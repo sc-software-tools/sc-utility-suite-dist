@@ -18,6 +18,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-main);
   color: var(--text-primary);
@@ -223,23 +227,46 @@ h1 {
 /* Apps Grid */
 .apps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 28px;
+}
+
+@media (min-width: 1100px) {
+  .apps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .app-card:nth-child(7) {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1099px) {
+  .apps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .app-card:nth-child(7) {
+    grid-column: 1 / -1;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 .app-card {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .app-card:hover {
-  border-color: #334155;
-  transform: translateY(-2px);
+  border-color: rgba(52, 211, 153, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(16, 185, 129, 0.12);
 }
 
 .card-header {
@@ -277,6 +304,7 @@ h1 {
   border: 1px solid #1E293B;
   background: #05080E;
   margin-bottom: 16px;
+  transition: border-color 0.25s ease;
 }
 
 .screenshot-frame img {
@@ -284,6 +312,15 @@ h1 {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.35s ease;
+}
+
+.app-card:hover .screenshot-frame {
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+.app-card:hover .screenshot-frame img {
+  transform: scale(1.025);
 }
 
 .card-desc {
@@ -327,18 +364,21 @@ h1 {
 }
 
 .btn-card-store {
-  background: #1410B981;
+  background: rgba(16, 185, 129, 0.12);
   color: #34D399;
   border: 1px solid rgba(16, 185, 129, 0.35);
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 9px 14px;
+  border-radius: 7px;
   font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
+  transition: all 0.2s ease;
 }
 
 .btn-card-store:hover {
-  background: rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.22);
+  border-color: #34D399;
+  transform: translateY(-1px);
 }
 
 .btn-group-sm {
@@ -348,19 +388,22 @@ h1 {
 }
 
 .btn-card-alt {
-  background: rgba(30, 41, 59, 0.5);
+  background: rgba(30, 41, 59, 0.6);
   border: 1px solid var(--border-card);
   color: var(--text-secondary);
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 7px 10px;
+  border-radius: 7px;
   font-size: 0.82rem;
   font-weight: 600;
   text-align: center;
+  transition: all 0.2s ease;
 }
 
 .btn-card-alt:hover {
   color: var(--text-primary);
   background: #1E293B;
+  border-color: #475569;
+  transform: translateY(-1px);
 }
 
 /* Master Suite Section */
@@ -369,11 +412,12 @@ h1 {
 }
 
 .master-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  border-radius: 16px;
-  padding: 48px 36px;
+  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, var(--bg-card) 70%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 18px;
+  padding: 52px 36px;
   text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(16, 185, 129, 0.08);
 }
 
 .master-badge {
@@ -433,6 +477,14 @@ h1 {
 .checksum-table th, .checksum-table td {
   padding: 12px 18px;
   border-bottom: 1px solid #1E293B;
+}
+
+.checksum-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.checksum-table tbody tr:hover {
+  background-color: rgba(30, 41, 59, 0.45);
 }
 
 .checksum-table th {
