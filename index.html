@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SC Utility Suite - Clean, Fast Windows Desktop Utilities</title>
+  <meta name="description" content="7 modern, privacy-focused utilities for Windows 10 and 11. Zero telemetry, fast native execution, permanent free tiers.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-icon">&#x25C7;</span>
+        <span class="brand-name">SC Utility Suite</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#apps">Applications</a>
+        <a href="#master-suite">Master Suite</a>
+        <a href="#checksums">Integrity</a>
+        <a href="#privacy">Privacy</a>
+        <a href="https://github.com/shortycarnage" target="_blank" class="nav-gh">GitHub &nearr;</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="pill-badge">Windows 10 &amp; 11 &middot; Modern .NET 9 &middot; Zero Telemetry</div>
+      <h1>7 Essential Desktop Utilities.<br><span class="accent-text">Engineered for Pure Performance.</span></h1>
+      <p class="hero-sub">
+        Lightweight, single-binary utilities for archive unpacking, duplicate cleaning, media editing, screen recording, HEIC conversion, PDF splitting and USB imaging. Generous free tiers forever, with optional one-time $3.99 PRO upgrades.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#apps" class="btn btn-primary">
+          <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+          Get on Microsoft Store
+        </a>
+        <a href="#master-suite" class="btn btn-secondary">Download Standalone (.exe &amp; .zip)</a>
+      </div>
+      <div class="trust-strip">
+        <div class="trust-item"><span class="check-icon">&#x2713;</span> 100% Local Execution</div>
+        <div class="trust-item"><span class="check-icon">&#x2713;</span> Microsoft Verified &amp; Signed</div>
+        <div class="trust-item"><span class="check-icon">&#x2713;</span> No Ads &middot; No Subscriptions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications Grid -->
+  <section id="apps" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>The Application Suite</h2>
+        <p>Each tool is completely self-contained, launches in milliseconds, and implements a unified Fluent-inspired visual theme.</p>
+      </div>
+
+      <div class="apps-grid">
+
+        <!-- Archive Unpacker -->
+        <div class="app-card" id="archive-unpacker">
+          <div class="card-header">
+            <img src="assets/icons/ArchiveUnpacker.png" alt="Archive Unpacker Icon" class="app-icon">
+            <div>
+              <h3>Archive Unpacker</h3>
+              <span class="app-subtitle">Multi-format archive extraction</span>
+            </div>
+          </div>
+          <div class="screenshot-frame">
+            <img src="assets/screenshots/ArchiveUnpacker.png" alt="Archive Unpacker Screenshot" loading="lazy">
+          </div>
+          <p class="card-desc">Safely inspect, preview, and extract 7z, ZIP, TAR, GZ, BZ2, and RAR archives. Includes password retry handling, zip-bomb size checks, and Windows Explorer context menu integration.</p>
+          <div class="feature-tags">
+            <span class="tag free">Free: Single archives &amp; inspection</span>
+            <span class="tag pro">PRO ($3.99): Batch extraction &amp; creation</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://apps.microsoft.com/detail/9NXS3LDTBRX8" target="_blank" class="btn btn-card-store">Microsoft Store &nearr;</a>
+            <div class="btn-group-sm">
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/ArchiveUnpacker_Setup_v1.0.0.exe" class="btn btn-card-alt">Setup (.exe)</a>
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/ArchiveUnpacker_v1.0.0_Portable.zip" class="btn btn-card-alt">Portable (.zip)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dup Scrub -->
+        <div class="app-card" id="dup-scrub">
+          <div class="card-header">
+            <img src="assets/icons/DupScrub.png" alt="Dup Scrub Icon" class="app-icon">
+            <div>
+              <h3>Dup Scrub</h3>
+              <span class="app-subtitle">High-speed duplicate file cleaner</span>
+            </div>
+          </div>
+          <div class="screenshot-frame">
+            <img src="assets/screenshots/DupScrub.png" alt="Dup Scrub Screenshot" loading="lazy">
+          </div>
+          <p class="card-desc">Multi-phase scan engine using fast file size grouping, partial-hash header probes, and full SHA256 verification. Safely cleans duplicates via the Windows Recycle Bin.</p>
+          <div class="feature-tags">
+            <span class="tag free">Free: Scan &amp; clean up to 1 group</span>
+            <span class="tag pro">PRO ($3.99): Unlimited batch cleanup &amp; auto-select</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://apps.microsoft.com/detail/9NL51TH9QR3M" target="_blank" class="btn btn-card-store">Microsoft Store &nearr;</a>
+            <div class="btn-group-sm">
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/DupScrub_Setup_v1.0.0.exe" class="btn btn-card-alt">Setup (.exe)</a>
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/DupScrub_v1.0.0_Portable.zip" class="btn btn-card-alt">Portable (.zip)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- HEIC Studio -->
+        <div class="app-card" id="heic-studio">
+          <div class="card-header">
+            <img src="assets/icons/HeicStudio.png" alt="HEIC Studio Icon" class="app-icon">
+            <div>
+              <h3>HEIC Studio</h3>
+              <span class="app-subtitle">Apple image converter</span>
+            </div>
+          </div>
+          <div class="screenshot-frame">
+            <img src="assets/screenshots/HeicStudio.png" alt="HEIC Studio Screenshot" loading="lazy">
+          </div>
+          <p class="card-desc">High-speed batch HEIC, HEIF, WebP, and AVIF image conversion to JPG, PNG, and PDF. Preserves full EXIF camera metadata and automatic orientation.</p>
+          <div class="feature-tags">
+            <span class="tag free">Free: 5 images per batch</span>
+            <span class="tag pro">PRO ($3.99): Unlimited batch &amp; custom resizing</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://apps.microsoft.com/detail/9N4F9K6G90HK" target="_blank" class="btn btn-card-store">Microsoft Store &nearr;</a>
+            <div class="btn-group-sm">
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/HeicStudio_Setup_v1.0.0.exe" class="btn btn-card-alt">Setup (.exe)</a>
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/HeicStudio_v1.0.0_Portable.zip" class="btn btn-card-alt">Portable (.zip)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Trim -->
+        <div class="app-card" id="media-trim">
+          <div class="card-header">
+            <img src="assets/icons/MediaTrim.png" alt="Media Trim Icon" class="app-icon">
+            <div>
+              <h3>Media Trim</h3>
+              <span class="app-subtitle">Lossless video and audio editor</span>
+            </div>
+          </div>
+          <div class="screenshot-frame">
+            <img src="assets/screenshots/MediaTrim.png" alt="Media Trim Screenshot" loading="lazy">
+          </div>
+          <p class="card-desc">Bundled static FFmpeg engine for millisecond-accurate video trimming, 720p compression, and lossless audio extraction to 320kbps MP3 and uncompressed WAV.</p>
+          <div class="feature-tags">
+            <span class="tag free">Free: 1 file per run</span>
+            <span class="tag pro">PRO ($3.99): Unlimited batch queue &amp; multi-pass encoding</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://apps.microsoft.com/detail/9PC1HVN60QBP" target="_blank" class="btn btn-card-store">Microsoft Store &nearr;</a>
+            <div class="btn-group-sm">
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/MediaTrim_Setup_v1.0.0.exe" class="btn btn-card-alt">Setup (.exe)</a>
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/MediaTrim_v1.0.0_Portable.zip" class="btn btn-card-alt">Portable (.zip)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PDF Knife -->
+        <div class="app-card" id="pdf-knife">
+          <div class="card-header">
+            <img src="assets/icons/PdfKnife.png" alt="PDF Knife Icon" class="app-icon">
+            <div>
+              <h3>PDF Knife</h3>
+              <span class="app-subtitle">Document splitter and merger</span>
+            </div>
+          </div>
+          <div class="screenshot-frame">
+            <img src="assets/screenshots/PdfKnife.png" alt="PDF Knife Screenshot" loading="lazy">
+          </div>
+          <p class="card-desc">Merge multiple PDF documents, split by custom page ranges, or burst every page into individual files. Memory-efficient streams with zero watermarks.</p>
+          <div class="feature-tags">
+            <span class="tag free">Free: 2 PDFs merge &amp; 1 split range</span>
+            <span class="tag pro">PRO ($3.99): Unlimited merge, burst &amp; complex ranges</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://apps.microsoft.com/detail/9NQLSS021G6T" target="_blank" class="btn btn-card-store">Microsoft Store &nearr;</a>
+            <div class="btn-group-sm">
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/PdfKnife_Setup_v1.0.0.exe" class="btn btn-card-alt">Setup (.exe)</a>
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/PdfKnife_v1.0.0_Portable.zip" class="btn btn-card-alt">Portable (.zip)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screen Lens -->
+        <div class="app-card" id="screen-lens">
+          <div class="card-header">
+            <img src="assets/icons/ScreenLens.png" alt="Screen Lens Icon" class="app-icon">
+            <div>
+              <h3>Screen Lens</h3>
+              <span class="app-subtitle">Screen snapshot and GIF recorder</span>
+            </div>
+          </div>
+          <div class="screenshot-frame">
+            <img src="assets/screenshots/ScreenLens.png" alt="Screen Lens Screenshot" loading="lazy">
+          </div>
+          <p class="card-desc">Low-overhead desktop recorder with multi-monitor region selection. Records MP4 video (H.264/AAC) and animated GIFs with a sleek floating HUD toolbar.</p>
+          <div class="feature-tags">
+            <span class="tag free">Free: Standard frame rates &amp; recordings</span>
+            <span class="tag pro">PRO ($3.99): 60 FPS, high-quality GIF palettes</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://apps.microsoft.com/detail/9N7V2FVFL4BN" target="_blank" class="btn btn-card-store">Microsoft Store &nearr;</a>
+            <div class="btn-group-sm">
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/ScreenLens_Setup_v1.0.0.exe" class="btn btn-card-alt">Setup (.exe)</a>
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/ScreenLens_v1.0.0_Portable.zip" class="btn btn-card-alt">Portable (.zip)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- USB Flasher -->
+        <div class="app-card" id="usb-flasher">
+          <div class="card-header">
+            <img src="assets/icons/UsbFlasher.png" alt="USB Flasher Icon" class="app-icon">
+            <div>
+              <h3>USB Flasher</h3>
+              <span class="app-subtitle">Bootable drive writer &amp; raw imaging</span>
+            </div>
+          </div>
+          <div class="screenshot-frame">
+            <img src="assets/screenshots/UsbFlasher.png" alt="USB Flasher Screenshot" loading="lazy">
+          </div>
+          <p class="card-desc">Write bootable UEFI Linux/Windows ISOs and raw IMG disk images directly to USB flash drives. Features unbuffered sector streaming, verification passes, and system disk safety locks.</p>
+          <div class="feature-tags">
+            <span class="tag free">Free: ISO &amp; IMG writing with verify</span>
+            <span class="tag pro">PRO ($3.99): Full drive sector backups to IMG</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://apps.microsoft.com/detail/9P9NBFS7PMJB" target="_blank" class="btn btn-card-store">Microsoft Store &nearr;</a>
+            <div class="btn-group-sm">
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/UsbFlasher_Setup_v1.0.0.exe" class="btn btn-card-alt">Setup (.exe)</a>
+              <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/UsbFlasher_v1.0.0_Portable.zip" class="btn btn-card-alt">Portable (.zip)</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Master Suite Section -->
+  <section id="master-suite" class="section master-section">
+    <div class="container">
+      <div class="master-card">
+        <div class="master-content">
+          <span class="master-badge">ALL-IN-ONE BUNDLE</span>
+          <h2>Download Complete SC Utility Suite</h2>
+          <p>Get all 7 tools in a single modern installer with optional Desktop and Start Menu shortcuts, or download the portable edition to run all tools without installation.</p>
+          <div class="master-buttons">
+            <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/SC_Utility_Suite_AllInOne_Setup_v1.0.0.exe" class="btn btn-primary btn-lg">Download Master Installer (.exe &middot; 572 MB)</a>
+            <a href="https://github.com/shortycarnage/sc-utility-suite-dist/releases/download/v1.0.0/SC_Utility_Suite_AllInOne_v1.0.0_Portable.zip" class="btn btn-secondary btn-lg">Download Portable ZIP (Zero Install)</a>
+          </div>
+          <p class="master-note">Requires Windows 10 (version 19041+) or Windows 11, x64 architecture. Fully self-contained .NET 9 runtimes included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHA256 Checksums Section -->
+  <section id="checksums" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cryptographic Integrity (SHA256)</h2>
+        <p>Every release binary is independently hashed. You can verify your download against these official SHA256 checksums.</p>
+      </div>
+
+      <div class="table-container">
+        <table class="checksum-table">
+          <thead>
+            <tr>
+              <th>File Name</th>
+              <th>SHA256 Hash</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>ArchiveUnpacker_Setup_v1.0.0.exe</td><td><code>ec9c1c01ef6ca2e6ad53faac13030f06d51983c4d9e829db665b7a9715763743</code></td></tr>
+            <tr><td>DupScrub_Setup_v1.0.0.exe</td><td><code>3ab49b423c94653f9194c1b152b22215ca75f8ea56d78142658579965845b603</code></td></tr>
+            <tr><td>HeicStudio_Setup_v1.0.0.exe</td><td><code>9cbf490960b36880a978f3bdfa65609756abda65b708c839fa6c83e05fdc5e3b</code></td></tr>
+            <tr><td>MediaTrim_Setup_v1.0.0.exe</td><td><code>70a1cdd6de4d5c6b3a709710143da36680b3bc375aebc4420f5f6453bc51051c</code></td></tr>
+            <tr><td>PdfKnife_Setup_v1.0.0.exe</td><td><code>b03b1627d39fe400be53c69b05036703784b590944105998563b5f3b2f8f9e8e</code></td></tr>
+            <tr><td>ScreenLens_Setup_v1.0.0.exe</td><td><code>a82cbbf99db68321542aba897df0c6ba83bba2b8ab47dd5dc04d13916e0140eb</code></td></tr>
+            <tr><td>SC_Utility_Suite_AllInOne_Setup_v1.0.0.exe</td><td><code>2884232a14f23cf35eba62f220cf2c9700500f52c4beb899c3971ddf111dd7a1</code></td></tr>
+            <tr><td>UsbFlasher_Setup_v1.0.0.exe</td><td><code>4c0039f6bf0016ecc34774da237fa78ec070bde3ea2299b45dd5b674f4053a1f</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Section -->
+  <section id="privacy" class="section privacy-section">
+    <div class="container">
+      <div class="privacy-box">
+        <h3>Privacy &amp; Data Security Promise</h3>
+        <p>SC Utility Suite tools operate <strong>100% locally on your computer</strong>. Your photos, videos, documents, disk sectors, and personal files are never uploaded to any cloud service, remote server, or third party. No background telemetry or analytics services are implemented.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <strong>SC Utility Suite</strong> &middot; Developed by Martin Wright
+        <p class="footer-sub">&copy; 2026 SC Software. Microsoft, Windows and the Windows Store logo are trademarks of Microsoft Corporation.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/shortycarnage">GitHub Profile</a>
+        <a href="#apps">Applications</a>
+        <a href="#privacy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
