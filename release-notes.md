@@ -1,15 +1,15 @@
-﻿## SC Utility Suite v1.0.1 - Production Release
+## SC Utility Suite v1.0.1 - Production Release
 
-Synchronized release with Microsoft Store package version 1.0.1.0 across all 7 applications.
+Standalone v1.0.1 release. Microsoft Store packages use package identity 1.0.1.0 and remain in the existing certification submission; they predate the latest standalone binaries.
 
 ### Included Applications
 - **Archive Unpacker**: Fast multi-format archive extraction (.zip, .7z, .tar, .gz, .bz2, .rar) and inspection
-- **Dup Scrub**: Multi-phase duplicate file scanner (file size -> 4KB probe -> full SHA256) with Recycle Bin safety
+- **Dup Scrub**: Multi-phase duplicate file scanner (file size -> sampled XxHash64 -> full XxHash64; byte comparison before recycling) with Recycle Bin safety
 - **HEIC Studio**: Batch convert Apple HEIC/HEIF photos, WebP, and AVIF to JPG, PNG, and PDF offline
-- **Media Trim**: Millisecond-accurate video trimming and lossless audio extraction powered by embedded static FFmpeg
+- **Media Trim**: Video trimming, keyframe-dependent lossless video cuts and MP3/WAV audio extraction powered by embedded static FFmpeg
 - **PDF Knife**: Local PDF page manipulation (split ranges, merge documents, burst pages) with zero cloud dependencies
-- **Screen Lens**: Screen recording and optimized GIF creation with floating HUD bar and custom hotkeys
-- **USB Flasher**: Bootable UEFI ISO burning and raw sector disk imaging (.img, .bin, .vhd) to removable drives
+- **Screen Lens**: Screen recording and optimized GIF creation with region selection and floating pause/resume/stop controls
+- **USB Flasher**: Bootable UEFI ISO burning and raw sector disk imaging (.img, .bin) to removable drives
 
 ### Verified SHA256 Package Checksums
 
@@ -36,3 +36,8 @@ Synchronized release with Microsoft Store package version 1.0.1.0 across all 7 a
 - Windows 10 (Build 19041+) or Windows 11
 - 64-bit (x64) processor architecture
 - Completely self-contained .NET 8 runtime included; no external prerequisites required
+### Signing and channel status
+
+Current standalone installers are unsigned. The hashes above establish file integrity, not trusted publisher identity. Microsoft Store certification and Winget catalog merges are pending; passing manifest validation does not establish catalog availability or Store approval. File processing is local; purchase/activation checks contact Microsoft Store or Gumroad.
+
+Media Trim edits one file at a time in both tiers; no batch queue or multipass feature is provided. PRO hides the upgrade strip. Other PRO limits are described on the showcase page. The exact source/build/dependency delivery for the included FFmpeg build remains an unresolved distribution requirement, separate from binary integrity checks.

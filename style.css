@@ -9,7 +9,7 @@
   --bg-card: #27272A;
   --bg-card-hover: #303036;
   --bg-card-active: #383840;
-  
+
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-card: rgba(255, 255, 255, 0.12);
   --border-hover: rgba(255, 255, 255, 0.22);
@@ -22,7 +22,7 @@
 
   --accent-emerald: #107C41;
   --accent-emerald-light: #34D399;
-  
+
   --text-primary: #FFFFFF;
   --text-secondary: #D4D4D8;
   --text-muted: #A1A1AA;
@@ -35,7 +35,7 @@
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
-  
+
   --shadow-fluent: 0 4px 16px rgba(0, 0, 0, 0.35);
   --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
@@ -504,7 +504,7 @@ a {
 }
 
 .app-features-list li::before {
-  content: "•";
+  content: "â€¢";
   color: var(--accent-fluent);
   font-weight: bold;
 }
@@ -729,4 +729,19 @@ a {
   .hero h1 { font-size: 2rem; }
   .nav-links { display: none; }
   .action-btn-row { flex-direction: column; }
+}
+
+/* Keep functional controls and labels usable at narrow widths. */
+.master-meta, .tier-strip, .footer-links { flex-wrap: wrap; }
+.fluent-app-card, .app-meta, .terminal-cmd, .winget-pill-code { min-width: 0; }
+.terminal-cmd, .winget-pill-code { overflow-x: auto; }
+.terminal-body { min-width: 0; }
+.tier-badge { overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .container { padding: 0 16px; }
+  .master-banner { padding: 20px; }
+  .master-actions { min-width: 0; }
+  .fluent-app-card { padding: 18px; }
+  .terminal-body { padding: 10px; gap: 6px; font-size: 0.75rem; }
+  .winget-pill-row { gap: 6px; }
 }

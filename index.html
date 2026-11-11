@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SC Utility Suite - Windows 10 & 11 Desktop Utilities</title>
-  <meta name="description" content="A modular suite of seven high-performance, privacy-focused desktop utilities for Windows 10 and 11. Zero telemetry, single-binary execution, permanent free tiers.">
+  <meta name="description" content="A modular suite of seven high-performance, privacy-focused desktop utilities for Windows 10 and 11. Zero telemetry, local file processing, permanent free tiers.">
   <link rel="canonical" href="https://sc-software-tools.github.io/sc-utility-suite-dist/">
-  
+
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sc-software-tools.github.io/sc-utility-suite-dist/">
@@ -87,7 +87,7 @@
       </div>
       <h1>Lightweight Desktop Utilities.<br>Engineered for Windows.</h1>
       <p class="hero-sub">
-        Seven single-binary, privacy-first desktop utilities built for speed. Archive extraction, duplicate cleaning, media editing, screen capture, HEIC photo conversion, PDF manipulation, and USB drive flashing. Generous permanent free tiers with optional one-time $3.99 PRO upgrades.
+        Seven self-contained, privacy-first desktop utilities built for speed. Archive extraction, duplicate cleaning, media editing, screen capture, HEIC photo conversion, PDF manipulation, and USB drive flashing. Generous permanent free tiers with optional one-time $3.99 PRO upgrades.
       </p>
 
       <div class="hero-cta-group">
@@ -106,7 +106,7 @@
       <div class="terminal-widget">
         <div class="terminal-header">
           <div class="terminal-tab">
-            <span>PowerShell &middot; Windows Package Manager</span>
+            <span>PowerShell &middot; Winget submissions pending</span>
           </div>
           <div class="terminal-controls">
             <span class="win-dot"></span>
@@ -133,12 +133,12 @@
           <span class="master-badge">All-In-One Distribution</span>
           <h2>SC Utility Suite Master Bundle</h2>
           <p>
-            Get all 7 utilities in a unified, silent installer or a zero-install portable folder. Self-contained .NET 8 runtimes and bundled FFmpeg engines included. No external dependencies required.
+            Get all 7 utilities in one setup wizard or a zero-install portable folder. Self-contained .NET 8 runtimes and bundled FFmpeg engines included. No external dependencies required.
           </p>
           <div class="master-meta">
             <span><strong>Version:</strong> 1.0.1</span>
             <span><strong>Architecture:</strong> x64</span>
-            <span><strong>Telemetry:</strong> 0% (Completely Offline)</span>
+            <span><strong>Processing:</strong> Local files</span>
             <span><strong>License:</strong> Freeware / Freemium</span>
           </div>
         </div>
@@ -155,8 +155,9 @@
 
     <!-- Individual Applications Grid -->
     <section id="applications" class="section">
+      <p class="section-subtitle">Standalone v1.0.1 downloads are available below. Microsoft Store certification and Winget catalog submissions are pending. Store links may not be available yet. Current standalone installers are unsigned; SHA256 hashes verify integrity, not publisher identity.</p>
       <h2 class="section-title">The Seven Applications</h2>
-      <p class="section-subtitle">Each tool operates as an independent, single-binary application with dedicated Free and PRO tiers.</p>
+      <p class="section-subtitle">Each tool operates as an independent desktop application with dedicated Free and PRO tiers.</p>
 
       <div class="apps-grid">
 
@@ -174,12 +175,12 @@
           </div>
           <ul class="app-features-list">
             <li>Extracts ZIP, 7Z, TAR, GZ, BZ2, and RAR archives.</li>
-            <li>In-place smart extraction and split-volume (.001, .part1) reconstruction.</li>
-            <li>Low memory footprint with background multi-threaded worker pools.</li>
+            <li>Browse archive folders and choose individual entries to extract.</li>
+            <li>Create ZIP archives from multiple files and folders.</li>
           </ul>
           <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Full multi-format unpacking</span>
-            <span class="tier-badge tier-pro">PRO: Ultra-compression &amp; encrypted archives</span>
+            <span class="tier-badge tier-free">Free: Single-archive extraction and basic ZIP creation</span>
+            <span class="tier-badge tier-pro">PRO: Batch extraction, TAR.GZ and Maximum compression</span>
           </div>
           <div class="card-actions-wrapper">
             <div class="action-btn-row">
@@ -207,13 +208,13 @@
             <img src="assets/screenshots/DupScrub.png" alt="Dup Scrub Screenshot" loading="lazy">
           </div>
           <ul class="app-features-list">
-            <li>3-phase verification: file size, initial block hash, full SHA256.</li>
-            <li>Safe deletion directly to Windows Recycle Bin with undo capability.</li>
-            <li>One-click auto-selection presets (keep newest, oldest, or shortest path).</li>
+            <li>Matches file sizes, samples and full XxHash64 hashes; compares bytes before recycling.</li>
+            <li>Moves selected duplicate files to the Windows Recycle Bin.</li>
+            <li>Keep the oldest or newest copy with automatic duplicate selection.</li>
           </ul>
           <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Clean up to 50 duplicate groups per run</span>
-            <span class="tier-badge tier-pro">PRO: Unlimited batch cleaning &amp; advanced export</span>
+            <span class="tier-badge tier-free">Free: Scan folders and clean one duplicate group at a time</span>
+            <span class="tier-badge tier-pro">PRO: Select and clean duplicates across groups</span>
           </div>
           <div class="card-actions-wrapper">
             <div class="action-btn-row">
@@ -242,12 +243,12 @@
           </div>
           <ul class="app-features-list">
             <li>100% offline batch conversion of HEIC, HEIF, WebP, and AVIF photos.</li>
-            <li>Preserves camera EXIF, GPS location, color profiles, and timestamps.</li>
-            <li>High-speed multi-threaded encoding to JPG, PNG, and PDF.</li>
+            <li>Automatic image orientation, adjustable quality and optional resizing.</li>
+            <li>Convert to JPG, PNG, WebP or PDF with parallel processing.</li>
           </ul>
           <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Batch convert 5 images per session</span>
-            <span class="tier-badge tier-pro">PRO: Unlimited batch conversions &amp; custom metadata</span>
+            <span class="tier-badge tier-free">Free: Convert up to 5 images per batch</span>
+            <span class="tier-badge tier-pro">PRO: Unlimited images per batch</span>
           </div>
           <div class="card-actions-wrapper">
             <div class="action-btn-row">
@@ -268,20 +269,20 @@
             <img src="assets/icons/MediaTrim.png" alt="Media Trim Icon" class="app-icon">
             <div class="app-meta">
               <h3 class="app-title">Media Trim</h3>
-              <p class="app-desc-short">Frame-accurate video trimmer &amp; audio extractor</p>
+              <p class="app-desc-short">Video trimmer, converter and audio extractor</p>
             </div>
           </div>
           <div class="app-screenshot-frame">
             <img src="assets/screenshots/MediaTrim.png" alt="Media Trim Screenshot" loading="lazy">
           </div>
           <ul class="app-features-list">
-            <li>Bundled static FFmpeg engine for instant, zero-reencode stream copying.</li>
-            <li>Lossless audio extraction to 320kbps MP3 and uncompressed WAV.</li>
+            <li>Bundled FFmpeg supports a lossless video cut preset; cut points depend on source keyframes.</li>
+            <li>Extract audio to MP3 at 320 kbps or uncompressed WAV.</li>
             <li>Supports MP4, MKV, MOV, WebM, AVI, and high-bitrate action camera footage.</li>
           </ul>
           <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: 1 file trim &amp; extract per session</span>
-            <span class="tier-badge tier-pro">PRO: Unlimited batch queue &amp; multi-pass encoding</span>
+            <span class="tier-badge tier-free">Free: Single-file editing with all five presets</span>
+            <span class="tier-badge tier-pro">PRO: Removes the upgrade strip</span>
           </div>
           <div class="card-actions-wrapper">
             <div class="action-btn-row">
@@ -344,12 +345,12 @@
           </div>
           <ul class="app-features-list">
             <li>Floating HUD recording bar with full-screen and region selection.</li>
-            <li>Records hardware-accelerated H.264 MP4 video and animated GIFs.</li>
-            <li>Low CPU overhead with optional microphone commentary recording.</li>
+            <li>Records H.264 MP4 video or animated GIFs, with pause and resume.</li>
+            <li>Optional microphone audio for MP4; recording controls stay outside the saved capture.</li>
           </ul>
           <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Standard frame rates &amp; recordings</span>
-            <span class="tier-badge tier-pro">PRO: 60 FPS recording &amp; high-density GIF palettes</span>
+            <span class="tier-badge tier-free">Free: Up to 3 minutes at 15 or 30 FPS; no watermark</span>
+            <span class="tier-badge tier-pro">PRO: 60 FPS and unlimited recording duration</span>
           </div>
           <div class="card-actions-wrapper">
             <div class="action-btn-row">
@@ -377,9 +378,9 @@
             <img src="assets/screenshots/UsbFlasher.png" alt="USB Flasher Screenshot" loading="lazy">
           </div>
           <ul class="app-features-list">
-            <li>Direct unbuffered sector streaming for bootable UEFI Linux and Windows ISOs.</li>
+            <li>Raw image writing for hybrid Linux ISOs and IMG/BIN files; FAT32 extraction for compatible UEFI ISOs.</li>
             <li>Cryptographic readback verification with system disk protection lockouts.</li>
-            <li>Raw physical disk imaging (.img / .raw) with progress monitoring.</li>
+            <li>Automatic write-mode selection with phase progress and remaining time.</li>
           </ul>
           <div class="tier-strip">
             <span class="tier-badge tier-free">Free: Full ISO &amp; IMG writing with verification</span>
@@ -403,7 +404,7 @@
 
     <!-- Technical Download Matrix Table -->
     <section id="download-matrix" class="section">
-      <h2 class="section-title">Technical Specifications &amp; Download Matrix</h2>
+      <h2 class="section-title">Downloads and System Requirements</h2>
       <p class="section-subtitle">Direct, unthrottled binaries from GitHub Release v1.0.1. Self-contained x64 executables.</p>
 
       <div class="matrix-container">
@@ -422,7 +423,7 @@
             <tr>
               <td><strong>SC Utility Suite (Master)</strong></td>
               <td>1.0.1</td>
-              <td>572 MB</td>
+              <td>572.2 MB</td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
               <td><code>SCSoftware.UtilitySuite</code></td>
@@ -430,7 +431,7 @@
             <tr>
               <td>Archive Unpacker</td>
               <td>1.0.1</td>
-              <td>62 MB</td>
+              <td>67.3 MB</td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ArchiveUnpacker_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ArchiveUnpacker_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
               <td><code>SCSoftware.ArchiveUnpacker</code></td>
@@ -438,7 +439,7 @@
             <tr>
               <td>Dup Scrub</td>
               <td>1.0.1</td>
-              <td>60 MB</td>
+              <td>64.5 MB</td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/DupScrub_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/DupScrub_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
               <td><code>SCSoftware.DupScrub</code></td>
@@ -446,7 +447,7 @@
             <tr>
               <td>HEIC Studio</td>
               <td>1.0.1</td>
-              <td>68 MB</td>
+              <td>73.4 MB</td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/HeicStudio_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/HeicStudio_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
               <td><code>SCSoftware.HEICStudio</code></td>
@@ -454,7 +455,7 @@
             <tr>
               <td>Media Trim</td>
               <td>1.0.1</td>
-              <td>118 MB</td>
+              <td>124.5 MB</td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/MediaTrim_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/MediaTrim_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
               <td><code>SCSoftware.MediaTrim</code></td>
@@ -462,7 +463,7 @@
             <tr>
               <td>PDF Knife</td>
               <td>1.0.1</td>
-              <td>61 MB</td>
+              <td>65.8 MB</td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/PdfKnife_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/PdfKnife_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
               <td><code>SCSoftware.PDFKnife</code></td>
@@ -470,7 +471,7 @@
             <tr>
               <td>Screen Lens</td>
               <td>1.0.1</td>
-              <td>118 MB</td>
+              <td>124.5 MB</td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ScreenLens_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ScreenLens_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
               <td><code>SCSoftware.ScreenLens</code></td>
@@ -478,7 +479,7 @@
             <tr>
               <td>USB Flasher</td>
               <td>1.0.1</td>
-              <td>60 MB</td>
+              <td>65.2 MB</td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/UsbFlasher_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
               <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/UsbFlasher_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
               <td><code>SCSoftware.USBFlasher</code></td>
@@ -490,7 +491,7 @@
 
     <!-- Cryptographic Integrity Section -->
     <section id="integrity" class="section">
-      <h2 class="section-title">Cryptographic SHA256 Checksums</h2>
+      <h2 class="section-title">SHA256 Download Checksums</h2>
       <p class="section-subtitle">Every release package is independently hashed. Verify your local downloads using PowerShell: <code>Get-FileHash -Algorithm SHA256 &lt;file&gt;</code>.</p>
 
       <div class="matrix-container">
@@ -518,16 +519,16 @@
     <!-- Privacy & Architecture Section -->
     <section id="privacy" class="section">
       <h2 class="section-title">Architecture &amp; Privacy Guarantees</h2>
-      <p class="section-subtitle">Engineered specifically for users and organizations that require 100% offline data sovereignty.</p>
+      <p class="section-subtitle">Your files are processed locally. Licensing uses the relevant purchase provider.</p>
 
       <div class="privacy-grid">
         <div class="privacy-card">
-          <h4>100% Offline Processing</h4>
-          <p>Your photos, videos, disk images, and documents never leave your PC. None of the seven utilities make external cloud network connections during operation.</p>
+          <h4>Local File Processing</h4>
+          <p>Your photos, videos, disk images, and documents never leave your PC. File processing stays on your PC. PRO license checks and activation contact Microsoft Store or Gumroad.</p>
         </div>
         <div class="privacy-card">
-          <h4>Zero Telemetry or Ads</h4>
-          <p>No third-party analytics SDKs, tracking pixels, or advertising frameworks are compiled into any binary. Zero user data is harvested or retained.</p>
+          <h4>No Background Analytics</h4>
+          <p>No background analytics or third-party advertisements are active. Free editions show a local PRO upgrade strip. Standalone activation saves a license cache on your Windows account.</p>
         </div>
         <div class="privacy-card">
           <h4>Recycle Bin Safety</h4>

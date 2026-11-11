@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+ï»¿<?xml version="1.0" encoding="UTF-8"?>
 <XML_DIZ_INFO>
   <MASTER_PAD_VERSION_INFO>
     <MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
@@ -55,17 +55,17 @@
       <Char_Desc_45>7 fast desktop utilities for Windows</Char_Desc_45>
       <Char_Desc_80>7 modern, privacy-focused productivity and maintenance utilities for Windows.</Char_Desc_80>
       <Char_Desc_250>SC Utility Suite is a modular collection of seven fast, privacy-focused desktop tools for Windows 10 and 11, covering archive extraction, duplicate finding, photo conversion, video trimming, PDF manipulation, screen recording, and USB disk imaging.</Char_Desc_250>
-      <Char_Desc_450>SC Utility Suite is a collection of 7 high-performance, privacy-focused desktop tools for Windows 10 and 11. It includes Archive Unpacker (multi-format extractor), Dup Scrub (fast duplicate cleaner), HEIC Studio (offline Apple photo converter), Media Trim (lossless video cutter and audio extractor), PDF Knife (split and merge PDF pages), Screen Lens (screen recorder and GIF creator), and USB Flasher (bootable UEFI ISO and disk imager).</Char_Desc_450>
-      <Char_Desc_2000>SC Utility Suite is a modern collection of 7 lightweight, privacy-focused desktop utilities designed for Windows 10 and 11. Built on native .NET 8, each application launches in milliseconds, works completely offline without cloud uploads or telemetry, and provides a permanent, full-featured free tier.
+      <Char_Desc_450>SC Utility Suite is a collection of 7 high-performance, privacy-focused desktop tools for Windows 10 and 11. It includes Archive Unpacker (multi-format extractor), Dup Scrub (fast duplicate cleaner), HEIC Studio (offline Apple photo converter), Media Trim (video trimmer, converter and audio extractor), PDF Knife (split and merge PDF pages), Screen Lens (screen recorder and GIF creator), and USB Flasher (bootable UEFI ISO and disk imager).</Char_Desc_450>
+      <Char_Desc_2000>SC Utility Suite is a modern collection of 7 lightweight, privacy-focused desktop utilities designed for Windows 10 and 11. Built on native .NET 8, each application processes files locally without background telemetry and provides a permanent free tier. License activation contacts the purchase provider.
 
 The suite includes:
 1. Archive Unpacker - Extract and inspect ZIP, 7Z, TAR, GZ, BZ2, and RAR archives with context menu integration and size-bomb safety checks.
-2. Dup Scrub - Detect and safely remove duplicate files using a multi-phase matching pipeline (size, 4KB block probe, and full SHA256) with Recycle Bin safety.
-3. HEIC Studio - Batch convert Apple iPhone/iPad HEIC/HEIF photos, WebP, and AVIF to JPG, PNG, and PDF offline with full EXIF retention.
-4. Media Trim - Millisecond-accurate video trimming and lossless audio extraction powered by embedded static FFmpeg with instant stream copy mode.
+2. Dup Scrub - Detect and safely remove duplicate files using a multi-phase matching pipeline (size, 4KB block probe, and full XxHash64) with Recycle Bin safety.
+3. HEIC Studio - Batch convert Apple iPhone/iPad HEIC/HEIF photos, WebP, and AVIF to JPG, PNG, and PDF offline with automatic orientation and optional resizing.
+4. Media Trim - Edit one media file at a time, extract MP3/WAV audio and convert video using bundled FFmpeg. The lossless video preset cuts at source keyframe boundaries.
 5. PDF Knife - Workstation to split page ranges, merge documents, reorder pages, and burst documents into single-page files locally.
-6. Screen Lens - Capture screen recordings and optimized animated GIFs featuring a dockable HUD bar and customizable hotkeys.
-7. USB Flasher - Burn UEFI ISOs, Linux live distros, and raw sector disk images (.img, .bin, .vhd) to USB drives with strict system disk protection.</Char_Desc_2000>
+6. Screen Lens - Capture MP4 and GIF recordings with region selection, a floating pause/resume/stop bar and optional MP4 microphone audio.
+7. USB Flasher - Burn UEFI ISOs, Linux live distros, and raw sector disk images (.img, .bin) to USB drives with strict system disk protection.</Char_Desc_2000>
     </English>
   </Program_Descriptions>
   <Web_Info>
