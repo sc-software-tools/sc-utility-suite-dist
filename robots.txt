@@ -1,4 +1,5 @@
 ﻿User-agent: *
+Disallow: /stats.html
 Allow: /
 
 Sitemap: https://sc-software-tools.github.io/sc-utility-suite-dist/sitemap.xml

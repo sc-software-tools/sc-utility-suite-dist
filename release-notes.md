@@ -1,6 +1,6 @@
 ## SC Utility Suite v1.0.1 - Production Release
 
-Standalone v1.0.1 release. Existing Microsoft Store packages use package identity 1.0.1.0 and predate the latest standalone binaries. As reported in Partner Center on 11 November 2026, Archive Unpacker, Dup Scrub, HEIC Studio, PDF Knife and Screen Lens are in Microsoft Store. Dup Scrub and PDF Knife also have updates in certification. Media Trim and USB Flasher are waiting to be released. Availability may vary by market.
+Standalone v1.0.1 release. Existing Microsoft Store packages use package identity 1.0.1.0 and predate the latest standalone binaries. All seven apps are available in Microsoft Store. Availability may vary by market.
 
 ### Included Applications
 - **Archive Unpacker**: Fast multi-format archive extraction (.zip, .7z, .tar, .gz, .bz2, .rar) and inspection
@@ -38,7 +38,7 @@ Standalone v1.0.1 release. Existing Microsoft Store packages use package identit
 - Completely self-contained .NET 8 runtime included; no external prerequisites required
 ### Signing and channel status
 
-Current standalone installers are unsigned. The hashes above establish file integrity, not trusted publisher identity. Five apps are user-reported in Microsoft Store; two are waiting for release, and two live apps have updates in certification. Winget catalog merges remain pending; passing manifest validation does not establish catalog availability. File processing is local; purchase/activation checks contact Microsoft Store or Gumroad.
+Current standalone installers are unsigned. The hashes above establish file integrity, not trusted publisher identity. All seven apps are available in Microsoft Store. Winget catalog merges remain pending; passing manifest validation does not establish catalog availability. File processing is local; purchase/activation checks contact Microsoft Store or Gumroad.
 
 Media Trim edits one file at a time in both tiers; no batch queue or multipass feature is provided. PRO hides the upgrade strip. Other PRO limits are described on the showcase page. The exact source/build/dependency delivery for the included FFmpeg build remains an unresolved distribution requirement, separate from binary integrity checks.
 
