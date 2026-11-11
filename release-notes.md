@@ -41,3 +41,7 @@ Standalone v1.0.1 release. Microsoft Store packages use package identity 1.0.1.0
 Current standalone installers are unsigned. The hashes above establish file integrity, not trusted publisher identity. Microsoft Store certification and Winget catalog merges are pending; passing manifest validation does not establish catalog availability or Store approval. File processing is local; purchase/activation checks contact Microsoft Store or Gumroad.
 
 Media Trim edits one file at a time in both tiers; no batch queue or multipass feature is provided. PRO hides the upgrade strip. Other PRO limits are described on the showcase page. The exact source/build/dependency delivery for the included FFmpeg build remains an unresolved distribution requirement, separate from binary integrity checks.
+
+### Known v1.0.1 ZIP-creation issue
+
+In the free edition, selecting several separate inputs for ZIP creation can include only the first input. To include several files in v1.0.1, place them in one folder and add that folder. The 1.0.2 candidate fixes separate multi-input creation and has passed byte-content regression checks; it has not replaced the existing downloads or Store submissions.

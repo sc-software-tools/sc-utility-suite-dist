@@ -35,3 +35,7 @@ Standalone v1.0.1 downloads are published. All seven Microsoft Store apps were l
 PRO uses Microsoft Store purchases in the Store edition and Gumroad keys in standalone editions. File processing stays local; activation contacts the purchase provider. Free editions display a local upgrade strip; PRO hides it. Media Trim currently edits one file at a time in both editions and has no batch or multipass encoding feature.
 
 Development fixes are being tested as a separate 1.0.2 candidate. Existing v1.0.1 release files, submitted MSIX packages and Winget download URLs are preserved. Exact corresponding-source delivery for the bundled FFmpeg build remains unresolved; bundling and hash checks do not certify license compliance.
+
+### Known v1.0.1 ZIP-creation issue
+
+In the free edition, selecting several separate inputs for ZIP creation can include only the first input. To include several files in v1.0.1, place them in one folder and add that folder. The 1.0.2 candidate fixes separate multi-input creation and has passed byte-content regression checks; it has not replaced the existing downloads or Store submissions.
