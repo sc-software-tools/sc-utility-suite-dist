@@ -30,7 +30,7 @@ The 16 v1.0.1 installer and portable files have SHA256 checksums in `checksums_d
 
 ## Channel status and licensing
 
-Standalone v1.0.1 downloads are published. All seven Microsoft Store apps were last reported submitted for certification; approval and live Store purchase restoration have not been verified. Eight Winget pull requests (seven apps plus the complete bundle) have passing validation labels but remain unmerged at the last check on 11 November 2026. Do not assume the catalog commands are available yet.
+Standalone v1.0.1 downloads are published. As reported in Partner Center on 11 November 2026, Archive Unpacker, Dup Scrub, HEIC Studio, PDF Knife and Screen Lens are in Microsoft Store. Dup Scrub and PDF Knife also have updates in certification. Media Trim and USB Flasher are waiting to be released. Availability may vary by market. Live Store purchase restoration has not been tested. Eight Winget pull requests (seven apps plus the complete bundle) have passing validation labels but remain unmerged at the last check on 11 November 2026. Do not assume the catalog commands are available yet.
 
 PRO uses Microsoft Store purchases in the Store edition and Gumroad keys in standalone editions. File processing stays local; activation contacts the purchase provider. Free editions display a local upgrade strip; PRO hides it. Media Trim currently edits one file at a time in both editions and has no batch or multipass encoding feature.
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SC Utility Suite - Windows 10 & 11 Desktop Utilities</title>
-  <meta name="description" content="A modular suite of seven high-performance, privacy-focused desktop utilities for Windows 10 and 11. Zero telemetry, local file processing, permanent free tiers.">
+  <meta name="description" content="Seven practical Windows tools for photos, files, PDFs, media, screen recording and USB drives. Free forever, with optional lifetime Pro upgrades per app.">
   <link rel="canonical" href="https://sc-software-tools.github.io/sc-utility-suite-dist/">
 
   <!-- Open Graph / Social Media -->
@@ -52,509 +52,177 @@
   <link rel="shortcut icon" href="favicon.ico?v=4">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=4.0.0">
+  <link rel="stylesheet" href="style.css?v=20261111.1">
+  <script src="site.js?v=20261111.1" defer></script>
 </head>
-<body>
 
-  <!-- Navigation Bar -->
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="navbar">
-    <div class="nav-container">
-      <div class="brand">
-        <div class="brand-icon">
-          <img src="favicon-32x32.png" alt="SC Icon">
-        </div>
-        <span>SC Utility Suite</span>
-      </div>
-      <nav class="nav-links">
-        <a href="#applications">Applications</a>
-        <a href="#master-bundle">Master Bundle</a>
-        <a href="#download-matrix">Downloads</a>
-        <a href="#integrity">Integrity</a>
-        <a href="#privacy">Privacy</a>
-        <a href="https://github.com/sc-software-tools/sc-utility-suite-dist" target="_blank" class="nav-gh">
-          GitHub Release v1.0.1 &nearr;
-        </a>
-      </nav>
+    <div class="nav-container container">
+      <a class="brand" href="#top" aria-label="SC Utility Suite home"><img src="favicon-32x32.png" width="30" height="30" alt=""><span>SC Utility Suite</span></a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="#applications">The apps</a><a href="#pro">Free &amp; Pro</a><a href="#download-matrix">Downloads</a><a href="#faq">FAQs</a></nav>
+      <a class="nav-download" href="#applications">Find your tool <span aria-hidden="true">↓</span></a>
+      <details class="mobile-menu"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation"><a href="#applications">The apps</a><a href="#pro">Free &amp; Pro</a><a href="#download-matrix">Downloads</a><a href="#faq">FAQs</a></nav></details>
     </div>
   </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-container">
-      <div class="fluent-pill">
-        <span class="fluent-dot"></span>
-        <span>Version 1.0.1 &middot; Windows 10 &amp; 11 &middot; 64-bit Architecture</span>
-      </div>
-      <h1>Lightweight Desktop Utilities.<br>Engineered for Windows.</h1>
-      <p class="hero-sub">
-        Seven self-contained, privacy-first desktop utilities built for speed. Archive extraction, duplicate cleaning, media editing, screen capture, HEIC photo conversion, PDF manipulation, and USB drive flashing. Generous permanent free tiers with optional one-time $3.99 PRO upgrades.
-      </p>
-
-      <div class="hero-cta-group">
-        <a href="#master-bundle" class="btn btn-fluent-primary">
-          Download Master Installer (.exe &middot; 572 MB)
-        </a>
-        <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">
-          Portable ZIP (Zero Install)
-        </a>
-        <a href="#applications" class="btn btn-fluent-store">
-          Browse Individual Apps
-        </a>
-      </div>
-
-      <!-- Windows Terminal Winget Console -->
-      <div class="terminal-widget">
-        <div class="terminal-header">
-          <div class="terminal-tab">
-            <span>PowerShell &middot; Winget submissions pending</span>
-          </div>
-          <div class="terminal-controls">
-            <span class="win-dot"></span>
-            <span class="win-dot"></span>
-            <span class="win-dot"></span>
-          </div>
+  <main id="main">
+    <section class="hero container" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> A little less friction. A lot more done.</p>
+        <h1 id="hero-title">Powerful Windows tools.<br><span>Without the hassle.</span></h1>
+        <p class="hero-sub">Seven practical utilities for your files, photos, media and more. Fast, private and free to get started.</p>
+        <p class="hero-promise">Free forever. Upgrade only when you need more.</p>
+        <div class="hero-cta-group">
+          <a href="#applications" class="btn btn-fluent-primary">Find your free app <span aria-hidden="true">↓</span></a>
+          <a href="#master-bundle" class="btn btn-fluent-secondary">Get all seven <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M10 3v9m-3-3 3 3 3-3M4 13v3h12v-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-        <div class="terminal-body">
-          <span class="terminal-prompt">PS &gt;</span>
-          <code class="terminal-cmd">winget install SCSoftware.UtilitySuite</code>
-          <button class="terminal-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.UtilitySuite'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
-        </div>
+        <ul class="hero-benefits" aria-label="Simple pricing"><li>Free to use</li><li>No subscriptions</li><li>Optional $3.99 lifetime Pro <strong>per app</strong></li></ul>
+        <p class="hero-platform">For Windows 10 &amp; 11 · 64-bit PCs. Pro prices in USD; checkout shows local pricing and taxes.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Main Content -->
-  <main class="container">
-
-    <!-- Master Bundle Section -->
-    <section id="master-bundle" class="section">
-      <div class="master-banner">
-        <div class="master-info">
-          <span class="master-badge">All-In-One Distribution</span>
-          <h2>SC Utility Suite Master Bundle</h2>
-          <p>
-            Get all 7 utilities in one setup wizard or a zero-install portable folder. Self-contained .NET 8 runtimes and bundled FFmpeg engines included. No external dependencies required.
-          </p>
-          <div class="master-meta">
-            <span><strong>Version:</strong> 1.0.1</span>
-            <span><strong>Architecture:</strong> x64</span>
-            <span><strong>Processing:</strong> Local files</span>
-            <span><strong>License:</strong> Freeware / Freemium</span>
-          </div>
-        </div>
-        <div class="master-actions">
-          <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe" class="btn btn-fluent-primary">
-            Download Setup Wizard (.exe)
-          </a>
-          <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">
-            Download Portable Archive (.zip)
-          </a>
-        </div>
-      </div>
+      <figure class="hero-showcase">
+        <div class="showcase-label"><span>MADE FOR THE EVERYDAY</span><span>HEIC Studio</span></div>
+        <a class="preview-link" href="assets/previews/HeicStudio.png" data-preview="HEIC Studio" target="_blank" rel="noopener" aria-label="Enlarge HEIC Studio app preview"><img src="assets/previews/HeicStudio.png" width="980" height="580" alt="HEIC Studio interface with output format, quality and resize controls above the photo drop area" fetchpriority="high"></a>
+        <figcaption><span>Photos in. Everyday formats out.</span><a href="#heic-studio">Meet HEIC Studio <span aria-hidden="true">→</span></a></figcaption>
+      </figure>
     </section>
 
-    <!-- Individual Applications Grid -->
-    <section id="applications" class="section">
-      <p class="section-subtitle">Standalone v1.0.1 downloads are available below. Microsoft Store certification and Winget catalog submissions are pending. Store links may not be available yet. Current standalone installers are unsigned; SHA256 hashes verify integrity, not publisher identity.</p>
-      <h2 class="section-title">The Seven Applications</h2>
-      <p class="section-subtitle">Each tool operates as an independent desktop application with dedicated Free and PRO tiers.</p>
+    <div class="trust-band"><div class="container trust-grid">
+      <div><span class="trust-icon" aria-hidden="true">↳</span><p><strong>Your files stay with you.</strong><span>Photos, documents and media are processed on your PC.</span></p></div>
+      <div><span class="trust-icon" aria-hidden="true">✓</span><p><strong>Useful from the first download.</strong><span>Permanent free editions. No trial countdown.</span></p></div>
+      <div><span class="trust-icon" aria-hidden="true">∞</span><p><strong>One payment, when it suits you.</strong><span>Optional lifetime Pro upgrades. No recurring fees.</span></p></div>
+    </div></div>
 
-      <div class="apps-grid">
+    <section class="section container" id="applications" aria-labelledby="apps-title">
+      <div class="section-heading"><div><p class="eyebrow">YOUR EVERYDAY TOOLBOX</p><h2 id="apps-title">Small tools. Jobs well done.</h2></div><p>Pick the one you need.<br>Each app works on its own.</p></div>
+      <nav class="app-shortcuts" aria-label="Choose an application">
+<a href="#archive-unpacker"><img src="assets/icons/ArchiveUnpacker.png" width="22" height="22" alt="">Archive Unpacker</a>
+<a href="#dup-scrub"><img src="assets/icons/DupScrub.png" width="22" height="22" alt="">Dup Scrub</a>
+<a href="#heic-studio"><img src="assets/icons/HeicStudio.png" width="22" height="22" alt="">HEIC Studio</a>
+<a href="#media-trim"><img src="assets/icons/MediaTrim.png" width="22" height="22" alt="">Media Trim</a>
+<a href="#pdf-knife"><img src="assets/icons/PdfKnife.png" width="22" height="22" alt="">PDF Knife</a>
+<a href="#screen-lens"><img src="assets/icons/ScreenLens.png" width="22" height="22" alt="">Screen Lens</a>
+<a href="#usb-flasher"><img src="assets/icons/UsbFlasher.png" width="22" height="22" alt="">USB Flasher</a>
+</nav><div class="apps-grid">
+<article class="fluent-app-card" id="archive-unpacker" aria-labelledby="title-archive-unpacker">
+      <div class="card-top"><img src="assets/icons/ArchiveUnpacker.png" width="48" height="48" alt="" class="app-icon"><div><p class="app-category">Files &amp; folders</p><h3 id="title-archive-unpacker">Archive Unpacker</h3></div></div>
+      <p class="app-benefit">Open compressed files without the fuss.</p><p class="app-description">Extract ZIP, RAR, 7Z and more in a few clicks. Browse an archive before choosing where to unpack it.</p>
+      <a class="app-screenshot-frame preview-link" href="assets/previews/ArchiveUnpacker.png" data-preview="Archive Unpacker" target="_blank" rel="noopener" aria-label="View app: Archive Unpacker (enlarge preview)"><img src="assets/previews/ArchiveUnpacker.png" width="980" height="580" alt="Archive Unpacker desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
+      <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>ZIP, RAR, 7Z, TAR, GZ and BZ2 extraction.</li><li>Inspect archive contents and choose an extraction folder.</li></ul></details>
+      <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Extract one archive at a time. Create ZIPs with Fast or Normal compression.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Extract batches, create TAR.GZ archives and use Maximum compression.</dd></div></dl>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NXS3LDTBRX8" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="#download-archive-unpacker" class="other-download">Other download options <span aria-hidden="true">→</span></a></div>
+      <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
+    </article>
+<article class="fluent-app-card" id="dup-scrub" aria-labelledby="title-dup-scrub">
+      <div class="card-top"><img src="assets/icons/DupScrub.png" width="48" height="48" alt="" class="app-icon"><div><p class="app-category">Storage</p><h3 id="title-dup-scrub">Dup Scrub</h3></div></div>
+      <p class="app-benefit">Make room for the files you want.</p><p class="app-description">Find duplicate files, review the unwanted copies and reclaim storage with Recycle Bin cleanup.</p>
+      <a class="app-screenshot-frame preview-link" href="assets/previews/DupScrub.png" data-preview="Dup Scrub" target="_blank" rel="noopener" aria-label="View app: Dup Scrub (enlarge preview)"><img src="assets/previews/DupScrub.png" width="980" height="580" alt="Dup Scrub desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
+      <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Compare file sizes and contents to find matching copies.</li><li>See reclaimable space and review paths before recycling files.</li></ul></details>
+      <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Scan folders and manually clean one duplicate group at a time.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Auto-select copies to keep the oldest or newest, then clean across groups.</dd></div></dl>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NL51TH9QR3M" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="#download-dup-scrub" class="other-download">Other download options <span aria-hidden="true">→</span></a></div>
+      <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
+    </article>
+<article class="fluent-app-card" id="heic-studio" aria-labelledby="title-heic-studio">
+      <div class="card-top"><img src="assets/icons/HeicStudio.png" width="48" height="48" alt="" class="app-icon"><div><p class="app-category">Photos</p><h3 id="title-heic-studio">HEIC Studio</h3></div></div>
+      <p class="app-benefit">Your iPhone photos. In a format that works.</p><p class="app-description">Turn HEIC, WebP and AVIF images into everyday formats, privately on your PC.</p>
+      <a class="app-screenshot-frame preview-link" href="assets/previews/HeicStudio.png" data-preview="HEIC Studio" target="_blank" rel="noopener" aria-label="View app: HEIC Studio (enlarge preview)"><img src="assets/previews/HeicStudio.png" width="980" height="580" alt="HEIC Studio desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
+      <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Export JPG, PNG, WebP or PDF.</li><li>Adjust output quality and optionally resize your images.</li></ul></details>
+      <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Convert up to 5 images per batch, with quality and resize controls.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Convert unlimited images per batch, without splitting up your photo collection.</dd></div></dl>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9N4F9K6G90HK" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="#download-heic-studio" class="other-download">Other download options <span aria-hidden="true">→</span></a></div>
+      <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
+    </article>
+<article class="fluent-app-card" id="media-trim" aria-labelledby="title-media-trim">
+      <div class="card-top"><img src="assets/icons/MediaTrim.png" width="48" height="48" alt="" class="app-icon"><div><p class="app-category">Video &amp; audio</p><h3 id="title-media-trim">Media Trim</h3></div></div>
+      <p class="app-benefit">Keep the part you need. Leave the rest.</p><p class="app-description">Trim videos, convert media and extract audio without uploading your files anywhere.</p>
+      <a class="app-screenshot-frame preview-link" href="assets/previews/MediaTrim.png" data-preview="Media Trim" target="_blank" rel="noopener" aria-label="View app: Media Trim (enlarge preview)"><img src="assets/previews/MediaTrim.png" width="980" height="580" alt="Media Trim desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
+      <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>MP3 320 kbps, WAV, MP4 H.264, 720p compression and lossless video cut presets.</li><li>Lossless stream-copy cut points depend on the source keyframes. FFmpeg is included.</li></ul></details>
+      <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Single-file editing with all five presets. No paid duration limit.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Remove the upgrade strip and support development. Editing features stay the same.</dd></div></dl>
+      <div class="card-actions-wrapper"><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/MediaTrim_Setup_v1.0.1.exe" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M10 3v9m-3-3 3 3 3-3M4 13v3h12v-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Download free for Windows</a><a href="#download-media-trim" class="other-download">Other download options <span aria-hidden="true">→</span></a></div>
+      <p class="store-status pending" data-store-status="pending"><a href="https://apps.microsoft.com/detail/9PC1HVN60QBP" target="_blank" rel="noopener">Microsoft Store release pending <span aria-hidden="true">↗</span></a></p></div>
+    </article>
+<article class="fluent-app-card" id="pdf-knife" aria-labelledby="title-pdf-knife">
+      <div class="card-top"><img src="assets/icons/PdfKnife.png" width="48" height="48" alt="" class="app-icon"><div><p class="app-category">Documents</p><h3 id="title-pdf-knife">PDF Knife</h3></div></div>
+      <p class="app-benefit">Bring your PDFs into order.</p><p class="app-description">Combine documents or pull out the pages you need. No uploads, no watermarks, no unnecessary steps.</p>
+      <a class="app-screenshot-frame preview-link" href="assets/previews/PdfKnife.png" data-preview="PDF Knife" target="_blank" rel="noopener" aria-label="View app: PDF Knife (enlarge preview)"><img src="assets/previews/PdfKnife.png" width="980" height="580" alt="PDF Knife desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
+      <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Reorder whole documents before merging.</li><li>Use page ranges such as 1–3, 5, 7–10, or burst each page to a separate PDF.</li></ul></details>
+      <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Merge 2 PDFs or extract one page range. No watermarks.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Merge more documents, extract multiple ranges and split every page at once.</dd></div></dl>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NQLSS021G6T" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="#download-pdf-knife" class="other-download">Other download options <span aria-hidden="true">→</span></a></div>
+      <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
+    </article>
+<article class="fluent-app-card" id="screen-lens" aria-labelledby="title-screen-lens">
+      <div class="card-top"><img src="assets/icons/ScreenLens.png" width="48" height="48" alt="" class="app-icon"><div><p class="app-category">Screen recording</p><h3 id="title-screen-lens">Screen Lens</h3></div></div>
+      <p class="app-benefit">Show it. Record it. Share it.</p><p class="app-description">Capture a how-to, explain a problem or make a GIF, with recording controls always within reach.</p>
+      <a class="app-screenshot-frame preview-link" href="assets/previews/ScreenLens.png" data-preview="Screen Lens" target="_blank" rel="noopener" aria-label="View app: Screen Lens (enlarge preview)"><img src="assets/previews/ScreenLens.png" width="980" height="580" alt="Screen Lens desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
+      <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Capture a monitor or selected region to MP4 or GIF, with pause and resume.</li><li>Optional microphone audio for MP4. Floating recording controls stay out of the capture.</li></ul></details>
+      <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Record up to 3 minutes at 15 or 30 FPS, with no watermark.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>60 FPS and unlimited recording duration for longer walkthroughs.</dd></div></dl>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9N7V2FVFL4BN" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="#download-screen-lens" class="other-download">Other download options <span aria-hidden="true">→</span></a></div>
+      <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
+    </article>
+<article class="fluent-app-card" id="usb-flasher" aria-labelledby="title-usb-flasher">
+      <div class="card-top"><img src="assets/icons/UsbFlasher.png" width="48" height="48" alt="" class="app-icon"><div><p class="app-category">USB drives</p><h3 id="title-usb-flasher">USB Flasher</h3></div></div>
+      <p class="app-benefit">A clearer path to your next bootable USB.</p><p class="app-description">Choose an image and USB drive, then follow the write progress with verification and built-in safety checks.</p>
+      <a class="app-screenshot-frame preview-link" href="assets/previews/UsbFlasher.png" data-preview="USB Flasher" target="_blank" rel="noopener" aria-label="View app: USB Flasher (enlarge preview)"><img src="assets/previews/UsbFlasher.png" width="980" height="580" alt="USB Flasher desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
+      <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Raw image writing for hybrid Linux ISOs and IMG/BIN files; FAT32 extraction for compatible UEFI ISOs.</li><li>Internal and boot drives are filtered out. Writing an image erases the selected USB drive.</li></ul></details>
+      <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Write ISO, IMG and BIN images to a USB drive, with optional verification.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Back up an entire USB drive to a raw IMG file for later use.</dd></div></dl>
+      <div class="card-actions-wrapper"><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/UsbFlasher_Setup_v1.0.1.exe" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M10 3v9m-3-3 3 3 3-3M4 13v3h12v-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Download free for Windows</a><a href="#download-usb-flasher" class="other-download">Other download options <span aria-hidden="true">→</span></a></div>
+      <p class="store-status pending" data-store-status="pending"><a href="https://apps.microsoft.com/detail/9P9NBFS7PMJB" target="_blank" rel="noopener">Microsoft Store release pending <span aria-hidden="true">↗</span></a></p></div>
+    </article>
+</div><p class="preview-note">Real app previews. Appearance can vary slightly by version and Windows settings.</p></section>
 
-        <!-- 1. Archive Unpacker -->
-        <article class="fluent-app-card" id="archive-unpacker">
-          <div class="card-top">
-            <img src="assets/icons/ArchiveUnpacker.png" alt="Archive Unpacker Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-title">Archive Unpacker</h3>
-              <p class="app-desc-short">High-speed multi-format decompression</p>
-            </div>
-          </div>
-          <div class="app-screenshot-frame">
-            <img src="assets/screenshots/ArchiveUnpacker.png" alt="Archive Unpacker Screenshot" loading="lazy">
-          </div>
-          <ul class="app-features-list">
-            <li>Extracts ZIP, 7Z, TAR, GZ, BZ2, and RAR archives.</li>
-            <li>Browse archive folders and choose individual entries to extract.</li>
-            <li>Create ZIP archives from a file or a folder and its contents.</li>
-          </ul>
-          <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Single-archive extraction and basic ZIP creation</span>
-            <span class="tier-badge tier-pro">PRO: Batch extraction, TAR.GZ and Maximum compression</span>
-          </div>
-          <div class="card-actions-wrapper">
-            <div class="action-btn-row">
-              <a href="https://apps.microsoft.com/detail/9NXS3LDTBRX8" target="_blank" class="btn btn-fluent-store">Microsoft Store &nearr;</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ArchiveUnpacker_Setup_v1.0.1.exe" class="btn btn-fluent-secondary">Setup (.exe)</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ArchiveUnpacker_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">Portable (.zip)</a>
-            </div>
-            <div class="winget-pill-row">
-              <span class="winget-pill-code">winget install SCSoftware.ArchiveUnpacker</span>
-              <button class="winget-pill-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.ArchiveUnpacker'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- 2. Dup Scrub -->
-        <article class="fluent-app-card" id="dup-scrub">
-          <div class="card-top">
-            <img src="assets/icons/DupScrub.png" alt="Dup Scrub Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-title">Dup Scrub</h3>
-              <p class="app-desc-short">Multi-phase duplicate cleaner with safety locks</p>
-            </div>
-          </div>
-          <div class="app-screenshot-frame">
-            <img src="assets/screenshots/DupScrub.png" alt="Dup Scrub Screenshot" loading="lazy">
-          </div>
-          <ul class="app-features-list">
-            <li>Matches file sizes, samples and full XxHash64 hashes; compares bytes before recycling.</li>
-            <li>Moves selected duplicate files to the Windows Recycle Bin.</li>
-            <li>Keep the oldest or newest copy with automatic duplicate selection.</li>
-          </ul>
-          <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Scan folders and clean one duplicate group at a time</span>
-            <span class="tier-badge tier-pro">PRO: Select and clean duplicates across groups</span>
-          </div>
-          <div class="card-actions-wrapper">
-            <div class="action-btn-row">
-              <a href="https://apps.microsoft.com/detail/9NL51TH9QR3M" target="_blank" class="btn btn-fluent-store">Microsoft Store &nearr;</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/DupScrub_Setup_v1.0.1.exe" class="btn btn-fluent-secondary">Setup (.exe)</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/DupScrub_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">Portable (.zip)</a>
-            </div>
-            <div class="winget-pill-row">
-              <span class="winget-pill-code">winget install SCSoftware.DupScrub</span>
-              <button class="winget-pill-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.DupScrub'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- 3. HEIC Studio -->
-        <article class="fluent-app-card" id="heic-studio">
-          <div class="card-top">
-            <img src="assets/icons/HeicStudio.png" alt="HEIC Studio Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-title">HEIC Studio</h3>
-              <p class="app-desc-short">Offline Apple HEIC &amp; AVIF batch converter</p>
-            </div>
-          </div>
-          <div class="app-screenshot-frame">
-            <img src="assets/screenshots/HeicStudio.png" alt="HEIC Studio Screenshot" loading="lazy">
-          </div>
-          <ul class="app-features-list">
-            <li>100% offline batch conversion of HEIC, HEIF, WebP, and AVIF photos.</li>
-            <li>Automatic image orientation, adjustable quality and optional resizing.</li>
-            <li>Convert to JPG, PNG, WebP or PDF with parallel processing.</li>
-          </ul>
-          <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Convert up to 5 images per batch</span>
-            <span class="tier-badge tier-pro">PRO: Unlimited images per batch</span>
-          </div>
-          <div class="card-actions-wrapper">
-            <div class="action-btn-row">
-              <a href="https://apps.microsoft.com/detail/9N4F9K6G90HK" target="_blank" class="btn btn-fluent-store">Microsoft Store &nearr;</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/HeicStudio_Setup_v1.0.1.exe" class="btn btn-fluent-secondary">Setup (.exe)</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/HeicStudio_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">Portable (.zip)</a>
-            </div>
-            <div class="winget-pill-row">
-              <span class="winget-pill-code">winget install SCSoftware.HEICStudio</span>
-              <button class="winget-pill-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.HEICStudio'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- 4. Media Trim -->
-        <article class="fluent-app-card" id="media-trim">
-          <div class="card-top">
-            <img src="assets/icons/MediaTrim.png" alt="Media Trim Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-title">Media Trim</h3>
-              <p class="app-desc-short">Video trimmer, converter and audio extractor</p>
-            </div>
-          </div>
-          <div class="app-screenshot-frame">
-            <img src="assets/screenshots/MediaTrim.png" alt="Media Trim Screenshot" loading="lazy">
-          </div>
-          <ul class="app-features-list">
-            <li>Bundled FFmpeg supports a lossless video cut preset; cut points depend on source keyframes.</li>
-            <li>Extract audio to MP3 at 320 kbps or uncompressed WAV.</li>
-            <li>Supports MP4, MKV, MOV, WebM, AVI, and high-bitrate action camera footage.</li>
-          </ul>
-          <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Single-file editing with all five presets</span>
-            <span class="tier-badge tier-pro">PRO: Removes the upgrade strip</span>
-          </div>
-          <div class="card-actions-wrapper">
-            <div class="action-btn-row">
-              <a href="https://apps.microsoft.com/detail/9PC1HVN60QBP" target="_blank" class="btn btn-fluent-store">Microsoft Store &nearr;</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/MediaTrim_Setup_v1.0.1.exe" class="btn btn-fluent-secondary">Setup (.exe)</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/MediaTrim_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">Portable (.zip)</a>
-            </div>
-            <div class="winget-pill-row">
-              <span class="winget-pill-code">winget install SCSoftware.MediaTrim</span>
-              <button class="winget-pill-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.MediaTrim'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- 5. PDF Knife -->
-        <article class="fluent-app-card" id="pdf-knife">
-          <div class="card-top">
-            <img src="assets/icons/PdfKnife.png" alt="PDF Knife Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-title">PDF Knife</h3>
-              <p class="app-desc-short">Local document splitter, merger &amp; burster</p>
-            </div>
-          </div>
-          <div class="app-screenshot-frame">
-            <img src="assets/screenshots/PdfKnife.png" alt="PDF Knife Screenshot" loading="lazy">
-          </div>
-          <ul class="app-features-list">
-            <li>Split by custom page ranges (e.g. 1-4, 8, 12-15) or burst every page.</li>
-            <li>Merge multiple PDFs in custom sequence with zero cloud uploads.</li>
-            <li>Clean stream processing with zero watermarks or formatting corruption.</li>
-          </ul>
-          <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: 2-file merge &amp; 1 split range</span>
-            <span class="tier-badge tier-pro">PRO: Unlimited document merge &amp; automated burst</span>
-          </div>
-          <div class="card-actions-wrapper">
-            <div class="action-btn-row">
-              <a href="https://apps.microsoft.com/detail/9NQLSS021G6T" target="_blank" class="btn btn-fluent-store">Microsoft Store &nearr;</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/PdfKnife_Setup_v1.0.1.exe" class="btn btn-fluent-secondary">Setup (.exe)</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/PdfKnife_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">Portable (.zip)</a>
-            </div>
-            <div class="winget-pill-row">
-              <span class="winget-pill-code">winget install SCSoftware.PDFKnife</span>
-              <button class="winget-pill-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.PDFKnife'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- 6. Screen Lens -->
-        <article class="fluent-app-card" id="screen-lens">
-          <div class="card-top">
-            <img src="assets/icons/ScreenLens.png" alt="Screen Lens Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-title">Screen Lens</h3>
-              <p class="app-desc-short">Desktop screen recorder &amp; optimized GIF generator</p>
-            </div>
-          </div>
-          <div class="app-screenshot-frame">
-            <img src="assets/screenshots/ScreenLens.png" alt="Screen Lens Screenshot" loading="lazy">
-          </div>
-          <ul class="app-features-list">
-            <li>Floating HUD recording bar with full-screen and region selection.</li>
-            <li>Records H.264 MP4 video or animated GIFs, with pause and resume.</li>
-            <li>Optional microphone audio for MP4; recording controls stay outside the saved capture.</li>
-          </ul>
-          <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Up to 3 minutes at 15 or 30 FPS; no watermark</span>
-            <span class="tier-badge tier-pro">PRO: 60 FPS and unlimited recording duration</span>
-          </div>
-          <div class="card-actions-wrapper">
-            <div class="action-btn-row">
-              <a href="https://apps.microsoft.com/detail/9N7V2FVFL4BN" target="_blank" class="btn btn-fluent-store">Microsoft Store &nearr;</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ScreenLens_Setup_v1.0.1.exe" class="btn btn-fluent-secondary">Setup (.exe)</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ScreenLens_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">Portable (.zip)</a>
-            </div>
-            <div class="winget-pill-row">
-              <span class="winget-pill-code">winget install SCSoftware.ScreenLens</span>
-              <button class="winget-pill-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.ScreenLens'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- 7. USB Flasher -->
-        <article class="fluent-app-card" id="usb-flasher" style="grid-column: 1 / -1; max-width: 628px; margin: 0 auto; width: 100%;">
-          <div class="card-top">
-            <img src="assets/icons/UsbFlasher.png" alt="USB Flasher Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-title">USB Flasher</h3>
-              <p class="app-desc-short">Raw sector image writer &amp; bootable media creator</p>
-            </div>
-          </div>
-          <div class="app-screenshot-frame">
-            <img src="assets/screenshots/UsbFlasher.png" alt="USB Flasher Screenshot" loading="lazy">
-          </div>
-          <ul class="app-features-list">
-            <li>Raw image writing for hybrid Linux ISOs and IMG/BIN files; FAT32 extraction for compatible UEFI ISOs.</li>
-            <li>Cryptographic readback verification with system disk protection lockouts.</li>
-            <li>Automatic write-mode selection with phase progress and remaining time.</li>
-          </ul>
-          <div class="tier-strip">
-            <span class="tier-badge tier-free">Free: Full ISO &amp; IMG writing with verification</span>
-            <span class="tier-badge tier-pro">PRO: Full drive sector backup to raw IMG file</span>
-          </div>
-          <div class="card-actions-wrapper">
-            <div class="action-btn-row">
-              <a href="https://apps.microsoft.com/detail/9P9NBFS7PMJB" target="_blank" class="btn btn-fluent-store">Microsoft Store &nearr;</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/UsbFlasher_Setup_v1.0.1.exe" class="btn btn-fluent-secondary">Setup (.exe)</a>
-              <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/UsbFlasher_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">Portable (.zip)</a>
-            </div>
-            <div class="winget-pill-row">
-              <span class="winget-pill-code">winget install SCSoftware.USBFlasher</span>
-              <button class="winget-pill-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.USBFlasher'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
-            </div>
-          </div>
-        </article>
-
+    <section class="pro-section" id="pro" aria-labelledby="pro-title"><div class="container">
+      <div class="section-heading"><div><p class="eyebrow">GOOD TOOLS. STRAIGHTFORWARD PRICING.</p><h2 id="pro-title">Start free. Make room for more.</h2></div><p>Keep using the free editions for as long as you like.<br>Upgrade an individual app when its extras are useful to you.</p></div>
+      <div class="pricing-grid">
+        <div class="price-card"><p class="plan-label">FREE FOREVER</p><h3>Your everyday essentials.</h3><p class="price">$0 <span>no expiry</span></p><ul class="plan-features"><li>Seven independent apps with useful free features.</li><li>Local file processing, without uploading your work.</li><li>No subscription and no payment required to get started.</li></ul><a href="#applications" class="btn btn-fluent-secondary">Explore the free apps <span aria-hidden="true">↑</span></a></div>
+        <div class="price-card pro-price-card"><p class="plan-label">OPTIONAL LIFETIME PRO</p><h3>A little extra, when you need it.</h3><p class="price">$3.99 <span>one payment, per app</span></p><ul class="plan-features"><li>Unlock the specific extras shown on each app card.</li><li>Remove that app’s upgrade strip.</li><li>Keep your upgrade without a recurring subscription.</li></ul><p class="plan-note">Media Trim’s editing features are all free. Its Pro upgrade removes the strip and supports development.</p></div>
       </div>
+      <p class="pricing-note">USD pricing. Store prices, currency conversion and taxes may vary. The price is for <strong>one app</strong>, not a licence for all seven.</p>
+      <details class="purchase-details"><summary>How do I upgrade?</summary><p>In a Microsoft Store edition, use the app’s Pro button to purchase through Microsoft. For a standalone download, that button opens the matching Gumroad product, where you can buy and activate a key for that app. Store purchases and Gumroad keys are separate purchase routes.</p><div class="upgrade-links">
+<a href="https://scsoftware.gumroad.com/l/sc-archive-unpacker" target="_blank" rel="noopener">Archive Unpacker on Gumroad <span aria-hidden="true">↗</span></a>
+<a href="https://scsoftware.gumroad.com/l/sc-dup-scrub" target="_blank" rel="noopener">Dup Scrub on Gumroad <span aria-hidden="true">↗</span></a>
+<a href="https://scsoftware.gumroad.com/l/sc-heic-studio" target="_blank" rel="noopener">HEIC Studio on Gumroad <span aria-hidden="true">↗</span></a>
+<a href="https://scsoftware.gumroad.com/l/sc-media-trim" target="_blank" rel="noopener">Media Trim on Gumroad <span aria-hidden="true">↗</span></a>
+<a href="https://scsoftware.gumroad.com/l/sc-pdf-knife" target="_blank" rel="noopener">PDF Knife on Gumroad <span aria-hidden="true">↗</span></a>
+<a href="https://scsoftware.gumroad.com/l/sc-screen-lens" target="_blank" rel="noopener">Screen Lens on Gumroad <span aria-hidden="true">↗</span></a>
+<a href="https://scsoftware.gumroad.com/l/sc-usb-flasher" target="_blank" rel="noopener">USB Flasher on Gumroad <span aria-hidden="true">↗</span></a>
+</div></details></div></section>
+
+    <section class="section container" id="master-bundle" aria-labelledby="bundle-title"><div class="master-banner"><div class="master-info"><p class="eyebrow">PREFER THE WHOLE TOOLBOX?</p><h2 id="bundle-title">All seven apps. One download.</h2><p>Get the free editions together in one Windows installer, or choose the portable ZIP if you prefer. Each app still works independently.</p><p class="bundle-note">This is a download bundle. Pro upgrades are purchased separately for each app.</p></div><div class="master-actions"><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M10 3v9m-3-3 3 3 3-3M4 13v3h12v-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Get all seven free</a><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip" class="btn btn-fluent-secondary">Download portable ZIP</a><p>Windows x64 · v1.0.1 · Setup 572 MB</p></div></div></section>
+
+    <section class="section container faq-section" id="faq" aria-labelledby="faq-title"><div class="section-heading"><div><p class="eyebrow">A FEW THINGS TO KNOW</p><h2 id="faq-title">Simple tools. Clear answers.</h2></div></div><div class="faq-list">
+      <details><summary>Are these free trials?</summary><p>No. Each app has a permanent free edition. Some actions have limits, such as five photos per conversion batch or three minutes per recording. You can keep using the free features without paying.</p></details>
+      <details><summary>Do I need to install the whole suite?</summary><p>No. Choose any app on its own, or use the bundle to download all seven together. You do not need an account for free file-processing features.</p></details>
+      <details><summary>Are my files uploaded anywhere?</summary><p>No. File processing happens on your PC. Pro purchases and activation contact Microsoft Store or Gumroad; standalone activation initially needs an internet connection. No background analytics are active.</p></details>
+      <details><summary>Which Windows versions are supported?</summary><p>64-bit Windows 10, version 2004 (build 19041) or later, and Windows 11. Standalone downloads include the .NET runtime; Media Trim and Screen Lens also include FFmpeg.</p></details>
+      <details><summary>Where can I get help?</summary><p>For questions or a problem with an app, email <a href="mailto:sc-developer@outlook.com">sc-developer@outlook.com</a>. Include the app name, what you were doing and any error message. Please avoid sending private files.</p></details>
+    </div></section>
+
+    <section class="section container download-section" id="download-matrix" aria-labelledby="download-title"><div class="section-heading"><div><p class="eyebrow">YOUR PREFERRED WAY TO INSTALL</p><h2 id="download-title">Downloads &amp; release details</h2></div><p>Individual installers and portable ZIPs.<br>Standalone release v1.0.1 for Windows x64.</p></div>
+      <p class="download-intro">Archive Unpacker, Dup Scrub, HEIC Studio, PDF Knife and Screen Lens are in Microsoft Store. Updates for Dup Scrub and PDF Knife are in certification. Media Trim and USB Flasher are waiting to be released. Store status reported on 11 November 2026; availability can vary by market.</p>
+      <div class="matrix-container" role="region" aria-label="Download choices for all applications" tabindex="0"><table class="fluent-table"><caption class="sr-only">Standalone installers, portable downloads and submitted Winget package identifiers</caption><thead><tr><th scope="col">Application</th><th scope="col">Windows installer</th><th scope="col">Portable</th><th scope="col">Setup size</th></tr></thead><tbody>
+<tr id="download-master"><th scope="row">All seven apps</th><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe" class="link-btn" aria-label="Download All seven apps Setup .exe">Setup .exe</a></td><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip" class="link-btn" aria-label="Download All seven apps Portable .zip">Portable .zip</a></td><td>572.2 MB</td></tr>
+<tr id="download-archive-unpacker"><th scope="row">Archive Unpacker</th><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ArchiveUnpacker_Setup_v1.0.1.exe" class="link-btn" aria-label="Download Archive Unpacker Setup .exe">Setup .exe</a></td><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ArchiveUnpacker_v1.0.1_Portable.zip" class="link-btn" aria-label="Download Archive Unpacker Portable .zip">Portable .zip</a></td><td>67.3 MB</td></tr>
+<tr id="download-dup-scrub"><th scope="row">Dup Scrub</th><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/DupScrub_Setup_v1.0.1.exe" class="link-btn" aria-label="Download Dup Scrub Setup .exe">Setup .exe</a></td><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/DupScrub_v1.0.1_Portable.zip" class="link-btn" aria-label="Download Dup Scrub Portable .zip">Portable .zip</a></td><td>64.5 MB</td></tr>
+<tr id="download-heic-studio"><th scope="row">HEIC Studio</th><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/HeicStudio_Setup_v1.0.1.exe" class="link-btn" aria-label="Download HEIC Studio Setup .exe">Setup .exe</a></td><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/HeicStudio_v1.0.1_Portable.zip" class="link-btn" aria-label="Download HEIC Studio Portable .zip">Portable .zip</a></td><td>73.4 MB</td></tr>
+<tr id="download-media-trim"><th scope="row">Media Trim</th><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/MediaTrim_Setup_v1.0.1.exe" class="link-btn" aria-label="Download Media Trim Setup .exe">Setup .exe</a></td><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/MediaTrim_v1.0.1_Portable.zip" class="link-btn" aria-label="Download Media Trim Portable .zip">Portable .zip</a></td><td>124.5 MB</td></tr>
+<tr id="download-pdf-knife"><th scope="row">PDF Knife</th><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/PdfKnife_Setup_v1.0.1.exe" class="link-btn" aria-label="Download PDF Knife Setup .exe">Setup .exe</a></td><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/PdfKnife_v1.0.1_Portable.zip" class="link-btn" aria-label="Download PDF Knife Portable .zip">Portable .zip</a></td><td>65.8 MB</td></tr>
+<tr id="download-screen-lens"><th scope="row">Screen Lens</th><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ScreenLens_Setup_v1.0.1.exe" class="link-btn" aria-label="Download Screen Lens Setup .exe">Setup .exe</a></td><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ScreenLens_v1.0.1_Portable.zip" class="link-btn" aria-label="Download Screen Lens Portable .zip">Portable .zip</a></td><td>124.5 MB</td></tr>
+<tr id="download-usb-flasher"><th scope="row">USB Flasher</th><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/UsbFlasher_Setup_v1.0.1.exe" class="link-btn" aria-label="Download USB Flasher Setup .exe">Setup .exe</a></td><td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/UsbFlasher_v1.0.1_Portable.zip" class="link-btn" aria-label="Download USB Flasher Portable .zip">Portable .zip</a></td><td>65.2 MB</td></tr>
+</tbody></table></div>
+      <details class="technical-details"><summary>Installation notes, Winget &amp; known issues</summary><p>Standalone installers are currently unsigned. Windows may display a security warning; a matching download checksum confirms file integrity, not a trusted publisher signature. Microsoft Store installation is a separate distribution route.</p><p>Winget catalog submissions are pending. The proposed package identifiers below may not be installable until those submissions are accepted.</p><div class="winget-list">
+<p><span>All seven apps</span><code>winget install SCSoftware.UtilitySuite</code></p>
+<p><span>Archive Unpacker</span><code>winget install SCSoftware.ArchiveUnpacker</code></p>
+<p><span>Dup Scrub</span><code>winget install SCSoftware.DupScrub</code></p>
+<p><span>HEIC Studio</span><code>winget install SCSoftware.HEICStudio</code></p>
+<p><span>Media Trim</span><code>winget install SCSoftware.MediaTrim</code></p>
+<p><span>PDF Knife</span><code>winget install SCSoftware.PDFKnife</code></p>
+<p><span>Screen Lens</span><code>winget install SCSoftware.ScreenLens</code></p>
+<p><span>USB Flasher</span><code>winget install SCSoftware.USBFlasher</code></p>
+</div><p><strong>Known v1.0.1 ZIP issue:</strong> free ZIP creation with several separately selected inputs can omit later inputs. Put the files in one folder and add that folder as a workaround. The fix is tested in the unreleased 1.0.2 candidate; existing downloads and Store submissions have not been replaced.</p><p>The exact corresponding-source/build/dependency delivery for the bundled FFmpeg build remains unresolved. Binary and packaging checks alone do not establish redistribution compliance.</p><p><a href="release-notes.md">Read the release notes</a> · <a href="LICENSE">Licence terms</a></p></details>
+      <details class="technical-details" id="integrity"><summary>Verify a download (SHA256 checksums)</summary><p>Download the <a href="checksums_distribution.sha256">complete checksum list</a> for all sixteen v1.0.1 installer and ZIP files. In PowerShell, run <code>Get-FileHash -Algorithm SHA256 &lt;file&gt;</code> and compare its SHA256 value with the matching filename. Hashes confirm download integrity, not publisher identity.</p></details>
     </section>
-
-    <!-- Technical Download Matrix Table -->
-    <section id="download-matrix" class="section">
-      <h2 class="section-title">Downloads and System Requirements</h2>
-      <p class="section-subtitle">Direct, unthrottled binaries from GitHub Release v1.0.1. Self-contained x64 executables.</p>
-
-      <div class="matrix-container">
-        <table class="fluent-table">
-          <thead>
-            <tr>
-              <th>Package Name</th>
-              <th>Version</th>
-              <th>Size</th>
-              <th>Installer (.exe)</th>
-              <th>Portable (.zip)</th>
-              <th>Winget Package ID</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>SC Utility Suite (Master)</strong></td>
-              <td>1.0.1</td>
-              <td>572.2 MB</td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
-              <td><code>SCSoftware.UtilitySuite</code></td>
-            </tr>
-            <tr>
-              <td>Archive Unpacker</td>
-              <td>1.0.1</td>
-              <td>67.3 MB</td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ArchiveUnpacker_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ArchiveUnpacker_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
-              <td><code>SCSoftware.ArchiveUnpacker</code></td>
-            </tr>
-            <tr>
-              <td>Dup Scrub</td>
-              <td>1.0.1</td>
-              <td>64.5 MB</td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/DupScrub_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/DupScrub_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
-              <td><code>SCSoftware.DupScrub</code></td>
-            </tr>
-            <tr>
-              <td>HEIC Studio</td>
-              <td>1.0.1</td>
-              <td>73.4 MB</td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/HeicStudio_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/HeicStudio_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
-              <td><code>SCSoftware.HEICStudio</code></td>
-            </tr>
-            <tr>
-              <td>Media Trim</td>
-              <td>1.0.1</td>
-              <td>124.5 MB</td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/MediaTrim_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/MediaTrim_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
-              <td><code>SCSoftware.MediaTrim</code></td>
-            </tr>
-            <tr>
-              <td>PDF Knife</td>
-              <td>1.0.1</td>
-              <td>65.8 MB</td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/PdfKnife_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/PdfKnife_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
-              <td><code>SCSoftware.PDFKnife</code></td>
-            </tr>
-            <tr>
-              <td>Screen Lens</td>
-              <td>1.0.1</td>
-              <td>124.5 MB</td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ScreenLens_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/ScreenLens_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
-              <td><code>SCSoftware.ScreenLens</code></td>
-            </tr>
-            <tr>
-              <td>USB Flasher</td>
-              <td>1.0.1</td>
-              <td>65.2 MB</td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/UsbFlasher_Setup_v1.0.1.exe" class="link-btn">Setup</a></td>
-              <td><a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/UsbFlasher_v1.0.1_Portable.zip" class="link-btn">ZIP</a></td>
-              <td><code>SCSoftware.USBFlasher</code></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Cryptographic Integrity Section -->
-    <section id="integrity" class="section">
-      <h2 class="section-title">SHA256 Download Checksums</h2>
-      <p class="section-subtitle">Every release package is independently hashed. Verify your local downloads using PowerShell: <code>Get-FileHash -Algorithm SHA256 &lt;file&gt;</code>.</p>
-
-      <div class="matrix-container">
-        <table class="fluent-table">
-          <thead>
-            <tr>
-              <th>File Name</th>
-              <th>SHA256 Hash</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe</td><td><code>17b82c13a377469e27918fcbaf65116fcf5ed484a34507884ce26a6aa979b114</code></td></tr>
-            <tr><td>ArchiveUnpacker_Setup_v1.0.1.exe</td><td><code>8336557cf5ce27be8404a0464cc1bca15ffb66bd83ba4add93cce243e1ee5808</code></td></tr>
-            <tr><td>DupScrub_Setup_v1.0.1.exe</td><td><code>e244e0716dd67eaab4dd9f56931e0da82ac8b2a25aaf9ef01f6889e180b34c2b</code></td></tr>
-            <tr><td>HeicStudio_Setup_v1.0.1.exe</td><td><code>a01aae722d65f47c46ffabfafe4861cc53dcad2960955dc7441ea4b50175f29e</code></td></tr>
-            <tr><td>MediaTrim_Setup_v1.0.1.exe</td><td><code>5a929b8a0ef4585dfe5b6688c5444c44637b916ed87eba6b765a9804af081601</code></td></tr>
-            <tr><td>PdfKnife_Setup_v1.0.1.exe</td><td><code>a4bae8c0d824545e7f1a637b00a1ce2d7224e5fddabf13628b438bf4eef8e617</code></td></tr>
-            <tr><td>ScreenLens_Setup_v1.0.1.exe</td><td><code>41385f5c66c589b04fa985fc30fa3fda055f1632af3b7cf364834fbb76f79a78</code></td></tr>
-            <tr><td>UsbFlasher_Setup_v1.0.1.exe</td><td><code>8874ce4dce67a650e8e1666bee7c6c207858c7979a024ffaa61de8f9ff203191</code></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Privacy & Architecture Section -->
-    <section id="privacy" class="section">
-      <h2 class="section-title">Architecture &amp; Privacy Guarantees</h2>
-      <p class="section-subtitle">Your files are processed locally. Licensing uses the relevant purchase provider.</p>
-
-      <div class="privacy-grid">
-        <div class="privacy-card">
-          <h4>Local File Processing</h4>
-          <p>Your photos, videos, disk images, and documents never leave your PC. File processing stays on your PC. PRO license checks and activation contact Microsoft Store or Gumroad.</p>
-        </div>
-        <div class="privacy-card">
-          <h4>No Background Analytics</h4>
-          <p>No background analytics or third-party advertisements are active. Free editions show a local PRO upgrade strip. Standalone activation saves a license cache on your Windows account.</p>
-        </div>
-        <div class="privacy-card">
-          <h4>Recycle Bin Safety</h4>
-          <p>Destructive file operations (such as Dup Scrub duplicate cleaning) route files through the native Windows Recycle Bin with instant undo recovery.</p>
-        </div>
-      </div>
-    </section>
-
+    <section class="privacy-strip container" id="privacy" aria-label="Privacy and responsible use"><p><strong>Local by design.</strong> Your files are processed on your PC. Purchase checks use the relevant provider. Dup Scrub sends selected unwanted copies to the Windows Recycle Bin; USB image writing erases the chosen drive.</p><a href="SECURITY.md">Security information <span aria-hidden="true">↗</span></a></section>
   </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <strong>SC Utility Suite</strong> &middot; Developed by Martin Wright
-        <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 4px;">&copy; 2026 SC Software. Windows and Microsoft Store are trademarks of Microsoft Corporation.</p>
-      </div>
-      <div class="footer-links">
-        <a href="https://github.com/sc-software-tools/sc-utility-suite-dist" target="_blank">GitHub Repository</a>
-        <a href="LICENSE" target="_blank">License (EULA)</a>
-        <a href="SECURITY.md" target="_blank">Security Policy</a>
-        <a href="pad.xml" target="_blank">PAD 4.0 XML</a>
-        <a href="#applications">Applications</a>
-      </div>
-    </div>
-  </footer>
-
+  <footer class="footer"><div class="container footer-content"><div><a class="brand" href="#top"><img src="favicon-32x32.png" width="24" height="24" alt=""><span>SC Utility Suite</span></a><p>Practical tools for a little less everyday hassle.</p><p class="copyright">© 2026 SC Software · Developed by Martin Wright</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="#applications">The apps</a><a href="#pro">Free &amp; Pro</a><a href="https://github.com/sc-software-tools/sc-utility-suite-dist" target="_blank" rel="noopener">GitHub</a><a href="LICENSE">Licence</a><a href="pad.xml">PAD XML</a><a href="mailto:sc-developer@outlook.com">Contact</a></nav></div><p class="container trademark-note">Windows and Microsoft Store are trademarks of Microsoft Corporation.</p></footer>
+  <dialog id="preview-dialog" aria-labelledby="preview-title"><div class="preview-dialog-heading"><h2 id="preview-title">App preview</h2><button type="button" id="close-preview" aria-label="Close app preview">Close <span aria-hidden="true">×</span></button></div><img id="preview-image" alt=""><p>App preview. Appearance may vary by version and Windows settings.</p></dialog>
 </body>
 </html>
