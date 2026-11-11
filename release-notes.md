@@ -15,22 +15,22 @@ Synchronized release with Microsoft Store package version 1.0.1.0 across all 7 a
 
 | File | Type | SHA256 Hash |
 | :--- | :--- | :--- |
-| SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe | Master Installer | $(System.Collections.Hashtable['SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe']) |
-| SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip | Master Portable | $(System.Collections.Hashtable['SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip']) |
-| ArchiveUnpacker_Setup_v1.0.1.exe | Setup Wizard | $(System.Collections.Hashtable['ArchiveUnpacker_Setup_v1.0.1.exe']) |
-| ArchiveUnpacker_v1.0.1_Portable.zip | Portable ZIP | $(System.Collections.Hashtable['ArchiveUnpacker_v1.0.1_Portable.zip']) |
-| DupScrub_Setup_v1.0.1.exe | Setup Wizard | $(System.Collections.Hashtable['DupScrub_Setup_v1.0.1.exe']) |
-| DupScrub_v1.0.1_Portable.zip | Portable ZIP | $(System.Collections.Hashtable['DupScrub_v1.0.1_Portable.zip']) |
-| HeicStudio_Setup_v1.0.1.exe | Setup Wizard | $(System.Collections.Hashtable['HeicStudio_Setup_v1.0.1.exe']) |
-| HeicStudio_v1.0.1_Portable.zip | Portable ZIP | $(System.Collections.Hashtable['HeicStudio_v1.0.1_Portable.zip']) |
-| MediaTrim_Setup_v1.0.1.exe | Setup Wizard | $(System.Collections.Hashtable['MediaTrim_Setup_v1.0.1.exe']) |
-| MediaTrim_v1.0.1_Portable.zip | Portable ZIP | $(System.Collections.Hashtable['MediaTrim_v1.0.1_Portable.zip']) |
-| PdfKnife_Setup_v1.0.1.exe | Setup Wizard | $(System.Collections.Hashtable['PdfKnife_Setup_v1.0.1.exe']) |
-| PdfKnife_v1.0.1_Portable.zip | Portable ZIP | $(System.Collections.Hashtable['PdfKnife_v1.0.1_Portable.zip']) |
-| ScreenLens_Setup_v1.0.1.exe | Setup Wizard | $(System.Collections.Hashtable['ScreenLens_Setup_v1.0.1.exe']) |
-| ScreenLens_v1.0.1_Portable.zip | Portable ZIP | $(System.Collections.Hashtable['ScreenLens_v1.0.1_Portable.zip']) |
-| UsbFlasher_Setup_v1.0.1.exe | Setup Wizard | $(System.Collections.Hashtable['UsbFlasher_Setup_v1.0.1.exe']) |
-| UsbFlasher_v1.0.1_Portable.zip | Portable ZIP | $(System.Collections.Hashtable['UsbFlasher_v1.0.1_Portable.zip']) |
+| SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe | Master Installer | $h_all_exe |
+| SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip | Master Portable | $h_all_zip |
+| ArchiveUnpacker_Setup_v1.0.1.exe | Setup Wizard | $h_arch_exe |
+| ArchiveUnpacker_v1.0.1_Portable.zip | Portable ZIP | $h_arch_zip |
+| DupScrub_Setup_v1.0.1.exe | Setup Wizard | $h_dup_exe |
+| DupScrub_v1.0.1_Portable.zip | Portable ZIP | $h_dup_zip |
+| HeicStudio_Setup_v1.0.1.exe | Setup Wizard | $h_heic_exe |
+| HeicStudio_v1.0.1_Portable.zip | Portable ZIP | $h_heic_zip |
+| MediaTrim_Setup_v1.0.1.exe | Setup Wizard | $h_med_exe |
+| MediaTrim_v1.0.1_Portable.zip | Portable ZIP | $h_med_zip |
+| PdfKnife_Setup_v1.0.1.exe | Setup Wizard | $h_pdf_exe |
+| PdfKnife_v1.0.1_Portable.zip | Portable ZIP | $h_pdf_zip |
+| ScreenLens_Setup_v1.0.1.exe | Setup Wizard | $h_lens_exe |
+| ScreenLens_v1.0.1_Portable.zip | Portable ZIP | $h_lens_zip |
+| UsbFlasher_Setup_v1.0.1.exe | Setup Wizard | $h_usb_exe |
+| UsbFlasher_v1.0.1_Portable.zip | Portable ZIP | $h_usb_zip |
 
 ### System Requirements
 - Windows 10 (Build 19041+) or Windows 11
