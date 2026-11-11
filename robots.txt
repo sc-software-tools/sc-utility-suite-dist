@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://sc-software-tools.github.io/sc-utility-suite-dist/sitemap.xml
