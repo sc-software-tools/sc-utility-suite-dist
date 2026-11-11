@@ -543,6 +543,54 @@ h1 {
   color: var(--text-muted);
 }
 
+/* Winget Quick Command */
+.winget-banner {
+  margin-top: 28px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.winget-prompt {
+  background: rgba(13, 19, 34, 0.9);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: Consolas, monospace;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.winget-label {
+  color: var(--accent-light);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.winget-prompt code {
+  color: #F8FAFC;
+}
+
+.btn-copy {
+  background: rgba(52, 211, 153, 0.12);
+  color: var(--accent-light);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-copy:hover {
+  background: rgba(52, 211, 153, 0.25);
+  border-color: var(--accent-light);
+}
+
 .footer-content {
   display: flex;
   justify-content: space-between;

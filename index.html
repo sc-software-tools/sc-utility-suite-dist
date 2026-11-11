@@ -50,7 +50,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
   <link rel="shortcut icon" href="favicon.ico?v=3">
   <!-- Stylesheet with Cache Busting -->
-  <link rel="stylesheet" href="style.css?v=3.1.0">
+  <link rel="stylesheet" href="style.css?v=3.2.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
@@ -88,6 +88,13 @@
           Get on Microsoft Store
         </a>
         <a href="#master-suite" class="btn btn-secondary">Download Standalone (.exe &amp; .zip)</a>
+      </div>
+      <div class="winget-banner">
+        <div class="winget-prompt">
+          <span class="winget-label">Winget</span>
+          <code>winget install SCSoftware.UtilitySuite</code>
+          <button class="btn-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.UtilitySuite'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
+        </div>
       </div>
       <div class="trust-strip">
         <div class="trust-item"><span class="check-icon">&#x2713;</span> 100% Local Execution</div>
@@ -305,6 +312,13 @@
             <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe" class="btn btn-primary btn-lg">Download Master Installer (.exe &middot; 572 MB)</a>
             <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/v1.0.1/SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip" class="btn btn-secondary btn-lg">Download Portable ZIP (Zero Install)</a>
           </div>
+          <div class="winget-banner" style="margin-top: 18px;">
+            <div class="winget-prompt">
+              <span class="winget-label">Winget</span>
+              <code>winget install SCSoftware.UtilitySuite</code>
+              <button class="btn-copy" onclick="navigator.clipboard.writeText('winget install SCSoftware.UtilitySuite'); this.innerText='Copied!'; setTimeout(function(){ this.innerText='Copy'; }.bind(this), 2000)">Copy</button>
+            </div>
+          </div>
           <p class="master-note">Requires Windows 10 (version 19041+) or Windows 11, x64 architecture. Fully self-contained .NET 8 runtimes included.</p>
         </div>
       </div>
@@ -363,6 +377,9 @@
         <a href="https://github.com/sc-software-tools/sc-utility-suite-dist" target="_blank">GitHub Repository</a>
         <a href="#apps">Applications</a>
         <a href="#privacy">Privacy</a>
+        <a href="LICENSE" target="_blank">License (EULA)</a>
+        <a href="SECURITY.md" target="_blank">Security</a>
+        <a href="pad.xml" target="_blank">PAD 4.0 XML</a>
       </div>
     </div>
   </footer>
