@@ -470,7 +470,8 @@
     }
 
     function fetchData() {
-      fetch("https://api.github.com/repos/sc-software-tools/sc-utility-suite-dist/releases/tags/v1.0.1")
+      var url = "https://api.github.com/repos/sc-software-tools/sc-utility-suite-dist/releases/tags/v1.0.1?nocache=" + new Date().getTime();
+      fetch(url, { cache: "no-store", headers: { "Accept": "application/vnd.github.v3+json" } })
         .then(function(res) { return res.json(); })
         .then(function(data) {
           if (!data || !data.assets) return;
