@@ -26,4 +26,4 @@ All binaries are verified. See `checksums_distribution.sha256` in each GitHub Re
 ## System Requirements
 - Windows 10 (version 19041+) or Windows 11
 - 64-bit architecture (x64)
-- Self-contained .NET 9 runtimes included
+- Self-contained .NET 8 runtimes included
