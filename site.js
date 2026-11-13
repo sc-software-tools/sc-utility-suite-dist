@@ -86,7 +86,10 @@
       if (started) remaining = Math.max(0, remaining - (performance.now() - started));
       started = 0;
       if (!rotation || choices.length < 2) return;
-      rotation.textContent = paused ? "Play previews" : "Pause previews";
+      rotation.innerHTML = paused 
+        ? '<svg viewBox="0 0 16 16" fill="currentColor" width="11" height="11" aria-hidden="true"><path d="m4 3 9 5-9 5z"/></svg><span>Play</span>' 
+        : '<svg viewBox="0 0 16 16" fill="currentColor" width="11" height="11" aria-hidden="true"><path d="M3.5 3h3v10h-3zm6 0h3v10h-3z"/></svg><span>Pause</span>';
+      rotation.setAttribute("aria-label", paused ? "Play previews auto-rotation" : "Pause previews auto-rotation");
       const playing = !paused && !hovered && visible && !document.hidden && !document.querySelector("#preview-dialog[open]");
       showcase.dataset.playing = String(playing);
       if (progress && typeof progress.animate === "function" && !reducedMotion.matches) {
@@ -124,6 +127,8 @@
       screenshot.alt = source.querySelector("img").alt;
       name.textContent = title;
       label.textContent = "FEATURED TOOL · " + (index + 1) + " OF " + choices.length;
+      const windowTitle = showcase.querySelector(".window-title-sub");
+      if (windowTitle) windowTitle.textContent = title + " · Desktop Interface";
       caption.textContent = choice.dataset.caption;
       meet.href = "#" + card.id;
       meet.textContent = "Meet " + title + " →";
