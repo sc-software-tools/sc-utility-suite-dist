@@ -45,7 +45,7 @@ Media Trim 1.0.2 is released:
 
 ## Archive Unpacker 1.0.2
 
-Updated Explorer integration and clearer Microsoft Store upgrade feedback. [Release notes and downloads](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/suite-v1.0.2). Verify standalone downloads using [the Archive Unpacker checksum list](checksums_distribution_v1.0.2.sha256). The new Store package awaits publisher submission and certification; the live Store listing may still deliver 1.0.1. Existing Store product and PRO add-on identities are unchanged.
+Updated Explorer integration and clearer Microsoft Store upgrade feedback. [Release notes and downloads](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/suite-v1.0.2). Verify standalone downloads using [the current checksum list](checksums_distribution_v1.0.2.sha256). Updated Store packages are prepared for all seven applications: Media Trim 1.0.3.0 and 1.0.2.0 of the other six. Store rollout awaits publisher submission and certification; live listings may still deliver earlier versions. Existing Store product and PRO add-on identities are unchanged.
 
 ## Current standalone patches
 

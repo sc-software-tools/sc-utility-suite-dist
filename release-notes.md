@@ -8,7 +8,7 @@ The new bundle contains Media Trim 1.0.3 and Archive Unpacker, HEIC Studio, PDF 
 - The all-in-one installer and its uninstall entry now use the suite website's emerald diamond branding. Individual app icons remain unchanged.
 - Media Trim and Screen Lens bundle the source-verified FFmpeg 9.0.2-sc1 engine and its corresponding-source delivery information. No separate FFmpeg installation is needed.
 
-These are new standalone packages; old 1.0.1 files and Media Trim1.0.2 remain unchanged. The Archive Unpacker 1.0.2 MSIX is prepared for publisher submission, with Store release subject to certification. Other existing Store submissions are unchanged. Standalone installers remain unsigned and may show browser/Windows reputation warnings; hashes verify integrity, not publisher trust. Existing PRO licences, prices and features remain unchanged.
+These are new standalone packages; old 1.0.1 files and Media Trim1.0.2 remain unchanged. Updated MSIX packages are also prepared for all seven Store applications: Media Trim 1.0.3.0 and 1.0.2.0 of the other six. They include the shared Store upgrade feedback improvements; Archive Unpacker also includes its native Explorer integration. Store rollout requires publisher submission and certification; existing submissions have not been changed automatically. Standalone installers remain unsigned and may show browser/Windows reputation warnings; hashes verify integrity, not publisher trust. Existing PRO licences, prices and features remain unchanged.
 
 ## Archive Unpacker v1.0.2 - Explorer Integration
 
