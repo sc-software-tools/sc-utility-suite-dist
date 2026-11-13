@@ -8,7 +8,7 @@ The new bundle contains Media Trim 1.0.3 and Archive Unpacker, HEIC Studio, PDF 
 - The all-in-one installer and its uninstall entry now use the suite website's emerald diamond branding. Individual app icons remain unchanged.
 - Media Trim and Screen Lens bundle the source-verified FFmpeg 9.0.2-sc1 engine and its corresponding-source delivery information. No separate FFmpeg installation is needed.
 
-These are new standalone packages; old 1.0.1 files and Media Trim1.0.2 remain unchanged. Updated MSIX packages are also prepared for all seven Store applications: Media Trim 1.0.3.0 and 1.0.2.0 of the other six. They include the shared Store upgrade feedback improvements; Archive Unpacker also includes its native Explorer integration. Store rollout requires publisher submission and certification; existing submissions have not been changed automatically. Standalone installers remain unsigned and may show browser/Windows reputation warnings; hashes verify integrity, not publisher trust. Existing PRO licences, prices and features remain unchanged.
+These are new standalone packages; old 1.0.1 files and Media Trim1.0.2 remain unchanged. Updated MSIX packages have also been submitted and are in certification for all seven Store applications: Media Trim 1.0.3.0 and 1.0.2.0 of the other six. They include the shared Store upgrade feedback improvements; Archive Unpacker also includes its native Explorer integration. The updates are set to publish after certification approval; live Store listings may still deliver earlier versions. Standalone installers remain unsigned and may show browser/Windows reputation warnings; hashes verify integrity, not publisher trust. Existing PRO licences, prices and features remain unchanged.
 
 ## Archive Unpacker v1.0.2 - Explorer Integration
 
@@ -17,7 +17,7 @@ These are new standalone packages; old 1.0.1 files and Media Trim1.0.2 remain un
 - PRO upgrade attempts now show progress and an explanation when checkout is unavailable or not completed, including Store error details when supplied. Entitlement queries are bounded; no purchase or licence bypass was added.
 - Existing free and PRO features, Store identity and add-on IDs remain unchanged.
 
-The1.0.2 standalone installer and portable ZIP are available in the [Archive Unpacker release](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/suite-v1.0.2). The new MSIX is prepared for publisher upload; its Store availability depends on submission and certification. Current standalone files remain unsigned. The old 1.0.1 releases remain available unchanged; a separate updated all-in-one bundle is included in the new release.
+The1.0.2 standalone installer and portable ZIP are available in the [Archive Unpacker release](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/suite-v1.0.2). The new MSIX has been submitted and is in certification; its Store rollout follows approval. Current standalone files remain unsigned. The old 1.0.1 releases remain available unchanged; a separate updated all-in-one bundle is included in the new release.
 
 ## Media Trim v1.0.2 - Production Release
 
