@@ -34,7 +34,7 @@ Standalone v1.0.1 downloads are published. Media Trim is awaiting its Microsoft 
 
 PRO uses Microsoft Store purchases in the Store edition and Gumroad keys in standalone editions. File processing stays local; activation contacts the purchase provider. Free editions display a local upgrade strip; PRO hides it. The published Media Trim v1.0.1 edits one file at a time in both editions. The v1.0.2 preview restores PRO batch conversion; it has not replaced the existing downloads. No multipass feature is offered.
 
-Development fixes are being tested as a separate 1.0.2 candidate. Existing v1.0.1 release files, submitted MSIX packages and Winget download URLs are preserved. Exact corresponding-source delivery for the bundled FFmpeg build remains unresolved; bundling and hash checks do not certify license compliance.
+Development fixes are being tested as a separate 1.0.2 candidate. Existing v1.0.1 release files, submitted MSIX packages and Winget download URLs are preserved. The unchanged 1.0.1 downloads still use the earlier FFmpeg build. The 1.0.2 Media Trim package uses a replacement engine with verified public source/build records; standalone publisher signing remains outstanding.
 
 ### Known v1.0.1 ZIP-creation issue
 
@@ -44,4 +44,4 @@ In the free edition, selecting several separate inputs for ZIP creation can incl
 
 PRO batch conversion has been restored in development: add files or folders, select the files to process, and convert whole files using one shared preset and output folder. The independent single-file editor keeps its preview and trim markers; all five single-file presets remain free, without a paid duration limit. PRO also removes the upgrade strip.
 
-This preview is not yet a public release. Its MSIX, installer and portable packages are being validated. Public release is held while exact corresponding-source/build/dependency delivery for the bundled FFmpeg build is completed. Existing v1.0.1 assets, Store IDs and Winget URLs are unchanged. See [release status](release-notes.md#media-trim-102-preview).
+This preview is not yet a public application release. New MSIX, installer and portable packages have passed source/payload checks and Windows installation, upgrade and removal tests. The MSIX is prepared for the existing Store product; no submission has been made by this development session. Standalone files remain unsigned and are held in a draft release while trusted publisher signing is arranged. Existing v1.0.1 assets, Store IDs and Winget URLs are unchanged. See [release status](release-notes.md#media-trim-102-preview) and [matching engine sources/build records](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/ffmpeg-9.0.2-sc1-sources).
