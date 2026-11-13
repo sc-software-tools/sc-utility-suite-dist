@@ -1,3 +1,24 @@
+## SC Utility Suite v1.0.2 - Standalone Upgrade Dialog Fixes
+
+The new bundle contains Media Trim 1.0.3 and Archive Unpacker, HEIC Studio, PDF Knife, Dup Scrub, Screen Lens and USB Flasher 1.0.2.
+
+- Fixed the shared standalone PRO window crashing because of missing button/text styles. Both the header and upgrade-strip buttons open the real activation dialog.
+- Fixed missing resources in Archive Unpacker's password prompt, including the prompt used by Explorer extraction.
+- Added clear feedback for unavailable or incomplete Microsoft Store upgrades, with a visible opening state and duplicate-click protection.
+- The all-in-one installer and its uninstall entry now use the suite website's emerald diamond branding. Individual app icons remain unchanged.
+- Media Trim and Screen Lens bundle the source-verified FFmpeg 9.0.2-sc1 engine and its corresponding-source delivery information. No separate FFmpeg installation is needed.
+
+These are new standalone packages; old 1.0.1 files and Media Trim1.0.2 remain unchanged. The Archive Unpacker 1.0.2 MSIX is prepared for publisher submission, with Store release subject to certification. Other existing Store submissions are unchanged. Standalone installers remain unsigned and may show browser/Windows reputation warnings; hashes verify integrity, not publisher trust. Existing PRO licences, prices and features remain unchanged.
+
+## Archive Unpacker v1.0.2 - Explorer Integration
+
+- The new Microsoft Store package includes native Explorer commands with embedded application icons for **Extract to folder**, **Extract Here**, and **Compress to ZIP**. Extraction applies to ZIP, 7Z, RAR, TAR, GZ, TGZ and BZ2; ZIP creation applies to a selected file or folder.
+- Store menu commands support one selected item at a time. Standalone installs retain the **Show more options** menu on Windows11 and per-user registration on Windows10.
+- PRO upgrade attempts now show progress and an explanation when checkout is unavailable or not completed, including Store error details when supplied. Entitlement queries are bounded; no purchase or licence bypass was added.
+- Existing free and PRO features, Store identity and add-on IDs remain unchanged.
+
+The1.0.2 standalone installer and portable ZIP are available in the [Archive Unpacker release](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/suite-v1.0.2). The new MSIX is prepared for publisher upload; its Store availability depends on submission and certification. Current standalone files remain unsigned. The old 1.0.1 releases remain available unchanged; a separate updated all-in-one bundle is included in the new release.
+
 ## Media Trim v1.0.2 - Production Release
 
 Media Trim 1.0.2 is released:
