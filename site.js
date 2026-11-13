@@ -90,13 +90,6 @@
         const btnText = stageCta.querySelector("span:first-child");
         if (btnText) btnText.textContent = "Explore " + title;
       }
-
-      // Only scroll the horizontal tabs track itself, NEVER the page window
-      const track = activeTab.parentElement;
-      if (track && track.scrollWidth > track.clientWidth) {
-        const left = activeTab.offsetLeft - track.offsetLeft - 10;
-        track.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
-      }
     }
 
     function tick(now) {
