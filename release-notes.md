@@ -1,3 +1,22 @@
+## Media Trim v1.0.2 - Production Release
+
+Media Trim 1.0.2 is released:
+- **PRO Batch Queue**: Process whole queues of video and audio files using a shared preset and output directory. Errors on one file do not interrupt processing of remaining queue items.
+- **Dedicated Single-File Editor**: Responsive preview player, waveform visualizer, and precision trim markers remain free and dedicated for quick edits.
+- **Five Free Presets**: MP3 320k, WAV, MP4 H.264, 720p compression, and lossless stream cut have no paid duration limits.
+- **Embedded FFmpeg 9.0.2-sc1**: Self-contained engine with full open source archives and build scripts published at [FFmpeg 9.0.2-sc1 sources](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/ffmpeg-9.0.2-sc1-sources).
+- **Downloads**: Available on [GitHub Releases](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/media-trim-v1.0.2) and the Microsoft Store.
+
+### Media Trim v1.0.2 SHA256 Checksums
+
+| File | Type | SHA256 Hash |
+| :--- | :--- | :--- |
+| MediaTrim_Setup_v1.0.2.exe | Setup Wizard | `383507c06fb3c3700e527c6ad7d0819a837cc17d60b257c94b2f7aca9aa69f09` |
+| MediaTrim_v1.0.2_Portable.zip | Portable ZIP | `35ccf63b8ca6f36e49cfe2afe207ec0e6d39c13df341031a0d107678c1b172bb` |
+| MediaTrim_1.0.2.0_x64.msix | Store Package | `5745b5037cf43ef1225a66982c1cfeea8a5feb1f5b0c3c92d24f4d86cb54f310` |
+
+---
+
 ## SC Utility Suite v1.0.1 - Production Release
 
 Standalone v1.0.1 release. Existing Microsoft Store packages use package identity 1.0.1.0 and predate the latest standalone binaries. Media Trim is awaiting its Microsoft Store release. The other six apps are listed as available; availability may vary by market.
@@ -47,16 +66,4 @@ Media Trim edits one file at a time in both tiers; no batch queue or multipass f
 In the free edition, selecting several separate inputs for ZIP creation can include only the first input. To include several files in v1.0.1, place them in one folder and add that folder. The 1.0.2 candidate fixes separate multi-input creation and has passed byte-content regression checks; it has not replaced the existing downloads or Store submissions.
 
 
-## Media Trim 1.0.2 preview
 
-Status: development preview, not available in the public downloads yet. Existing v1.0.1 files and their checksums remain unchanged.
-
-- PRO adds a separate whole-file batch queue: add files or folders, select a subset or process the whole queue, and use one shared preset and output folder.
-- The single-file preview, waveform and trim markers remain independent. All five single-file presets stay free, without a paid duration limit.
-- Cancelling retains completed outputs. A failed input does not prevent later queued files from being processed. Existing output files are not overwritten.
-- Switching between Single file and Batch preserves each workspace. Free users receive clear feedback when dropping multiple files into the single-file editor.
-- PRO continues to remove the upgrade strip. No subscription, multipass encoding or batch timeline editing is introduced.
-
-Release hold: trusted standalone publisher signing remains outstanding. The new Media Trim engine now has a verified corresponding-source/build/dependency archive, publicly delivered with the exact engine hash and retained notices. Windows package checks passed: clean install, actual 1.0.1 upgrade, reinstall, installed conversion/crash recovery, uninstall preserving user-created data, and test-certificate MSIX deployment/launch/removal. A stricter MSIX retest confirmed exit code 0 and rejected a tampered package. Test signatures are not production signatures. No replacement has been submitted to Microsoft Store or Softpedia.
-
-The engine/runtime and corresponding sources are available separately at [FFmpeg 9.0.2-sc1 sources and build records](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/ffmpeg-9.0.2-sc1-sources). This technical source delivery does not replace the old public 1.0.1 application binaries or establish Store certification. Media Trim EXE/ZIP files remain in a draft release; existing public downloads are unchanged.

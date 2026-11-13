@@ -470,12 +470,16 @@
     }
 
     function fetchData() {
-      var url = "https://api.github.com/repos/sc-software-tools/sc-utility-suite-dist/releases/tags/v1.0.1?nocache=" + new Date().getTime();
+      var url = "https://api.github.com/repos/sc-software-tools/sc-utility-suite-dist/releases?nocache=" + new Date().getTime();
       fetch(url, { cache: "no-store", headers: { "Accept": "application/vnd.github.v3+json" } })
         .then(function(res) { return res.json(); })
-        .then(function(data) {
-          if (!data || !data.assets) return;
-          renderMetrics(data.assets);
+        .then(function(releases) {
+          if (!releases || !Array.isArray(releases)) return;
+          var allAssets = [];
+          releases.forEach(function(rel) {
+            if (rel.assets) allAssets = allAssets.concat(rel.assets);
+          });
+          renderMetrics(allAssets);
         })
         .catch(function(err) {
           console.error("Failed to fetch release assets", err);
@@ -483,14 +487,14 @@
     }
 
     var APPS = [
-      { name: "SC Utility Suite (All-In-One)", exe: "SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe", zip: "SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip" },
-      { name: "Archive Unpacker", exe: "ArchiveUnpacker_Setup_v1.0.1.exe", zip: "ArchiveUnpacker_v1.0.1_Portable.zip" },
-      { name: "Dup Scrub", exe: "DupScrub_Setup_v1.0.1.exe", zip: "DupScrub_v1.0.1_Portable.zip" },
-      { name: "HEIC Studio", exe: "HeicStudio_Setup_v1.0.1.exe", zip: "HeicStudio_v1.0.1_Portable.zip" },
-      { name: "Media Trim", exe: "MediaTrim_Setup_v1.0.1.exe", zip: "MediaTrim_v1.0.1_Portable.zip" },
-      { name: "PDF Knife", exe: "PdfKnife_Setup_v1.0.1.exe", zip: "PdfKnife_v1.0.1_Portable.zip" },
-      { name: "Screen Lens", exe: "ScreenLens_Setup_v1.0.1.exe", zip: "ScreenLens_v1.0.1_Portable.zip" },
-      { name: "USB Flasher", exe: "UsbFlasher_Setup_v1.0.1.exe", zip: "UsbFlasher_v1.0.1_Portable.zip" }
+      { name: "SC Utility Suite (All-In-One)", exe: ["SC_Utility_Suite_AllInOne_Setup_v1.0.1.exe"], zip: ["SC_Utility_Suite_AllInOne_v1.0.1_Portable.zip"] },
+      { name: "Archive Unpacker", exe: ["ArchiveUnpacker_Setup_v1.0.1.exe"], zip: ["ArchiveUnpacker_v1.0.1_Portable.zip"] },
+      { name: "Dup Scrub", exe: ["DupScrub_Setup_v1.0.1.exe"], zip: ["DupScrub_v1.0.1_Portable.zip"] },
+      { name: "HEIC Studio", exe: ["HeicStudio_Setup_v1.0.1.exe"], zip: ["HeicStudio_v1.0.1_Portable.zip"] },
+      { name: "Media Trim (v1.0.2)", exe: ["MediaTrim_Setup_v1.0.2.exe", "MediaTrim_Setup_v1.0.1.exe"], zip: ["MediaTrim_v1.0.2_Portable.zip", "MediaTrim_v1.0.1_Portable.zip"] },
+      { name: "PDF Knife", exe: ["PdfKnife_Setup_v1.0.1.exe"], zip: ["PdfKnife_v1.0.1_Portable.zip"] },
+      { name: "Screen Lens", exe: ["ScreenLens_Setup_v1.0.1.exe"], zip: ["ScreenLens_v1.0.1_Portable.zip"] },
+      { name: "USB Flasher", exe: ["UsbFlasher_Setup_v1.0.1.exe"], zip: ["UsbFlasher_v1.0.1_Portable.zip"] }
     ];
 
     function renderMetrics(assets) {
@@ -509,17 +513,21 @@
 
       var maxRowTotal = 1;
       APPS.forEach(function(app) {
-        var exeCount = counts[app.exe] || 0;
-        var zipCount = counts[app.zip] || 0;
+        var exeCount = 0;
+        var zipCount = 0;
+        app.exe.forEach(function(f) { exeCount += (counts[f] || 0); });
+        app.zip.forEach(function(f) { zipCount += (counts[f] || 0); });
         var rowTotal = exeCount + zipCount;
         if (rowTotal > maxRowTotal) maxRowTotal = rowTotal;
       });
 
       APPS.forEach(function(app) {
-        var exeCount = counts[app.exe] || 0;
-        var zipCount = counts[app.zip] || 0;
+        var exeCount = 0;
+        var zipCount = 0;
+        app.exe.forEach(function(f) { exeCount += (counts[f] || 0); });
+        app.zip.forEach(function(f) { zipCount += (counts[f] || 0); });
         var rowTotal = exeCount + zipCount;
-        var pct = Math.round((rowTotal / maxRowTotal) * 100);
+        var pct = maxRowTotal > 0 ? Math.round((rowTotal / maxRowTotal) * 100) : 0;
 
         var tr = document.createElement("tr");
         tr.innerHTML = "<td><strong>" + app.name + "</strong></td>" +
