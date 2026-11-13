@@ -91,8 +91,12 @@
         if (btnText) btnText.textContent = "Explore " + title;
       }
 
-      // Smooth scroll tab into view on mobile
-      activeTab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+      // Only scroll the horizontal tabs track itself, NEVER the page window
+      const track = activeTab.parentElement;
+      if (track && track.scrollWidth > track.clientWidth) {
+        const left = activeTab.offsetLeft - track.offsetLeft - 10;
+        track.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+      }
     }
 
     function tick(now) {
