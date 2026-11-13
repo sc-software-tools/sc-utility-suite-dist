@@ -18,18 +18,27 @@
     });
   }
 
-  const showcaseTabs = document.querySelectorAll(".showcase-tab");
-  const windowAppIcon = document.getElementById("window-app-icon");
-  const windowAppTitle = document.getElementById("window-app-title");
-  const windowAppBadge = document.getElementById("window-app-badge");
+  const stageTabs = document.querySelectorAll(".stage-tab");
+  const windowIcon = document.getElementById("window-icon");
+  const windowTitle = document.getElementById("window-title");
+  const windowTag = document.getElementById("window-tag");
   const showcaseImg = document.getElementById("showcase-img");
   const showcasePreviewLink = document.getElementById("showcase-preview-link");
-  const showcaseCaptionText = document.getElementById("showcase-caption-text");
-  const showcaseDetailLink = document.getElementById("showcase-detail-link");
+  const stageHeadline = document.getElementById("stage-headline");
+  const stageSubtext = document.getElementById("stage-subtext");
+  const stageCta = document.getElementById("stage-cta");
+  const heroShowcase = document.getElementById("hero-showcase");
 
-  if (showcaseTabs.length && showcaseImg) {
-    // Preload preview images for instant tab switching
-    showcaseTabs.forEach(tab => {
+  if (stageTabs.length && showcaseImg) {
+    const DURATION = 4600; // 4.6 seconds per app
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let currentIndex = 0;
+    let isPaused = prefersReducedMotion;
+    let startTime = performance.now();
+    let elapsedBeforePause = 0;
+
+    // Preload all previews
+    stageTabs.forEach(tab => {
       const src = tab.dataset.preview;
       if (src) {
         const img = new Image();
@@ -37,58 +46,116 @@
       }
     });
 
-    function activateTab(tab) {
-      showcaseTabs.forEach(t => {
-        t.classList.remove("active");
-        t.setAttribute("aria-selected", "false");
-      });
-      tab.classList.add("active");
-      tab.setAttribute("aria-selected", "true");
+    function selectTab(index, userInitiated) {
+      currentIndex = index;
+      elapsedBeforePause = 0;
+      startTime = performance.now();
 
-      const title = tab.dataset.title;
-      const category = tab.dataset.category;
-      const caption = tab.dataset.caption;
-      const preview = tab.dataset.preview;
-      const icon = tab.dataset.icon;
-      const app = tab.dataset.app;
+      stageTabs.forEach((tab, i) => {
+        const isActive = (i === index);
+        tab.classList.toggle("active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+        const fill = tab.querySelector(".tab-progress-fill");
+        if (fill) fill.style.width = "0%";
+      });
+
+      const activeTab = stageTabs[index];
+      const title = activeTab.dataset.title;
+      const category = activeTab.dataset.category;
+      const headline = activeTab.dataset.headline;
+      const subtext = activeTab.dataset.subtext;
+      const preview = activeTab.dataset.preview;
+      const icon = activeTab.dataset.icon;
+      const app = activeTab.dataset.app;
 
       showcaseImg.style.opacity = "0.3";
       setTimeout(() => {
         showcaseImg.src = preview;
         showcaseImg.alt = title + " desktop interface";
         showcaseImg.style.opacity = "1";
-      }, 80);
+      }, 70);
 
-      if (windowAppIcon) windowAppIcon.src = icon;
-      if (windowAppTitle) windowAppTitle.textContent = title;
-      if (windowAppBadge) windowAppBadge.textContent = category;
-      if (showcaseCaptionText) showcaseCaptionText.textContent = caption;
+      if (windowIcon) windowIcon.src = icon;
+      if (windowTitle) windowTitle.textContent = title;
+      if (windowTag) windowTag.textContent = category;
+      if (stageHeadline) stageHeadline.textContent = headline;
+      if (stageSubtext) stageSubtext.textContent = subtext;
       if (showcasePreviewLink) {
         showcasePreviewLink.href = preview;
         showcasePreviewLink.dataset.preview = title;
         showcasePreviewLink.setAttribute("aria-label", "Enlarge " + title + " preview");
       }
-      if (showcaseDetailLink) {
-        showcaseDetailLink.href = "#" + app;
-        const btnText = showcaseDetailLink.querySelector("span:first-child");
-        if (btnText) btnText.textContent = "View " + title + " details";
+      if (stageCta) {
+        stageCta.href = "#" + app;
+        const btnText = stageCta.querySelector("span:first-child");
+        if (btnText) btnText.textContent = "Explore " + title;
       }
+
+      // Smooth scroll tab into view on mobile
+      activeTab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
     }
 
-    showcaseTabs.forEach((tab, index) => {
-      tab.addEventListener("click", () => activateTab(tab));
-      tab.addEventListener("keydown", (e) => {
-        let nextIndex;
-        if (e.key === "ArrowRight") nextIndex = (index + 1) % showcaseTabs.length;
-        if (e.key === "ArrowLeft") nextIndex = (index - 1 + showcaseTabs.length) % showcaseTabs.length;
-        if (e.key === "Home") nextIndex = 0;
-        if (e.key === "End") nextIndex = showcaseTabs.length - 1;
-        if (nextIndex !== undefined) {
-          e.preventDefault();
-          showcaseTabs[nextIndex].focus();
-          activateTab(showcaseTabs[nextIndex]);
+    function tick(now) {
+      if (!isPaused && stageTabs[currentIndex]) {
+        const elapsed = (now - startTime) + elapsedBeforePause;
+        const pct = Math.min(100, (elapsed / DURATION) * 100);
+        const fill = stageTabs[currentIndex].querySelector(".tab-progress-fill");
+        if (fill) fill.style.width = pct + "%";
+
+        if (elapsed >= DURATION) {
+          selectTab((currentIndex + 1) % stageTabs.length, false);
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Start auto-rotation animation loop
+    requestAnimationFrame(tick);
+
+    // Pause on hover
+    if (heroShowcase) {
+      heroShowcase.addEventListener("mouseenter", () => {
+        if (!prefersReducedMotion) {
+          elapsedBeforePause += (performance.now() - startTime);
+          isPaused = true;
         }
       });
+      heroShowcase.addEventListener("mouseleave", () => {
+        if (!prefersReducedMotion) {
+          startTime = performance.now();
+          isPaused = false;
+        }
+      });
+    }
+
+    // Tab click and keyboard controls
+    stageTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        selectTab(index, true);
+      });
+
+      tab.addEventListener("keydown", (e) => {
+        let nextIndex;
+        if (e.key === "ArrowRight") nextIndex = (index + 1) % stageTabs.length;
+        if (e.key === "ArrowLeft") nextIndex = (index - 1 + stageTabs.length) % stageTabs.length;
+        if (e.key === "Home") nextIndex = 0;
+        if (e.key === "End") nextIndex = stageTabs.length - 1;
+        if (nextIndex !== undefined) {
+          e.preventDefault();
+          stageTabs[nextIndex].focus();
+          selectTab(nextIndex, true);
+        }
+      });
+    });
+
+    // Pause rotation if document tab loses visibility
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        isPaused = true;
+      } else if (!prefersReducedMotion) {
+        startTime = performance.now();
+        isPaused = false;
+      }
     });
   }
 

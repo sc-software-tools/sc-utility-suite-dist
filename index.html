@@ -81,66 +81,89 @@
         <p class="hero-platform">For Windows 10 &amp; 11 · 64-bit PCs. Pro prices in USD; checkout shows local pricing and taxes.</p>
       </div>
       <figure class="hero-showcase" id="hero-showcase" aria-label="Interactive application showcase">
-        <div class="showcase-tabs" role="tablist" aria-label="Select an application to preview">
-          <button type="button" role="tab" class="showcase-tab" id="tab-archive" aria-selected="false" data-app="archive-unpacker" data-title="Archive Unpacker" data-category="Files &amp; folders" data-caption="Extract ZIP, RAR, 7Z and more without the fuss." data-preview="assets/previews/ArchiveUnpacker.png" data-icon="assets/icons/ArchiveUnpacker.png" title="Archive Unpacker">
-            <img src="assets/icons/ArchiveUnpacker.png" width="16" height="16" alt="" class="tab-icon">
-            <span>Archive</span>
+        <!-- Interactive Progress Tabs -->
+        <div class="stage-tabs-track" role="tablist" aria-label="Select an application to preview">
+          <button type="button" role="tab" class="stage-tab active" id="tab-0" aria-selected="true" data-index="0" data-app="heic-studio" data-title="HEIC Studio" data-category="Photos" data-headline="Photos in. Everyday formats out." data-subtext="Convert Apple HEIC photos, WebP and AVIF to everyday formats offline." data-preview="assets/previews/HeicStudio.png" data-icon="assets/icons/HeicStudio.png" title="HEIC Studio">
+            <span class="tab-label">
+              <img src="assets/icons/HeicStudio.png" width="15" height="15" alt="" class="tab-icon">
+              <span>HEIC Studio</span>
+            </span>
+            <span class="tab-progress-track"><span class="tab-progress-fill"></span></span>
           </button>
-          <button type="button" role="tab" class="showcase-tab" id="tab-dup" aria-selected="false" data-app="dup-scrub" data-title="Dup Scrub" data-category="Storage" data-caption="Find duplicate files and reclaim storage safely." data-preview="assets/previews/DupScrub.png" data-icon="assets/icons/DupScrub.png" title="Dup Scrub">
-            <img src="assets/icons/DupScrub.png" width="16" height="16" alt="" class="tab-icon">
-            <span>Dup Scrub</span>
+          <button type="button" role="tab" class="stage-tab" id="tab-1" aria-selected="false" data-index="1" data-app="media-trim" data-title="Media Trim" data-category="Video &amp; audio" data-headline="Keep the clip. Skip the upload." data-subtext="Trim video, batch convert media and extract audio locally with bundled FFmpeg." data-preview="assets/previews/MediaTrim.png" data-icon="assets/icons/MediaTrim.png" title="Media Trim">
+            <span class="tab-label">
+              <img src="assets/icons/MediaTrim.png" width="15" height="15" alt="" class="tab-icon">
+              <span>Media Trim</span>
+            </span>
+            <span class="tab-progress-track"><span class="tab-progress-fill"></span></span>
           </button>
-          <button type="button" role="tab" class="showcase-tab active" id="tab-heic" aria-selected="true" data-app="heic-studio" data-title="HEIC Studio" data-category="Photos" data-caption="Photos in. Everyday formats out." data-preview="assets/previews/HeicStudio.png" data-icon="assets/icons/HeicStudio.png" title="HEIC Studio">
-            <img src="assets/icons/HeicStudio.png" width="16" height="16" alt="" class="tab-icon">
-            <span>HEIC Studio</span>
+          <button type="button" role="tab" class="stage-tab" id="tab-2" aria-selected="false" data-index="2" data-app="dup-scrub" data-title="Dup Scrub" data-category="Storage" data-headline="Make room for the files you want." data-subtext="Find duplicate files, review unwanted copies and reclaim storage safely." data-preview="assets/previews/DupScrub.png" data-icon="assets/icons/DupScrub.png" title="Dup Scrub">
+            <span class="tab-label">
+              <img src="assets/icons/DupScrub.png" width="15" height="15" alt="" class="tab-icon">
+              <span>Dup Scrub</span>
+            </span>
+            <span class="tab-progress-track"><span class="tab-progress-fill"></span></span>
           </button>
-          <button type="button" role="tab" class="showcase-tab" id="tab-media" aria-selected="false" data-app="media-trim" data-title="Media Trim" data-category="Video &amp; audio" data-caption="Keep the clip. Skip the upload." data-preview="assets/previews/MediaTrim.png" data-icon="assets/icons/MediaTrim.png" title="Media Trim">
-            <img src="assets/icons/MediaTrim.png" width="16" height="16" alt="" class="tab-icon">
-            <span>Media Trim</span>
+          <button type="button" role="tab" class="stage-tab" id="tab-3" aria-selected="false" data-index="3" data-app="archive-unpacker" data-title="Archive Unpacker" data-category="Files &amp; folders" data-headline="Open compressed files without the fuss." data-subtext="Extract ZIP, RAR, 7Z and TAR in a few clicks. Inspect before unpacking." data-preview="assets/previews/ArchiveUnpacker.png" data-icon="assets/icons/ArchiveUnpacker.png" title="Archive Unpacker">
+            <span class="tab-label">
+              <img src="assets/icons/ArchiveUnpacker.png" width="15" height="15" alt="" class="tab-icon">
+              <span>Archive</span>
+            </span>
+            <span class="tab-progress-track"><span class="tab-progress-fill"></span></span>
           </button>
-          <button type="button" role="tab" class="showcase-tab" id="tab-pdf" aria-selected="false" data-app="pdf-knife" data-title="PDF Knife" data-category="Documents" data-caption="Your documents, in the right order." data-preview="assets/previews/PdfKnife.png" data-icon="assets/icons/PdfKnife.png" title="PDF Knife">
-            <img src="assets/icons/PdfKnife.png" width="16" height="16" alt="" class="tab-icon">
-            <span>PDF Knife</span>
+          <button type="button" role="tab" class="stage-tab" id="tab-4" aria-selected="false" data-index="4" data-app="pdf-knife" data-title="PDF Knife" data-category="Documents" data-headline="Bring your PDFs into order." data-subtext="Split pages, extract custom ranges and merge documents with zero cloud uploads." data-preview="assets/previews/PdfKnife.png" data-icon="assets/icons/PdfKnife.png" title="PDF Knife">
+            <span class="tab-label">
+              <img src="assets/icons/PdfKnife.png" width="15" height="15" alt="" class="tab-icon">
+              <span>PDF Knife</span>
+            </span>
+            <span class="tab-progress-track"><span class="tab-progress-fill"></span></span>
           </button>
-          <button type="button" role="tab" class="showcase-tab" id="tab-lens" aria-selected="false" data-app="screen-lens" data-title="Screen Lens" data-category="Screen recording" data-caption="Capture walkthroughs and crisp GIFs effortlessly." data-preview="assets/previews/ScreenLens.png" data-icon="assets/icons/ScreenLens.png" title="Screen Lens">
-            <img src="assets/icons/ScreenLens.png" width="16" height="16" alt="" class="tab-icon">
-            <span>Screen Lens</span>
+          <button type="button" role="tab" class="stage-tab" id="tab-5" aria-selected="false" data-index="5" data-app="screen-lens" data-title="Screen Lens" data-category="Screen recording" data-headline="Show your screen. Tell your story." data-subtext="Record full displays or selected regions to MP4 or GIF with floating controls." data-preview="assets/previews/ScreenLens.png" data-icon="assets/icons/ScreenLens.png" title="Screen Lens">
+            <span class="tab-label">
+              <img src="assets/icons/ScreenLens.png" width="15" height="15" alt="" class="tab-icon">
+              <span>Screen Lens</span>
+            </span>
+            <span class="tab-progress-track"><span class="tab-progress-fill"></span></span>
           </button>
-          <button type="button" role="tab" class="showcase-tab" id="tab-usb" aria-selected="false" data-app="usb-flasher" data-title="USB Flasher" data-category="Drives &amp; ISOs" data-caption="Your next bootable USB drive starts here." data-preview="assets/previews/UsbFlasher.png" data-icon="assets/icons/UsbFlasher.png" title="USB Flasher">
-            <img src="assets/icons/UsbFlasher.png" width="16" height="16" alt="" class="tab-icon">
-            <span>USB Flasher</span>
+          <button type="button" role="tab" class="stage-tab" id="tab-6" aria-selected="false" data-index="6" data-app="usb-flasher" data-title="USB Flasher" data-category="Drives &amp; ISOs" data-headline="Your next bootable USB starts here." data-subtext="Burn UEFI ISOs or write raw disk images to removable flash drives with ease." data-preview="assets/previews/UsbFlasher.png" data-icon="assets/icons/UsbFlasher.png" title="USB Flasher">
+            <span class="tab-label">
+              <img src="assets/icons/UsbFlasher.png" width="15" height="15" alt="" class="tab-icon">
+              <span>USB Flasher</span>
+            </span>
+            <span class="tab-progress-track"><span class="tab-progress-fill"></span></span>
           </button>
         </div>
 
-        <div class="showcase-window" id="preview-panel" role="tabpanel" aria-labelledby="tab-heic">
-          <div class="window-titlebar">
-            <div class="window-identity">
-              <img id="window-app-icon" src="assets/icons/HeicStudio.png" width="16" height="16" alt="" class="window-icon">
-              <span id="window-app-title" class="window-title-text">HEIC Studio</span>
-              <span id="window-app-badge" class="window-category-tag">Photos</span>
+        <!-- Windows 11 Fluent App Stage -->
+        <div class="fluent-window-stage" id="preview-panel" role="tabpanel" aria-labelledby="tab-0">
+          <div class="fluent-titlebar">
+            <div class="fluent-titlebar-identity">
+              <img id="window-icon" src="assets/icons/HeicStudio.png" width="16" height="16" alt="" class="fluent-titlebar-icon">
+              <span id="window-title" class="fluent-titlebar-text">HEIC Studio</span>
+              <span id="window-tag" class="fluent-titlebar-badge">Photos</span>
             </div>
-            <div class="window-controls" aria-hidden="true">
-              <span class="win-btn win-min" title="Minimize">&minus;</span>
-              <span class="win-btn win-max" title="Maximize">&#9633;</span>
-              <span class="win-btn win-close" title="Close">&#10005;</span>
+            <div class="fluent-titlebar-controls" aria-hidden="true">
+              <span class="fluent-win-btn" title="Minimize">&minus;</span>
+              <span class="fluent-win-btn" title="Maximize">&#9633;</span>
+              <span class="fluent-win-btn close" title="Close">&#10005;</span>
             </div>
           </div>
-          <div class="window-viewport">
+          <div class="fluent-screen">
             <a class="preview-link" id="showcase-preview-link" href="assets/previews/HeicStudio.png" data-preview="HEIC Studio" target="_blank" rel="noopener" aria-label="Enlarge HEIC Studio preview">
               <img id="showcase-img" src="assets/previews/HeicStudio.png" width="980" height="580" alt="HEIC Studio desktop interface" fetchpriority="high">
             </a>
           </div>
-        </div>
-
-        <figcaption class="showcase-footer">
-          <div class="showcase-meta">
-            <p id="showcase-caption-text" class="showcase-caption">Photos in. Everyday formats out.</p>
+          <div class="fluent-stage-caption">
+            <div class="stage-caption-copy">
+              <h4 id="stage-headline">Photos in. Everyday formats out.</h4>
+              <p id="stage-subtext">Convert Apple HEIC photos, WebP and AVIF to everyday formats offline.</p>
+            </div>
+            <a id="stage-cta" href="#heic-studio" class="stage-cta-btn">
+              <span>Explore HEIC Studio</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
-          <a id="showcase-detail-link" class="showcase-action-btn" href="#heic-studio">
-            <span>View HEIC Studio details</span>
-            <span aria-hidden="true">&rarr;</span>
-          </a>
-        </figcaption>
+        </div>
       </figure>
     </section>
 
