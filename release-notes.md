@@ -1,3 +1,16 @@
+## SC Utility Suite v1.0.3 - Archive Selection and Reliability
+
+The suite bundle contains **Media Trim 1.0.4** and **version 1.0.3 of the other six applications**.
+
+- Archive Unpacker correctly extracts selected files and folders when archive paths begin with ./ or use backslashes.
+- Large archive inspections run in the background, with cancellation and protection against stale results when clearing or changing the source.
+- Cleared archive items no longer send updates to the current workspace.
+- Filename validation rejects additional Windows-reserved device names before opening output files.
+- Settings reads each application's own version metadata.
+- Previous PRO dialog fixes, Explorer menu icons, suite branding and bundled FFmpeg source delivery are retained.
+
+All installers and portable ZIPs contain the same app payloads as the all-in-one bundle. Matching Microsoft Store packages are prepared for publisher upload; their availability follows submission and certification. Previous releases and submissions have not been overwritten. Existing licences, prices, PRO features and Store identities are unchanged. Standalone installers remain unsigned; a matching SHA256 verifies integrity, not publisher trust.
+
 ## SC Utility Suite v1.0.2 - Standalone Upgrade Dialog Fixes
 
 The new bundle contains Media Trim 1.0.3 and Archive Unpacker, HEIC Studio, PDF Knife, Dup Scrub, Screen Lens and USB Flasher 1.0.2.
