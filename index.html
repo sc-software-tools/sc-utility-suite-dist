@@ -80,11 +80,67 @@
         <ul class="hero-benefits" aria-label="Simple pricing"><li>Free to use</li><li>No subscriptions</li><li>Optional $3.99 lifetime Pro <strong>per app</strong></li></ul>
         <p class="hero-platform">For Windows 10 &amp; 11 · 64-bit PCs. Pro prices in USD; checkout shows local pricing and taxes.</p>
       </div>
-      <figure class="hero-showcase" aria-roledescription="carousel" aria-label="Featured applications">
-        <div class="showcase-label"><span class="showcase-position">FEATURED TOOL &middot; 3 OF 7</span><span class="showcase-name">HEIC Studio</span></div>
-        <div class="showcase-stage"><a class="preview-link" href="assets/previews/HeicStudio.png" data-preview="HEIC Studio" target="_blank" rel="noopener" aria-label="Enlarge HEIC Studio app preview"><div class="showcase-window-bar"><span class="window-dot red"></span><span class="window-dot yellow"></span><span class="window-dot green"></span><span class="window-title-sub">HEIC Studio &middot; Desktop Interface</span></div><img src="assets/previews/HeicStudio.png" width="980" height="580" alt="HEIC Studio interface with output format, quality and resize controls above the photo drop area" fetchpriority="high"></a><div class="showcase-progress" aria-hidden="true"><span></span></div></div>
-        <figcaption><span class="showcase-caption">Photos in. Everyday formats out.</span><a class="showcase-meet" href="#heic-studio">Meet HEIC Studio <span aria-hidden="true">→</span></a></figcaption>
-<div class="showcase-controls" hidden><div class="showcase-control-heading"><span>Explore all seven apps</span><div class="showcase-navigation"><button type="button" class="showcase-step showcase-previous" aria-label="Previous featured app"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4 6 10l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="showcase-rotation" aria-label="Pause previews"><svg viewBox="0 0 16 16" fill="currentColor" width="11" height="11" aria-hidden="true"><path d="M3.5 3h3v10h-3zm6 0h3v10h-3z"/></svg><span>Pause</span></button><button type="button" class="showcase-step showcase-next" aria-label="Next featured app"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m8 4 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="showcase-choices" role="group" aria-label="Choose a featured app"><button type="button" data-featured-app="archive-unpacker" data-caption="Archives open. Files ready." aria-label="Show Archive Unpacker preview" aria-pressed="false" title="Archive Unpacker"><img src="assets/icons/ArchiveUnpacker.png" width="23" height="23" alt=""></button><button type="button" data-featured-app="dup-scrub" data-caption="More space. Fewer unwanted copies." aria-label="Show Dup Scrub preview" aria-pressed="false" title="Dup Scrub"><img src="assets/icons/DupScrub.png" width="23" height="23" alt=""></button><button type="button" data-featured-app="heic-studio" data-caption="Photos in. Everyday formats out." aria-label="Show HEIC Studio preview" aria-pressed="true" title="HEIC Studio"><img src="assets/icons/HeicStudio.png" width="23" height="23" alt=""></button><button type="button" data-featured-app="media-trim" data-caption="Keep the clip. Skip the upload." aria-label="Show Media Trim preview" aria-pressed="false" title="Media Trim"><img src="assets/icons/MediaTrim.png" width="23" height="23" alt=""></button><button type="button" data-featured-app="pdf-knife" data-caption="Your documents, in the right order." aria-label="Show PDF Knife preview" aria-pressed="false" title="PDF Knife"><img src="assets/icons/PdfKnife.png" width="23" height="23" alt=""></button><button type="button" data-featured-app="screen-lens" data-caption="Show your screen. Tell your story." aria-label="Show Screen Lens preview" aria-pressed="false" title="Screen Lens"><img src="assets/icons/ScreenLens.png" width="23" height="23" alt=""></button><button type="button" data-featured-app="usb-flasher" data-caption="Your next bootable USB starts here." aria-label="Show USB Flasher preview" aria-pressed="false" title="USB Flasher"><img src="assets/icons/UsbFlasher.png" width="23" height="23" alt=""></button></div></div><p class="sr-only showcase-announcement" role="status" aria-live="polite"></p>
+      <figure class="hero-showcase" id="hero-showcase" aria-label="Interactive application showcase">
+        <div class="showcase-tabs" role="tablist" aria-label="Select an application to preview">
+          <button type="button" role="tab" class="showcase-tab" id="tab-archive" aria-selected="false" data-app="archive-unpacker" data-title="Archive Unpacker" data-category="Files &amp; folders" data-caption="Extract ZIP, RAR, 7Z and more without the fuss." data-preview="assets/previews/ArchiveUnpacker.png" data-icon="assets/icons/ArchiveUnpacker.png" title="Archive Unpacker">
+            <img src="assets/icons/ArchiveUnpacker.png" width="16" height="16" alt="" class="tab-icon">
+            <span>Archive</span>
+          </button>
+          <button type="button" role="tab" class="showcase-tab" id="tab-dup" aria-selected="false" data-app="dup-scrub" data-title="Dup Scrub" data-category="Storage" data-caption="Find duplicate files and reclaim storage safely." data-preview="assets/previews/DupScrub.png" data-icon="assets/icons/DupScrub.png" title="Dup Scrub">
+            <img src="assets/icons/DupScrub.png" width="16" height="16" alt="" class="tab-icon">
+            <span>Dup Scrub</span>
+          </button>
+          <button type="button" role="tab" class="showcase-tab active" id="tab-heic" aria-selected="true" data-app="heic-studio" data-title="HEIC Studio" data-category="Photos" data-caption="Photos in. Everyday formats out." data-preview="assets/previews/HeicStudio.png" data-icon="assets/icons/HeicStudio.png" title="HEIC Studio">
+            <img src="assets/icons/HeicStudio.png" width="16" height="16" alt="" class="tab-icon">
+            <span>HEIC Studio</span>
+          </button>
+          <button type="button" role="tab" class="showcase-tab" id="tab-media" aria-selected="false" data-app="media-trim" data-title="Media Trim" data-category="Video &amp; audio" data-caption="Keep the clip. Skip the upload." data-preview="assets/previews/MediaTrim.png" data-icon="assets/icons/MediaTrim.png" title="Media Trim">
+            <img src="assets/icons/MediaTrim.png" width="16" height="16" alt="" class="tab-icon">
+            <span>Media Trim</span>
+          </button>
+          <button type="button" role="tab" class="showcase-tab" id="tab-pdf" aria-selected="false" data-app="pdf-knife" data-title="PDF Knife" data-category="Documents" data-caption="Your documents, in the right order." data-preview="assets/previews/PdfKnife.png" data-icon="assets/icons/PdfKnife.png" title="PDF Knife">
+            <img src="assets/icons/PdfKnife.png" width="16" height="16" alt="" class="tab-icon">
+            <span>PDF Knife</span>
+          </button>
+          <button type="button" role="tab" class="showcase-tab" id="tab-lens" aria-selected="false" data-app="screen-lens" data-title="Screen Lens" data-category="Screen recording" data-caption="Capture walkthroughs and crisp GIFs effortlessly." data-preview="assets/previews/ScreenLens.png" data-icon="assets/icons/ScreenLens.png" title="Screen Lens">
+            <img src="assets/icons/ScreenLens.png" width="16" height="16" alt="" class="tab-icon">
+            <span>Screen Lens</span>
+          </button>
+          <button type="button" role="tab" class="showcase-tab" id="tab-usb" aria-selected="false" data-app="usb-flasher" data-title="USB Flasher" data-category="Drives &amp; ISOs" data-caption="Your next bootable USB drive starts here." data-preview="assets/previews/UsbFlasher.png" data-icon="assets/icons/UsbFlasher.png" title="USB Flasher">
+            <img src="assets/icons/UsbFlasher.png" width="16" height="16" alt="" class="tab-icon">
+            <span>USB Flasher</span>
+          </button>
+        </div>
+
+        <div class="showcase-window" id="preview-panel" role="tabpanel" aria-labelledby="tab-heic">
+          <div class="window-titlebar">
+            <div class="window-identity">
+              <img id="window-app-icon" src="assets/icons/HeicStudio.png" width="16" height="16" alt="" class="window-icon">
+              <span id="window-app-title" class="window-title-text">HEIC Studio</span>
+              <span id="window-app-badge" class="window-category-tag">Photos</span>
+            </div>
+            <div class="window-controls" aria-hidden="true">
+              <span class="win-btn win-min" title="Minimize">&minus;</span>
+              <span class="win-btn win-max" title="Maximize">&#9633;</span>
+              <span class="win-btn win-close" title="Close">&#10005;</span>
+            </div>
+          </div>
+          <div class="window-viewport">
+            <a class="preview-link" id="showcase-preview-link" href="assets/previews/HeicStudio.png" data-preview="HEIC Studio" target="_blank" rel="noopener" aria-label="Enlarge HEIC Studio preview">
+              <img id="showcase-img" src="assets/previews/HeicStudio.png" width="980" height="580" alt="HEIC Studio desktop interface" fetchpriority="high">
+            </a>
+          </div>
+        </div>
+
+        <figcaption class="showcase-footer">
+          <div class="showcase-meta">
+            <p id="showcase-caption-text" class="showcase-caption">Photos in. Everyday formats out.</p>
+          </div>
+          <a id="showcase-detail-link" class="showcase-action-btn" href="#heic-studio">
+            <span>View HEIC Studio details</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </figcaption>
       </figure>
     </section>
 
