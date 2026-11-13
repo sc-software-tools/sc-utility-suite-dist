@@ -30,12 +30,18 @@ The 16 v1.0.1 installer and portable files have SHA256 checksums in `checksums_d
 
 ## Channel status and licensing
 
-Standalone v1.0.1 downloads are published. All seven apps are available in Microsoft Store. Availability may vary by market. Live Store purchase restoration has not been tested. Eight Winget pull requests (seven apps plus the complete bundle) have passing validation labels but remain unmerged at the last check on 11 November 2026. Do not assume the catalog commands are available yet.
+Standalone v1.0.1 downloads are published. Media Trim is awaiting its Microsoft Store release. The other six apps are listed as available; availability may vary by market. Live Store purchase restoration has not been tested. Eight Winget pull requests (seven apps plus the complete bundle) have passing validation labels but remain unmerged at the last check on 11 November 2026. Do not assume the catalog commands are available yet.
 
-PRO uses Microsoft Store purchases in the Store edition and Gumroad keys in standalone editions. File processing stays local; activation contacts the purchase provider. Free editions display a local upgrade strip; PRO hides it. Media Trim currently edits one file at a time in both editions and has no batch or multipass encoding feature.
+PRO uses Microsoft Store purchases in the Store edition and Gumroad keys in standalone editions. File processing stays local; activation contacts the purchase provider. Free editions display a local upgrade strip; PRO hides it. The published Media Trim v1.0.1 edits one file at a time in both editions. The v1.0.2 preview restores PRO batch conversion; it has not replaced the existing downloads. No multipass feature is offered.
 
 Development fixes are being tested as a separate 1.0.2 candidate. Existing v1.0.1 release files, submitted MSIX packages and Winget download URLs are preserved. Exact corresponding-source delivery for the bundled FFmpeg build remains unresolved; bundling and hash checks do not certify license compliance.
 
 ### Known v1.0.1 ZIP-creation issue
 
 In the free edition, selecting several separate inputs for ZIP creation can include only the first input. To include several files in v1.0.1, place them in one folder and add that folder. The 1.0.2 candidate fixes separate multi-input creation and has passed byte-content regression checks; it has not replaced the existing downloads or Store submissions.
+
+## Media Trim 1.0.2 preview
+
+PRO batch conversion has been restored in development: add files or folders, select the files to process, and convert whole files using one shared preset and output folder. The independent single-file editor keeps its preview and trim markers; all five single-file presets remain free, without a paid duration limit. PRO also removes the upgrade strip.
+
+This preview is not yet a public release. Its MSIX, installer and portable packages are being validated. Public release is held while exact corresponding-source/build/dependency delivery for the bundled FFmpeg build is completed. Existing v1.0.1 assets, Store IDs and Winget URLs are unchanged. See [release status](release-notes.md#media-trim-102-preview).

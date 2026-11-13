@@ -1,6 +1,6 @@
 ## SC Utility Suite v1.0.1 - Production Release
 
-Standalone v1.0.1 release. Existing Microsoft Store packages use package identity 1.0.1.0 and predate the latest standalone binaries. All seven apps are available in Microsoft Store. Availability may vary by market.
+Standalone v1.0.1 release. Existing Microsoft Store packages use package identity 1.0.1.0 and predate the latest standalone binaries. Media Trim is awaiting its Microsoft Store release. The other six apps are listed as available; availability may vary by market.
 
 ### Included Applications
 - **Archive Unpacker**: Fast multi-format archive extraction (.zip, .7z, .tar, .gz, .bz2, .rar) and inspection
@@ -38,10 +38,23 @@ Standalone v1.0.1 release. Existing Microsoft Store packages use package identit
 - Completely self-contained .NET 8 runtime included; no external prerequisites required
 ### Signing and channel status
 
-Current standalone installers are unsigned. The hashes above establish file integrity, not trusted publisher identity. All seven apps are available in Microsoft Store. Winget catalog merges remain pending; passing manifest validation does not establish catalog availability. File processing is local; purchase/activation checks contact Microsoft Store or Gumroad.
+Current standalone installers are unsigned. The hashes above establish file integrity, not trusted publisher identity. Media Trim is awaiting its Microsoft Store release. Winget catalog merges remain pending; passing manifest validation does not establish catalog availability. File processing is local; purchase/activation checks contact Microsoft Store or Gumroad.
 
 Media Trim edits one file at a time in both tiers; no batch queue or multipass feature is provided. PRO hides the upgrade strip. Other PRO limits are described on the showcase page. The exact source/build/dependency delivery for the included FFmpeg build remains an unresolved distribution requirement, separate from binary integrity checks.
 
 ### Known v1.0.1 ZIP-creation issue
 
 In the free edition, selecting several separate inputs for ZIP creation can include only the first input. To include several files in v1.0.1, place them in one folder and add that folder. The 1.0.2 candidate fixes separate multi-input creation and has passed byte-content regression checks; it has not replaced the existing downloads or Store submissions.
+
+
+## Media Trim 1.0.2 preview
+
+Status: development preview, not available in the public downloads yet. Existing v1.0.1 files and their checksums remain unchanged.
+
+- PRO adds a separate whole-file batch queue: add files or folders, select a subset or process the whole queue, and use one shared preset and output folder.
+- The single-file preview, waveform and trim markers remain independent. All five single-file presets stay free, without a paid duration limit.
+- Cancelling retains completed outputs. A failed input does not prevent later queued files from being processed. Existing output files are not overwritten.
+- Switching between Single file and Batch preserves each workspace. Free users receive clear feedback when dropping multiple files into the single-file editor.
+- PRO continues to remove the upgrade strip. No subscription, multipass encoding or batch timeline editing is introduced.
+
+Release hold: exact corresponding-source/build/dependency delivery for the bundled FFmpeg build remains incomplete. Evaluation packages do not establish redistribution or Store compliance. No replacement has been submitted to Microsoft Store or Softpedia.
