@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lightweight Screen Recorder & GIF Capture - Screen Lens | Windows 10 & 11</title>
   <meta name="description" content="Minimalist, high-performance desktop screen recorder and GIF capture tool for Windows. Region selection, 60 FPS recording, zero bloat, instant local saving.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="SC Software">
   <link rel="canonical" href="https://sc-software-tools.github.io/sc-utility-suite-dist/screen-recorder.html">
 
   <!-- Open Graph / Social Media -->
@@ -13,6 +15,8 @@
   <meta property="og:title" content="Lightweight Screen Recorder & GIF Capture - Screen Lens | Windows 10 & 11">
   <meta property="og:description" content="Minimalist, high-performance desktop screen recorder and GIF capture tool for Windows. Region selection, 60 FPS recording, zero bloat, instant local saving.">
   <meta property="og:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/ScreenLens.png">
+  <meta property="og:image:width" content="980">
+  <meta property="og:image:height" content="580">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -20,27 +24,102 @@
   <meta name="twitter:description" content="Minimalist, high-performance desktop screen recorder and GIF capture tool for Windows. Region selection, 60 FPS recording, zero bloat, instant local saving.">
   <meta name="twitter:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/ScreenLens.png">
 
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://gc.zgo.at" crossorigin>
+  <link rel="dns-prefetch" href="https://gc.zgo.at">
+  <link rel="dns-prefetch" href="https://apps.microsoft.com">
+  <link rel="dns-prefetch" href="https://scsoftware.gumroad.com">
+
   <!-- Schema.org SoftwareApplication Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Screen Lens",
-    "operatingSystem": "Windows 10, Windows 11",
+    "operatingSystem": "Windows 10, Windows 11 (64-bit)",
     "applicationCategory": "Screen Capture & Recording",
-    "offers": {
-      "@type": "Offer",
-      "price": "0.00",
-      "priceCurrency": "USD"
-    },
+    "inLanguage": "en-US",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Standard Edition",
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "description": "Permanent free edition"
+      },
+      {
+        "@type": "Offer",
+        "name": "PRO Edition",
+        "price": "3.99",
+        "priceCurrency": "USD",
+        "description": "Optional lifetime PRO upgrade"
+      }
+    ],
     "description": "Minimalist, high-performance desktop screen recorder and GIF capture tool for Windows. Region selection, 60 FPS recording, zero bloat, instant local saving.",
     "softwareVersion": "1.0.3",
+    "screenshot": "https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/ScreenLens.png",
     "downloadUrl": "https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/ScreenLens_Setup_v1.0.3.exe",
     "author": {
       "@type": "Organization",
       "name": "SC Software",
       "url": "https://sc-software-tools.github.io/sc-utility-suite-dist/"
     }
+  }
+  </script>
+
+  <!-- Schema.org BreadcrumbList Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "SC Utility Suite",
+        "item": "https://sc-software-tools.github.io/sc-utility-suite-dist/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Screen Lens",
+        "item": "https://sc-software-tools.github.io/sc-utility-suite-dist/screen-recorder.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org FAQPage Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Screen Lens add a watermark to my recordings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Screen Lens never stamps watermarks on your recordings, even in the free version."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it create animated GIFs directly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can capture any screen area and save it directly as an animated GIF, perfect for GitHub pull requests, Slack, Teams, or bug tickets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it record system audio and microphone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can select your audio input device to record clear voiceovers or system sound alongside your screen."
+        }
+      }
+    ]
   }
   </script>
 
@@ -390,7 +469,7 @@
       </div>
 
       <div class="product-frame">
-        <img src="assets/screenshots/ScreenLens.png" alt="Screen Lens for Windows" width="680" height="402">
+        <img src="assets/screenshots/ScreenLens.png" alt="Screen Lens for Windows" width="680" height="402" fetchpriority="high" decoding="async">
       </div>
     </section>
 
@@ -603,7 +682,7 @@
     <p class="container trademark-note">Windows and Microsoft Store are trademarks of Microsoft Corporation.</p>
   </footer>
 
-  <!-- Privacy-friendly analytics & automatic download tracking -->
+  <!-- Privacy-friendly analytics & granular conversion tracking -->
   <script data-goatcounter="https://sc-software.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
     document.addEventListener('click', function(e) {
@@ -620,8 +699,21 @@
         });
       } else if (href.indexOf('apps.microsoft.com') !== -1) {
         window.goatcounter.count({
-          path: 'store/outbound',
-          title: 'Store Link Click',
+          path: 'store/screen-lens',
+          title: 'Store: Screen Lens',
+          event: true
+        });
+      } else if (href.indexOf('gumroad.com') !== -1) {
+        window.goatcounter.count({
+          path: 'gumroad/screen-lens',
+          title: 'Gumroad: Screen Lens',
+          event: true
+        });
+      } else if (a.classList.contains('other-app-chip')) {
+        var dest = href.replace('.html', '');
+        window.goatcounter.count({
+          path: 'cross-suite/' + dest,
+          title: 'Cross-Suite: ' + dest,
           event: true
         });
       }

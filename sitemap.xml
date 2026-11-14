@@ -1,51 +1,84 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/previews/ArchiveUnpacker.png</image:loc>
+      <image:title>SC Utility Suite - Native Windows 10 and 11 Desktop Utilities</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/heic-to-jpg.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/HeicStudio.png</image:loc>
+      <image:title>HEIC Studio - Free Offline iPhone HEIC to JPG Converter for Windows</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/duplicate-finder.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/DupScrub.png</image:loc>
+      <image:title>Dup Scrub - Safe Offline Duplicate File Finder for Windows</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/video-trimmer.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/MediaTrim.png</image:loc>
+      <image:title>Media Trim - Fast Local Video Trimmer and Batch Media Converter</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/screen-recorder.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/ScreenLens.png</image:loc>
+      <image:title>Screen Lens - Lightweight Screen Recorder and GIF Capture for Windows</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/pdf-tools.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/PdfKnife.png</image:loc>
+      <image:title>PDF Knife - Offline PDF Merger, Page Extractor and Splitter</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/archive-extractor.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/ArchiveUnpacker.png</image:loc>
+      <image:title>Archive Unpacker - Fast Clean RAR, 7z and ZIP Archive Extractor</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/usb-imager.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/UsbFlasher.png</image:loc>
+      <image:title>USB Flasher - Safe Bootable ISO USB Flasher and Disk Imager</image:title>
+    </image:image>
   </url>
 </urlset>

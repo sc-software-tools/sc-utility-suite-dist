@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SC Utility Suite - Windows 10 & 11 Desktop Utilities</title>
   <meta name="description" content="Seven practical Windows tools for photos, files, PDFs, media, screen recording and USB drives. Free forever, with optional lifetime Pro upgrades per app.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="SC Software">
   <link rel="canonical" href="https://sc-software-tools.github.io/sc-utility-suite-dist/">
 
   <!-- Open Graph / Social Media -->
@@ -12,13 +14,32 @@
   <meta property="og:url" content="https://sc-software-tools.github.io/sc-utility-suite-dist/">
   <meta property="og:title" content="SC Utility Suite - Clean Windows 10 & 11 Desktop Utilities">
   <meta property="og:description" content="7 native, privacy-focused utilities for Windows 10 & 11. Zero telemetry, fast local execution, permanent free tiers.">
-  <meta property="og:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/apple-touch-icon.png">
+  <meta property="og:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/assets/previews/ArchiveUnpacker.png">
+  <meta property="og:image:width" content="980">
+  <meta property="og:image:height" content="580">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SC Utility Suite - Clean Windows 10 & 11 Desktop Utilities">
   <meta name="twitter:description" content="7 native, privacy-focused utilities for Windows 10 & 11. Zero telemetry, fast local execution, permanent free tiers.">
-  <meta name="twitter:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/apple-touch-icon.png">
+  <meta name="twitter:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/assets/previews/ArchiveUnpacker.png">
+
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://gc.zgo.at" crossorigin>
+  <link rel="dns-prefetch" href="https://gc.zgo.at">
+  <link rel="dns-prefetch" href="https://apps.microsoft.com">
+  <link rel="dns-prefetch" href="https://scsoftware.gumroad.com">
+
+  <!-- Schema.org Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SC Software",
+    "url": "https://sc-software-tools.github.io/sc-utility-suite-dist/",
+    "logo": "https://sc-software-tools.github.io/sc-utility-suite-dist/favicon-32x32.png"
+  }
+  </script>
 
   <!-- Schema.org SoftwareApplication Structured Data -->
   <script type="application/ld+json">
@@ -304,7 +325,7 @@
   </main>
   <footer class="footer"><div class="container footer-content"><div><a class="brand" href="#top"><img src="favicon-32x32.png" width="24" height="24" alt=""><span>SC Utility Suite</span></a><p>Practical tools for a little less everyday hassle.</p><p class="copyright">© 2026 SC Software · Developed by Martin Wright</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="heic-to-jpg.html">HEIC to JPG</a><a href="duplicate-finder.html">Duplicate Finder</a><a href="video-trimmer.html">Video Trimmer</a><a href="screen-recorder.html">Screen Recorder</a><a href="pdf-tools.html">PDF Tools</a><a href="archive-extractor.html">Archive Extractor</a><a href="usb-imager.html">USB Imager</a><a href="#applications">The apps</a><a href="#pro">Free &amp; Pro</a><a href="https://github.com/sc-software-tools/sc-utility-suite-dist" target="_blank" rel="noopener">GitHub</a><a href="LICENSE">Licence</a><a href="pad.xml">PAD XML</a><a href="mailto:sc-developer@outlook.com">Contact</a></nav></div><p class="container trademark-note">Windows and Microsoft Store are trademarks of Microsoft Corporation.</p></footer>
   <dialog id="preview-dialog" aria-labelledby="preview-title"><div class="preview-dialog-heading"><h2 id="preview-title">App preview</h2><button type="button" id="close-preview" aria-label="Close app preview">Close <span aria-hidden="true">×</span></button></div><img id="preview-image" alt=""><p>App preview. Appearance may vary by version and Windows settings.</p></dialog>
-  <!-- Privacy-friendly analytics & automatic download tracking -->
+  <!-- Privacy-friendly analytics & granular conversion tracking -->
   <script data-goatcounter="https://sc-software.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
     document.addEventListener('click', function(e) {
@@ -320,9 +341,24 @@
           event: true
         });
       } else if (href.indexOf('apps.microsoft.com') !== -1) {
+        var card = a.closest('.fluent-app-card');
+        var appId = card ? card.id : 'suite';
         window.goatcounter.count({
-          path: 'store/outbound',
-          title: 'Store Link Click',
+          path: 'store/' + appId,
+          title: 'Store: ' + appId,
+          event: true
+        });
+      } else if (href.indexOf('gumroad.com') !== -1) {
+        window.goatcounter.count({
+          path: 'gumroad/bundle',
+          title: 'Gumroad Suite Bundle',
+          event: true
+        });
+      } else if (href.endsWith('.html') && href !== 'index.html' && !href.startsWith('http')) {
+        var page = href.replace('.html', '');
+        window.goatcounter.count({
+          path: 'nav/landing/' + page,
+          title: 'Landing Page: ' + page,
           event: true
         });
       }

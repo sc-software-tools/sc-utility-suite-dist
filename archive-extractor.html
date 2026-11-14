@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fast RAR, 7z & ZIP Archive Extractor - Archive Unpacker</title>
   <meta name="description" content="Extract RAR, 7z, ZIP, and TAR archives on Windows 10 & 11. Clean modern Fluent interface, context menu integration, fast multi-format extraction.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="SC Software">
   <link rel="canonical" href="https://sc-software-tools.github.io/sc-utility-suite-dist/archive-extractor.html">
 
   <!-- Open Graph / Social Media -->
@@ -13,6 +15,8 @@
   <meta property="og:title" content="Fast RAR, 7z & ZIP Archive Extractor - Archive Unpacker">
   <meta property="og:description" content="Extract RAR, 7z, ZIP, and TAR archives on Windows 10 & 11. Clean modern Fluent interface, context menu integration, fast multi-format extraction.">
   <meta property="og:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/ArchiveUnpacker.png">
+  <meta property="og:image:width" content="980">
+  <meta property="og:image:height" content="580">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -20,27 +24,102 @@
   <meta name="twitter:description" content="Extract RAR, 7z, ZIP, and TAR archives on Windows 10 & 11. Clean modern Fluent interface, context menu integration, fast multi-format extraction.">
   <meta name="twitter:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/ArchiveUnpacker.png">
 
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://gc.zgo.at" crossorigin>
+  <link rel="dns-prefetch" href="https://gc.zgo.at">
+  <link rel="dns-prefetch" href="https://apps.microsoft.com">
+  <link rel="dns-prefetch" href="https://scsoftware.gumroad.com">
+
   <!-- Schema.org SoftwareApplication Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Archive Unpacker",
-    "operatingSystem": "Windows 10, Windows 11",
+    "operatingSystem": "Windows 10, Windows 11 (64-bit)",
     "applicationCategory": "Compression & File Archives",
-    "offers": {
-      "@type": "Offer",
-      "price": "0.00",
-      "priceCurrency": "USD"
-    },
+    "inLanguage": "en-US",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Standard Edition",
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "description": "Permanent free edition"
+      },
+      {
+        "@type": "Offer",
+        "name": "PRO Edition",
+        "price": "3.99",
+        "priceCurrency": "USD",
+        "description": "Optional lifetime PRO upgrade"
+      }
+    ],
     "description": "Extract RAR, 7z, ZIP, and TAR archives on Windows 10 & 11. Clean modern Fluent interface, context menu integration, fast multi-format extraction.",
     "softwareVersion": "1.0.3",
+    "screenshot": "https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/ArchiveUnpacker.png",
     "downloadUrl": "https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/ArchiveUnpacker_Setup_v1.0.3.exe",
     "author": {
       "@type": "Organization",
       "name": "SC Software",
       "url": "https://sc-software-tools.github.io/sc-utility-suite-dist/"
     }
+  }
+  </script>
+
+  <!-- Schema.org BreadcrumbList Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "SC Utility Suite",
+        "item": "https://sc-software-tools.github.io/sc-utility-suite-dist/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Archive Unpacker",
+        "item": "https://sc-software-tools.github.io/sc-utility-suite-dist/archive-extractor.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org FAQPage Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can Archive Unpacker extract password-protected RAR or 7z files?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If an archive requires a decryption password, Archive Unpacker prompts you for the passphrase and cleanly extracts the encrypted contents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it integrate with Windows File Explorer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The installer registers native shell verbs so you can right-click archives in Explorer and select Extract Here or Extract to folder."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will it ever show trial expiration popups?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Never. The free version remains permanently free for standard single-archive decompression without nag dialogs."
+        }
+      }
+    ]
   }
   </script>
 
@@ -390,7 +469,7 @@
       </div>
 
       <div class="product-frame">
-        <img src="assets/screenshots/ArchiveUnpacker.png" alt="Archive Unpacker for Windows" width="680" height="402">
+        <img src="assets/screenshots/ArchiveUnpacker.png" alt="Archive Unpacker for Windows" width="680" height="402" fetchpriority="high" decoding="async">
       </div>
     </section>
 
@@ -603,7 +682,7 @@
     <p class="container trademark-note">Windows and Microsoft Store are trademarks of Microsoft Corporation.</p>
   </footer>
 
-  <!-- Privacy-friendly analytics & automatic download tracking -->
+  <!-- Privacy-friendly analytics & granular conversion tracking -->
   <script data-goatcounter="https://sc-software.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
     document.addEventListener('click', function(e) {
@@ -620,8 +699,21 @@
         });
       } else if (href.indexOf('apps.microsoft.com') !== -1) {
         window.goatcounter.count({
-          path: 'store/outbound',
-          title: 'Store Link Click',
+          path: 'store/archive-unpacker',
+          title: 'Store: Archive Unpacker',
+          event: true
+        });
+      } else if (href.indexOf('gumroad.com') !== -1) {
+        window.goatcounter.count({
+          path: 'gumroad/archive-unpacker',
+          title: 'Gumroad: Archive Unpacker',
+          event: true
+        });
+      } else if (a.classList.contains('other-app-chip')) {
+        var dest = href.replace('.html', '');
+        window.goatcounter.count({
+          path: 'cross-suite/' + dest,
+          title: 'Cross-Suite: ' + dest,
           event: true
         });
       }
