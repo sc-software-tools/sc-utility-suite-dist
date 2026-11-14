@@ -252,6 +252,20 @@
       border-color: var(--accent-light);
       color: #fff;
     }
+    .pricing-cta-sub {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .pricing-cta-sub a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+    }
+    .pricing-cta-sub a:hover {
+      color: var(--accent-light);
+    }
     @media (max-width: 900px) {
       .landing-hero {
         grid-template-columns: 1fr;
@@ -416,10 +430,10 @@
     <section class="container section" id="pricing" style="border-top: 1px solid var(--border-subtle);">
       <div class="section-heading">
         <div>
-          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Clear &amp; Fair Pricing</p>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Transparent &amp; Fair Pricing</p>
           <h2>Free vs. Lifetime PRO</h2>
         </div>
-        <p>Use it free forever. Upgrade once if you need heavy-duty power features.</p>
+        <p>Download free from the Microsoft Store. Upgrade inside the app whenever you need heavy-duty batch features.</p>
       </div>
 
       <div class="compare-container">
@@ -436,6 +450,7 @@
             <li>No watermarks or cloud lock-in</li>
           </ul>
           <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/UsbFlasher_Setup_v1.0.3.exe" class="btn btn-fluent-secondary" style="margin-top:auto;">Download Free (.exe)</a>
+          <p class="pricing-cta-sub">Microsoft Store edition in final certification</p>
         </div>
 
         <!-- Pro Card -->
@@ -450,6 +465,7 @@
           <a href="https://scsoftware.gumroad.com/l/sc-usb-flasher" target="_blank" rel="noopener" class="btn btn-fluent-primary" style="margin-top:auto;">
             Get Lifetime PRO Key ($3.99) <span aria-hidden="true">↗</span>
           </a>
+          <p class="pricing-cta-sub">Instant standalone key activation on Gumroad</p>
         </div>
       </div>
     </section>
@@ -512,6 +528,7 @@
         <a href="index.html#applications">All 7 Apps</a>
         <a href="https://github.com/sc-software-tools/sc-utility-suite-dist" target="_blank" rel="noopener">GitHub</a>
         <a href="LICENSE">Licence</a>
+        <a href="pad.xml">PAD XML</a>
         <a href="mailto:sc-developer@outlook.com">Contact</a>
       </nav>
     </div>
