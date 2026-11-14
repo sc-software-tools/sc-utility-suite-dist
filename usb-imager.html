@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Bootable USB Creator & Raw Disk Imager - USB Flasher</title>
+  <meta name="description" content="Flash bootable ISO, IMG, and raw disk images to USB drives safely on Windows. Strict drive isolation, write speed verification, and USB image backup mode.">
+  <link rel="canonical" href="https://sc-software-tools.github.io/sc-utility-suite-dist/usb-imager.html">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sc-software-tools.github.io/sc-utility-suite-dist/usb-imager.html">
+  <meta property="og:title" content="Safe Bootable USB Creator & Raw Disk Imager - USB Flasher">
+  <meta property="og:description" content="Flash bootable ISO, IMG, and raw disk images to USB drives safely on Windows. Strict drive isolation, write speed verification, and USB image backup mode.">
+  <meta property="og:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/UsbFlasher.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Safe Bootable USB Creator & Raw Disk Imager - USB Flasher">
+  <meta name="twitter:description" content="Flash bootable ISO, IMG, and raw disk images to USB drives safely on Windows. Strict drive isolation, write speed verification, and USB image backup mode.">
+  <meta name="twitter:image" content="https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/UsbFlasher.png">
+
+  <!-- Schema.org SoftwareApplication Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "USB Flasher",
+    "operatingSystem": "Windows 10, Windows 11",
+    "applicationCategory": "Disk Imaging & OS Deployment",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
+    "description": "Flash bootable ISO, IMG, and raw disk images to USB drives safely on Windows. Strict drive isolation, write speed verification, and USB image backup mode.",
+    "softwareVersion": "1.0.3",
+    "downloadUrl": "https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/UsbFlasher_Setup_v1.0.3.exe",
+    "author": {
+      "@type": "Organization",
+      "name": "SC Software",
+      "url": "https://sc-software-tools.github.io/sc-utility-suite-dist/"
+    }
+  }
+  </script>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=4">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=4">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=4">
+  <link rel="shortcut icon" href="favicon.ico?v=4">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=20261111.3">
+  <style>
+    /* Landing Page Specific Enhancements */
+    .landing-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      align-items: center;
+      gap: 48px;
+      padding-block: 70px 60px;
+    }
+    .landing-hero h1 {
+      font-size: clamp(34px, 3.2vw, 46px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      font-weight: 680;
+      margin-block: 16px 20px;
+    }
+    .landing-hero h1 span {
+      color: var(--accent-light);
+    }
+    .landing-hero-desc {
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 26px;
+    }
+    .winget-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      background: #181b22;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #93c5fd;
+      margin-top: 14px;
+    }
+    .winget-badge code {
+      color: #e2e8f0;
+    }
+    .product-frame {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      background: #0b1018;
+    }
+    .product-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .tutorial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .tutorial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      position: relative;
+    }
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent-subtle);
+      color: var(--accent-light);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+    }
+    .tutorial-card h3 {
+      font-size: 17px;
+      font-weight: 650;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+    .tutorial-card p {
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .feature-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .feature-box h3 {
+      font-size: 17px;
+      font-weight: 650;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .feature-box p {
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .compare-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .compare-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+    }
+    .compare-card.pro {
+      border-color: #507ba4;
+      background: linear-gradient(145deg, #1d2c3d, #1a222e);
+    }
+    .compare-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .compare-card.pro .compare-badge {
+      color: var(--accent-light);
+    }
+    .compare-card h3 {
+      font-size: 22px;
+      font-weight: 650;
+      margin-bottom: 12px;
+    }
+    .compare-price {
+      font-size: 36px;
+      font-weight: 700;
+      margin-block: 10px 18px;
+    }
+    .compare-price span {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .cross-suite-strip {
+      margin-top: 60px;
+      padding: 32px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      background: #181b22;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .cross-suite-copy h3 {
+      font-size: 20px;
+      font-weight: 650;
+      margin-bottom: 6px;
+    }
+    .cross-suite-copy p {
+      color: var(--text-secondary);
+      font-size: 13.5px;
+    }
+    .other-apps-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .other-app-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      color: var(--text-secondary);
+      transition: border-color .15s, color .15s;
+    }
+    .other-app-chip:hover {
+      border-color: var(--accent-light);
+      color: #fff;
+    }
+    @media (max-width: 900px) {
+      .landing-hero {
+        grid-template-columns: 1fr;
+        padding-block: 40px;
+      }
+      .tutorial-grid, .features-grid, .compare-container {
+        grid-template-columns: 1fr;
+      }
+      .cross-suite-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="navbar">
+    <div class="nav-container container">
+      <a class="brand" href="index.html" aria-label="SC Utility Suite Home">
+        <img src="favicon-32x32.png" width="30" height="30" alt="">
+        <span>SC Utility Suite</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html#applications">All 7 Apps</a>
+        <a href="#features">Features</a>
+        <a href="#how-to">How-To</a>
+        <a href="#pricing">Free vs Pro</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-download" href="#download">Download <span aria-hidden="true">↓</span></a>
+      <details class="mobile-menu">
+        <summary>Menu <span aria-hidden="true">☰</span></summary>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html#applications">All 7 Apps</a>
+          <a href="#features">Features</a>
+          <a href="#how-to">How-To</a>
+          <a href="#pricing">Free vs Pro</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="container landing-hero" id="top" aria-labelledby="hero-title">
+      <div class="landing-hero-copy">
+        <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Safe USB Image Writer</p>
+        <h1 id="hero-title">Write Bootable ISO & Raw Disk Images to USB.<br><span>With Strict Drive Protection.</span></h1>
+        <p class="landing-hero-desc">Flashing an operating system installer (Linux, Windows, Raspberry Pi) to a USB thumb drive is risky if a tool accidentally selects your primary boot SSD. USB Flasher incorporates strict drive-type filtering, volume locking, and safety prompts so you only ever write to removable USB media.</p>
+        
+        <div class="hero-cta-group" id="download">
+          <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/UsbFlasher_Setup_v1.0.3.exe" class="btn btn-fluent-primary">Download Free Installer (.exe)</a>
+          <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/UsbFlasher_Setup_v1.0.3.exe" class="btn btn-fluent-secondary">Download Installer (.exe)</a>
+          <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/UsbFlasher_v1.0.3_Portable.zip" class="btn btn-fluent-secondary">Portable (.zip)</a>
+        </div>
+
+        <div class="winget-badge" title="Copy command to install via Windows Package Manager">
+          <span style="color:var(--text-muted)">winget:</span>
+          <code>winget install --id 9P9NBFS7PMJB --source msstore</code>
+        </div>
+        
+        <p class="hero-platform" style="margin-top:16px;">Runs on Windows 10 &amp; 11 (64-bit). No sign-up, no subscriptions, zero cloud telemetry.</p>
+      </div>
+
+      <div class="product-frame">
+        <img src="assets/screenshots/UsbFlasher.png" alt="USB Flasher for Windows" width="680" height="402">
+      </div>
+    </section>
+
+    <!-- Trust Band -->
+    <section class="trust-band">
+      <div class="container trust-grid">
+        <div>
+          <span class="trust-icon" aria-hidden="true">🔒</span>
+          <div>
+            <strong>100% Local &amp; Private</strong>
+            <p><span>Your files never leave your PC. No cloud uploads, no third-party tracking.</span></p>
+          </div>
+        </div>
+        <div>
+          <span class="trust-icon" aria-hidden="true">⚡</span>
+          <div>
+            <strong>Zero Background Bloat</strong>
+            <p><span>No startup daemons, no background services, no persistent system tray bloat.</span></p>
+          </div>
+        </div>
+        <div>
+          <span class="trust-icon" aria-hidden="true">💎</span>
+          <div>
+            <strong>Free Forever + Optional $3.99 Pro</strong>
+            <p><span>Useful free edition with no expiry. Upgrade once for lifetime extras; no subscriptions.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container section" id="features">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Designed for Performance</p>
+          <h2>Key Features &amp; Capabilities</h2>
+        </div>
+        <p>Built with native Windows 11 Fluent styling, high-efficiency local engines, and zero friction.</p>
+      </div>
+
+      <div class="features-grid">
+        
+        <div class="feature-box">
+          <h3>Strict Drive Isolation</h3>
+          <p>Automatically detects and hides internal NVMe, SATA, and system boot drives, preventing catastrophic accidental formatting.</p>
+        </div>
+        <div class="feature-box">
+          <h3>ISO & Raw IMG Support</h3>
+          <p>Flash standard bootable Linux ISOs, Windows installation media, and raw DD disk images (.img, .bin, .raw).</p>
+        </div>
+        <div class="feature-box">
+          <h3>Drive Backup Mode (PRO)</h3>
+          <p>Clone physical USB drives, Raspberry Pi microSD cards, or flash media into raw backup .IMG files.</p>
+        </div>
+        <div class="feature-box">
+          <h3>Direct Hardware Verification</h3>
+          <p>Calculates post-write sector checksums to verify your flashed drive will boot reliably without data corruption.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step-by-Step How-To Section -->
+    <section class="container section" id="how-to" style="border-top: 1px solid var(--border-subtle);">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Quick Start Guide</p>
+          <h2>How to Use USB Flasher</h2>
+        </div>
+        <p>Three straightforward steps from file selection to completed task.</p>
+      </div>
+
+      <div class="tutorial-grid">
+        
+        <div class="tutorial-card">
+          <span class="step-badge">1</span>
+          <h3>Select Disk Image</h3>
+          <p>Choose your ISO or raw IMG file (Ubuntu, Fedora, Windows, Raspberry Pi OS, etc.).</p>
+        </div>
+        <div class="tutorial-card">
+          <span class="step-badge">2</span>
+          <h3>Select Removable USB Drive</h3>
+          <p>Pick your target removable USB drive. Internal drives are automatically protected and filtered out.</p>
+        </div>
+        <div class="tutorial-card">
+          <span class="step-badge">3</span>
+          <h3>Flash Safely</h3>
+          <p>Confirm the drive selection and start the write. A real-time progress bar shows write speeds and byte verification.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing / Free vs Pro Comparison -->
+    <section class="container section" id="pricing" style="border-top: 1px solid var(--border-subtle);">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Clear &amp; Fair Pricing</p>
+          <h2>Free vs. Lifetime PRO</h2>
+        </div>
+        <p>Use it free forever. Upgrade once if you need heavy-duty power features.</p>
+      </div>
+
+      <div class="compare-container">
+        <!-- Free Card -->
+        <div class="compare-card">
+          <p class="compare-badge">FREE FOREVER</p>
+          <h3>Standard Edition</h3>
+          <p class="compare-price">$0 <span>no expiration</span></p>
+          <p style="color:var(--text-secondary);font-size:14px;margin-bottom:18px;">Full ISO and raw IMG disk writing to USB drives, drive safety filters, and post-write verification.</p>
+          <ul class="plan-features">
+            <li>100% offline file processing</li>
+            <li>No recurring subscription</li>
+            <li>Clean Windows 11 Fluent interface</li>
+            <li>No watermarks or cloud lock-in</li>
+          </ul>
+          <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/UsbFlasher_Setup_v1.0.3.exe" class="btn btn-fluent-secondary" style="margin-top:auto;">Download Free (.exe)</a>
+        </div>
+
+        <!-- Pro Card -->
+        <div class="compare-card pro">
+          <p class="compare-badge">OPTIONAL LIFETIME UPGRADE</p>
+          <h3>PRO Edition</h3>
+          <p class="compare-price">$3.99 <span>one-time payment</span></p>
+          <p style="color:var(--text-secondary);font-size:14px;margin-bottom:18px;">Full physical drive backup mode to clone USB disks into raw .IMG files, plus upgrade banner removal.</p>
+          <ul class="plan-features">
+            <li>Clone USB drives to .IMG files</li><li>Backup Raspberry Pi SD cards</li><li>Remove upgrade banner</li><li>Lifetime license</li>
+          </ul>
+          <a href="https://scsoftware.gumroad.com/l/sc-usb-flasher" target="_blank" rel="noopener" class="btn btn-fluent-primary" style="margin-top:auto;">
+            Get Lifetime PRO Key ($3.99) <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container section faq-section" id="faq" style="border-top: 1px solid var(--border-subtle);">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Answers</p>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        
+        <details>
+          <summary>Can USB Flasher accidentally overwrite my C: drive?</summary>
+          <p>No. USB Flasher queries Windows storage management APIs and strictly filters out non-removable physical drives (such as your internal boot SSD). Only confirmed removable USB storage devices are presented in the drive selector.</p>
+        </details>
+        <details>
+          <summary>What operating system images are supported?</summary>
+          <p>You can flash standard bootable Linux distributions (Ubuntu, Debian, Fedora, Arch), Windows installation ISOs, and raw disk images for single-board computers like Raspberry Pi.</p>
+        </details>
+        <details>
+          <summary>How does Drive Backup mode work?</summary>
+          <p>In PRO mode, you can select any connected USB drive or microSD card and clone its raw partition structure and data into a single .IMG file on your computer for safekeeping.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Cross-Promotion Strip -->
+    <section class="container" style="padding-bottom: 70px;">
+      <div class="cross-suite-strip">
+        <div class="cross-suite-copy">
+          <h3>Part of the SC Utility Suite</h3>
+          <p>Looking for other native Windows desktop tools? Explore the other 6 privacy-first utilities in our family:</p>
+          <div class="other-apps-nav">
+            <a href="heic-to-jpg.html" class="other-app-chip"><img src="assets/icons/HeicStudio.png" width="14" height="14" alt=""> HEIC Studio</a><a href="duplicate-finder.html" class="other-app-chip"><img src="assets/icons/DupScrub.png" width="14" height="14" alt=""> Dup Scrub</a><a href="video-trimmer.html" class="other-app-chip"><img src="assets/icons/MediaTrim.png" width="14" height="14" alt=""> Media Trim</a><a href="screen-recorder.html" class="other-app-chip"><img src="assets/icons/ScreenLens.png" width="14" height="14" alt=""> Screen Lens</a><a href="pdf-tools.html" class="other-app-chip"><img src="assets/icons/PdfKnife.png" width="14" height="14" alt=""> PDF Knife</a><a href="archive-extractor.html" class="other-app-chip"><img src="assets/icons/ArchiveUnpacker.png" width="14" height="14" alt=""> Archive Unpacker</a>
+          </div>
+        </div>
+        <div>
+          <a href="index.html" class="btn btn-fluent-primary" style="white-space:nowrap;">View Full Suite <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="favicon-32x32.png" width="24" height="24" alt="">
+          <span>SC Utility Suite</span>
+        </a>
+        <p>Practical desktop utilities for Windows 10 &amp; 11.</p>
+        <p class="copyright">© 2026 SC Software · Developed by Martin Wright</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#applications">All 7 Apps</a>
+        <a href="https://github.com/sc-software-tools/sc-utility-suite-dist" target="_blank" rel="noopener">GitHub</a>
+        <a href="LICENSE">Licence</a>
+        <a href="mailto:sc-developer@outlook.com">Contact</a>
+      </nav>
+    </div>
+    <p class="container trademark-note">Windows and Microsoft Store are trademarks of Microsoft Corporation.</p>
+  </footer>
+
+  <!-- Privacy-friendly analytics & automatic download tracking -->
+  <script data-goatcounter="https://sc-software.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a');
+      if (!a || !window.goatcounter || !window.goatcounter.count) return;
+      var href = a.getAttribute('href');
+      if (!href) return;
+      if (href.endsWith('.exe') || href.endsWith('.zip')) {
+        var filename = href.split('/').pop();
+        window.goatcounter.count({
+          path: 'download/' + filename,
+          title: 'Download: ' + filename,
+          event: true
+        });
+      } else if (href.indexOf('apps.microsoft.com') !== -1) {
+        window.goatcounter.count({
+          path: 'store/outbound',
+          title: 'Store Link Click',
+          event: true
+        });
+      }
+    });
+  </script>
+</body>
+</html>
