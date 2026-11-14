@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>SC Utility Suite Releases &amp; Updates</title>
+  <subtitle>Practical, privacy-first desktop utilities for Windows 10 &amp; 11</subtitle>
+  <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/feed.xml" rel="self"/>
+  <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/"/>
+  <updated>2026-11-14T16:00:00Z</updated>
+  <id>https://sc-software-tools.github.io/sc-utility-suite-dist/</id>
+  <author>
+    <name>SC Software</name>
+    <email>sc-developer@outlook.com</email>
+    <uri>https://sc-software-tools.github.io/sc-utility-suite-dist/</uri>
+  </author>
+
+  <entry>
+    <title>SC Utility Suite 1.0.3 Release &amp; Dedicated Landing Hubs</title>
+    <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/#release-v1.0.3</id>
+    <updated>2026-11-14T16:00:00Z</updated>
+    <summary>Updated production release across all 7 utilities with verified Microsoft Store integration, offline processing engines, and performance enhancements.</summary>
+  </entry>
+
+  <entry>
+    <title>HEIC Studio: Free Offline Apple HEIC to JPG Converter</title>
+    <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/heic-to-jpg.html"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/heic-to-jpg.html#v1.0.3</id>
+    <updated>2026-11-14T16:00:00Z</updated>
+    <summary>Convert Apple iPhone HEIC, WebP, and AVIF photos to standard JPG and PNG locally on Windows 10 and 11 without cloud uploads.</summary>
+  </entry>
+
+  <entry>
+    <title>Dup Scrub: Safe Duplicate File Finder with 3-Stage Verification</title>
+    <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/duplicate-finder.html"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/duplicate-finder.html#v1.0.3</id>
+    <updated>2026-11-14T16:00:00Z</updated>
+    <summary>Find and clean identical duplicate files safely with 3-stage cryptographic SHA-256 matching and Windows Recycle Bin safety integration.</summary>
+  </entry>
+
+  <entry>
+    <title>Media Trim 1.0.4: Fast Offline Video Trimmer &amp; Batch Converter</title>
+    <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/video-trimmer.html"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/video-trimmer.html#v1.0.4</id>
+    <updated>2026-11-14T16:00:00Z</updated>
+    <summary>Lossless video trimming, audio track extraction, and high-performance batch conversions using bundled FFmpeg.</summary>
+  </entry>
+
+  <entry>
+    <title>Screen Lens: Lightweight 60 FPS Screen Recorder &amp; GIF Maker</title>
+    <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/screen-recorder.html"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/screen-recorder.html#v1.0.3</id>
+    <updated>2026-11-14T16:00:00Z</updated>
+    <summary>Record desktop regions up to 60 FPS and create animated GIFs cleanly without OBS complexity or watermarks.</summary>
+  </entry>
+
+  <entry>
+    <title>PDF Knife: Offline PDF Merger, Range Extractor &amp; Page Splitter</title>
+    <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/pdf-tools.html"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/pdf-tools.html#v1.0.3</id>
+    <updated>2026-11-14T16:00:00Z</updated>
+    <summary>Merge PDFs, extract custom page ranges, and burst documents into single pages 100% locally on your computer.</summary>
+  </entry>
+
+  <entry>
+    <title>Archive Unpacker: Modern Fluent RAR, 7z &amp; ZIP Archive Manager</title>
+    <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/archive-extractor.html"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/archive-extractor.html#v1.0.3</id>
+    <updated>2026-11-14T16:00:00Z</updated>
+    <summary>Extract RAR, 7z, ZIP, and TAR archives on Windows 11 with context menu integration and zero trial nag popups.</summary>
+  </entry>
+
+  <entry>
+    <title>USB Flasher: Safe Bootable ISO Writer &amp; Flash Drive Imager</title>
+    <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/usb-imager.html"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/usb-imager.html#v1.0.3</id>
+    <updated>2026-11-14T16:00:00Z</updated>
+    <summary>Write bootable Linux ISOs, Windows installation media, and raw DD disk images safely with strict internal drive isolation.</summary>
+  </entry>
+</feed>
