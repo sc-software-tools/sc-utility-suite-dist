@@ -81,4 +81,46 @@
       <image:title>USB Flasher - Safe Bootable ISO USB Flasher and Disk Imager</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/pad-heic-studio.xml</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/pad-dup-scrub.xml</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/pad-media-trim.xml</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/pad-screen-lens.xml</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/pad-pdf-knife.xml</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/pad-archive-unpacker.xml</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sc-software-tools.github.io/sc-utility-suite-dist/pad-usb-flasher.xml</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

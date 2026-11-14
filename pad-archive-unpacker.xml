@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>SC Software PAD Generator</MASTER_PAD_EDITOR>
+    <MASTER_PAD_DATE>11/14/2026</MASTER_PAD_DATE>
+  </MASTER_PAD_VERSION_INFO>
+  <Company_Info>
+    <Company_Name>SC Software</Company_Name>
+    <Address_1>United Kingdom</Address_1>
+    <Country>United Kingdom</Country>
+    <Company_WebSite_URL>https://sc-software-tools.github.io/sc-utility-suite-dist/</Company_WebSite_URL>
+    <Contact_Info>
+      <Author_First_Name>Martin</Author_First_Name>
+      <Author_Last_Name>Wright</Author_Last_Name>
+      <Author_Email>sc-developer@outlook.com</Author_Email>
+      <Contact_First_Name>Martin</Contact_First_Name>
+      <Contact_Last_Name>Wright</Contact_Last_Name>
+      <Contact_Email>sc-developer@outlook.com</Contact_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Support_Email>sc-developer@outlook.com</Support_Email>
+      <Support_URL>https://github.com/sc-software-tools/sc-utility-suite-dist/issues</Support_URL>
+    </Support_Info>
+  </Company_Info>
+  <Program_Info>
+    <Program_Name>Archive Unpacker</Program_Name>
+    <Program_Version>1.0.3</Program_Version>
+    <Program_Release_Month>11</Program_Release_Month>
+    <Program_Release_Day>14</Program_Release_Day>
+    <Program_Release_Year>2026</Program_Release_Year>
+    <Program_Cost_Dollars>3.99</Program_Cost_Dollars>
+    <Program_Cost_Other_Code>USD</Program_Cost_Other_Code>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>Minor Update</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>Win10, Win11, Win64</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Change_Info>Enhanced performance, balanced Fluent design, updated offline engines.</Program_Change_Info>
+    <Program_Category_Class>System Utilities :: Archivers & Extraction</Program_Category_Class>
+    <File_Info>
+      <File_Size_Bytes>67800000</File_Size_Bytes>
+      <File_Size_K>66210</File_Size_K>
+      <File_Size_MB>64</File_Size_MB>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+    </Expire_Info>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>Archive Unpacker, windows 11 utilities, offline tools, sc software, freeware, lifetime license</Keywords>
+      <Char_Desc_45>Modern Windows 11 archive extractor for RAR, </Char_Desc_45>
+      <Char_Desc_80>Modern Windows 11 archive extractor for RAR, 7z, ZIP and TAR without nag screens</Char_Desc_80>
+      <Char_Desc_250>Modern Windows 11 archive extractor for RAR, 7z, ZIP and TAR without nag screens.</Char_Desc_250>
+      <Char_Desc_2000>Archive Unpacker decompress RAR, 7z, ZIP, TAR, GZ, and BZ2 archives with a sleek Fluent interface. Inspect archive trees before extracting and use native File Explorer right-click context menu integration.</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://sc-software-tools.github.io/sc-utility-suite-dist/archive-extractor.html</Application_Info_URL>
+      <Application_Order_URL>https://scsoftware.gumroad.com/l/sc-archive-unpacker</Application_Order_URL>
+      <Application_Screenshot_URL>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/screenshots/ArchiveUnpacker.png</Application_Screenshot_URL>
+      <Application_Icon_URL>https://sc-software-tools.github.io/sc-utility-suite-dist/assets/icons/ArchiveUnpacker.png</Application_Icon_URL>
+      <Application_XML_File_URL>https://sc-software-tools.github.io/sc-utility-suite-dist/pad-archive-unpacker.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/ArchiveUnpacker_Setup_v1.0.3.exe</Primary_Download_URL>
+      <Secondary_Download_URL>https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/ArchiveUnpacker_v1.0.3_Portable.zip</Secondary_Download_URL>
+    </Download_URLs>
+  </Web_Info>
+</XML_DIZ_INFO>

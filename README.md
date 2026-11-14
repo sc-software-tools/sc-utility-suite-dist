@@ -6,7 +6,7 @@ This repository is the official binary distribution hub and showcase website for
 
 ## Applications
 
-| Application | Description | Microsoft Store | Standalone (.exe) | Portable (.zip) |
+| Application | Product Guide & Features | Description | Microsoft Store | Direct Downloads |
 | :--- | :--- | :--- | :--- | :--- |
 | **Archive Unpacker** | Multi-format archive extraction & inspection | [Store Listing](https://apps.microsoft.com/detail/9NXS3LDTBRX8) | [Setup](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/ArchiveUnpacker_Setup_v1.0.3.exe) | [Portable](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/ArchiveUnpacker_v1.0.3_Portable.zip) |
 | **Dup Scrub** | High-speed duplicate file cleaner | [Store Listing](https://apps.microsoft.com/detail/9NL51TH9QR3M) | [Setup](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/DupScrub_Setup_v1.0.3.exe) | [Portable](https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/DupScrub_v1.0.3_Portable.zip) |

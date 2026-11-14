@@ -1,0 +1,60 @@
+# SC Utility Suite
+
+> Practical, privacy-first desktop utilities for Windows 10 and Windows 11. 100% offline local processing, zero telemetry, no recurring subscriptions, and native Fluent Design interfaces.
+
+Official Website: https://sc-software-tools.github.io/sc-utility-suite-dist/
+GitHub Repository: https://github.com/sc-software-tools/sc-utility-suite-dist
+Developer: SC Software (Martin Wright)
+Supported OS: Windows 10 (64-bit), Windows 11 (64-bit)
+License: Free editions forever, optional lifetime PRO upgrades ($3.99 per app)
+
+## Applications in the Suite
+
+### HEIC Studio (Photo & Image Utilities)
+- Purpose: Converts Apple iPhone and iPad HEIC, HEIF, WebP, and AVIF photos to standard JPG or lossless PNG without uploading private photos to online converters.
+- Key Features: 100% offline local conversion, multi-format decoding, quality and compression sliders, drag-and-drop folder processing.
+- Pricing: Standard Edition is free forever. PRO Edition is a $3.99 one-time payment for unlimited batch processing of 100+ photos.
+- Product Guide: https://sc-software-tools.github.io/sc-utility-suite-dist/heic-to-jpg.html
+- Microsoft Store: https://apps.microsoft.com/detail/9N4F9K6G90HK
+
+### Dup Scrub (Storage & Disk Optimization)
+- Purpose: Safely locates and removes duplicate files, identical photos, and duplicate downloads to reclaim SSD and hard drive storage.
+- Key Features: Rigorous 3-stage verification (file size, sampled header check, full SHA-256 cryptographic hash), Windows Recycle Bin safety integration (deleted files can be restored), side-by-side review.
+- Pricing: Standard Edition is free forever for manual cleaning. PRO Edition ($3.99 one-time) adds 1-click automated group selection (keep newest or oldest) across hundreds of duplicate clusters.
+- Product Guide: https://sc-software-tools.github.io/sc-utility-suite-dist/duplicate-finder.html
+- Microsoft Store: https://apps.microsoft.com/detail/9NL51TH9QR3M
+
+### Media Trim (Video & Audio Utilities)
+- Purpose: Quick offline video cutting, audio track extraction, and format conversion using a bundled, verified FFmpeg engine.
+- Key Features: Fast lossless trimming, MP4/WebM/MP3/AAC encoding, zero cloud uploads, clean Fluent UI.
+- Pricing: Standard Edition is free forever for single-file editing. PRO Edition ($3.99 one-time) adds a batch queue to transcode dozens of video/audio files in sequence.
+- Product Guide: https://sc-software-tools.github.io/sc-utility-suite-dist/video-trimmer.html
+- Microsoft Store: https://apps.microsoft.com/detail/9PC1HVN60QBP
+
+### Screen Lens (Screen Capture & GIF Recording)
+- Purpose: Lightweight desktop screen recorder and animated GIF maker without the complexity or weight of OBS Studio.
+- Key Features: Custom region selection, audio capture, GIF generation with automatic palette optimization, watermark-free recordings.
+- Pricing: Standard Edition is free forever up to 30 FPS. PRO Edition ($3.99 one-time) enables 60 FPS smooth capture and unlimited recording duration.
+- Product Guide: https://sc-software-tools.github.io/sc-utility-suite-dist/screen-recorder.html
+- Microsoft Store: https://apps.microsoft.com/detail/9N7V2FVFL4BN
+
+### PDF Knife (Offline Document Utilities)
+- Purpose: Fast local PDF operations without uploading sensitive legal, financial, or personal documents to web services.
+- Key Features: Split PDFs, merge multiple documents into one, extract specific page ranges, burst documents into single pages, visual document inspection.
+- Pricing: Standard Edition is free forever for merging up to 2 documents and extracting single ranges. PRO Edition ($3.99 one-time) unlocks unlimited multi-document merging and full page bursting.
+- Product Guide: https://sc-software-tools.github.io/sc-utility-suite-dist/pdf-tools.html
+- Microsoft Store: https://apps.microsoft.com/detail/9NQLSS021G6T
+
+### Archive Unpacker (Modern File Extraction)
+- Purpose: Clean, modern Windows 11 archive extractor for RAR, 7z, ZIP, and TAR archives without WinRAR trial expiration nag dialogs or obsolete 90s interfaces.
+- Key Features: Unified extraction engine for .rar, .7z, .zip, .tar, .gz, .bz2, inspect archive contents before extraction, File Explorer context menu integration.
+- Pricing: Standard Edition is free forever for standard decompression. PRO Edition ($3.99 one-time) adds multi-archive batch extraction and TAR.GZ archive creation.
+- Product Guide: https://sc-software-tools.github.io/sc-utility-suite-dist/archive-extractor.html
+- Microsoft Store: https://apps.microsoft.com/detail/9NXS3LDTBRX8
+
+### USB Flasher (Safe Disk Imager & OS Writer)
+- Purpose: Safely flashes bootable Linux ISOs, Windows media, and raw DD disk images (.img, .bin) to removable USB flash drives.
+- Key Features: Strict physical drive isolation that hides internal NVMe, SATA, and boot SSDs to prevent accidental formatting, post-write hardware verification.
+- Pricing: Standard Edition is free forever for ISO and IMG writing. PRO Edition ($3.99 one-time) adds Drive Backup Mode to clone physical USB thumb drives and Raspberry Pi microSD cards into raw .IMG files.
+- Product Guide: https://sc-software-tools.github.io/sc-utility-suite-dist/usb-imager.html
+- Microsoft Store: https://apps.microsoft.com/detail/9P9NBFS7PMJB

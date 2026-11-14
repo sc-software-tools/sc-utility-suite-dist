@@ -1,0 +1,5 @@
+Contact: mailto:sc-developer@outlook.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://sc-software-tools.github.io/sc-utility-suite-dist/.well-known/security.txt
+Policy: https://github.com/sc-software-tools/sc-utility-suite-dist/blob/main/SECURITY.md
