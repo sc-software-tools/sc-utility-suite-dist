@@ -1,0 +1,43 @@
+name: Feature Request
+description: Suggest an idea or enhancement for SC Utility Suite.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: We welcome practical feature suggestions that maintain our fast, offline, and lightweight focus!
+  - type: dropdown
+    id: application
+    attributes:
+      label: Target Application
+      options:
+        - Archive Unpacker
+        - Dup Scrub
+        - HEIC Studio
+        - Media Trim
+        - PDF Knife
+        - Screen Lens
+        - USB Flasher
+        - Whole Suite / Shared Features
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Workflow Gap
+      description: Is your feature request related to a specific problem or workflow?
+      placeholder: I frequently need to... and currently it requires...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution or new feature you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions Considered
+      description: Any alternative options or workarounds you have considered?

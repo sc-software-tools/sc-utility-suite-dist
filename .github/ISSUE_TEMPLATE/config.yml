@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Microsoft Store Reviews & Feedback
+    url: https://apps.microsoft.com/detail/9N4F9K6G90HK
+    about: Leave feedback or reviews directly on the Microsoft Store
+  - name: Direct Developer Contact
+    url: mailto:sc-developer@outlook.com
+    about: Email the developer directly for commercial inquiries or private support

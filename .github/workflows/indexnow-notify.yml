@@ -1,0 +1,31 @@
+name: IndexNow Search Engine Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping IndexNow API
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "sc-software-tools.github.io",
+              "key": "c4e8a1f39b7d2e5a8c1f0d3b6a9e2f4a",
+              "keyLocation": "https://sc-software-tools.github.io/sc-utility-suite-dist/c4e8a1f39b7d2e5a8c1f0d3b6a9e2f4a.txt",
+              "urlList": [
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/heic-to-jpg.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/duplicate-finder.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/video-trimmer.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/screen-recorder.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/pdf-tools.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/archive-extractor.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/usb-imager.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/feed.xml"
+              ]
+            }'
