@@ -442,6 +442,46 @@
       </div>
     </div>
 
+    <!-- Commercial Licensing Panel (Gumroad + Store Add-ons) -->
+    <div class="panel">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 4px;">
+        <h3 class="panel-title" style="margin-bottom: 0;">Commercial Upgrades &amp; Direct Web Sales ($3.99 PRO)</h3>
+        <span class="badge-live"><span class="badge-live-dot"></span> Gumroad API Active</span>
+      </div>
+      <p class="panel-sub">Live telemetry from Gumroad REST API &middot; Tracks direct checkout sales and revenue.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px;">
+        <div style="background: #1E1E22; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 18px;">
+          <div style="font-size: 0.78rem; color: #A1A1AA; text-transform: uppercase; font-weight: 600; margin-bottom: 6px;">Gumroad Web Sales</div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #FFFFFF;" id="gumroad-total-sales">0</div>
+          <div style="font-size: 0.8rem; color: #34D399; margin-top: 4px;" id="gumroad-total-rev">$0.00 Gross Revenue</div>
+        </div>
+        <div style="background: #1E1E22; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 18px;">
+          <div style="font-size: 0.78rem; color: #A1A1AA; text-transform: uppercase; font-weight: 600; margin-bottom: 6px;">Microsoft Store In-App Upgrades</div>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #FFFFFF;" id="store-inapp-total-sales">0</div>
+          <div style="font-size: 0.8rem; color: #34D399; margin-top: 4px;" id="store-inapp-total-rev">$0.00 Gross Revenue</div>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="stat-table">
+          <thead>
+            <tr>
+              <th>Commercial Product</th>
+              <th>Platform</th>
+              <th>Price</th>
+              <th>Units Sold</th>
+              <th>Revenue (USD)</th>
+              <th>Listing</th>
+            </tr>
+          </thead>
+          <tbody id="gumroad-table-body">
+            <tr><td colspan="6" style="text-align: center; color: #A1A1AA; padding: 24px;">Loading commercial sales data...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <!-- Binary Download Matrix Table -->
     <div class="panel">
       <h3 class="panel-title">Binary Downloads Breakdown (GitHub Release v1.0.1)</h3>
@@ -640,17 +680,46 @@
       storeInstallsTotal = data.summary.total_installs || 0;
       document.getElementById("metric-store-installs-card").innerText = storeInstallsTotal;
       document.getElementById("metric-store-acquisitions").innerText = data.summary.total_acquisitions || 0;
-      document.getElementById("metric-store-inapp").innerText = data.summary.total_inapp_purchases || 0;
       
-      var inappRev = data.summary.total_inapp_revenue_usd || 0.0;
-      if (inappRev > 0) {
-        document.getElementById("metric-store-inapp-sub").innerText = "$" + inappRev.toFixed(2) + " Revenue ($3.99 PRO)";
+      // Calculate Combined PRO Upgrades (Store + Gumroad)
+      var storeInAppSales = data.summary.total_inapp_purchases || 0;
+      var storeInAppRev = data.summary.total_inapp_revenue_usd || 0.0;
+      var gumroadSales = (data.gumroad && data.gumroad.total_sales) ? data.gumroad.total_sales : 0;
+      var gumroadRev = (data.gumroad && data.gumroad.total_revenue_usd) ? data.gumroad.total_revenue_usd : 0.0;
+      
+      var totalUpgradesSold = storeInAppSales + gumroadSales;
+      var totalUpgradesRev = storeInAppRev + gumroadRev;
+      
+      document.getElementById("metric-store-inapp").innerText = totalUpgradesSold;
+      if (totalUpgradesRev > 0) {
+        document.getElementById("metric-store-inapp-sub").innerText = "$" + totalUpgradesRev.toFixed(2) + " Revenue (Store + Gumroad)";
       } else {
-        document.getElementById("metric-store-inapp-sub").innerText = "$3.99 Lifetime License";
+        document.getElementById("metric-store-inapp-sub").innerText = "$3.99 PRO Upgrades";
       }
 
       document.getElementById("metric-store-crashes").innerText = data.summary.total_crashes || 0;
       updateCombinedTotals();
+
+      // Render Commercial Licensing Panel
+      document.getElementById("gumroad-total-sales").innerText = gumroadSales;
+      document.getElementById("gumroad-total-rev").innerText = "$" + gumroadRev.toFixed(2) + " Gross Revenue";
+      document.getElementById("store-inapp-total-sales").innerText = storeInAppSales;
+      document.getElementById("store-inapp-total-rev").innerText = "$" + storeInAppRev.toFixed(2) + " Gross Revenue";
+
+      var gTbody = document.getElementById("gumroad-table-body");
+      gTbody.innerHTML = "";
+      if (data.gumroad && data.gumroad.products) {
+        data.gumroad.products.forEach(function(prod) {
+          var tr = document.createElement("tr");
+          tr.innerHTML = "<td><strong>" + prod.name + "</strong></td>" +
+                         "<td><span style='color: #F43F5E; font-weight: 600;'>Gumroad Web</span></td>" +
+                         "<td>" + (prod.price || "$3.99") + "</td>" +
+                         "<td>" + prod.sales + "</td>" +
+                         "<td>$" + (prod.revenue_usd || 0).toFixed(2) + "</td>" +
+                         "<td><a href='https://scsoftware.gumroad.com' target='_blank' style='color: #38BDF8; text-decoration: none;'>View Listing &nearr;</a></td>";
+          gTbody.appendChild(tr);
+        });
+      }
 
       // Render Store Apps Table
       var tbody = document.getElementById("store-table-body");
