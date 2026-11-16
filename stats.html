@@ -147,6 +147,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      text-decoration: none;
     }
 
     .dash-pill-btn:hover {
@@ -258,11 +259,6 @@
       background: rgba(255, 255, 255, 0.02);
     }
 
-    .stat-table td:last-child {
-      font-weight: 700;
-      color: #38BDF8;
-    }
-
     .bar-container {
       width: 100%;
       background: rgba(255, 255, 255, 0.06);
@@ -293,6 +289,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+      text-decoration: none;
       transition: border-color 0.15s ease;
     }
 
@@ -344,7 +341,7 @@
     <div class="dash-topbar">
       <div class="dash-header-title">
         <img src="favicon-32x32.png" width="28" height="28" alt="SC">
-        <h1>Ecosystem Metrics &middot; Release v1.0.1</h1>
+        <h1>Ecosystem Metrics &middot; Live Command Center</h1>
       </div>
       <div class="dash-header-actions">
         <button class="dash-pill-btn" onclick="fetchData()">
@@ -362,24 +359,78 @@
     <!-- Summary Metrics -->
     <div class="stat-cards-grid">
       <div class="metric-card">
-        <div class="metric-label">Total Downloads</div>
+        <div class="metric-label">GitHub Downloads</div>
         <div class="metric-val" id="metric-total-downloads">--</div>
-        <div class="metric-sub">Across all 16 installer &amp; zip assets</div>
+        <div class="metric-sub">Installers &amp; Portable Zips</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">Microsoft Store</div>
-        <div class="metric-val">6 / 7 Live</div>
-        <div class="metric-sub"><span class="badge-live"><span class="badge-live-dot"></span> 1 Final Publishing (USB Flasher)</span></div>
+        <div class="metric-label">Store Acquisitions</div>
+        <div class="metric-val" id="metric-store-acquisitions">--</div>
+        <div class="metric-sub"><span class="badge-live"><span class="badge-live-dot"></span> <span id="metric-store-installs">--</span> Verified Installs</span></div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">Winget Catalog</div>
-        <div class="metric-val">8 / 8 Pass</div>
-        <div class="metric-sub">Validation-Completed &middot; PR review</div>
+        <div class="metric-label">Global Markets</div>
+        <div class="metric-val" id="metric-store-markets">--</div>
+        <div class="metric-sub">Organic across 4 Continents</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">Release Version</div>
-        <div class="metric-val">v1.0.1</div>
-        <div class="metric-sub">PE 1.0.1.0 &middot; 64-bit Architecture</div>
+        <div class="metric-label">Store Crash Rate</div>
+        <div class="metric-val" id="metric-store-health" style="color: #34D399;">0%</div>
+        <div class="metric-sub"><span id="metric-store-crashes">0</span> Reported Failures</div>
+      </div>
+    </div>
+
+    <!-- Microsoft Store Ecosystem Table -->
+    <div class="panel">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 4px;">
+        <h3 class="panel-title" style="margin-bottom: 0;">Microsoft Store Telemetry (Direct Partner Center API)</h3>
+        <span class="badge-live"><span class="badge-live-dot"></span> Automated 4-Hour Sync</span>
+      </div>
+      <p class="panel-sub">Programmatic telemetry from Microsoft Entra ID. Last updated: <strong id="store-last-updated" style="color: #38BDF8;">Updating...</strong></p>
+      
+      <div style="overflow-x: auto; margin-bottom: 24px;">
+        <table class="stat-table">
+          <thead>
+            <tr>
+              <th>Application Package</th>
+              <th>Product ID</th>
+              <th>Acquisitions</th>
+              <th>Successful Installs</th>
+              <th>Crash Hits</th>
+              <th>Store Status</th>
+            </tr>
+          </thead>
+          <tbody id="store-table-body">
+            <tr><td colspan="6" style="text-align: center; color: #A1A1AA; padding: 24px;">Fetching live Store analytics...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Two-column grid for Markets and OS -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+        
+        <!-- Geographic Distribution -->
+        <div style="background: #1E1E22; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 18px;">
+          <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFFFFF; margin-bottom: 12px; display: flex; justify-content: space-between;">
+            <span>Geographic Distribution (Markets)</span>
+            <span style="font-size: 0.78rem; color: #A1A1AA;" id="market-total-badge">--</span>
+          </h4>
+          <div id="markets-list" style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="color: #71717A; font-size: 0.82rem;">Loading market telemetry...</div>
+          </div>
+        </div>
+
+        <!-- Operating System Breakdown -->
+        <div style="background: #1E1E22; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 18px;">
+          <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFFFFF; margin-bottom: 12px; display: flex; justify-content: space-between;">
+            <span>Operating System Adoption</span>
+            <span style="font-size: 0.78rem; color: #A1A1AA;" id="os-total-badge">--</span>
+          </h4>
+          <div id="os-list" style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="color: #71717A; font-size: 0.82rem;">Loading OS telemetry...</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -470,6 +521,11 @@
     }
 
     function fetchData() {
+      fetchGitHubReleases();
+      fetchStoreStats();
+    }
+
+    function fetchGitHubReleases() {
       var url = "https://api.github.com/repos/sc-software-tools/sc-utility-suite-dist/releases?nocache=" + new Date().getTime();
       fetch(url, { cache: "no-store", headers: { "Accept": "application/vnd.github.v3+json" } })
         .then(function(res) { return res.json(); })
@@ -479,7 +535,7 @@
           releases.forEach(function(rel) {
             if (rel.assets) allAssets = allAssets.concat(rel.assets);
           });
-          renderMetrics(allAssets);
+          renderGitHubMetrics(allAssets);
         })
         .catch(function(err) {
           console.error("Failed to fetch release assets", err);
@@ -497,7 +553,7 @@
       { name: "USB Flasher", exe: ["UsbFlasher_Setup_v1.0.1.exe"], zip: ["UsbFlasher_v1.0.1_Portable.zip"] }
     ];
 
-    function renderMetrics(assets) {
+    function renderGitHubMetrics(assets) {
       var counts = {};
       var totalDownloads = 0;
 
@@ -539,6 +595,78 @@
                          "<div class='bar-container'><div class='bar-fill' style='width: " + pct + "%;'></div></div>" +
                        "</td>";
         tbody.appendChild(tr);
+      });
+    }
+
+    function fetchStoreStats() {
+      var url = "store-stats.json?nocache=" + new Date().getTime();
+      fetch(url, { cache: "no-store" })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          renderStoreMetrics(data);
+        })
+        .catch(function(err) {
+          console.error("Failed to load store stats", err);
+          document.getElementById("store-last-updated").innerText = "Unavailable";
+        });
+    }
+
+    function renderStoreMetrics(data) {
+      if (!data) return;
+      document.getElementById("store-last-updated").innerText = data.last_updated || "Recently";
+      document.getElementById("metric-store-acquisitions").innerText = data.summary.total_acquisitions || 0;
+      document.getElementById("metric-store-installs").innerText = (data.summary.total_installs || 0) + " Verified Installs";
+      document.getElementById("metric-store-markets").innerText = (data.markets ? data.markets.length : 0) + " Countries";
+      document.getElementById("metric-store-crashes").innerText = data.summary.total_crashes || 0;
+
+      // Render Store Apps Table
+      var tbody = document.getElementById("store-table-body");
+      tbody.innerHTML = "";
+      var apps = data.apps || [];
+      apps.forEach(function(app) {
+        var tr = document.createElement("tr");
+        var statusHtml = app.product_id === "9P9NBFS7PMJB"
+          ? "<span style='color: #FBBF24; font-size: 0.76rem; font-weight: 600;'>In Review</span>"
+          : "<span class='badge-live'><span class='badge-live-dot'></span> Live</span>";
+        tr.innerHTML = "<td><strong>" + app.name + "</strong></td>" +
+                       "<td><code>" + app.product_id + "</code></td>" +
+                       "<td><strong>" + app.acquisitions + "</strong></td>" +
+                       "<td>" + app.installs + "</td>" +
+                       "<td>" + (app.crashes > 0 ? "<span style='color: #F87171; font-weight: 700;'>" + app.crashes + "</span>" : "<span style='color: #34D399;'>0</span>") + "</td>" +
+                       "<td>" + statusHtml + "</td>";
+        tbody.appendChild(tr);
+      });
+
+      // Render Markets
+      var mList = document.getElementById("markets-list");
+      mList.innerHTML = "";
+      var markets = data.markets || [];
+      var maxMarket = markets.length > 0 ? markets[0].count : 1;
+      document.getElementById("market-total-badge").innerText = markets.length + " markets active";
+      markets.forEach(function(m) {
+        var pct = maxMarket > 0 ? Math.round((m.count / maxMarket) * 100) : 0;
+        var item = document.createElement("div");
+        item.innerHTML = "<div style='display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;'>" +
+                         "<span><strong>" + m.country + "</strong> <span style='color: #71717A;'>(" + m.code + ")</span></span>" +
+                         "<span style='color: #38BDF8; font-weight: 600;'>" + m.count + " install" + (m.count > 1 ? "s" : "") + "</span>" +
+                         "</div>" +
+                         "<div class='bar-container'><div class='bar-fill' style='width: " + pct + "%;'></div></div>";
+        mList.appendChild(item);
+      });
+
+      // Render OS
+      var osList = document.getElementById("os-list");
+      osList.innerHTML = "";
+      var osData = data.os_breakdown || [];
+      document.getElementById("os-total-badge").innerText = data.summary.total_installs + " installs";
+      osData.forEach(function(o) {
+        var item = document.createElement("div");
+        item.innerHTML = "<div style='display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;'>" +
+                         "<span><strong>" + o.os + "</strong></span>" +
+                         "<span style='color: #38BDF8; font-weight: 600;'>" + o.count + " (" + o.percent + "%)</span>" +
+                         "</div>" +
+                         "<div class='bar-container'><div class='bar-fill' style='width: " + o.percent + "%;'></div></div>";
+        osList.appendChild(item);
       });
     }
 

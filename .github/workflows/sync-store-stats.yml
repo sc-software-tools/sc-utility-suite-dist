@@ -1,0 +1,39 @@
+name: Sync Microsoft Store Analytics
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Runs every 4 hours automatically
+  workflow_dispatch:        # Allows manual one-click trigger anytime
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Sync Store Analytics
+        env:
+          MSSTORE_TENANT_ID: ${{ secrets.MSSTORE_TENANT_ID }}
+          MSSTORE_CLIENT_ID: ${{ secrets.MSSTORE_CLIENT_ID }}
+          MSSTORE_CLIENT_SECRET: ${{ secrets.MSSTORE_CLIENT_SECRET }}
+        run: python scripts/sync_store_stats.py
+
+      - name: Commit and Push if Changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add store-stats.json
+          git diff-index --quiet HEAD || (git commit -m "Auto-sync Microsoft Store analytics [skip ci]" && git push)

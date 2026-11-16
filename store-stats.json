@@ -1,0 +1,125 @@
+{
+  "last_updated": "2026-11-16 11:58:14 UTC",
+  "date_range": "2026-08-18 to 2026-11-16",
+  "summary": {
+    "total_acquisitions": 11,
+    "total_installs": 10,
+    "total_crashes": 0,
+    "apps_tracked": 7
+  },
+  "apps": [
+    {
+      "name": "Archive Unpacker",
+      "product_id": "9NXS3LDTBRX8",
+      "acquisitions": 4,
+      "installs": 3,
+      "crashes": 0
+    },
+    {
+      "name": "Dup Scrub",
+      "product_id": "9NL51TH9QR3M",
+      "acquisitions": 0,
+      "installs": 0,
+      "crashes": 0
+    },
+    {
+      "name": "HEIC Studio",
+      "product_id": "9N4F9K6G90HK",
+      "acquisitions": 2,
+      "installs": 4,
+      "crashes": 0
+    },
+    {
+      "name": "Media Trim",
+      "product_id": "9PC1HVN60QBP",
+      "acquisitions": 2,
+      "installs": 2,
+      "crashes": 0
+    },
+    {
+      "name": "PDF Knife",
+      "product_id": "9NQLSS021G6T",
+      "acquisitions": 3,
+      "installs": 1,
+      "crashes": 0
+    },
+    {
+      "name": "Screen Lens",
+      "product_id": "9N7V2FVFL4BN",
+      "acquisitions": 0,
+      "installs": 0,
+      "crashes": 0
+    },
+    {
+      "name": "USB Flasher",
+      "product_id": "9P9NBFS7PMJB",
+      "acquisitions": 0,
+      "installs": 0,
+      "crashes": 0
+    }
+  ],
+  "markets": [
+    {
+      "code": "RU",
+      "country": "Russia",
+      "count": 1
+    },
+    {
+      "code": "TN",
+      "country": "Tunisia",
+      "count": 1
+    },
+    {
+      "code": "US",
+      "country": "United States",
+      "count": 1
+    },
+    {
+      "code": "AZ",
+      "country": "Azerbaijan",
+      "count": 1
+    },
+    {
+      "code": "JP",
+      "country": "Japan",
+      "count": 1
+    },
+    {
+      "code": "NL",
+      "country": "Netherlands",
+      "count": 1
+    },
+    {
+      "code": "TW",
+      "country": "Taiwan",
+      "count": 1
+    },
+    {
+      "code": "BA",
+      "country": "Bosnia and Herzegovina",
+      "count": 1
+    },
+    {
+      "code": "KH",
+      "country": "Cambodia",
+      "count": 1
+    },
+    {
+      "code": "GB",
+      "country": "United Kingdom",
+      "count": 1
+    }
+  ],
+  "os_breakdown": [
+    {
+      "os": "Windows 11",
+      "count": 9,
+      "percent": 90.0
+    },
+    {
+      "os": "Windows 10",
+      "count": 1,
+      "percent": 10.0
+    }
+  ]
+}
