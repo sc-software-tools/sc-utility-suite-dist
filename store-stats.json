@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-11-16 12:38:53 UTC",
+  "last_updated": "2026-11-16 23:54:55 UTC",
   "date_range": "2026-08-18 to 2026-11-16",
   "summary": {
-    "total_acquisitions": 11,
+    "total_acquisitions": 12,
     "total_installs": 10,
     "total_crashes": 0,
     "total_inapp_purchases": 0,
-    "total_inapp_revenue_usd": 0.0,
+    "total_inapp_revenue_usd": 4.42,
     "apps_tracked": 7
   },
   "apps": [
@@ -31,10 +31,10 @@
     {
       "name": "HEIC Studio",
       "product_id": "9N4F9K6G90HK",
-      "acquisitions": 2,
+      "acquisitions": 3,
       "installs": 4,
       "inapp_purchases": 0,
-      "inapp_revenue_usd": 0,
+      "inapp_revenue_usd": 4.42,
       "crashes": 0
     },
     {
