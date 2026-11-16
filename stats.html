@@ -155,12 +155,12 @@
       color: #FFFFFF;
     }
 
-    /* Top Global Summary Cards Grid */
-    .stat-cards-grid {
+    /* Headline Metric Cards Grid */
+    .headline-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
 
     .metric-card {
@@ -172,7 +172,7 @@
     }
 
     .metric-label {
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       color: #A1A1AA;
       text-transform: uppercase;
       letter-spacing: 0.6px;
@@ -212,13 +212,13 @@
       border-radius: 50%;
     }
 
-    /* Panels & Segments */
+    /* Major Ecosystem Panels */
     .panel {
       background: #242428;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
       padding: 24px;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
@@ -232,52 +232,24 @@
     }
 
     .panel-title {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 0;
+      color: #FFFFFF;
     }
 
     .panel-sub {
       font-size: 0.84rem;
       color: #A1A1AA;
-      margin-bottom: 18px;
-    }
-
-    /* Segment Internal KPI Bar */
-    .segment-kpi-bar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 12px;
-      background: #19191D;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 8px;
-      padding: 14px 18px;
       margin-bottom: 20px;
     }
 
-    .segment-kpi-item {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .segment-kpi-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #A1A1AA;
-      font-weight: 600;
-    }
-
-    .segment-kpi-val {
-      font-size: 1.45rem;
+    /* Sub-panels inside an Ecosystem */
+    .sub-section-title {
+      font-size: 1.0rem;
       font-weight: 700;
       color: #FFFFFF;
-    }
-
-    .segment-kpi-sub {
-      font-size: 0.74rem;
-      color: #71717A;
+      margin: 24px 0 12px 0;
     }
 
     /* Tables */
@@ -324,7 +296,7 @@
 
     .ext-links-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 16px;
     }
 
@@ -356,6 +328,14 @@
     .ext-card-desc {
       font-size: 0.8rem;
       color: #A1A1AA;
+    }
+
+    @media (max-width: 960px) {
+      .headline-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 540px) {
+      .headline-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -395,87 +375,78 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- GRAND TOTALS SUMMARY BAR (Top of Page)    -->
+    <!-- GRAND TOTALS EXECUTIVE BAR (Across All)   -->
     <!-- ========================================== -->
-    <div class="stat-cards-grid">
+    <div class="headline-grid">
       
-      <!-- Grand Total Ecosystem Deliveries -->
+      <!-- 1. Total Ecosystem Installs -->
       <div class="metric-card" style="border-color: rgba(56, 189, 248, 0.35);">
         <div class="metric-label" style="color: #38BDF8;">Total Ecosystem Installs</div>
         <div class="metric-val" id="metric-combined-installs" style="color: #38BDF8;">--</div>
-        <div class="metric-sub" id="metric-combined-sub">GitHub Releases + Store Delivered</div>
+        <div class="metric-sub" id="metric-combined-sub">GitHub Downloads + Store Installs</div>
       </div>
 
-      <!-- Unique Account Licenses -->
-      <div class="metric-card">
-        <div class="metric-label">Store Acquisitions</div>
-        <div class="metric-val" id="metric-top-acquisitions">--</div>
-        <div class="metric-sub">Microsoft Accounts Claimed</div>
+      <!-- 2. Total PRO Upgrades Sold -->
+      <div class="metric-card" style="border-color: rgba(168, 85, 247, 0.35);">
+        <div class="metric-label" style="color: #C084FC;">Total Upgrades Sold</div>
+        <div class="metric-val" id="metric-top-upgrades" style="color: #C084FC;">0</div>
+        <div class="metric-sub" id="metric-top-upgrades-sub">Store Add-ons (0) + Gumroad (0)</div>
       </div>
 
-      <!-- Total Commercial Upgrades -->
-      <div class="metric-card">
-        <div class="metric-label">PRO Upgrades Sold</div>
-        <div class="metric-val" id="metric-top-upgrades">0</div>
-        <div class="metric-sub" id="metric-top-revenue">$0.00 Gross (Gumroad + Store)</div>
+      <!-- 3. Total Money Made -->
+      <div class="metric-card" style="border-color: rgba(52, 211, 153, 0.35);">
+        <div class="metric-label" style="color: #34D399;">Total Money Made</div>
+        <div class="metric-val" id="metric-top-revenue" style="color: #34D399;">$0.00</div>
+        <div class="metric-sub" id="metric-top-revenue-sub">Gross USD (Store + Gumroad)</div>
       </div>
 
-      <!-- Global Reach -->
-      <div class="metric-card">
-        <div class="metric-label">Active Global Markets</div>
-        <div class="metric-val" id="metric-top-markets">--</div>
-        <div class="metric-sub">Organic Across 4 Continents</div>
-      </div>
-
-      <!-- Fleet Stability -->
-      <div class="metric-card">
-        <div class="metric-label">System Stability</div>
-        <div class="metric-val" style="color: #34D399;">100%</div>
-        <div class="metric-sub"><span id="metric-top-crashes">0</span> Failures Across Fleet</div>
+      <!-- 4. Overall Stability -->
+      <div class="metric-card" style="border-color: rgba(34, 197, 94, 0.35);">
+        <div class="metric-label" style="color: #4ADE80;">Overall Fleet Stability</div>
+        <div class="metric-val" id="metric-top-stability" style="color: #4ADE80;">100%</div>
+        <div class="metric-sub" id="metric-top-stability-sub"><span id="metric-top-crashes">0</span> Failures Across Fleet</div>
       </div>
 
     </div>
 
     <!-- ========================================== -->
-    <!-- SEGMENT 1: MICROSOFT STORE ECOSYSTEM       -->
+    <!-- ECOSYSTEM 1: MICROSOFT STORE               -->
     <!-- ========================================== -->
     <div class="panel">
       <div class="panel-header">
-        <h3 class="panel-title">1. Microsoft Store Ecosystem</h3>
+        <h2 class="panel-title">Ecosystem 1: Microsoft Store</h2>
         <span class="badge-live"><span class="badge-live-dot"></span> Automated 4-Hour Partner Center Sync</span>
       </div>
-      <p class="panel-sub">Official Microsoft Store listings, package downloads, and crash telemetry. Last synced: <strong id="store-last-updated" style="color: #38BDF8;">Updating...</strong></p>
+      <p class="panel-sub">Official Microsoft Store listings, package deliveries, in-app add-ons, and telemetry. Last synced: <strong id="store-last-updated" style="color: #38BDF8;">Updating...</strong></p>
       
-      <!-- Segment 1 Specific KPI Sub-Bar -->
-      <div class="segment-kpi-bar">
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Store Acquisitions</div>
-          <div class="segment-kpi-val" id="seg1-acquisitions">--</div>
-          <div class="segment-kpi-sub">Account licenses claimed</div>
+      <!-- Store Segment Headline Panel (4 Cards) -->
+      <div class="headline-grid" style="margin-bottom: 24px;">
+        <div class="metric-card" style="background: #19191D;">
+          <div class="metric-label">Store Installs</div>
+          <div class="metric-val" id="seg1-installs">--</div>
+          <div class="metric-sub" id="seg1-installs-sub"><span id="seg1-acquisitions">--</span> Claimed Acquisitions</div>
         </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Device Installs</div>
-          <div class="segment-kpi-val" id="seg1-installs">--</div>
-          <div class="segment-kpi-sub">Verified Windows PC deliveries</div>
+
+        <div class="metric-card" style="background: #19191D;">
+          <div class="metric-label">Store Add-ons Sold</div>
+          <div class="metric-val" id="seg1-upgrades">0</div>
+          <div class="metric-sub">In-App PRO ($3.99)</div>
         </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Delivery Completion</div>
-          <div class="segment-kpi-val" id="seg1-rate" style="color: #34D399;">--%</div>
-          <div class="segment-kpi-sub">Install-to-acquisition ratio</div>
+
+        <div class="metric-card" style="background: #19191D;">
+          <div class="metric-label">Store Money Made</div>
+          <div class="metric-val" id="seg1-revenue" style="color: #34D399;">$0.00</div>
+          <div class="metric-sub">Gross Store IAP Revenue</div>
         </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">In-App PRO Add-ons</div>
-          <div class="segment-kpi-val" id="seg1-inapp">0</div>
-          <div class="segment-kpi-sub" id="seg1-inapp-rev">$0.00 Store Revenue</div>
-        </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Store Health</div>
-          <div class="segment-kpi-val" style="color: #34D399;">0 Crashes</div>
-          <div class="segment-kpi-sub">100% Crash-Free Run</div>
+
+        <div class="metric-card" style="background: #19191D;">
+          <div class="metric-label">Store Stability</div>
+          <div class="metric-val" id="seg1-stability" style="color: #4ADE80;">100%</div>
+          <div class="metric-sub"><span id="seg1-crashes">0</span> Reported Failures</div>
         </div>
       </div>
 
-      <!-- Segment 1 Table -->
+      <!-- Store Applications Table -->
       <div style="overflow-x: auto; margin-bottom: 24px;">
         <table class="stat-table">
           <thead>
@@ -495,7 +466,7 @@
         </table>
       </div>
 
-      <!-- Segment 1 Details: Markets & OS Breakdown -->
+      <!-- Store Markets & OS Sub-Panels -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
         
         <!-- Geographic Distribution -->
@@ -524,41 +495,45 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- SEGMENT 2: COMMERCIAL SALES & PRO LICENSES -->
+    <!-- ECOSYSTEM 2: GITHUB & GUMROAD DIRECT       -->
     <!-- ========================================== -->
     <div class="panel">
       <div class="panel-header">
-        <h3 class="panel-title">2. Commercial Upgrades &amp; Direct Sales ($3.99 PRO)</h3>
-        <span class="badge-live"><span class="badge-live-dot"></span> Gumroad REST API Connected</span>
+        <h2 class="panel-title">Ecosystem 2: GitHub Releases &amp; Gumroad Direct</h2>
+        <span class="badge-live"><span class="badge-live-dot"></span> GitHub &amp; Gumroad REST APIs Live</span>
       </div>
-      <p class="panel-sub">Monetization breakdown across Gumroad direct web checkout and Microsoft Store in-app add-ons.</p>
+      <p class="panel-sub">Direct open-source binary distributions on GitHub paired with $3.99 standalone PRO license upgrades on Gumroad.</p>
 
-      <!-- Segment 2 Specific KPI Sub-Bar -->
-      <div class="segment-kpi-bar">
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Total Commercial Sales</div>
-          <div class="segment-kpi-val" id="seg2-total-units">0</div>
-          <div class="segment-kpi-sub">Units sold across all channels</div>
+      <!-- GitHub & Gumroad Headline Panel (4 Cards) -->
+      <div class="headline-grid" style="margin-bottom: 24px;">
+        <div class="metric-card" style="background: #19191D;">
+          <div class="metric-label">GitHub Downloads</div>
+          <div class="metric-val" id="seg2-installs">--</div>
+          <div class="metric-sub" id="seg2-installs-sub">Installers &amp; Portable Archives</div>
         </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Gross Revenue (USD)</div>
-          <div class="segment-kpi-val" id="seg2-total-rev" style="color: #34D399;">$0.00</div>
-          <div class="segment-kpi-sub">Store IAPs + Gumroad Web</div>
+
+        <div class="metric-card" style="background: #19191D;">
+          <div class="metric-label">Gumroad Upgrades Sold</div>
+          <div class="metric-val" id="seg2-upgrades">0</div>
+          <div class="metric-sub">Standalone PRO Licenses ($3.99)</div>
         </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Gumroad Direct Sales</div>
-          <div class="segment-kpi-val" id="seg2-gumroad-sales">0</div>
-          <div class="segment-kpi-sub" id="seg2-gumroad-rev">$0.00 Gross</div>
+
+        <div class="metric-card" style="background: #19191D;">
+          <div class="metric-label">Gumroad Money Made</div>
+          <div class="metric-val" id="seg2-revenue" style="color: #34D399;">$0.00</div>
+          <div class="metric-sub">Gross Direct Web Revenue</div>
         </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Store In-App Purchases</div>
-          <div class="segment-kpi-val" id="seg2-store-sales">0</div>
-          <div class="segment-kpi-sub" id="seg2-store-rev">$0.00 Gross</div>
+
+        <div class="metric-card" style="background: #19191D;">
+          <div class="metric-label">Package Stability</div>
+          <div class="metric-val" id="seg2-stability" style="color: #4ADE80;">100%</div>
+          <div class="metric-sub">8 / 8 Packages Verified</div>
         </div>
       </div>
 
-      <!-- Segment 2 Table -->
-      <div style="overflow-x: auto;">
+      <!-- Gumroad Commercial Offerings Table -->
+      <div class="sub-section-title">Commercial PRO Offerings (Gumroad Direct Checkout)</div>
+      <div style="overflow-x: auto; margin-bottom: 32px;">
         <table class="stat-table">
           <thead>
             <tr>
@@ -575,43 +550,9 @@
           </tbody>
         </table>
       </div>
-    </div>
 
-    <!-- ========================================== -->
-    <!-- SEGMENT 3: GITHUB BINARY RELEASES          -->
-    <!-- ========================================== -->
-    <div class="panel">
-      <div class="panel-header">
-        <h3 class="panel-title">3. GitHub Open-Source Release Downloads</h3>
-        <span class="badge-live"><span class="badge-live-dot"></span> GitHub REST API Live</span>
-      </div>
-      <p class="panel-sub">Direct installer binaries (.exe) and portable zip archives downloaded from GitHub Releases.</p>
-
-      <!-- Segment 3 Specific KPI Sub-Bar -->
-      <div class="segment-kpi-bar">
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Total Binary Downloads</div>
-          <div class="segment-kpi-val" id="seg3-total-dl">--</div>
-          <div class="segment-kpi-sub">Across 16 release assets</div>
-        </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Setup Installers (.exe)</div>
-          <div class="segment-kpi-val" id="seg3-exe-dl">--</div>
-          <div class="segment-kpi-sub">Inno Setup packages</div>
-        </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Portable Archives (.zip)</div>
-          <div class="segment-kpi-val" id="seg3-zip-dl">--</div>
-          <div class="segment-kpi-sub">Standalone portable archives</div>
-        </div>
-        <div class="segment-kpi-item">
-          <div class="segment-kpi-label">Tracked Packages</div>
-          <div class="segment-kpi-val">8 Packages</div>
-          <div class="segment-kpi-sub">Suite All-In-One + 7 Tools</div>
-        </div>
-      </div>
-      
-      <!-- Segment 3 Table -->
+      <!-- GitHub Release Binary Matrix Table -->
+      <div class="sub-section-title">Binary Downloads Breakdown (GitHub Release v1.0.1)</div>
       <div style="overflow-x: auto;">
         <table class="stat-table">
           <thead>
@@ -628,12 +569,13 @@
           </tbody>
         </table>
       </div>
+
     </div>
 
     <!-- Quick External Portals Navigation -->
     <div class="panel">
-      <h3 class="panel-title">Ecosystem Dashboards &amp; Portals</h3>
-      <p class="panel-sub">Direct access to your official developer portals, distribution repositories, and web traffic.</p>
+      <h3 class="panel-title">Developer Dashboards &amp; Portals</h3>
+      <p class="panel-sub">Direct access to your official developer portals, distribution repositories, and web analytics.</p>
       
       <div class="ext-links-grid">
         <a href="https://partner.microsoft.com/dashboard/apps-and-games/overview" target="_blank" class="ext-card">
@@ -662,6 +604,11 @@
     var gitHubDownloadsTotal = 0;
     var storeInstallsTotal = 0;
     var storeAcquisitionsTotal = 0;
+    var storeInAppSales = 0;
+    var storeInAppRev = 0.0;
+    var gumroadSales = 0;
+    var gumroadRev = 0.0;
+    var totalFleetCrashes = 0;
 
     function checkAuth() {
       if (sessionStorage.getItem("sc_dash_auth") === "granted") {
@@ -701,9 +648,30 @@
     }
 
     function updateGrandTotals() {
+      // 1. Total Installs (GitHub + Store)
       var grandTotalInstalls = gitHubDownloadsTotal + storeInstallsTotal;
       document.getElementById("metric-combined-installs").innerText = grandTotalInstalls;
-      document.getElementById("metric-combined-sub").innerText = "GitHub (" + gitHubDownloadsTotal + ") + Store Delivered (" + storeInstallsTotal + ")";
+      document.getElementById("metric-combined-sub").innerText = "GitHub (" + gitHubDownloadsTotal + ") + Store (" + storeInstallsTotal + ")";
+
+      // 2. Total Upgrades Sold (Store Add-ons + Gumroad)
+      var grandTotalUpgrades = storeInAppSales + gumroadSales;
+      document.getElementById("metric-top-upgrades").innerText = grandTotalUpgrades;
+      document.getElementById("metric-top-upgrades-sub").innerText = "Gumroad (" + gumroadSales + ") + Store Add-ons (" + storeInAppSales + ")";
+
+      // 3. Total Money Made (Store Revenue + Gumroad Revenue)
+      var grandTotalRev = storeInAppRev + gumroadRev;
+      document.getElementById("metric-top-revenue").innerText = "$" + grandTotalRev.toFixed(2);
+      document.getElementById("metric-top-revenue-sub").innerText = "Store ($" + storeInAppRev.toFixed(2) + ") + Gumroad ($" + gumroadRev.toFixed(2) + ")";
+
+      // 4. Overall Stability
+      document.getElementById("metric-top-crashes").innerText = totalFleetCrashes;
+      if (totalFleetCrashes > 0) {
+        document.getElementById("metric-top-stability").style.color = "#F87171";
+        document.getElementById("metric-top-stability").innerText = "Issues Detected";
+      } else {
+        document.getElementById("metric-top-stability").style.color = "#4ADE80";
+        document.getElementById("metric-top-stability").innerText = "100%";
+      }
     }
 
     function fetchData() {
@@ -768,10 +736,9 @@
         if (rowTotal > maxRowTotal) maxRowTotal = rowTotal;
       });
 
-      // Update Segment 3 Sub-Bar
-      document.getElementById("seg3-total-dl").innerText = totalDownloads;
-      document.getElementById("seg3-exe-dl").innerText = totalExe;
-      document.getElementById("seg3-zip-dl").innerText = totalZip;
+      // Update Ecosystem 2 Headline Cards (GitHub side)
+      document.getElementById("seg2-installs").innerText = totalDownloads;
+      document.getElementById("seg2-installs-sub").innerText = totalExe + " Setup .exe + " + totalZip + " Portable .zip";
 
       APPS.forEach(function(app) {
         var exeCount = 0;
@@ -813,35 +780,24 @@
       
       storeInstallsTotal = data.summary.total_installs || 0;
       storeAcquisitionsTotal = data.summary.total_acquisitions || 0;
+      totalFleetCrashes = data.summary.total_crashes || 0;
       
-      // Top Grand Summary Bar Updates
-      document.getElementById("metric-top-acquisitions").innerText = storeAcquisitionsTotal;
-      document.getElementById("metric-top-markets").innerText = (data.markets ? data.markets.length : 0) + " Countries";
-      document.getElementById("metric-top-crashes").innerText = data.summary.total_crashes || 0;
-      
-      // Calculate Combined Commercial PRO Upgrades
-      var storeInAppSales = data.summary.total_inapp_purchases || 0;
-      var storeInAppRev = data.summary.total_inapp_revenue_usd || 0.0;
-      var gumroadSales = (data.gumroad && data.gumroad.total_sales) ? data.gumroad.total_sales : 0;
-      var gumroadRev = (data.gumroad && data.gumroad.total_revenue_usd) ? data.gumroad.total_revenue_usd : 0.0;
-      
-      var totalUpgradesSold = storeInAppSales + gumroadSales;
-      var totalUpgradesRev = storeInAppRev + gumroadRev;
-      
-      document.getElementById("metric-top-upgrades").innerText = totalUpgradesSold;
-      document.getElementById("metric-top-revenue").innerText = "$" + totalUpgradesRev.toFixed(2) + " Gross (Gumroad + Store)";
+      storeInAppSales = data.summary.total_inapp_purchases || 0;
+      storeInAppRev = data.summary.total_inapp_revenue_usd || 0.0;
+      gumroadSales = (data.gumroad && data.gumroad.total_sales) ? data.gumroad.total_sales : 0;
+      gumroadRev = (data.gumroad && data.gumroad.total_revenue_usd) ? data.gumroad.total_revenue_usd : 0.0;
 
       updateGrandTotals();
 
       // ==========================================
-      // SEGMENT 1 UPDATES: MICROSOFT STORE
+      // ECOSYSTEM 1 HEADLINE CARDS: MICROSOFT STORE
       // ==========================================
-      document.getElementById("seg1-acquisitions").innerText = storeAcquisitionsTotal;
       document.getElementById("seg1-installs").innerText = storeInstallsTotal;
-      var installRatio = storeAcquisitionsTotal > 0 ? ((storeInstallsTotal / storeAcquisitionsTotal) * 100).toFixed(1) : 0;
-      document.getElementById("seg1-rate").innerText = installRatio + "%";
-      document.getElementById("seg1-inapp").innerText = storeInAppSales;
-      document.getElementById("seg1-inapp-rev").innerText = "$" + storeInAppRev.toFixed(2) + " Store Revenue";
+      document.getElementById("seg1-acquisitions").innerText = storeAcquisitionsTotal;
+      document.getElementById("seg1-upgrades").innerText = storeInAppSales;
+      document.getElementById("seg1-revenue").innerText = "$" + storeInAppRev.toFixed(2);
+      document.getElementById("seg1-crashes").innerText = totalFleetCrashes;
+      document.getElementById("seg1-stability").innerText = totalFleetCrashes === 0 ? "100%" : "Issues";
 
       // Render Store Apps Table
       var tbody = document.getElementById("store-table-body");
@@ -872,7 +828,7 @@
       mList.innerHTML = "";
       var markets = data.markets || [];
       var maxMarket = markets.length > 0 ? markets[0].count : 1;
-      document.getElementById("market-total-badge").innerText = markets.length + " markets active";
+      document.getElementById("market-total-badge").innerText = markets.length + " countries active";
       markets.forEach(function(m) {
         var pct = maxMarket > 0 ? Math.round((m.count / maxMarket) * 100) : 0;
         var item = document.createElement("div");
@@ -900,14 +856,10 @@
       });
 
       // ==========================================
-      // SEGMENT 2 UPDATES: COMMERCIAL SALES
+      // ECOSYSTEM 2 HEADLINE CARDS: GUMROAD SIDE
       // ==========================================
-      document.getElementById("seg2-total-units").innerText = totalUpgradesSold;
-      document.getElementById("seg2-total-rev").innerText = "$" + totalUpgradesRev.toFixed(2);
-      document.getElementById("seg2-gumroad-sales").innerText = gumroadSales;
-      document.getElementById("seg2-gumroad-rev").innerText = "$" + gumroadRev.toFixed(2) + " Gross";
-      document.getElementById("seg2-store-sales").innerText = storeInAppSales;
-      document.getElementById("seg2-store-rev").innerText = "$" + storeInAppRev.toFixed(2) + " Gross";
+      document.getElementById("seg2-upgrades").innerText = gumroadSales;
+      document.getElementById("seg2-revenue").innerText = "$" + gumroadRev.toFixed(2);
 
       var gTbody = document.getElementById("gumroad-table-body");
       gTbody.innerHTML = "";
