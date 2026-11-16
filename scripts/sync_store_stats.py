@@ -1,5 +1,5 @@
 """
-Syncs Microsoft Store Analytics for SC Utility Suite
+Syncs Microsoft Store and Gumroad Analytics for SC Utility Suite
 Outputs store-stats.json for the GitHub Pages Command Center dashboard.
 """
 
@@ -43,12 +43,11 @@ COUNTRY_MAP = {
     "CN": "China"
 }
 
-def get_oauth_token():
+def get_msstore_token():
     tenant_id = os.environ.get("MSSTORE_TENANT_ID")
     client_id = os.environ.get("MSSTORE_CLIENT_ID")
     client_secret = os.environ.get("MSSTORE_CLIENT_SECRET")
     
-    # Fallback to local file if run locally
     if not (tenant_id and client_id and client_secret):
         local_path = r"C:\Users\Martin\Documents\SC Software Keys\msstore-analytics.json"
         if os.path.exists(local_path):
@@ -59,7 +58,7 @@ def get_oauth_token():
                 client_secret = creds.get("client_secret")
                 
     if not (tenant_id and client_id and client_secret):
-        raise ValueError("Missing MS Store API credentials in environment or local key file.")
+        raise ValueError("Missing MS Store API credentials.")
         
     token_url = f"https://login.microsoftonline.com/{tenant_id}/oauth2/token"
     payload = {
@@ -91,8 +90,50 @@ def call_api(url, headers, max_retries=4, base_delay=2.0):
             time.sleep(base_delay)
     return {"error": "Max retries exceeded"}
 
+def fetch_gumroad_stats():
+    token = os.environ.get("GUMROAD_ACCESS_TOKEN")
+    if not token:
+        local_key = r"C:\Users\Martin\Documents\SC Software Keys\gumroad-token.txt"
+        if os.path.exists(local_key):
+            with open(local_key, "r", encoding="utf-8") as f:
+                token = f.read().strip()
+                
+    if not token:
+        return {"configured": False, "total_sales": 0, "total_revenue_usd": 0.0, "products": []}
+        
+    try:
+        url = f"https://api.gumroad.com/v2/products?access_token={token}"
+        resp = requests.get(url, timeout=20)
+        if resp.status_code == 200:
+            data = resp.json()
+            products = data.get("products", [])
+            total_sales = 0
+            total_cents = 0
+            prod_list = []
+            for p in products:
+                sales = p.get("sales_count", 0)
+                cents = p.get("sales_usd_cents", 0)
+                total_sales += sales
+                total_cents += cents
+                prod_list.append({
+                    "name": p.get("name"),
+                    "sales": sales,
+                    "revenue_usd": round(cents / 100.0, 2),
+                    "price": p.get("formatted_price")
+                })
+            return {
+                "configured": True,
+                "total_sales": total_sales,
+                "total_revenue_usd": round(total_cents / 100.0, 2),
+                "products": prod_list
+            }
+        else:
+            return {"configured": False, "error": f"HTTP {resp.status_code}", "total_sales": 0, "total_revenue_usd": 0.0}
+    except Exception as e:
+        return {"configured": False, "error": str(e), "total_sales": 0, "total_revenue_usd": 0.0}
+
 def main():
-    token = get_oauth_token()
+    token = get_msstore_token()
     headers = {"Authorization": f"Bearer {token}"}
     
     end_date = datetime.utcnow().strftime("%Y-%m-%d")
@@ -101,6 +142,8 @@ def main():
     total_acquisitions = 0
     total_installs = 0
     total_crashes = 0
+    total_inapp = 0
+    total_inapp_revenue = 0.0
     
     market_counts = {}
     os_counts = {}
@@ -108,16 +151,27 @@ def main():
     
     for app_name, app_id in APPS.items():
         time.sleep(1.2)
+        # Acquisitions
         acq_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/acquisitions?applicationId={app_id}&startDate={start_date}&endDate={end_date}"
         acq_data = call_api(acq_url, headers)
         acq_count = sum(item.get("acquisitionQuantity", 0) for item in acq_data.get("Value", []))
         
         time.sleep(1.2)
+        # In-app purchases (Add-ons)
+        inapp_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId={app_id}&startDate={start_date}&endDate={end_date}"
+        inapp_data = call_api(inapp_url, headers)
+        inapp_records = inapp_data.get("Value", [])
+        inapp_count = sum(item.get("inAppAcquisitionQuantity", 0) for item in inapp_records)
+        inapp_rev = sum(item.get("purchasePriceUSDAmount", 0.0) for item in inapp_records)
+        
+        time.sleep(1.2)
+        # Failures
         fail_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId={app_id}&startDate={start_date}&endDate={end_date}"
         fail_data = call_api(fail_url, headers)
         fail_count = sum(item.get("failureCount", 0) for item in fail_data.get("Value", []))
         
         time.sleep(1.2)
+        # Installs
         inst_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/installs?applicationId={app_id}&startDate={start_date}&endDate={end_date}&groupby=market,deviceType,osVersion,packageVersion"
         inst_data = call_api(inst_url, headers)
         inst_records = inst_data.get("Value", [])
@@ -133,12 +187,16 @@ def main():
         total_acquisitions += acq_count
         total_installs += inst_count
         total_crashes += fail_count
+        total_inapp += inapp_count
+        total_inapp_revenue += inapp_rev
         
         apps_data.append({
             "name": app_name,
             "product_id": app_id,
             "acquisitions": acq_count,
             "installs": inst_count,
+            "inapp_purchases": inapp_count,
+            "inapp_revenue_usd": round(inapp_rev, 2),
             "crashes": fail_count
         })
         
@@ -158,6 +216,8 @@ def main():
             "percent": round((cnt / total_installs * 100), 1) if total_installs > 0 else 0
         })
         
+    gumroad_data = fetch_gumroad_stats()
+    
     output_payload = {
         "last_updated": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"),
         "date_range": f"{start_date} to {end_date}",
@@ -165,11 +225,14 @@ def main():
             "total_acquisitions": total_acquisitions,
             "total_installs": total_installs,
             "total_crashes": total_crashes,
+            "total_inapp_purchases": total_inapp,
+            "total_inapp_revenue_usd": round(total_inapp_revenue, 2),
             "apps_tracked": len(APPS)
         },
         "apps": apps_data,
         "markets": markets_formatted,
-        "os_breakdown": os_formatted
+        "os_breakdown": os_formatted,
+        "gumroad": gumroad_data
     }
     
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -180,7 +243,7 @@ def main():
         json.dump(output_payload, f, indent=2)
         
     print(f"Store analytics successfully synced to {out_file}")
-    print(f"Total Acquisitions: {total_acquisitions}, Total Installs: {total_installs}")
+    print(f"Acquisitions: {total_acquisitions}, Installs: {total_installs}, InApp: {total_inapp}")
 
 if __name__ == "__main__":
     main()
