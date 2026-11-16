@@ -4,7 +4,7 @@
   <subtitle>Practical, privacy-first desktop utilities for Windows 10 &amp; 11</subtitle>
   <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/feed.xml" rel="self"/>
   <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/"/>
-  <updated>2026-11-16T14:43:23Z</updated>
+  <updated>2026-11-16T17:30:05Z</updated>
   <id>https://sc-software-tools.github.io/sc-utility-suite-dist/</id>
   <author>
     <name>SC Software</name>
@@ -12,6 +12,13 @@
     <uri>https://sc-software-tools.github.io/sc-utility-suite-dist/</uri>
   </author>
 
+  <entry>
+    <title>SC Utility Suite 1.1.1: rebuilt for Windows and now on Linux</title>
+    <link href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/suite-v1.1.1"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/#release-v1.1.1</id>
+    <updated>2026-11-16T17:30:05Z</updated>
+    <summary>All seven apps rebuilt on a new cross-platform core, with Linux .deb and .tar.gz downloads alongside the Windows installers and portable ZIPs.</summary>
+  </entry>
   <entry>
     <title>SC Utility Suite 1.1.0: now on Linux</title>
     <link href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/suite-v1.1.0"/>

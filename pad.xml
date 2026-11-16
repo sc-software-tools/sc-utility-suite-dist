@@ -77,8 +77,8 @@ The suite includes:
       <Application_XML_File_URL>https://sc-software-tools.github.io/sc-utility-suite-dist/pad.xml</Application_XML_File_URL>
     </Application_URLs>
     <Download_URLs>
-      <Primary_Download_URL>https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/SC_Utility_Suite_AllInOne_Setup_v1.0.3.exe</Primary_Download_URL>
-      <Secondary_Download_URL>https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.0.3/SC_Utility_Suite_AllInOne_v1.0.3_Portable.zip</Secondary_Download_URL>
+      <Primary_Download_URL>https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.1.1/SC_Utility_Suite_AllInOne_Setup_v1.1.1.exe</Primary_Download_URL>
+      <Secondary_Download_URL>https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.1.1/SC_Utility_Suite_AllInOne_v1.1.1_Portable.zip</Secondary_Download_URL>
     </Download_URLs>
   </Web_Info>
   <Permissions>
