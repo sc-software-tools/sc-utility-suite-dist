@@ -1,8 +1,8 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
-  - name: Microsoft Store Reviews & Feedback
-    url: https://apps.microsoft.com/detail/9N4F9K6G90HK
-    about: Leave feedback or reviews directly on the Microsoft Store
-  - name: Direct Developer Contact
+  - name: Support & Help Page
+    url: https://sc-software-tools.github.io/sc-utility-suite-dist/support.html
+    about: Licensing help, troubleshooting, and bug report guidance for Windows, Linux, and Android.
+  - name: Direct Developer Email
     url: mailto:sc-developer@outlook.com
-    about: Email the developer directly for commercial inquiries or private support
+    about: Email sc-developer@outlook.com directly for licensing or private support.
