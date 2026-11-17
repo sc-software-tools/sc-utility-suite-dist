@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-16 23:54:55 UTC",
-  "date_range": "2026-08-18 to 2026-11-16",
+  "last_updated": "2026-11-17 05:26:58 UTC",
+  "date_range": "2026-08-19 to 2026-11-17",
   "summary": {
-    "total_acquisitions": 12,
+    "total_acquisitions": 13,
     "total_installs": 10,
     "total_crashes": 0,
     "total_inapp_purchases": 0,
@@ -49,7 +49,7 @@
     {
       "name": "PDF Knife",
       "product_id": "9NQLSS021G6T",
-      "acquisitions": 3,
+      "acquisitions": 4,
       "installs": 1,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0,
