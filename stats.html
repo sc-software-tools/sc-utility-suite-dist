@@ -446,7 +446,7 @@
     <div class="panel">
       <div class="panel-header">
         <h2 class="panel-title">Microsoft Store Ecosystem</h2>
-        <span class="badge-live"><span class="badge-live-dot"></span> Automated 4-Hour Partner Center Sync</span>
+        <span class="badge-live"><span class="badge-live-dot"></span> Automated Hourly Sync &middot; Live 60s Poll</span>
       </div>
       <p class="panel-sub">Official Microsoft Store listings, package deliveries, in-app add-ons, and telemetry. Last synced: <strong id="store-last-updated" style="color: #38BDF8;">Updating...</strong> <span id="store-date-range" style="color: #71717A; margin-left: 6px;"></span></p>
       
@@ -657,9 +657,19 @@
     var gumroadRev = 0.0;
     var totalFleetCrashes = 0;
     var cachedReleases = [];
+    var pollTimer = null;
     var regionNames = (typeof Intl !== "undefined" && Intl.DisplayNames)
       ? new Intl.DisplayNames(["en"], { type: "region" })
       : null;
+
+    /* AUTO_SYNC_DATA_START */
+    var EMBEDDED_STORE_DATA = {"last_updated": "2026-11-17 13:45:27 UTC", "date_range": "2026-08-19 to 2026-11-17", "summary": {"total_acquisitions": 15, "total_installs": 11, "total_crashes": 0, "total_inapp_purchases": 1, "total_inapp_revenue_usd": 4.42, "apps_tracked": 7}, "apps": [{"name": "Archive Unpacker", "product_id": "9NXS3LDTBRX8", "acquisitions": 4, "installs": 3, "inapp_purchases": 0, "inapp_revenue_usd": 0, "crashes": 0}, {"name": "Dup Scrub", "product_id": "9NL51TH9QR3M", "acquisitions": 1, "installs": 0, "inapp_purchases": 0, "inapp_revenue_usd": 0, "crashes": 0}, {"name": "HEIC Studio", "product_id": "9N4F9K6G90HK", "acquisitions": 3, "installs": 5, "inapp_purchases": 1, "inapp_revenue_usd": 4.42, "crashes": 0}, {"name": "Media Trim", "product_id": "9PC1HVN60QBP", "acquisitions": 2, "installs": 2, "inapp_purchases": 0, "inapp_revenue_usd": 0, "crashes": 0}, {"name": "PDF Knife", "product_id": "9NQLSS021G6T", "acquisitions": 5, "installs": 1, "inapp_purchases": 0, "inapp_revenue_usd": 0, "crashes": 0}, {"name": "Screen Lens", "product_id": "9N7V2FVFL4BN", "acquisitions": 0, "installs": 0, "inapp_purchases": 0, "inapp_revenue_usd": 0, "crashes": 0}, {"name": "USB Flasher", "product_id": "9P9NBFS7PMJB", "acquisitions": 0, "installs": 0, "inapp_purchases": 0, "inapp_revenue_usd": 0, "crashes": 0}], "sales_history": [{"source": "Microsoft Store", "app": "HEIC Studio", "product_id": "9N4F9K6G90HK", "addon_name": "HEIC Studio PRO (Lifetime)", "addon_id": "", "date": "2026-11-16", "market": "Store", "country": "Microsoft Store", "quantity": 1, "revenue_usd": 4.42, "os": ""}], "markets": [{"code": "RU", "country": "Russia", "count": 1}, {"code": "TN", "country": "Tunisia", "count": 1}, {"code": "US", "country": "United States", "count": 1}, {"code": "AZ", "country": "Azerbaijan", "count": 1}, {"code": "JP", "country": "Japan", "count": 1}, {"code": "NL", "country": "Netherlands", "count": 1}, {"code": "NO", "country": "NO", "count": 1}, {"code": "TW", "country": "Taiwan", "count": 1}, {"code": "BA", "country": "Bosnia and Herzegovina", "count": 1}, {"code": "KH", "country": "Cambodia", "count": 1}, {"code": "GB", "country": "United Kingdom", "count": 1}], "os_breakdown": [{"os": "Windows 11", "count": 10, "percent": 90.9}, {"os": "Windows 10", "count": 1, "percent": 9.1}], "gumroad": {"configured": true, "total_sales": 0, "total_revenue_usd": 0.0, "products": [{"name": "USB Flasher PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Screen Lens PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "PDF Knife PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Media Trim PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "HEIC Studio PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Dup Scrub PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Archive Unpacker PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}], "recent_sales": []}};
+    /* AUTO_SYNC_DATA_END */
+
+    function startAutoPoll() {
+      if (pollTimer) clearInterval(pollTimer);
+      pollTimer = setInterval(fetchData, 60000);
+    }
 
     function resolveCountryName(code, fallback) {
       if (!code || code.length !== 2) return fallback || code || "Global";
@@ -676,6 +686,7 @@
         document.getElementById("lock-screen").style.display = "none";
         document.getElementById("dash-shell").style.display = "block";
         fetchData();
+        startAutoPoll();
       }
     }
 
@@ -687,6 +698,7 @@
         document.getElementById("dash-shell").style.display = "block";
         document.getElementById("pin-error").style.display = "none";
         fetchData();
+        startAutoPoll();
       } else {
         document.getElementById("pin-error").style.display = "block";
         document.getElementById("pin-input").value = "";
@@ -701,6 +713,7 @@
     });
 
     function lockOut() {
+      if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
       sessionStorage.removeItem("sc_dash_auth");
       document.getElementById("lock-screen").style.display = "flex";
       document.getElementById("dash-shell").style.display = "none";
@@ -889,15 +902,33 @@
     }
 
     function fetchStoreStats() {
-      var url = "store-stats.json?nocache=" + new Date().getTime();
-      fetch(url, { cache: "no-store" })
-        .then(function(res) { return res.json(); })
+      // Immediately render embedded snapshot so adblockers or CDN lag never leave the board empty
+      if (typeof EMBEDDED_STORE_DATA !== "undefined" && EMBEDDED_STORE_DATA) {
+        try { renderStoreMetrics(EMBEDDED_STORE_DATA); } catch (e) { console.error(e); }
+      }
+      var ts = new Date().getTime();
+      var rawUrl = "https://raw.githubusercontent.com/sc-software-tools/sc-utility-suite-dist/main/ecosystem-data.json?t=" + ts;
+      var localUrl = "ecosystem-data.json?t=" + ts;
+      fetch(rawUrl, { cache: "no-store" })
+        .then(function(res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.json();
+        })
         .then(function(data) {
           renderStoreMetrics(data);
         })
-        .catch(function(err) {
-          console.error("Failed to load store stats", err);
-          document.getElementById("store-last-updated").innerText = "Unavailable";
+        .catch(function() {
+          fetch(localUrl, { cache: "no-store" })
+            .then(function(res) {
+              if (!res.ok) throw new Error("HTTP " + res.status);
+              return res.json();
+            })
+            .then(function(data) {
+              renderStoreMetrics(data);
+            })
+            .catch(function(err) {
+              console.warn("Live fetch fallback to embedded store data:", err);
+            });
         });
     }
 

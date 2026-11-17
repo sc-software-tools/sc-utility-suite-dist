@@ -297,12 +297,28 @@ def main():
     
     script_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = os.path.abspath(os.path.join(script_dir, ".."))
-    out_file = os.path.join(root_dir, "store-stats.json")
-    
-    with open(out_file, "w", encoding="utf-8") as f:
-        json.dump(output_payload, f, indent=2)
+    for fname in ("store-stats.json", "ecosystem-data.json"):
+        out_file = os.path.join(root_dir, fname)
+        with open(out_file, "w", encoding="utf-8") as f:
+            json.dump(output_payload, f, indent=2)
+
+    stats_html_path = os.path.join(root_dir, "stats.html")
+    if os.path.exists(stats_html_path):
+        import re
+        with open(stats_html_path, "r", encoding="utf-8") as f:
+            html_text = f.read()
+        embedded_js = "/* AUTO_SYNC_DATA_START */\n    var EMBEDDED_STORE_DATA = " + json.dumps(output_payload) + ";\n    /* AUTO_SYNC_DATA_END */"
+        html_text_new = re.sub(
+            r"/\* AUTO_SYNC_DATA_START \*/[\s\S]*?/\* AUTO_SYNC_DATA_END \*/",
+            lambda _: embedded_js,
+            html_text,
+            count=1
+        )
+        if html_text_new != html_text:
+            with open(stats_html_path, "w", encoding="utf-8") as f:
+                f.write(html_text_new)
         
-    print(f"Store analytics successfully synced to {out_file}")
+    print(f"Store analytics successfully synced to store-stats.json, ecosystem-data.json, and stats.html")
     print(f"Acquisitions: {total_acquisitions}, Installs: {total_installs}, InApp: {total_inapp}")
 
 if __name__ == "__main__":

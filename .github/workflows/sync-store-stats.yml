@@ -2,7 +2,7 @@ name: Sync Microsoft Store Analytics
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Runs every 4 hours automatically
+    - cron: '0 * * * *'  # Runs every hour automatically
   workflow_dispatch:        # Allows manual one-click trigger anytime
 
 permissions:
@@ -36,5 +36,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add store-stats.json
-          git diff-index --quiet HEAD || (git commit -m "Auto-sync Microsoft Store analytics [skip ci]" && git push)
+          git add store-stats.json ecosystem-data.json stats.html
+          git diff-index --quiet HEAD || (git pull --rebase --autostash && git commit -m "Auto-sync Microsoft Store and Gumroad analytics" && git push)
