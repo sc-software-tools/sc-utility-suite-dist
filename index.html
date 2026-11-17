@@ -238,13 +238,13 @@
               <span id="window-title" class="fluent-titlebar-text">Archive Unpacker</span>
               <span id="window-tag" class="fluent-titlebar-badge">Files &amp; folders</span>
             </div>
-            <div class="fluent-titlebar-controls" aria-hidden="true">
+            <div class="stage-mode-toggle" role="group" aria-label="Stage view"><button type="button" class="stage-mode-btn active" data-stage-mode="img">Preview</button><button type="button" class="stage-mode-btn" data-stage-mode="vid">&#9654; Live Video</button></div><div class="fluent-titlebar-controls" aria-hidden="true">
               <span class="fluent-win-btn" title="Minimize">&minus;</span>
               <span class="fluent-win-btn" title="Maximize">&#9633;</span>
               <span class="fluent-win-btn close" title="Close">&#10005;</span>
             </div>
           </div>
-          <div class="fluent-screen">
+          <div class="fluent-screen"><div id="stage-video-wrap" hidden style="position:relative;padding-bottom:59%;height:0;overflow:hidden;background:#0b0f17;"><iframe id="stage-video-iframe" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
             <a class="preview-link" id="showcase-preview-link" href="assets/previews/ArchiveUnpacker.png" data-preview="Archive Unpacker" target="_blank" rel="noopener" aria-label="Enlarge Archive Unpacker preview">
               <img id="showcase-img" src="assets/previews/ArchiveUnpacker.png" width="980" height="580" alt="Archive Unpacker desktop interface" fetchpriority="high">
             </a>
@@ -269,6 +269,32 @@
       <div><span class="trust-icon" aria-hidden="true">∞</span><p><strong>One payment, when it suits you.</strong><span>Optional lifetime Pro upgrades. No recurring fees.</span></p></div>
     </div></div>
 
+    <div class="tech-marquee-wrap" aria-hidden="true">
+      <div class="tech-marquee-track">
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>100% Local Processing</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>.NET 10 Native Performance</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>Windows 11 · Linux · Android</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>Bundled FFmpeg Engine</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>Zero Cloud Uploads</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>One-Time Lifetime PRO</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>Wayland &amp; PipeWire Ready</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>100% Local Processing</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>.NET 10 Native Performance</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>Windows 11 · Linux · Android</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>Bundled FFmpeg Engine</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>Zero Cloud Uploads</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>One-Time Lifetime PRO</span>
+        <span class="tech-marquee-item"><span class="tech-marquee-dot"></span>Wayland &amp; PipeWire Ready</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="stats-pulse-grid reveal-up">
+        <div class="stat-pulse-card"><div class="stat-pulse-num" data-count="7">7</div><div class="stat-pulse-lbl">Focused Desktop &amp; Mobile Apps</div></div>
+        <div class="stat-pulse-card"><div class="stat-pulse-num" data-count="3">3</div><div class="stat-pulse-lbl">OS Platforms (Win, Linux, Android)</div></div>
+        <div class="stat-pulse-card"><div class="stat-pulse-num" data-count="21">21</div><div class="stat-pulse-lbl">Video Demos, Shorts &amp; Guides</div></div>
+        <div class="stat-pulse-card"><div class="stat-pulse-num" data-count="0">0</div><div class="stat-pulse-lbl">Files Uploaded to Any Cloud</div></div>
+      </div>
+    </div>
     <section class="section container" id="applications" aria-labelledby="apps-title">
       <div class="section-heading"><div><p class="eyebrow">YOUR EVERYDAY TOOLBOX</p><h2 id="apps-title">Small tools. Jobs well done.</h2></div><p>Pick the one you need.<br>Each app works on its own.</p></div>
       <nav class="app-shortcuts" aria-label="Choose an application">
@@ -279,8 +305,13 @@
 <a href="#pdf-knife"><img src="assets/icons/PdfKnife.png" width="22" height="22" alt="">PDF Knife</a>
 <a href="#screen-lens"><img src="assets/icons/ScreenLens.png" width="22" height="22" alt="">Screen Lens</a>
 <a href="#usb-flasher"><img src="assets/icons/UsbFlasher.png" width="22" height="22" alt="">USB Flasher</a>
-</nav><div class="apps-grid">
-<article class="fluent-app-card" id="archive-unpacker" aria-labelledby="title-archive-unpacker">
+</nav><div class="filter-pills" role="group" aria-label="Filter applications by category">
+        <button type="button" class="filter-pill active" data-filter="all">All 7 Apps</button>
+        <button type="button" class="filter-pill" data-filter="media">Photos, Video &amp; Recording</button>
+        <button type="button" class="filter-pill" data-filter="files">PDF &amp; Archives</button>
+        <button type="button" class="filter-pill" data-filter="system">Storage &amp; USB Drives</button>
+      </div><div class="apps-grid">
+<article class="fluent-app-card reveal-up" data-cat="files" id="archive-unpacker" aria-labelledby="title-archive-unpacker">
       <div class="card-top"><a href="archive-extractor.html" class="app-icon-link" title="View Archive Unpacker guide and features"><img src="assets/icons/ArchiveUnpacker.png" width="48" height="48" alt="" class="app-icon"></a><div><p class="app-category">Files &amp; folders</p><h3 id="title-archive-unpacker"><a href="archive-extractor.html" class="app-title-link" title="View Archive Unpacker guide and features">Archive Unpacker</a></h3></div></div>
       <p class="app-benefit">Open compressed files without the fuss.</p><p class="app-description">Extract ZIP, RAR, 7Z and more in a few clicks. Browse an archive before choosing where to unpack it.</p>
       <a class="app-screenshot-frame preview-link" href="assets/previews/ArchiveUnpacker.png" data-preview="Archive Unpacker" target="_blank" rel="noopener" aria-label="View app: Archive Unpacker (enlarge preview)"><img src="assets/previews/ArchiveUnpacker.png" width="980" height="580" alt="Archive Unpacker desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
@@ -289,7 +320,7 @@
       <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NXS3LDTBRX8" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="archive-extractor.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="Archive Unpacker" data-trailer="ZyScf7TUhJM" data-short="gPr1moco9fs" data-howto="NXEhLqc0k2E">&#9654; Watch Video</button><a href="#download-archive-unpacker" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
-<article class="fluent-app-card" id="dup-scrub" aria-labelledby="title-dup-scrub">
+<article class="fluent-app-card reveal-up" data-cat="system" id="dup-scrub" aria-labelledby="title-dup-scrub">
       <div class="card-top"><a href="duplicate-finder.html" class="app-icon-link" title="View Dup Scrub guide and features"><img src="assets/icons/DupScrub.png" width="48" height="48" alt="" class="app-icon"></a><div><p class="app-category">Storage</p><h3 id="title-dup-scrub"><a href="duplicate-finder.html" class="app-title-link" title="View Dup Scrub guide and features">Dup Scrub</a></h3></div></div>
       <p class="app-benefit">Make room for the files you want.</p><p class="app-description">Find duplicate files, review the unwanted copies and reclaim storage with Recycle Bin cleanup.</p>
       <a class="app-screenshot-frame preview-link" href="assets/previews/DupScrub.png" data-preview="Dup Scrub" target="_blank" rel="noopener" aria-label="View app: Dup Scrub (enlarge preview)"><img src="assets/previews/DupScrub.png" width="980" height="580" alt="Dup Scrub desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
@@ -298,7 +329,7 @@
       <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NL51TH9QR3M" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="duplicate-finder.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="Dup Scrub" data-trailer="B2i0ye9X4G4" data-short="kp342Z-HX4w" data-howto="5P9yvJciUSo">&#9654; Watch Video</button><a href="#download-dup-scrub" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
-<article class="fluent-app-card" id="heic-studio" aria-labelledby="title-heic-studio">
+<article class="fluent-app-card reveal-up" data-cat="media" id="heic-studio" aria-labelledby="title-heic-studio">
       <div class="card-top"><a href="heic-to-jpg.html" class="app-icon-link" title="View HEIC Studio guide and features"><img src="assets/icons/HeicStudio.png" width="48" height="48" alt="" class="app-icon"></a><div><p class="app-category">Photos</p><h3 id="title-heic-studio"><a href="heic-to-jpg.html" class="app-title-link" title="View HEIC Studio guide and features">HEIC Studio</a></h3></div></div>
       <p class="app-benefit">Your iPhone photos. In a format that works.</p><p class="app-description">Turn HEIC, WebP and AVIF images into everyday formats, privately on your PC.</p>
       <a class="app-screenshot-frame preview-link" href="assets/previews/HeicStudio.png" data-preview="HEIC Studio" target="_blank" rel="noopener" aria-label="View app: HEIC Studio (enlarge preview)"><img src="assets/previews/HeicStudio.png" width="980" height="580" alt="HEIC Studio desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
@@ -307,7 +338,7 @@
       <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9N4F9K6G90HK" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="heic-to-jpg.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="HEIC Studio" data-trailer="ROld8b81A5Q" data-short="5U0EqbCI2GE" data-howto="tuaWcBls3Sg">&#9654; Watch Video</button><a href="#download-heic-studio" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
-<article class="fluent-app-card" id="media-trim" aria-labelledby="title-media-trim">
+<article class="fluent-app-card reveal-up" data-cat="media" id="media-trim" aria-labelledby="title-media-trim">
       <div class="card-top"><a href="video-trimmer.html" class="app-icon-link" title="View Media Trim guide and features"><img src="assets/icons/MediaTrim.png" width="48" height="48" alt="" class="app-icon"></a><div><p class="app-category">Video &amp; audio</p><h3 id="title-media-trim"><a href="video-trimmer.html" class="app-title-link" title="View Media Trim guide and features">Media Trim</a></h3></div></div>
       <p class="app-benefit">Keep the part you need. Leave the rest.</p><p class="app-description">Trim videos, convert media and extract audio without uploading your files anywhere.</p>
       <a class="app-screenshot-frame preview-link" href="assets/previews/MediaTrim.png" data-preview="Media Trim" target="_blank" rel="noopener" aria-label="View app: Media Trim (enlarge preview)"><img src="assets/previews/MediaTrim.png" width="980" height="580" alt="Media Trim desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
@@ -316,7 +347,7 @@
       <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9PC1HVN60QBP" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="video-trimmer.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="Media Trim" data-trailer="y_Cted3elow" data-short="QE6QzP195PE" data-howto="mU8Ov3AE9JY">&#9654; Watch Video</button><a href="#download-media-trim" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
-<article class="fluent-app-card" id="pdf-knife" aria-labelledby="title-pdf-knife">
+<article class="fluent-app-card reveal-up" data-cat="files" id="pdf-knife" aria-labelledby="title-pdf-knife">
       <div class="card-top"><a href="pdf-tools.html" class="app-icon-link" title="View PDF Knife guide and features"><img src="assets/icons/PdfKnife.png" width="48" height="48" alt="" class="app-icon"></a><div><p class="app-category">Documents</p><h3 id="title-pdf-knife"><a href="pdf-tools.html" class="app-title-link" title="View PDF Knife guide and features">PDF Knife</a></h3></div></div>
       <p class="app-benefit">Bring your PDFs into order.</p><p class="app-description">Combine documents or pull out the pages you need. No uploads, no watermarks, no unnecessary steps.</p>
       <a class="app-screenshot-frame preview-link" href="assets/previews/PdfKnife.png" data-preview="PDF Knife" target="_blank" rel="noopener" aria-label="View app: PDF Knife (enlarge preview)"><img src="assets/previews/PdfKnife.png" width="980" height="580" alt="PDF Knife desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
@@ -325,7 +356,7 @@
       <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NQLSS021G6T" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="pdf-tools.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="PDF Knife" data-trailer="ymDUY4EcBzs" data-short="sqULGx948nY" data-howto="Wz0xmJ_0htk">&#9654; Watch Video</button><a href="#download-pdf-knife" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
-<article class="fluent-app-card" id="screen-lens" aria-labelledby="title-screen-lens">
+<article class="fluent-app-card reveal-up" data-cat="media" id="screen-lens" aria-labelledby="title-screen-lens">
       <div class="card-top"><a href="screen-recorder.html" class="app-icon-link" title="View Screen Lens guide and features"><img src="assets/icons/ScreenLens.png" width="48" height="48" alt="" class="app-icon"></a><div><p class="app-category">Screen recording</p><h3 id="title-screen-lens"><a href="screen-recorder.html" class="app-title-link" title="View Screen Lens guide and features">Screen Lens</a></h3></div></div>
       <p class="app-benefit">Show it. Record it. Share it.</p><p class="app-description">Capture a how-to, explain a problem or make a GIF, with recording controls always within reach.</p>
       <a class="app-screenshot-frame preview-link" href="assets/previews/ScreenLens.png" data-preview="Screen Lens" target="_blank" rel="noopener" aria-label="View app: Screen Lens (enlarge preview)"><img src="assets/previews/ScreenLens.png" width="980" height="580" alt="Screen Lens desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
@@ -334,7 +365,7 @@
       <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9N7V2FVFL4BN" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="screen-recorder.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="Screen Lens" data-trailer="-GRiY58d5eo" data-short="sKfmMZEzvUw" data-howto="9YatbRnOjpA">&#9654; Watch Video</button><a href="#download-screen-lens" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
-<article class="fluent-app-card" id="usb-flasher" aria-labelledby="title-usb-flasher">
+<article class="fluent-app-card reveal-up" data-cat="system" id="usb-flasher" aria-labelledby="title-usb-flasher">
       <div class="card-top"><a href="usb-imager.html" class="app-icon-link" title="View USB Flasher guide and features"><img src="assets/icons/UsbFlasher.png" width="48" height="48" alt="" class="app-icon"></a><div><p class="app-category">USB drives</p><h3 id="title-usb-flasher"><a href="usb-imager.html" class="app-title-link" title="View USB Flasher guide and features">USB Flasher</a></h3></div></div>
       <p class="app-benefit">A clearer path to your next bootable USB.</p><p class="app-description">Choose an image and USB drive, then follow the write progress with verification and built-in safety checks.</p>
       <a class="app-screenshot-frame preview-link" href="assets/previews/UsbFlasher.png" data-preview="USB Flasher" target="_blank" rel="noopener" aria-label="View app: USB Flasher (enlarge preview)"><img src="assets/previews/UsbFlasher.png" width="980" height="580" alt="USB Flasher desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
@@ -372,6 +403,84 @@
       <details><summary>Where can I get help?</summary><p>For questions or a problem with an app, email <a href="mailto:sc-developer@outlook.com">sc-developer@outlook.com</a>. Include the app name, what you were doing and any error message. Please avoid sending private files.</p></details>
     </div></section>
 
+        <section class="section container video-reel-strip reveal-up" id="video-showcase" aria-labelledby="reel-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">21 PUBLIC VIDEO GUIDES</p><h2 id="reel-title">Watch every app in action</h2></div>
+        <p>Click any app below to watch its Official Trailer, 60-second Short, or How-To Walkthrough.</p>
+      </div>
+      <div class="video-reel-grid">
+        <button type="button" class="reel-card watch-demo-btn" data-app-name="Archive Unpacker" data-trailer="ZyScf7TUhJM" data-short="gPr1moco9fs" data-howto="NXEhLqc0k2E">
+          <div class="reel-thumb">
+            <img src="assets/gumroad-covers/ArchiveUnpacker.png" alt="Archive Unpacker video showcase" loading="lazy">
+            <div class="reel-play-badge"><span class="reel-play-circle">&#9654;</span></div>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-title">Archive Unpacker</span>
+            <span class="reel-tag">ZIP · RAR · 7Z · TAR</span>
+          </div>
+        </button>
+        <button type="button" class="reel-card watch-demo-btn" data-app-name="Dup Scrub" data-trailer="B2i0ye9X4G4" data-short="kp342Z-HX4w" data-howto="5P9yvJciUSo">
+          <div class="reel-thumb">
+            <img src="assets/gumroad-covers/DupScrub.png" alt="Dup Scrub video showcase" loading="lazy">
+            <div class="reel-play-badge"><span class="reel-play-circle">&#9654;</span></div>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-title">Dup Scrub</span>
+            <span class="reel-tag">3-Stage XxHash64</span>
+          </div>
+        </button>
+        <button type="button" class="reel-card watch-demo-btn" data-app-name="HEIC Studio" data-trailer="ROld8b81A5Q" data-short="5U0EqbCI2GE" data-howto="tuaWcBls3Sg">
+          <div class="reel-thumb">
+            <img src="assets/gumroad-covers/HeicStudio.png" alt="HEIC Studio video showcase" loading="lazy">
+            <div class="reel-play-badge"><span class="reel-play-circle">&#9654;</span></div>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-title">HEIC Studio</span>
+            <span class="reel-tag">HEIC · AVIF · WebP</span>
+          </div>
+        </button>
+        <button type="button" class="reel-card watch-demo-btn" data-app-name="Media Trim" data-trailer="y_Cted3elow" data-short="QE6QzP195PE" data-howto="mU8Ov3AE9JY">
+          <div class="reel-thumb">
+            <img src="assets/gumroad-covers/MediaTrim.png" alt="Media Trim video showcase" loading="lazy">
+            <div class="reel-play-badge"><span class="reel-play-circle">&#9654;</span></div>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-title">Media Trim</span>
+            <span class="reel-tag">FFmpeg · Lossless Cut</span>
+          </div>
+        </button>
+        <button type="button" class="reel-card watch-demo-btn" data-app-name="PDF Knife" data-trailer="ymDUY4EcBzs" data-short="sqULGx948nY" data-howto="Wz0xmJ_0htk">
+          <div class="reel-thumb">
+            <img src="assets/gumroad-covers/PdfKnife.png" alt="PDF Knife video showcase" loading="lazy">
+            <div class="reel-play-badge"><span class="reel-play-circle">&#9654;</span></div>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-title">PDF Knife</span>
+            <span class="reel-tag">Merge · Split · Burst</span>
+          </div>
+        </button>
+        <button type="button" class="reel-card watch-demo-btn" data-app-name="Screen Lens" data-trailer="-GRiY58d5eo" data-short="sKfmMZEzvUw" data-howto="9YatbRnOjpA">
+          <div class="reel-thumb">
+            <img src="assets/gumroad-covers/ScreenLens.png" alt="Screen Lens video showcase" loading="lazy">
+            <div class="reel-play-badge"><span class="reel-play-circle">&#9654;</span></div>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-title">Screen Lens</span>
+            <span class="reel-tag">60 FPS · MP4 · GIF</span>
+          </div>
+        </button>
+        <button type="button" class="reel-card watch-demo-btn" data-app-name="USB Flasher" data-trailer="SDGugV7kNp4" data-short="cPwYQwpFAec" data-howto="3VMdgwPXPT0">
+          <div class="reel-thumb">
+            <img src="assets/gumroad-covers/UsbFlasher.png" alt="USB Flasher video showcase" loading="lazy">
+            <div class="reel-play-badge"><span class="reel-play-circle">&#9654;</span></div>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-title">USB Flasher</span>
+            <span class="reel-tag">Bootable ISO · IMG</span>
+          </div>
+        </button>
+      </div>
+    </section>
     <section class="section container download-section" id="download-matrix" aria-labelledby="download-title"><div class="section-heading"><div><p class="eyebrow">YOUR PREFERRED WAY TO INSTALL</p><h2 id="download-title">Downloads &amp; release details</h2></div><p>Individual installers and portable ZIPs.<br>Release v1.1.2 for Windows x64 and Linux x64 (.deb for Ubuntu/Debian, .tar.gz for any distro).</p></div>
       <p class="download-intro">All seven apps are available in Microsoft Store. Prefer a standalone installer or portable ZIP? Choose your download below.</p>
       <div class="matrix-container" role="region" aria-label="Download choices for all applications" tabindex="0"><table class="fluent-table"><caption class="sr-only">Standalone installers, portable downloads and submitted Winget package identifiers</caption><thead><tr><th scope="col">Application</th><th scope="col">Windows installer</th><th scope="col">Portable</th><th scope="col">Linux</th><th scope="col">Setup size</th></tr></thead><tbody>
@@ -535,6 +644,80 @@
       closeBtn.addEventListener('click', stopVideo);
       dlg.addEventListener('click', function(e) { if (e.target === dlg) stopVideo(); });
       dlg.addEventListener('cancel', function() { frame.src = ''; });
+    })();
+  </script>
+  <script>
+    (function() {
+      var TRAILER_MAP = {
+        "archive-unpacker": "ZyScf7TUhJM",
+        "dup-scrub": "B2i0ye9X4G4",
+        "heic-studio": "ROld8b81A5Q",
+        "media-trim": "y_Cted3elow",
+        "pdf-knife": "ymDUY4EcBzs",
+        "screen-lens": "-GRiY58d5eo",
+        "usb-flasher": "SDGugV7kNp4"
+      };
+      // 1. Cursor spotlight on app cards
+      document.querySelectorAll('.fluent-app-card').forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+          var r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+      });
+      // 2. Category filter pills
+      document.querySelectorAll('.filter-pill').forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          var f = pill.getAttribute('data-filter');
+          document.querySelectorAll('.fluent-app-card').forEach(function(c) {
+            c.style.display = (f === 'all' || c.getAttribute('data-cat') === f) ? '' : 'none';
+          });
+        });
+      });
+      // 3. Hero Stage Preview vs Live Video toggle
+      var stageMode = 'img';
+      var screenLink = document.getElementById('showcase-preview-link');
+      var videoWrap = document.getElementById('stage-video-wrap');
+      var videoFrame = document.getElementById('stage-video-iframe');
+      function syncStageVideo() {
+        if (!videoWrap || !videoFrame || !screenLink) return;
+        if (stageMode === 'vid') {
+          var activeTab = document.querySelector('.stage-tab[aria-selected="true"]');
+          var appId = activeTab ? activeTab.getAttribute('data-app') : 'archive-unpacker';
+          var vid = TRAILER_MAP[appId] || 'ZyScf7TUhJM';
+          screenLink.hidden = true;
+          videoWrap.hidden = false;
+          videoFrame.src = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1&mute=1&rel=0';
+        } else {
+          videoWrap.hidden = true;
+          videoFrame.src = '';
+          screenLink.hidden = false;
+        }
+      }
+      document.querySelectorAll('.stage-mode-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.stage-mode-btn').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          stageMode = btn.getAttribute('data-stage-mode');
+          syncStageVideo();
+        });
+      });
+      document.querySelectorAll('.stage-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() { if (stageMode === 'vid') setTimeout(syncStageVideo, 40); });
+      });
+      // 4. Scroll reveal animations
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(en) {
+            if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+          });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal-up').forEach(function(el) { io.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal-up').forEach(function(el) { el.classList.add('is-visible'); });
+      }
     })();
   </script>
 </body>
