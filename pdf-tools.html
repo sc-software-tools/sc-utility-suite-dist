@@ -164,6 +164,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
+  <link rel="stylesheet" href="assets/redesign.css?v=20261117.3">
   <style>
     /* Landing Page Specific Enhancements */
     .landing-hero {
@@ -447,25 +448,9 @@
       }
     }
   </style>
-  <style>
-    .landing-hero { position: relative; overflow: hidden; }
-    .app-hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; opacity: 0.16; }
-    .app-hero-bg iframe { position: absolute; top: 50%; left: 50%; width: 140vw; height: 140vh; min-width: 177.78vh; min-height: 56.25vw; transform: translate(-50%, -50%); border: 0; pointer-events: none; }
-    .app-hero-scrim { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(circle at 65% 35%, rgba(16,185,129,0.12), rgba(11,15,23,0.9) 55%, #0b0f17 92%); }
-    .landing-hero > *:not(.app-hero-bg):not(.app-hero-scrim) { position: relative; z-index: 1; }
-    .platform-switcher { display: inline-flex; gap: 6px; background: #151821; border: 1px solid #2d3139; padding: 4px; border-radius: 8px; margin-bottom: 12px; }
-    .plat-btn { padding: 6px 12px; border-radius: 6px; border: 0; background: transparent; color: #a2aabb; font-size: 0.84rem; font-weight: 600; cursor: pointer; }
-    .plat-btn.active { background: #10b981; color: #0b0f17; }
-    .video-theater { padding: 56px 0; border-top: 1px solid #1f2430; }
-    .theater-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 18px; }
-    .theater-tab { padding: 8px 16px; border-radius: 8px; background: #1b1d22; color: #a2aabb; border: 1px solid #2d3139; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
-    .theater-tab.active { background: #10b981; color: #0b0f17; border-color: #10b981; }
-    .theater-frame { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid #2d3139; background: #0b0f17; box-shadow: 0 20px 50px rgba(0,0,0,0.45); }
-    .theater-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-  </style>
 </head>
 
-<body>
+<body data-app-theme="PdfKnife">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="navbar">
     <div class="nav-container container">
@@ -497,7 +482,7 @@
   <main id="main">
     <!-- Hero Section -->
     <section class="container landing-hero" id="top" aria-labelledby="hero-title">
-      <div class="app-hero-bg" aria-hidden="true"><iframe src="https://www.youtube-nocookie.com/embed/ymDUY4EcBzs?autoplay=1&mute=1&loop=1&playlist=ymDUY4EcBzs&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="PDF Knife background preview" allow="autoplay; encrypted-media"></iframe></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
+      <div class="app-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/PdfKnife-wide.png"><source src="assets/videos/PdfKnife/trailer.mp4" type="video/mp4"></video></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
       <div class="landing-hero-copy">
         <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Private Document Manipulation</p>
         <h1 id="hero-title">Split, Merge & Burst PDFs Locally.<br><span>Confidential Files Stay Confidential.</span></h1>
@@ -524,9 +509,11 @@
         <div class="platform-switcher" role="tablist" aria-label="Platform preview">
           <button type="button" class="plat-btn active" data-src="assets/screenshots/PdfKnife.png" data-alt="PDF Knife on Windows">Windows 11</button>
           <button type="button" class="plat-btn" data-src="assets/linux/sc-pdf-knife.png" data-alt="PDF Knife on Linux">Linux</button>
+          <button type="button" class="plat-btn" data-mode="video" data-vid="assets/videos/PdfKnife/flow.mp4">&#9654; Live Demo</button>
           <button type="button" class="plat-btn" data-src="assets/android/PdfKnife.png" data-alt="PDF Knife on Android">Android</button>
         </div>
-        <img id="hero-platform-img" src="assets/screenshots/PdfKnife.png" alt="PDF Knife on Windows" width="680" height="486" style="max-height:486px;width:auto;max-width:100%;object-fit:contain;" fetchpriority="high" decoding="async">
+        <video id="hero-platform-vid" muted loop playsinline controls hidden style="max-height:486px;width:100%;border-radius:10px;background:#07090e;" src="assets/videos/PdfKnife/flow.mp4"></video>
+        <img id="hero-platform-img" src="assets/screenshots/PdfKnife.png" alt="PDF Knife on Windows" width="680" height="486" style="max-height:486px;width:auto;max-width:100%;object-fit:contain;" fetchpriority="high">
       </div>
     </section>
 
@@ -619,6 +606,38 @@
     </section>
 
     <!-- Pricing / Free vs Pro Comparison -->
+        <section class="video-theater" id="videos" aria-labelledby="videos-heading">
+      <div class="container">
+        <p class="eyebrow">SEE IT IN ACTION</p>
+        <h2 id="videos-heading" style="margin-top:4px;">Watch PDF Knife in Action</h2>
+        <p style="color:#a2aabb;max-width:680px;">Instant high-framerate demos, vertical 60-second Short, and full YouTube walkthrough.</p>
+        <div class="theater-tabs" role="tablist">
+          <button type="button" class="theater-tab active" data-kind="mp4" data-src="assets/videos/PdfKnife/trailer.mp4">&#9654; Official Trailer</button>
+          <button type="button" class="theater-tab" data-kind="mp4" data-src="assets/videos/PdfKnife/howto.mp4">&#128214; How-To Walkthrough</button>
+          <button type="button" class="theater-tab" data-kind="yt" data-vid="ymDUY4EcBzs">Watch on YouTube &#8599;</button>
+        </div>
+        <div class="theater-split">
+          <div class="theater-main-card">
+            <div class="theater-video-box">
+              <video id="app-theater-mp4" controls muted loop playsinline preload="metadata" poster="assets/gumroad-covers/PdfKnife.png">
+                <source src="assets/videos/PdfKnife/trailer.mp4" type="video/mp4">
+              </video>
+              <iframe id="app-theater-iframe" hidden title="PDF Knife YouTube player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="theater-short-card">
+            <span class="band-kicker" style="color: var(--accent);">60-Second Short</span>
+            <div class="short-phone-bezel">
+              <video controls muted loop playsinline preload="metadata">
+                <source src="assets/videos/PdfKnife/short.mp4" type="video/mp4">
+              </video>
+            </div>
+            <span class="short-caption">Vertical quick tour &middot; <a href="https://youtube.com/shorts/sqULGx948nY" target="_blank" rel="noopener" style="color:#38bdf8;">Open Short on YouTube &#8599;</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="container section" id="pricing" style="border-top: 1px solid var(--border-subtle);">
       <div class="section-heading">
         <div>
@@ -712,21 +731,6 @@
         </div>
         <div>
           <a href="index.html" class="btn btn-fluent-primary" style="white-space:nowrap;">View Full Suite <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-      <section class="video-theater" id="videos" aria-labelledby="videos-heading">
-      <div class="container">
-        <p class="eyebrow">SEE IT IN ACTION</p>
-        <h2 id="videos-heading" style="margin-top:4px;">Watch PDF Knife in Action</h2>
-        <p style="color:#a2aabb;max-width:640px;">Explore the official trailer, a quick 60-second Short, or the full step-by-step walkthrough.</p>
-        <div class="theater-tabs" role="tablist">
-          <button type="button" class="theater-tab active" data-vid="ymDUY4EcBzs">&#9654; Official Trailer</button>
-          <button type="button" class="theater-tab" data-vid="sqULGx948nY">&#9889; Quick Short</button>
-          <button type="button" class="theater-tab" data-vid="Wz0xmJ_0htk">&#128214; How-To Walkthrough</button>
-        </div>
-        <div class="theater-frame">
-          <iframe id="app-theater-iframe" src="https://www.youtube-nocookie.com/embed/ymDUY4EcBzs?rel=0" title="PDF Knife video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -826,27 +830,37 @@
   <script>
     (function() {
       var heroImg = document.getElementById('hero-platform-img');
+      var heroVid = document.getElementById('hero-platform-vid');
       document.querySelectorAll('.plat-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           document.querySelectorAll('.plat-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
-          if (heroImg) {
-            heroImg.src = btn.getAttribute('data-src');
-            heroImg.alt = btn.getAttribute('data-alt');
+          if (btn.getAttribute('data-mode') === 'video') {
+            if (heroImg) heroImg.hidden = true;
+            if (heroVid) { heroVid.hidden = false; var p = heroVid.play(); if (p && p.catch) p.catch(function(){}); }
+          } else {
+            if (heroVid) { heroVid.pause(); heroVid.hidden = true; }
+            if (heroImg) { heroImg.hidden = false; heroImg.src = btn.getAttribute('data-src'); heroImg.alt = btn.getAttribute('data-alt'); }
           }
         });
       });
-      var theater = document.getElementById('app-theater-iframe');
+      var mp4 = document.getElementById('app-theater-mp4');
+      var yt = document.getElementById('app-theater-iframe');
       document.querySelectorAll('.theater-tab').forEach(function(tab) {
         tab.addEventListener('click', function() {
           document.querySelectorAll('.theater-tab').forEach(function(t) { t.classList.remove('active'); });
           tab.classList.add('active');
-          if (theater) {
-            theater.src = 'https://www.youtube-nocookie.com/embed/' + tab.getAttribute('data-vid') + '?autoplay=1&rel=0';
+          if (tab.getAttribute('data-kind') === 'yt') {
+            if (mp4) { mp4.pause(); mp4.hidden = true; }
+            if (yt) { yt.hidden = false; yt.src = 'https://www.youtube-nocookie.com/embed/' + tab.getAttribute('data-vid') + '?autoplay=1&rel=0'; }
+          } else {
+            if (yt) { yt.hidden = true; yt.src = ''; }
+            if (mp4) { mp4.hidden = false; mp4.src = tab.getAttribute('data-src'); var p = mp4.play(); if (p && p.catch) p.catch(function(){}); }
           }
         });
       });
     })();
   </script>
+  <script src="assets/redesign.js?v=20261117"></script>
 </body>
 </html>
