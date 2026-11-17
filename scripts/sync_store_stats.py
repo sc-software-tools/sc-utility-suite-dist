@@ -95,8 +95,7 @@ def record_quantity(item):
         val = item.get(key)
         if isinstance(val, (int, float)) and val > 0:
             return int(val)
-    rev = float(item.get("purchasePriceUSDAmount") or 0.0)
-    return 1 if rev > 0 else 0
+    return 0
 
 def fetch_gumroad_stats():
     token = os.environ.get("GUMROAD_ACCESS_TOKEN")
@@ -191,18 +190,22 @@ def main():
         
         time.sleep(1.2)
         # In-app purchases (Add-ons)
+        # Note: Partner Center returns purchasePriceUSDAmount (the unit price in USD, e.g. £3.29 = $4.42)
+        # even on rows where acquisitionQuantity is 0 (such as a declined/cancelled checkout attempt).
+        # Only completed purchases (qty > 0) count toward revenue!
         inapp_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId={app_id}&startDate={start_date}&endDate={end_date}"
         inapp_data = call_api(inapp_url, headers)
         inapp_records = inapp_data.get("Value", [])
-        inapp_count = sum(record_quantity(item) for item in inapp_records)
-        inapp_rev = sum(float(item.get("purchasePriceUSDAmount") or 0.0) for item in inapp_records)
-        if inapp_count == 0 and inapp_rev > 0:
-            inapp_count = 1
+        inapp_count = 0
+        inapp_rev = 0.0
 
         for item in inapp_records:
             qty = record_quantity(item)
-            rev = float(item.get("purchasePriceUSDAmount") or 0.0)
-            if qty > 0 or rev > 0:
+            unit_price = float(item.get("purchasePriceUSDAmount") or 0.0)
+            if qty > 0:
+                row_rev = round(qty * unit_price, 2) if unit_price > 0 else 0.0
+                inapp_count += qty
+                inapp_rev += row_rev
                 m_code = (item.get("market") or "").upper()
                 store_sales.append({
                     "source": "Microsoft Store",
@@ -213,8 +216,8 @@ def main():
                     "date": (item.get("date") or item.get("startDate") or end_date)[:10],
                     "market": m_code or "Store",
                     "country": COUNTRY_MAP.get(m_code, m_code or "Microsoft Store"),
-                    "quantity": qty if qty > 0 else 1,
-                    "revenue_usd": round(rev, 2),
+                    "quantity": qty,
+                    "revenue_usd": row_rev,
                     "os": item.get("osVersion") or ""
                 })
         
