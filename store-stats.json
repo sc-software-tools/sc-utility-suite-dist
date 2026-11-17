@@ -5,7 +5,7 @@
     "total_acquisitions": 13,
     "total_installs": 10,
     "total_crashes": 0,
-    "total_inapp_purchases": 0,
+    "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
     "apps_tracked": 7
   },
@@ -33,7 +33,7 @@
       "product_id": "9N4F9K6G90HK",
       "acquisitions": 3,
       "installs": 4,
-      "inapp_purchases": 0,
+      "inapp_purchases": 1,
       "inapp_revenue_usd": 4.42,
       "crashes": 0
     },

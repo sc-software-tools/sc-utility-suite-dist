@@ -90,6 +90,14 @@ def call_api(url, headers, max_retries=4, base_delay=2.0):
             time.sleep(base_delay)
     return {"error": "Max retries exceeded"}
 
+def record_quantity(item):
+    for key in ("inAppAcquisitionQuantity", "acquisitionQuantity", "quantity", "orderQuantity"):
+        val = item.get(key)
+        if isinstance(val, (int, float)) and val > 0:
+            return int(val)
+    rev = float(item.get("purchasePriceUSDAmount") or 0.0)
+    return 1 if rev > 0 else 0
+
 def fetch_gumroad_stats():
     token = os.environ.get("GUMROAD_ACCESS_TOKEN")
     if not token:
@@ -99,7 +107,7 @@ def fetch_gumroad_stats():
                 token = f.read().strip()
                 
     if not token:
-        return {"configured": False, "total_sales": 0, "total_revenue_usd": 0.0, "products": []}
+        return {"configured": False, "total_sales": 0, "total_revenue_usd": 0.0, "products": [], "recent_sales": []}
         
     try:
         url = f"https://api.gumroad.com/v2/products?access_token={token}"
@@ -121,16 +129,40 @@ def fetch_gumroad_stats():
                     "revenue_usd": round(cents / 100.0, 2),
                     "price": p.get("formatted_price")
                 })
+
+            recent_sales = []
+            try:
+                sales_resp = requests.get(f"https://api.gumroad.com/v2/sales?access_token={token}", timeout=20)
+                if sales_resp.status_code == 200:
+                    for s in sales_resp.json().get("sales", [])[:50]:
+                        if s.get("refunded") or s.get("chargedback"):
+                            continue
+                        price_cents = s.get("price", 0)
+                        code = (s.get("country_iso2") or "").upper()
+                        recent_sales.append({
+                            "source": "Gumroad",
+                            "app": s.get("product_name") or "SC Utility Suite PRO",
+                            "date": (s.get("created_at") or "")[:10],
+                            "market": code or "Web",
+                            "country": s.get("country") or COUNTRY_MAP.get(code, code or "Direct Web"),
+                            "quantity": int(s.get("quantity") or 1),
+                            "revenue_usd": round(price_cents / 100.0, 2),
+                            "currency": (s.get("currency_symbol") or "$")
+                        })
+            except Exception:
+                pass
+
             return {
                 "configured": True,
                 "total_sales": total_sales,
                 "total_revenue_usd": round(total_cents / 100.0, 2),
-                "products": prod_list
+                "products": prod_list,
+                "recent_sales": recent_sales
             }
         else:
-            return {"configured": False, "error": f"HTTP {resp.status_code}", "total_sales": 0, "total_revenue_usd": 0.0}
+            return {"configured": False, "error": f"HTTP {resp.status_code}", "total_sales": 0, "total_revenue_usd": 0.0, "products": [], "recent_sales": []}
     except Exception as e:
-        return {"configured": False, "error": str(e), "total_sales": 0, "total_revenue_usd": 0.0}
+        return {"configured": False, "error": str(e), "total_sales": 0, "total_revenue_usd": 0.0, "products": [], "recent_sales": []}
 
 def main():
     token = get_msstore_token()
@@ -148,6 +180,7 @@ def main():
     market_counts = {}
     os_counts = {}
     apps_data = []
+    store_sales = []
     
     for app_name, app_id in APPS.items():
         time.sleep(1.2)
@@ -161,8 +194,29 @@ def main():
         inapp_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId={app_id}&startDate={start_date}&endDate={end_date}"
         inapp_data = call_api(inapp_url, headers)
         inapp_records = inapp_data.get("Value", [])
-        inapp_count = sum(item.get("inAppAcquisitionQuantity", 0) for item in inapp_records)
-        inapp_rev = sum(item.get("purchasePriceUSDAmount", 0.0) for item in inapp_records)
+        inapp_count = sum(record_quantity(item) for item in inapp_records)
+        inapp_rev = sum(float(item.get("purchasePriceUSDAmount") or 0.0) for item in inapp_records)
+        if inapp_count == 0 and inapp_rev > 0:
+            inapp_count = 1
+
+        for item in inapp_records:
+            qty = record_quantity(item)
+            rev = float(item.get("purchasePriceUSDAmount") or 0.0)
+            if qty > 0 or rev > 0:
+                m_code = (item.get("market") or "").upper()
+                store_sales.append({
+                    "source": "Microsoft Store",
+                    "app": app_name,
+                    "product_id": app_id,
+                    "addon_name": item.get("inAppProductName") or f"{app_name} PRO",
+                    "addon_id": item.get("inAppProductId") or item.get("storeId") or "",
+                    "date": (item.get("date") or item.get("startDate") or end_date)[:10],
+                    "market": m_code or "Store",
+                    "country": COUNTRY_MAP.get(m_code, m_code or "Microsoft Store"),
+                    "quantity": qty if qty > 0 else 1,
+                    "revenue_usd": round(rev, 2),
+                    "os": item.get("osVersion") or ""
+                })
         
         time.sleep(1.2)
         # Failures
@@ -217,6 +271,11 @@ def main():
         })
         
     gumroad_data = fetch_gumroad_stats()
+    combined_sales = sorted(
+        store_sales + gumroad_data.get("recent_sales", []),
+        key=lambda s: s.get("date", ""),
+        reverse=True
+    )
     
     output_payload = {
         "last_updated": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"),
@@ -230,6 +289,7 @@ def main():
             "apps_tracked": len(APPS)
         },
         "apps": apps_data,
+        "sales_history": combined_sales,
         "markets": markets_formatted,
         "os_breakdown": os_formatted,
         "gumroad": gumroad_data
