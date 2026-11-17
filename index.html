@@ -137,6 +137,19 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
   <script src="site.js?v=20261111.3" defer></script>
+  <style>
+    .hero { position: relative; overflow: hidden; }
+    .hero-bg-video { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; opacity: 0.18; filter: saturate(1.15) contrast(1.05); }
+    .hero-bg-video iframe { position: absolute; top: 50%; left: 50%; width: 140vw; height: 140vh; min-width: 177.78vh; min-height: 56.25vw; transform: translate(-50%, -50%); border: 0; pointer-events: none; }
+    .hero-bg-scrim { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(circle at 70% 35%, rgba(16,185,129,0.12), rgba(11,15,23,0.88) 55%, #0b0f17 90%); }
+    .hero > *:not(.hero-bg-video):not(.hero-bg-scrim) { position: relative; z-index: 1; }
+    .fluent-app-card { transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+    .fluent-app-card:hover { transform: translateY(-3px); border-color: rgba(16,185,129,0.45); box-shadow: 0 12px 32px rgba(0,0,0,0.45); }
+    .watch-demo-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 6px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.35); color: #34d399; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.15s ease; }
+    .watch-demo-btn:hover { background: rgba(16,185,129,0.22); }
+    .video-tab-btn { padding: 7px 14px; border-radius: 6px; background: #202228; color: #a2aabb; border: 1px solid #2d3139; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+    .video-tab-btn.active { background: #10b981; color: #0b0f17; border-color: #10b981; }
+  </style>
 </head>
 
 <body>
@@ -273,7 +286,7 @@
       <a class="app-screenshot-frame preview-link" href="assets/previews/ArchiveUnpacker.png" data-preview="Archive Unpacker" target="_blank" rel="noopener" aria-label="View app: Archive Unpacker (enlarge preview)"><img src="assets/previews/ArchiveUnpacker.png" width="980" height="580" alt="Archive Unpacker desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
       <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>ZIP, RAR, 7Z, TAR, GZ and BZ2 extraction.</li><li>Inspect archive contents and choose an extraction folder.</li></ul></details>
       <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Extract one archive at a time. Create ZIPs with Fast or Normal compression.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Extract batches, create TAR.GZ archives and use Maximum compression.</dd></div></dl>
-      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NXS3LDTBRX8" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="archive-extractor.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><a href="#download-archive-unpacker" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NXS3LDTBRX8" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="archive-extractor.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="Archive Unpacker" data-trailer="ZyScf7TUhJM" data-short="gPr1moco9fs" data-howto="NXEhLqc0k2E">&#9654; Watch Video</button><a href="#download-archive-unpacker" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
 <article class="fluent-app-card" id="dup-scrub" aria-labelledby="title-dup-scrub">
@@ -282,7 +295,7 @@
       <a class="app-screenshot-frame preview-link" href="assets/previews/DupScrub.png" data-preview="Dup Scrub" target="_blank" rel="noopener" aria-label="View app: Dup Scrub (enlarge preview)"><img src="assets/previews/DupScrub.png" width="980" height="580" alt="Dup Scrub desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
       <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Compare file sizes and contents to find matching copies.</li><li>See reclaimable space and review paths before recycling files.</li></ul></details>
       <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Scan folders and manually clean one duplicate group at a time.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Auto-select copies to keep the oldest or newest, then clean across groups.</dd></div></dl>
-      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NL51TH9QR3M" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="duplicate-finder.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><a href="#download-dup-scrub" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NL51TH9QR3M" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="duplicate-finder.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="Dup Scrub" data-trailer="B2i0ye9X4G4" data-short="kp342Z-HX4w" data-howto="5P9yvJciUSo">&#9654; Watch Video</button><a href="#download-dup-scrub" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
 <article class="fluent-app-card" id="heic-studio" aria-labelledby="title-heic-studio">
@@ -291,7 +304,7 @@
       <a class="app-screenshot-frame preview-link" href="assets/previews/HeicStudio.png" data-preview="HEIC Studio" target="_blank" rel="noopener" aria-label="View app: HEIC Studio (enlarge preview)"><img src="assets/previews/HeicStudio.png" width="980" height="580" alt="HEIC Studio desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
       <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Export JPG, PNG, WebP or PDF.</li><li>Adjust output quality and optionally resize your images.</li></ul></details>
       <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Convert up to 5 images per batch, with quality and resize controls.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Convert unlimited images per batch, without splitting up your photo collection.</dd></div></dl>
-      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9N4F9K6G90HK" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="heic-to-jpg.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><a href="#download-heic-studio" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9N4F9K6G90HK" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="heic-to-jpg.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="HEIC Studio" data-trailer="ROld8b81A5Q" data-short="5U0EqbCI2GE" data-howto="tuaWcBls3Sg">&#9654; Watch Video</button><a href="#download-heic-studio" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
 <article class="fluent-app-card" id="media-trim" aria-labelledby="title-media-trim">
@@ -300,7 +313,7 @@
       <a class="app-screenshot-frame preview-link" href="assets/previews/MediaTrim.png" data-preview="Media Trim" target="_blank" rel="noopener" aria-label="View app: Media Trim (enlarge preview)"><img src="assets/previews/MediaTrim.png" width="980" height="580" alt="Media Trim desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
       <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>MP3 320 kbps, WAV, MP4 H.264, 720p compression and lossless video cut presets.</li><li>Lossless stream-copy cut points depend on the source keyframes. FFmpeg is included.</li></ul></details>
       <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Single-file editing with all five presets. No paid duration limit.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Convert a whole queue in one go with shared presets. Removes the upgrade strip.</dd></div></dl>
-      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9PC1HVN60QBP" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="video-trimmer.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><a href="#download-media-trim" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9PC1HVN60QBP" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="video-trimmer.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="Media Trim" data-trailer="y_Cted3elow" data-short="QE6QzP195PE" data-howto="mU8Ov3AE9JY">&#9654; Watch Video</button><a href="#download-media-trim" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
 <article class="fluent-app-card" id="pdf-knife" aria-labelledby="title-pdf-knife">
@@ -309,7 +322,7 @@
       <a class="app-screenshot-frame preview-link" href="assets/previews/PdfKnife.png" data-preview="PDF Knife" target="_blank" rel="noopener" aria-label="View app: PDF Knife (enlarge preview)"><img src="assets/previews/PdfKnife.png" width="980" height="580" alt="PDF Knife desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
       <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Reorder whole documents before merging.</li><li>Use page ranges such as 1–3, 5, 7–10, or burst each page to a separate PDF.</li></ul></details>
       <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Merge 2 PDFs or extract one page range. No watermarks.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Merge more documents, extract multiple ranges and split every page at once.</dd></div></dl>
-      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NQLSS021G6T" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="pdf-tools.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><a href="#download-pdf-knife" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9NQLSS021G6T" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="pdf-tools.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="PDF Knife" data-trailer="ymDUY4EcBzs" data-short="sqULGx948nY" data-howto="Wz0xmJ_0htk">&#9654; Watch Video</button><a href="#download-pdf-knife" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
 <article class="fluent-app-card" id="screen-lens" aria-labelledby="title-screen-lens">
@@ -318,7 +331,7 @@
       <a class="app-screenshot-frame preview-link" href="assets/previews/ScreenLens.png" data-preview="Screen Lens" target="_blank" rel="noopener" aria-label="View app: Screen Lens (enlarge preview)"><img src="assets/previews/ScreenLens.png" width="980" height="580" alt="Screen Lens desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
       <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Capture a monitor or selected region to MP4 or GIF, with pause and resume.</li><li>Optional microphone audio for MP4. Floating recording controls stay out of the capture.</li></ul></details>
       <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Record up to 3 minutes at 15 or 30 FPS, with no watermark.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>60 FPS and unlimited recording duration for longer walkthroughs.</dd></div></dl>
-      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9N7V2FVFL4BN" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="screen-recorder.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><a href="#download-screen-lens" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9N7V2FVFL4BN" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="screen-recorder.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="Screen Lens" data-trailer="-GRiY58d5eo" data-short="sKfmMZEzvUw" data-howto="9YatbRnOjpA">&#9654; Watch Video</button><a href="#download-screen-lens" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
 <article class="fluent-app-card" id="usb-flasher" aria-labelledby="title-usb-flasher">
@@ -327,7 +340,7 @@
       <a class="app-screenshot-frame preview-link" href="assets/previews/UsbFlasher.png" data-preview="USB Flasher" target="_blank" rel="noopener" aria-label="View app: USB Flasher (enlarge preview)"><img src="assets/previews/UsbFlasher.png" width="980" height="580" alt="USB Flasher desktop interface" loading="lazy"><span class="preview-hint">View app <span aria-hidden="true">↗</span></span></a>
       <details class="feature-details"><summary>Formats &amp; details</summary><ul class="app-features-list"><li>Raw image writing for hybrid Linux ISOs and IMG/BIN files; FAT32 extraction for compatible UEFI ISOs.</li><li>Internal and boot drives are filtered out. Writing an image erases the selected USB drive.</li></ul></details>
       <div class="card-plan-actions"><dl class="tier-strip"><div class="tier-free"><dt>Free forever</dt><dd>Write ISO, IMG and BIN images to a USB drive, with optional verification.</dd></div><div class="tier-pro"><dt>Pro upgrade</dt><dd>Back up an entire USB drive to a raw IMG file for later use.</dd></div></dl>
-      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9P9NBFS7PMJB" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="usb-imager.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><a href="#download-usb-flasher" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
+      <div class="card-actions-wrapper"><a href="https://apps.microsoft.com/detail/9P9NBFS7PMJB" target="_blank" rel="noopener" class="btn btn-fluent-primary"><svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3.5 9 2.6v6.7H2zm8.5-1.1L18 1.5v7.8h-7.5zM2 10.8h7v6.7l-7-.9zm8.5 0H18v7.7l-7.5-.9z"/></svg> Get from Microsoft Store <span aria-hidden="true">↗</span></a><a href="usb-imager.html" class="other-download">Learn more <span aria-hidden="true">→</span></a><button type="button" class="watch-demo-btn" data-app-name="USB Flasher" data-trailer="SDGugV7kNp4" data-short="cPwYQwpFAec" data-howto="3VMdgwPXPT0">&#9654; Watch Video</button><a href="#download-usb-flasher" class="other-download">Downloads <span aria-hidden="true">↓</span></a></div>
       <p class="store-status" data-store-status="available">Available in Microsoft Store</p></div>
     </article>
 </div><p class="preview-note">Real app previews. Appearance can vary slightly by version and Windows settings.</p></section>
@@ -380,7 +393,7 @@
 <p><span>PDF Knife</span><code>winget install SCSoftware.PDFKnife</code></p>
 <p><span>Screen Lens</span><code>winget install SCSoftware.ScreenLens</code></p>
 <p><span>USB Flasher</span><code>winget install SCSoftware.USBFlasher</code></p>
-</div><p><strong>Media Trim</strong> includes a PRO batch queue and bundled FFmpeg engine with verified open-source delivery. All current standalone downloads include the PRO dialog fix. Archive Unpacker 1.0.3 fixes selected-file extraction in archives with ./ paths and keeps large-archive inspection responsive. The suite bundle includes Media Trim 1.0.4 and version 1.0.3 of the other six apps. Matching Store updates are prepared for publisher upload; the Microsoft Store may deliver an earlier version until those updates are submitted and approved.</p><p>The corresponding-source archives and build scripts for the bundled FFmpeg engine are delivered at <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/ffmpeg-9.0.2-sc1-sources">FFmpeg 9.0.2-sc1 sources</a>.</p><p><a href="release-notes.md">Read the release notes</a> · <a href="LICENSE">Licence terms</a></p></details>
+</div><p><strong>Release v1.1.2 (Desktop) &amp; v1.0.6 (Android):</strong> Built on a unified .NET 10 &amp; Avalonia 12 engine for Windows (x64), Linux (x64 Snap, .deb, .tar.gz), and Android. Includes Explorer context-menu integration for Archive Unpacker, Recycle Bin safety checks for Dup Scrub, Wayland/PipeWire capture for Screen Lens, and in-place upgrades from 1.0.x.</p><p>The corresponding-source archives and build scripts for the bundled FFmpeg engine are delivered at <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/ffmpeg-9.0.2-sc1-sources">FFmpeg 9.0.2-sc1 sources</a>.</p><p><a href="release-notes.md">Read the release notes</a> · <a href="LICENSE">Licence terms</a></p></details>
       <details class="technical-details" id="integrity"><summary>Verify a download (SHA256 checksums)</summary><p>Release v1.1.2: the <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.1.2/checksums_windows_v1.1.2.sha256">Windows checksum list</a> covers the installers and portable ZIPs, the <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/download/suite-v1.1.2/checksums_linux_v1.1.2.sha256">Linux checksum list</a> the .deb and .tar.gz packages. In PowerShell, run <code>Get-FileHash -Algorithm SHA256 &lt;file&gt;</code> (Linux: <code>sha256sum &lt;file&gt;</code>) and compare the value with the matching filename. Hashes confirm download integrity, not publisher identity.</p></details>
     </section>
     <section class="privacy-strip container" id="privacy" aria-label="Privacy and responsible use"><p><strong>Local by design.</strong> Your files are processed on your PC. Purchase checks use the relevant provider. Dup Scrub sends selected unwanted copies to the Windows Recycle Bin; USB image writing erases the chosen drive.</p><a href="SECURITY.md">Security information <span aria-hidden="true">↗</span></a></section>
@@ -469,6 +482,59 @@
       });
       closeBtn.addEventListener('click', function() { dlg.close(); });
       dlg.addEventListener('click', function(e) { if (e.target === dlg) dlg.close(); });
+    })();
+  </script>
+  <dialog id="video-modal" aria-labelledby="video-modal-title" style="max-width:860px;width:calc(100% - 32px);background:#151821;color:#f8f9fc;border:1px solid #2d3139;border-radius:14px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.75);">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
+      <h2 id="video-modal-title" style="margin:0;font-size:1.2rem;">App Video</h2>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button type="button" class="video-tab-btn active" data-kind="trailer">Official Trailer</button>
+        <button type="button" class="video-tab-btn" data-kind="short">Quick Short</button>
+        <button type="button" class="video-tab-btn" data-kind="howto">How-To Guide</button>
+        <button type="button" id="close-video-modal" style="background:#272b34;color:#f8f9fc;border:1px solid #363c48;border-radius:6px;padding:7px 12px;cursor:pointer;font-size:0.85rem;margin-left:6px;">Close &times;</button>
+      </div>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#0b0f17;">
+      <iframe id="video-modal-frame" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </dialog>
+  <script>
+    (function() {
+      var dlg = document.getElementById('video-modal');
+      var title = document.getElementById('video-modal-title');
+      var frame = document.getElementById('video-modal-frame');
+      var closeBtn = document.getElementById('close-video-modal');
+      if (!dlg) return;
+      var currentIds = {};
+      function loadKind(kind) {
+        var vid = currentIds[kind] || currentIds.trailer;
+        dlg.querySelectorAll('.video-tab-btn').forEach(function(b) {
+          b.classList.toggle('active', b.getAttribute('data-kind') === kind);
+        });
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1&rel=0';
+      }
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('.watch-demo-btn');
+        if (btn) {
+          currentIds = {
+            trailer: btn.getAttribute('data-trailer'),
+            short: btn.getAttribute('data-short'),
+            howto: btn.getAttribute('data-howto')
+          };
+          title.textContent = btn.getAttribute('data-app-name') + ' — Video Showcase';
+          loadKind('trailer');
+          dlg.showModal();
+          return;
+        }
+        var tab = e.target.closest('#video-modal .video-tab-btn');
+        if (tab) {
+          loadKind(tab.getAttribute('data-kind'));
+        }
+      });
+      function stopVideo() { frame.src = ''; dlg.close(); }
+      closeBtn.addEventListener('click', stopVideo);
+      dlg.addEventListener('click', function(e) { if (e.target === dlg) stopVideo(); });
+      dlg.addEventListener('cancel', function() { frame.src = ''; });
     })();
   </script>
 </body>

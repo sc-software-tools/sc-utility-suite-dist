@@ -447,6 +447,22 @@
       }
     }
   </style>
+  <style>
+    .landing-hero { position: relative; overflow: hidden; }
+    .app-hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; opacity: 0.16; }
+    .app-hero-bg iframe { position: absolute; top: 50%; left: 50%; width: 140vw; height: 140vh; min-width: 177.78vh; min-height: 56.25vw; transform: translate(-50%, -50%); border: 0; pointer-events: none; }
+    .app-hero-scrim { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(circle at 65% 35%, rgba(16,185,129,0.12), rgba(11,15,23,0.9) 55%, #0b0f17 92%); }
+    .landing-hero > *:not(.app-hero-bg):not(.app-hero-scrim) { position: relative; z-index: 1; }
+    .platform-switcher { display: inline-flex; gap: 6px; background: #151821; border: 1px solid #2d3139; padding: 4px; border-radius: 8px; margin-bottom: 12px; }
+    .plat-btn { padding: 6px 12px; border-radius: 6px; border: 0; background: transparent; color: #a2aabb; font-size: 0.84rem; font-weight: 600; cursor: pointer; }
+    .plat-btn.active { background: #10b981; color: #0b0f17; }
+    .video-theater { padding: 56px 0; border-top: 1px solid #1f2430; }
+    .theater-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 18px; }
+    .theater-tab { padding: 8px 16px; border-radius: 8px; background: #1b1d22; color: #a2aabb; border: 1px solid #2d3139; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+    .theater-tab.active { background: #10b981; color: #0b0f17; border-color: #10b981; }
+    .theater-frame { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid #2d3139; background: #0b0f17; box-shadow: 0 20px 50px rgba(0,0,0,0.45); }
+    .theater-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  </style>
 </head>
 
 <body>
@@ -481,6 +497,7 @@
   <main id="main">
     <!-- Hero Section -->
     <section class="container landing-hero" id="top" aria-labelledby="hero-title">
+      <div class="app-hero-bg" aria-hidden="true"><iframe src="https://www.youtube-nocookie.com/embed/ZyScf7TUhJM?autoplay=1&mute=1&loop=1&playlist=ZyScf7TUhJM&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="Archive Unpacker background preview" allow="autoplay; encrypted-media"></iframe></div><div class="app-hero-scrim" aria-hidden="true"></div>
       <div class="landing-hero-copy">
         <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Modern Archive Manager</p>
         <h1 id="hero-title">Extract RAR, 7z & ZIP Archives Cleanly.<br><span>Without the 90s Nag Screens.</span></h1>
@@ -500,11 +517,16 @@
           <code>winget install --id 9NXS3LDTBRX8 --source msstore</code>
         </div>
         
-        <p class="hero-platform" style="margin-top:16px;">Runs on Windows 10 &amp; 11 (64-bit). No sign-up, no subscriptions, zero cloud telemetry.</p>
+        <p class="hero-platform" style="margin-top:16px;">Runs on Windows 10 &amp; 11 (x64), Linux (Snap Store, .deb, .tar.gz), and Android. No sign-up, no subscriptions, zero cloud telemetry.</p>
       </div>
 
       <div class="product-frame">
-        <img src="assets/screenshots/ArchiveUnpacker.png" alt="Archive Unpacker for Windows" width="680" height="402" fetchpriority="high" decoding="async">
+        <div class="platform-switcher" role="tablist" aria-label="Platform preview">
+          <button type="button" class="plat-btn active" data-src="assets/screenshots/ArchiveUnpacker.png" data-alt="Archive Unpacker on Windows">Windows 11</button>
+          <button type="button" class="plat-btn" data-src="assets/linux/sc-archive-unpacker.png" data-alt="Archive Unpacker on Linux">Linux</button>
+          <button type="button" class="plat-btn" data-src="assets/android/ArchiveUnpacker.png" data-alt="Archive Unpacker on Android">Android</button>
+        </div>
+        <img id="hero-platform-img" src="assets/screenshots/ArchiveUnpacker.png" alt="Archive Unpacker on Windows" width="680" height="486" style="max-height:486px;width:auto;max-width:100%;object-fit:contain;" fetchpriority="high" decoding="async">
       </div>
     </section>
 
@@ -603,7 +625,7 @@
           <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Transparent &amp; Fair Pricing</p>
           <h2>Free vs. Lifetime PRO</h2>
         </div>
-        <p>Download free from the Microsoft Store. Upgrade inside the app whenever you need heavy-duty batch features.</p>
+        <p>Available free on Microsoft Store, Snap Store, direct installer/portable ZIP, and Linux .deb/.tar.gz. Upgrade anytime with a one-time PRO licence.</p>
       </div>
 
       <div class="compare-container">
@@ -693,6 +715,21 @@
         </div>
       </div>
     </section>
+      <section class="video-theater" id="videos" aria-labelledby="videos-heading">
+      <div class="container">
+        <p class="eyebrow">SEE IT IN ACTION</p>
+        <h2 id="videos-heading" style="margin-top:4px;">Watch Archive Unpacker in Action</h2>
+        <p style="color:#a2aabb;max-width:640px;">Explore the official trailer, a quick 60-second Short, or the full step-by-step walkthrough.</p>
+        <div class="theater-tabs" role="tablist">
+          <button type="button" class="theater-tab active" data-vid="ZyScf7TUhJM">&#9654; Official Trailer</button>
+          <button type="button" class="theater-tab" data-vid="gPr1moco9fs">&#9889; Quick Short</button>
+          <button type="button" class="theater-tab" data-vid="NXEhLqc0k2E">&#128214; How-To Walkthrough</button>
+        </div>
+        <div class="theater-frame">
+          <iframe id="app-theater-iframe" src="https://www.youtube-nocookie.com/embed/ZyScf7TUhJM?rel=0" title="Archive Unpacker video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -753,6 +790,31 @@
         });
       }
     });
+  </script>
+  <script>
+    (function() {
+      var heroImg = document.getElementById('hero-platform-img');
+      document.querySelectorAll('.plat-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.plat-btn').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          if (heroImg) {
+            heroImg.src = btn.getAttribute('data-src');
+            heroImg.alt = btn.getAttribute('data-alt');
+          }
+        });
+      });
+      var theater = document.getElementById('app-theater-iframe');
+      document.querySelectorAll('.theater-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          document.querySelectorAll('.theater-tab').forEach(function(t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          if (theater) {
+            theater.src = 'https://www.youtube-nocookie.com/embed/' + tab.getAttribute('data-vid') + '?autoplay=1&rel=0';
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
