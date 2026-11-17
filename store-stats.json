@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-11-17 05:26:58 UTC",
+  "last_updated": "2026-11-17 13:45:27 UTC",
   "date_range": "2026-08-19 to 2026-11-17",
   "summary": {
-    "total_acquisitions": 13,
-    "total_installs": 10,
+    "total_acquisitions": 15,
+    "total_installs": 11,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
@@ -22,7 +22,7 @@
     {
       "name": "Dup Scrub",
       "product_id": "9NL51TH9QR3M",
-      "acquisitions": 0,
+      "acquisitions": 1,
       "installs": 0,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0,
@@ -32,7 +32,7 @@
       "name": "HEIC Studio",
       "product_id": "9N4F9K6G90HK",
       "acquisitions": 3,
-      "installs": 4,
+      "installs": 5,
       "inapp_purchases": 1,
       "inapp_revenue_usd": 4.42,
       "crashes": 0
@@ -49,7 +49,7 @@
     {
       "name": "PDF Knife",
       "product_id": "9NQLSS021G6T",
-      "acquisitions": 4,
+      "acquisitions": 5,
       "installs": 1,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0,
@@ -72,6 +72,21 @@
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0,
       "crashes": 0
+    }
+  ],
+  "sales_history": [
+    {
+      "source": "Microsoft Store",
+      "app": "HEIC Studio",
+      "product_id": "9N4F9K6G90HK",
+      "addon_name": "HEIC Studio PRO (Lifetime)",
+      "addon_id": "",
+      "date": "2026-11-16",
+      "market": "Store",
+      "country": "Microsoft Store",
+      "quantity": 1,
+      "revenue_usd": 4.42,
+      "os": ""
     }
   ],
   "markets": [
@@ -106,6 +121,11 @@
       "count": 1
     },
     {
+      "code": "NO",
+      "country": "NO",
+      "count": 1
+    },
+    {
       "code": "TW",
       "country": "Taiwan",
       "count": 1
@@ -129,13 +149,13 @@
   "os_breakdown": [
     {
       "os": "Windows 11",
-      "count": 9,
-      "percent": 90.0
+      "count": 10,
+      "percent": 90.9
     },
     {
       "os": "Windows 10",
       "count": 1,
-      "percent": 10.0
+      "percent": 9.1
     }
   ],
   "gumroad": {
@@ -185,6 +205,7 @@
         "revenue_usd": 0.0,
         "price": "$3.99"
       }
-    ]
+    ],
+    "recent_sales": []
   }
 }
