@@ -164,7 +164,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
-  <link rel="stylesheet" href="assets/redesign.css?v=20261117.4">
+  <link rel="stylesheet" href="assets/redesign.css?v=20261117.5">
   <style>
     /* Landing Page Specific Enhancements */
     .landing-hero {
@@ -482,7 +482,7 @@
   <main id="main">
     <!-- Hero Section -->
     <section class="container landing-hero" id="top" aria-labelledby="hero-title">
-      <div class="app-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/DupScrub-wide.png"><source src="assets/videos/DupScrub/trailer.mp4" type="video/mp4"></video></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
+      <div class="app-hero-bg" aria-hidden="true"><img src="assets/screenshots/DupScrub-wide.png" alt="" aria-hidden="true"></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
       <div class="landing-hero-copy">
         <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Reclaim Storage Safely</p>
         <h1 id="hero-title">Find & Clean Duplicate Files on Windows.<br><span>Without the Risk.</span></h1>
@@ -576,6 +576,52 @@
     </section>
 
     <!-- Step-by-Step How-To Section -->
+
+    <!-- Signature Interactive Demonstration -->
+    <section class="container section" id="signature-demo" aria-labelledby="sig-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> 3-Stage XxHash64 Pipeline</p>
+          <h2 id="sig-title">Exact Content Matching &amp; Safe Cleanup</h2>
+        </div>
+        <p>Group identical files by exact content hash and send unwanted copies safely to the Recycle Bin.</p>
+      </div>
+      <div class="sig-demo-shell" data-sig-demo>
+        <div class="sig-demo-header">
+          <div class="sig-tabs" role="tablist" aria-label="Scan stage">
+            <button type="button" class="sig-tab active" role="tab" aria-selected="true" data-sig-target="scan">1. Size + Hash Match</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="review">2. Keep Original</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="clean">3. Recycle Bin Safety</button>
+          </div>
+          <span class="sig-note">Interactive preview</span>
+        </div>
+        <div class="sig-grid">
+          <div class="sig-panel">
+            <div class="sig-list" data-sig-panel="scan">
+              <div class="sig-row is-safe"><span>&#128269; Group #1 (XxHash64: 9f41...c8)</span><span class="sig-badge">3 exact matches</span></div>
+              <div class="sig-row is-indent"><span>Holiday_2025.jpg (Pictures/)</span><span class="sig-badge">6.4 MB</span></div>
+              <div class="sig-row is-indent"><span>Holiday_2025 (1).jpg (Downloads/)</span><span class="sig-badge">6.4 MB</span></div>
+              <div class="sig-row is-indent"><span>IMG_copy.jpg (Desktop/)</span><span class="sig-badge">6.4 MB</span></div>
+            </div>
+            <div class="sig-list" data-sig-panel="review" hidden>
+              <div class="sig-row is-safe"><span>&#9989; Keep Oldest: Pictures/Holiday_2025.jpg</span><span class="sig-badge">Protected</span></div>
+              <div class="sig-row is-indent"><span>&#9745;&#65039; Downloads/Holiday_2025 (1).jpg</span><span class="sig-badge">Queued</span></div>
+              <div class="sig-row is-indent"><span>&#9745;&#65039; Desktop/IMG_copy.jpg</span><span class="sig-badge">Queued</span></div>
+              <div class="sig-row is-safe"><span>Reclaimable in group</span><span class="sig-badge">12.8 MB</span></div>
+            </div>
+            <div class="sig-list" data-sig-panel="clean" hidden>
+              <div class="sig-row is-safe"><span>&#9989; Pictures/Holiday_2025.jpg</span><span class="sig-badge">Kept safely</span></div>
+              <div class="sig-row is-removed"><span>Downloads/Holiday_2025 (1).jpg</span><span class="sig-badge">Recycle Bin</span></div>
+              <div class="sig-row is-removed"><span>Desktop/IMG_copy.jpg</span><span class="sig-badge">Recycle Bin</span></div>
+              <div class="sig-row is-safe"><span>Recoverable anytime</span><span class="sig-badge">12.8 MB freed</span></div>
+            </div>
+          </div>
+          <div class="sig-preview-img">
+            <img src="assets/screenshots/DupScrub-wide.png" alt="Dup Scrub duplicate group review interface" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="container section" id="how-to" style="border-top: 1px solid var(--border-subtle);">
       <div class="section-heading">
         <div>
@@ -861,6 +907,6 @@
       });
     })();
   </script>
-  <script src="assets/redesign.js?v=20261117.4"></script>
+  <script src="assets/redesign.js?v=20261117.5"></script>
 </body>
 </html>

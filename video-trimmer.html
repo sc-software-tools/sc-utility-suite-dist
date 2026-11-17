@@ -164,7 +164,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
-  <link rel="stylesheet" href="assets/redesign.css?v=20261117.4">
+  <link rel="stylesheet" href="assets/redesign.css?v=20261117.5">
   <style>
     /* Landing Page Specific Enhancements */
     .landing-hero {
@@ -482,7 +482,7 @@
   <main id="main">
     <!-- Hero Section -->
     <section class="container landing-hero" id="top" aria-labelledby="hero-title">
-      <div class="app-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/MediaTrim-wide.png"><source src="assets/videos/MediaTrim/trailer.mp4" type="video/mp4"></video></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
+      <div class="app-hero-bg" aria-hidden="true"><img src="assets/screenshots/MediaTrim-wide.png" alt="" aria-hidden="true"></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
       <div class="landing-hero-copy">
         <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Trim & Convert Without Bloat</p>
         <h1 id="hero-title">Fast Video Trimmer & Batch Media Converter.<br><span>Keep the Clip. Skip the Upload.</span></h1>
@@ -576,6 +576,54 @@
     </section>
 
     <!-- Step-by-Step How-To Section -->
+
+    <!-- Signature Interactive Demonstration -->
+    <section class="container section" id="signature-demo" aria-labelledby="sig-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Precision Timeline &amp; FFmpeg Engine</p>
+          <h2 id="sig-title">Select the Exact Segment You Want to Keep</h2>
+        </div>
+        <p>Switch between lossless stream-copy cuts and MP3, WAV, or 720p MP4 presets powered by local FFmpeg.</p>
+      </div>
+      <div class="sig-demo-shell" data-sig-demo>
+        <div class="sig-demo-header">
+          <div class="sig-tabs" role="tablist" aria-label="Trim preset">
+            <button type="button" class="sig-tab active" role="tab" aria-selected="true" data-sig-target="cut">Lossless Stream Copy</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="mp3">Extract MP3 320k / WAV</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="p720">Compress 720p MP4</button>
+          </div>
+          <span class="sig-note">Interactive timeline</span>
+        </div>
+        <div class="sig-grid">
+          <div class="sig-panel">
+            <div class="sig-wave-bars" aria-hidden="true">
+              <div class="sig-bar" style="height:28%"></div><div class="sig-bar" style="height:44%"></div><div class="sig-bar" style="height:32%"></div><div class="sig-bar" style="height:55%"></div>
+              <div class="sig-bar in-range" style="height:72%"></div><div class="sig-bar in-range" style="height:88%"></div><div class="sig-bar in-range" style="height:64%"></div><div class="sig-bar in-range" style="height:92%"></div>
+              <div class="sig-bar in-range" style="height:78%"></div><div class="sig-bar in-range" style="height:84%"></div><div class="sig-bar in-range" style="height:95%"></div><div class="sig-bar in-range" style="height:70%"></div>
+              <div class="sig-bar in-range" style="height:80%"></div><div class="sig-bar in-range" style="height:66%"></div><div class="sig-bar in-range" style="height:86%"></div><div class="sig-bar in-range" style="height:74%"></div>
+              <div class="sig-bar" style="height:40%"></div><div class="sig-bar" style="height:52%"></div><div class="sig-bar" style="height:34%"></div><div class="sig-bar" style="height:48%"></div>
+              <div class="sig-bar" style="height:30%"></div><div class="sig-bar" style="height:38%"></div><div class="sig-bar" style="height:26%"></div><div class="sig-bar" style="height:22%"></div>
+            </div>
+            <div class="sig-list" style="margin-top:12px;" data-sig-panel="cut">
+              <div class="sig-row is-safe"><span>Trim Range: 00:10.0 &rarr; 00:40.0</span><span class="sig-badge">30.0s clip</span></div>
+              <div class="sig-row is-safe"><span>Preset: Stream Copy (-c copy)</span><span class="sig-badge">Zero re-encode</span></div>
+            </div>
+            <div class="sig-list" style="margin-top:12px;" data-sig-panel="mp3" hidden>
+              <div class="sig-row is-safe"><span>Audio Extraction: MP3 320 kbps / WAV</span><span class="sig-badge">Studio Audio</span></div>
+              <div class="sig-row is-safe"><span>Runs Locally with Bundled FFmpeg</span><span class="sig-badge">No Upload</span></div>
+            </div>
+            <div class="sig-list" style="margin-top:12px;" data-sig-panel="p720" hidden>
+              <div class="sig-row is-safe"><span>Output: 720p H.264 MP4</span><span class="sig-badge">Compact Share</span></div>
+              <div class="sig-row is-safe"><span>PRO Batch Queue</span><span class="sig-badge">Multi-File</span></div>
+            </div>
+          </div>
+          <div class="sig-preview-img">
+            <img src="assets/screenshots/MediaTrim-wide.png" alt="Media Trim waveform timeline interface" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="container section" id="how-to" style="border-top: 1px solid var(--border-subtle);">
       <div class="section-heading">
         <div>
@@ -861,6 +909,6 @@
       });
     })();
   </script>
-  <script src="assets/redesign.js?v=20261117.4"></script>
+  <script src="assets/redesign.js?v=20261117.5"></script>
 </body>
 </html>

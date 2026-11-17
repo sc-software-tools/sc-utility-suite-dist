@@ -164,7 +164,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
-  <link rel="stylesheet" href="assets/redesign.css?v=20261117.4">
+  <link rel="stylesheet" href="assets/redesign.css?v=20261117.5">
   <style>
     /* Landing Page Specific Enhancements */
     .landing-hero {
@@ -482,7 +482,7 @@
   <main id="main">
     <!-- Hero Section -->
     <section class="container landing-hero" id="top" aria-labelledby="hero-title">
-      <div class="app-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/ArchiveUnpacker-wide.png"><source src="assets/videos/ArchiveUnpacker/trailer.mp4" type="video/mp4"></video></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
+      <div class="app-hero-bg" aria-hidden="true"><img src="assets/screenshots/ArchiveUnpacker-wide.png" alt="" aria-hidden="true"></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
       <div class="landing-hero-copy">
         <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Modern Archive Manager</p>
         <h1 id="hero-title">Extract RAR, 7z & ZIP Archives Cleanly.<br><span>Without the 90s Nag Screens.</span></h1>
@@ -576,6 +576,52 @@
     </section>
 
     <!-- Step-by-Step How-To Section -->
+
+    <!-- Signature Interactive Demonstration -->
+    <section class="container section" id="signature-demo" aria-labelledby="sig-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Interactive Inspection</p>
+          <h2 id="sig-title">Inspect Archives Safely Before Extracting</h2>
+        </div>
+        <p>Preview nested contents with path-traversal protection before writing a single file to disk.</p>
+      </div>
+      <div class="sig-demo-shell" data-sig-demo>
+        <div class="sig-demo-header">
+          <div class="sig-tabs" role="tablist" aria-label="Archive sample">
+            <button type="button" class="sig-tab active" role="tab" aria-selected="true" data-sig-target="zip">project_backup.zip</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="rar">photos_raw.rar (RAR5)</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="7z">release_assets.7z</button>
+          </div>
+          <span class="sig-note">Interactive preview</span>
+        </div>
+        <div class="sig-grid">
+          <div class="sig-panel">
+            <div class="sig-list" data-sig-panel="zip">
+              <div class="sig-row is-safe"><span>&#128193; src/</span><span class="sig-badge">Safe relative path</span></div>
+              <div class="sig-row is-indent"><span>&#128196; MainWindow.axaml</span><span class="sig-badge">14.2 KB</span></div>
+              <div class="sig-row is-indent"><span>&#128196; ArchiveEngine.cs</span><span class="sig-badge">28.9 KB</span></div>
+              <div class="sig-row is-safe"><span>&#128274; Path-Traversal Guard</span><span class="sig-badge">Verified</span></div>
+            </div>
+            <div class="sig-list" data-sig-panel="rar" hidden>
+              <div class="sig-row is-safe"><span>&#128193; CameraRoll_2026/</span><span class="sig-badge">RAR5 Header OK</span></div>
+              <div class="sig-row is-indent"><span>&#128247; IMG_4012.JPG</span><span class="sig-badge">4.1 MB</span></div>
+              <div class="sig-row is-indent"><span>&#128247; IMG_4013.JPG</span><span class="sig-badge">3.8 MB</span></div>
+              <div class="sig-row is-safe"><span>&#9989; Extract to Subfolder</span><span class="sig-badge">Ready</span></div>
+            </div>
+            <div class="sig-list" data-sig-panel="7z" hidden>
+              <div class="sig-row is-safe"><span>&#128230; dist-win-x64/</span><span class="sig-badge">LZMA2 7z</span></div>
+              <div class="sig-row is-indent"><span>&#9881;&#65039; ArchiveUnpacker.exe</span><span class="sig-badge">63.8 MB</span></div>
+              <div class="sig-row is-indent"><span>&#128220; checksums.sha256</span><span class="sig-badge">1.1 KB</span></div>
+              <div class="sig-row is-safe"><span>&#128274; Zero Cloud Upload</span><span class="sig-badge">100% Local</span></div>
+            </div>
+          </div>
+          <div class="sig-preview-img">
+            <img src="assets/screenshots/ArchiveUnpacker-wide.png" alt="Archive Unpacker inspection interface" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="container section" id="how-to" style="border-top: 1px solid var(--border-subtle);">
       <div class="section-heading">
         <div>
@@ -861,6 +907,6 @@
       });
     })();
   </script>
-  <script src="assets/redesign.js?v=20261117.4"></script>
+  <script src="assets/redesign.js?v=20261117.5"></script>
 </body>
 </html>

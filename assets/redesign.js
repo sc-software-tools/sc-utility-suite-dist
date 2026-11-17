@@ -95,4 +95,30 @@
   } else {
     document.querySelectorAll('.reveal-up').forEach(function (el) { el.classList.add('is-visible'); });
   }
+
+  // 5. Signature Interactive Demonstrations (lightweight, accessible, zero-bloat)
+  document.querySelectorAll('[data-sig-demo]').forEach(function (shell) {
+    var tabs = shell.querySelectorAll('.sig-tab');
+    var panels = shell.querySelectorAll('[data-sig-panel]');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var key = tab.getAttribute('data-sig-target');
+        tabs.forEach(function (t) {
+          var active = t === tab;
+          t.classList.toggle('active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach(function (p) {
+          p.hidden = p.getAttribute('data-sig-panel') !== key;
+        });
+      });
+    });
+    var range = shell.querySelector('.sig-range');
+    var compareBox = shell.querySelector('.sig-compare-box');
+    if (range && compareBox) {
+      range.addEventListener('input', function () {
+        compareBox.style.setProperty('--split', range.value + '%');
+      });
+    }
+  });
 })();

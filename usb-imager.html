@@ -164,7 +164,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
-  <link rel="stylesheet" href="assets/redesign.css?v=20261117.4">
+  <link rel="stylesheet" href="assets/redesign.css?v=20261117.5">
   <style>
     /* Landing Page Specific Enhancements */
     .landing-hero {
@@ -482,7 +482,7 @@
   <main id="main">
     <!-- Hero Section -->
     <section class="container landing-hero" id="top" aria-labelledby="hero-title">
-      <div class="app-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/UsbFlasher-wide.png"><source src="assets/videos/UsbFlasher/trailer.mp4" type="video/mp4"></video></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
+      <div class="app-hero-bg" aria-hidden="true"><img src="assets/screenshots/UsbFlasher-wide.png" alt="" aria-hidden="true"></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
       <div class="landing-hero-copy">
         <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Safe USB Image Writer</p>
         <h1 id="hero-title">Write Bootable ISO & Raw Disk Images to USB.<br><span>With Strict Drive Protection.</span></h1>
@@ -576,6 +576,55 @@
     </section>
 
     <!-- Step-by-Step How-To Section -->
+
+    <!-- Signature Interactive Demonstration -->
+    <section class="container section" id="signature-demo" aria-labelledby="sig-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Guided 3-Step Workflow</p>
+          <h2 id="sig-title">From Disk Image to Verified Bootable USB</h2>
+        </div>
+        <p>Hardware locks hide internal system disks while post-write verification confirms every sector.</p>
+      </div>
+      <div class="sig-demo-shell" data-sig-demo>
+        <div class="sig-demo-header">
+          <div class="sig-tabs" role="tablist" aria-label="Flashing step">
+            <button type="button" class="sig-tab active" role="tab" aria-selected="true" data-sig-target="step1">1. Pick ISO / IMG</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="step2">2. Removable Drive Only</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="step3">3. Post-Write Verify</button>
+          </div>
+          <span class="sig-note">Workflow preview (browser cannot access drives)</span>
+        </div>
+        <div class="sig-grid">
+          <div class="sig-panel">
+            <div data-sig-panel="step1">
+              <div class="sig-list">
+                <div class="sig-row is-safe"><span>Selected Image: ubuntu-24.04-desktop-amd64.iso</span><span class="sig-badge">ISO · IMG · BIN</span></div>
+                <div class="sig-row"><span>Auto-UEFI Setup (FAT32)</span><span class="sig-badge">Optional</span></div>
+              </div>
+              <div class="sig-progress-track"><div class="sig-progress-fill" style="--pct: 33%;"></div></div>
+            </div>
+            <div data-sig-panel="step2" hidden>
+              <div class="sig-list">
+                <div class="sig-row is-safe"><span>&#128190; SanDisk Ultra USB (E:) &mdash; Removable</span><span class="sig-badge">Eligible</span></div>
+                <div class="sig-row is-removed"><span>Internal NVMe OS Drive (C:)</span><span class="sig-badge">Hardware Locked</span></div>
+              </div>
+              <div class="sig-progress-track"><div class="sig-progress-fill" style="--pct: 66%;"></div></div>
+            </div>
+            <div data-sig-panel="step3" hidden>
+              <div class="sig-list">
+                <div class="sig-row is-safe"><span>&#9989; Sector-by-Sector Readback Check</span><span class="sig-badge">100% Verified</span></div>
+                <div class="sig-row is-safe"><span>PRO Multi-Drive &amp; USB-to-IMG Backup</span><span class="sig-badge">Supported</span></div>
+              </div>
+              <div class="sig-progress-track"><div class="sig-progress-fill" style="--pct: 100%;"></div></div>
+            </div>
+          </div>
+          <div class="sig-preview-img">
+            <img src="assets/screenshots/UsbFlasher-wide.png" alt="USB Flasher drive selection and verification interface" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="container section" id="how-to" style="border-top: 1px solid var(--border-subtle);">
       <div class="section-heading">
         <div>
@@ -861,6 +910,6 @@
       });
     })();
   </script>
-  <script src="assets/redesign.js?v=20261117.4"></script>
+  <script src="assets/redesign.js?v=20261117.5"></script>
 </body>
 </html>

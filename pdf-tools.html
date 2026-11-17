@@ -164,7 +164,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
-  <link rel="stylesheet" href="assets/redesign.css?v=20261117.4">
+  <link rel="stylesheet" href="assets/redesign.css?v=20261117.5">
   <style>
     /* Landing Page Specific Enhancements */
     .landing-hero {
@@ -482,7 +482,7 @@
   <main id="main">
     <!-- Hero Section -->
     <section class="container landing-hero" id="top" aria-labelledby="hero-title">
-      <div class="app-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/PdfKnife-wide.png"><source src="assets/videos/PdfKnife/trailer.mp4" type="video/mp4"></video></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
+      <div class="app-hero-bg" aria-hidden="true"><img src="assets/screenshots/PdfKnife-wide.png" alt="" aria-hidden="true"></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
       <div class="landing-hero-copy">
         <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Private Document Manipulation</p>
         <h1 id="hero-title">Split, Merge & Burst PDFs Locally.<br><span>Confidential Files Stay Confidential.</span></h1>
@@ -576,6 +576,61 @@
     </section>
 
     <!-- Step-by-Step How-To Section -->
+
+    <!-- Signature Interactive Demonstration -->
+    <section class="container section" id="signature-demo" aria-labelledby="sig-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Document Manipulation Modes</p>
+          <h2 id="sig-title">Merge, Extract Ranges, or Burst Every Page</h2>
+        </div>
+        <p>Select an operation to preview how PDF Knife reorganizes confidential documents 100% locally.</p>
+      </div>
+      <div class="sig-demo-shell" data-sig-demo>
+        <div class="sig-demo-header">
+          <div class="sig-tabs" role="tablist" aria-label="PDF operation">
+            <button type="button" class="sig-tab active" role="tab" aria-selected="true" data-sig-target="merge">Merge PDFs</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="extract">Extract Pages 2-3</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="burst">Burst All Pages</button>
+          </div>
+          <span class="sig-note">Interactive sequence</span>
+        </div>
+        <div class="sig-grid">
+          <div class="sig-panel">
+            <div data-sig-panel="merge">
+              <div class="sig-pdf-pages">
+                <div class="sig-pdf-sheet is-active">Doc A<br>p.1-4</div>
+                <div class="sig-pdf-sheet is-active">+</div>
+                <div class="sig-pdf-sheet is-active">Doc B<br>p.1-2</div>
+                <div class="sig-pdf-sheet is-active">Merged<br>6 pages</div>
+              </div>
+              <p style="margin:14px 0 0;color:var(--sc-muted);font-size:0.86rem;">Drag to reorder files and combine into a single clean PDF with zero watermarks.</p>
+            </div>
+            <div data-sig-panel="extract" hidden>
+              <div class="sig-pdf-pages">
+                <div class="sig-pdf-sheet is-dim">Page 1</div>
+                <div class="sig-pdf-sheet is-active">Page 2 &#10003;</div>
+                <div class="sig-pdf-sheet is-active">Page 3 &#10003;</div>
+                <div class="sig-pdf-sheet is-dim">Page 4</div>
+              </div>
+              <p style="margin:14px 0 0;color:var(--sc-muted);font-size:0.86rem;">Isolate exact page ranges for contracts, invoices, or tax filings.</p>
+            </div>
+            <div data-sig-panel="burst" hidden>
+              <div class="sig-pdf-pages">
+                <div class="sig-pdf-sheet is-active">01.pdf</div>
+                <div class="sig-pdf-sheet is-active">02.pdf</div>
+                <div class="sig-pdf-sheet is-active">03.pdf</div>
+                <div class="sig-pdf-sheet is-active">04.pdf</div>
+              </div>
+              <p style="margin:14px 0 0;color:var(--sc-muted);font-size:0.86rem;">One-click PRO burst splits an entire packet into individual one-page PDFs.</p>
+            </div>
+          </div>
+          <div class="sig-preview-img">
+            <img src="assets/screenshots/PdfKnife-wide.png" alt="PDF Knife merge and split interface" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="container section" id="how-to" style="border-top: 1px solid var(--border-subtle);">
       <div class="section-heading">
         <div>
@@ -861,6 +916,6 @@
       });
     })();
   </script>
-  <script src="assets/redesign.js?v=20261117.4"></script>
+  <script src="assets/redesign.js?v=20261117.5"></script>
 </body>
 </html>

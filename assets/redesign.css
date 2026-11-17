@@ -22,7 +22,7 @@
 /* Remove any legacy ticker tape if present */
 .tech-marquee-wrap { display: none !important; }
 
-/* Native Hero Video Backdrop */
+/* Native Hero Video Backdrop (Homepage) & Atmospheric Artwork Backdrop (App Pages) */
 .hero, .landing-hero { position: relative; overflow: hidden; }
 .hero-bg-video, .app-hero-bg {
   position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
@@ -30,6 +30,11 @@
 }
 .hero-bg-video video, .app-hero-bg video {
   width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.app-hero-bg img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: blur(28px) saturate(1.45) brightness(0.55);
+  transform: scale(1.12);
 }
 .hero-bg-scrim, .app-hero-scrim {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
@@ -340,11 +345,249 @@ html, body { overflow-x: clip; max-width: 100%; }
 .stage-mode-toggle { white-space: nowrap; flex-shrink: 0; }
 .stage-mode-btn { white-space: nowrap; }
 .winget-badge { max-width: 100%; flex-wrap: wrap; overflow-wrap: anywhere; white-space: normal; }
+@media (max-width: 1120px) {
+  .fluent-titlebar-badge { display: none; }
+  .tab-label { font-size: 10.5px; gap: 4px; }
+}
+@media (max-width: 768px) {
+  .landing-hero { padding-block: 26px 38px !important; gap: 22px !important; }
+  .hero-cta-group {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px !important;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 10px;
+    font-size: 0.84rem;
+    min-height: 40px;
+  }
+  .hero-cta-group .btn:first-child {
+    grid-column: 1 / -1;
+    font-size: 0.92rem;
+    min-height: 44px;
+  }
+}
 @media (max-width: 640px) {
   .hero h1, .landing-hero h1 { font-size: clamp(1.85rem, 7.6vw, 2.5rem) !important; line-height: 1.08 !important; }
-  .hero-actions .btn, .hero-cta-group .btn { width: 100%; justify-content: center; }
-  .fluent-titlebar-badge { display: none; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
   .nav-download { padding: 6px 10px !important; font-size: 0.8rem !important; white-space: nowrap; }
   .showcase-band { padding: 18px 16px; gap: 20px; }
   .band-actions .btn { width: 100%; justify-content: center; }
+}
+
+/* Signature Interactive Product Demonstrations (App Pages) */
+.sig-demo-shell {
+  margin-top: 28px;
+  border-radius: 20px;
+  padding: 28px;
+  background: linear-gradient(145deg, rgba(21, 27, 40, 0.9), rgba(10, 14, 22, 0.98));
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.48), 0 0 36px rgba(var(--accent-rgb), 0.08);
+}
+@media (max-width: 640px) {
+  .sig-demo-shell { padding: 18px 16px; }
+}
+.sig-demo-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.sig-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sig-tab {
+  min-height: 36px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+.sig-tab:hover { border-color: rgba(var(--accent-rgb), 0.45); color: #fff; }
+.sig-tab.active {
+  background: rgba(var(--accent-rgb), 0.22);
+  border-color: rgba(var(--accent-rgb), 0.72);
+  color: #fff;
+}
+.sig-tab:focus-visible, .plat-btn:focus-visible, .device-frame:focus-visible {
+  outline: 2px solid rgb(var(--accent-rgb));
+  outline-offset: 2px;
+}
+.sig-note {
+  font-size: 0.78rem;
+  color: var(--sc-muted);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.sig-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .sig-grid { grid-template-columns: 1fr; }
+}
+.sig-panel {
+  background: #080b11;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 18px;
+}
+.sig-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sig-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.86rem;
+  color: #e2e8f0;
+  transition: transform 0.25s ease, opacity 0.25s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.sig-row.is-indent { margin-left: 18px; }
+.sig-row.is-safe { border-color: rgba(var(--accent-rgb), 0.35); background: rgba(var(--accent-rgb), 0.08); }
+.sig-row.is-removed { opacity: 0.52; text-decoration: line-through; border-color: rgba(244, 63, 94, 0.35); }
+.sig-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(var(--accent-rgb), 0.16);
+  color: #f8fafc;
+  white-space: nowrap;
+}
+.sig-preview-img {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #07090e;
+}
+.sig-preview-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* HEIC Before/After Slider */
+.sig-compare-box {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #07090e;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.sig-compare-box img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.sig-compare-before {
+  filter: grayscale(0.45) brightness(0.82);
+  clip-path: inset(0 calc(100% - var(--split, 50%)) 0 0);
+}
+.sig-compare-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split, 50%);
+  width: 2px;
+  background: rgb(var(--accent-rgb));
+  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.8);
+  pointer-events: none;
+}
+.sig-compare-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-top: 8px;
+}
+.sig-range {
+  width: 100%;
+  margin-top: 10px;
+  accent-color: rgb(var(--accent-rgb));
+  cursor: pointer;
+}
+/* Media Trim Waveform */
+.sig-wave-bars {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  align-items: end;
+  gap: 4px;
+  height: 76px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #0d121c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+.sig-bar {
+  border-radius: 3px;
+  background: rgba(148, 163, 184, 0.28);
+  transition: background 0.2s ease, height 0.25s ease;
+}
+.sig-bar.in-range {
+  background: rgb(var(--accent-rgb));
+}
+/* PDF Knife Page Sequence */
+.sig-pdf-pages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.sig-pdf-sheet {
+  padding: 14px 10px;
+  border-radius: 10px;
+  background: #111827;
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  transition: transform 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
+}
+.sig-pdf-sheet.is-active {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.14);
+  transform: translateY(-4px);
+}
+.sig-pdf-sheet.is-dim { opacity: 0.35; }
+/* USB Flasher Progress Bar */
+.sig-progress-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  margin-top: 12px;
+}
+.sig-progress-fill {
+  height: 100%;
+  width: var(--pct, 32%);
+  background: linear-gradient(90deg, rgb(var(--accent-rgb)), #fbbf24);
+  transition: width 0.35s ease;
 }

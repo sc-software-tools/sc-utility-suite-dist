@@ -164,7 +164,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
-  <link rel="stylesheet" href="assets/redesign.css?v=20261117.4">
+  <link rel="stylesheet" href="assets/redesign.css?v=20261117.5">
   <style>
     /* Landing Page Specific Enhancements */
     .landing-hero {
@@ -482,7 +482,7 @@
   <main id="main">
     <!-- Hero Section -->
     <section class="container landing-hero" id="top" aria-labelledby="hero-title">
-      <div class="app-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/ScreenLens-wide.png"><source src="assets/videos/ScreenLens/trailer.mp4" type="video/mp4"></video></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
+      <div class="app-hero-bg" aria-hidden="true"><img src="assets/screenshots/ScreenLens-wide.png" alt="" aria-hidden="true"></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
       <div class="landing-hero-copy">
         <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Minimalist Desktop Recording</p>
         <h1 id="hero-title">Lightweight Screen Recorder & GIF Maker.<br><span>Without the OBS Complexity.</span></h1>
@@ -576,6 +576,49 @@
     </section>
 
     <!-- Step-by-Step How-To Section -->
+
+    <!-- Signature Interactive Demonstration -->
+    <section class="container section" id="signature-demo" aria-labelledby="sig-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Capture Profiles</p>
+          <h2 id="sig-title">Full Display, Custom Region, MP4 or Animated GIF</h2>
+        </div>
+        <p>Preview how Screen Lens configures capture targets and output formats without OBS complexity.</p>
+      </div>
+      <div class="sig-demo-shell" data-sig-demo>
+        <div class="sig-demo-header">
+          <div class="sig-tabs" role="tablist" aria-label="Recording mode">
+            <button type="button" class="sig-tab active" role="tab" aria-selected="true" data-sig-target="mp4">60 FPS MP4 Capture</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="gif">Animated GIF</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="region">Region &amp; Wayland</button>
+          </div>
+          <span class="sig-note">Session preview</span>
+        </div>
+        <div class="sig-grid">
+          <div class="sig-panel">
+            <div class="sig-list" data-sig-panel="mp4">
+              <div class="sig-row is-safe"><span>&#128308; Ready to Record</span><span class="sig-badge">Zero Watermark</span></div>
+              <div class="sig-row is-safe"><span>Format: Crisp H.264 MP4</span><span class="sig-badge">Up to 60 FPS (PRO)</span></div>
+              <div class="sig-row"><span>Audio: Optional Mic + System</span><span class="sig-badge">Floating Mini-Bar</span></div>
+            </div>
+            <div class="sig-list" data-sig-panel="gif" hidden>
+              <div class="sig-row is-safe"><span>&#127902;&#65039; Output: Animated GIF</span><span class="sig-badge">Docs &amp; Bug Reports</span></div>
+              <div class="sig-row is-safe"><span>Direct Palette Generation</span><span class="sig-badge">Bundled FFmpeg</span></div>
+              <div class="sig-row"><span>Saved locally to Videos folder</span><span class="sig-badge">Instant Preview</span></div>
+            </div>
+            <div class="sig-list" data-sig-panel="region" hidden>
+              <div class="sig-row is-safe"><span>Target: Full Monitor or Custom Region</span><span class="sig-badge">Multi-Monitor</span></div>
+              <div class="sig-row is-safe"><span>Linux Support: Wayland &amp; PipeWire</span><span class="sig-badge">Native Portal</span></div>
+              <div class="sig-row"><span>Zero background tray daemons</span><span class="sig-badge">Lightweight</span></div>
+            </div>
+          </div>
+          <div class="sig-preview-img">
+            <img src="assets/screenshots/ScreenLens-wide.png" alt="Screen Lens capture studio interface" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="container section" id="how-to" style="border-top: 1px solid var(--border-subtle);">
       <div class="section-heading">
         <div>
@@ -861,6 +904,6 @@
       });
     })();
   </script>
-  <script src="assets/redesign.js?v=20261117.4"></script>
+  <script src="assets/redesign.js?v=20261117.5"></script>
 </body>
 </html>

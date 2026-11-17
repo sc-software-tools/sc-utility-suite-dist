@@ -164,7 +164,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
-  <link rel="stylesheet" href="assets/redesign.css?v=20261117.4">
+  <link rel="stylesheet" href="assets/redesign.css?v=20261117.5">
   <style>
     /* Landing Page Specific Enhancements */
     .landing-hero {
@@ -482,7 +482,7 @@
   <main id="main">
     <!-- Hero Section -->
     <section class="container landing-hero" id="top" aria-labelledby="hero-title">
-      <div class="app-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/HeicStudio-wide.png"><source src="assets/videos/HeicStudio/trailer.mp4" type="video/mp4"></video></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
+      <div class="app-hero-bg" aria-hidden="true"><img src="assets/screenshots/HeicStudio-wide.png" alt="" aria-hidden="true"></div><div class="app-hero-scrim" aria-hidden="true"></div><div class="aurora-orb" aria-hidden="true"></div><div class="aurora-orb orb-2" aria-hidden="true"></div>
       <div class="landing-hero-copy">
         <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Apple Photos on Windows Made Easy</p>
         <h1 id="hero-title">Convert iPhone HEIC Photos to JPG on Windows.<br><span>100% Offline.</span></h1>
@@ -576,6 +576,55 @@
     </section>
 
     <!-- Step-by-Step How-To Section -->
+
+    <!-- Signature Interactive Demonstration -->
+    <section class="container section" id="signature-demo" aria-labelledby="sig-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="fluent-dot" aria-hidden="true"></span> Before &amp; After Conversion</p>
+          <h2 id="sig-title">HEIC to Upright JPG, PNG, WebP or PDF</h2>
+        </div>
+        <p>Drag the comparison handle to see how local conversion fixes orientation and strips private EXIF GPS data.</p>
+      </div>
+      <div class="sig-demo-shell" data-sig-demo>
+        <div class="sig-demo-header">
+          <div class="sig-tabs" role="tablist" aria-label="Output format">
+            <button type="button" class="sig-tab active" role="tab" aria-selected="true" data-sig-target="jpg">Output: JPG</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="png">Output: PNG</button>
+            <button type="button" class="sig-tab" role="tab" aria-selected="false" data-sig-target="webp">Output: WebP / PDF</button>
+          </div>
+          <span class="sig-note">Interactive comparison</span>
+        </div>
+        <div class="sig-grid">
+          <div class="sig-panel">
+            <div class="sig-list" data-sig-panel="jpg">
+              <div class="sig-row"><span>Input: IMG_5001.HEIC</span><span class="sig-badge">Apple HEIF + GPS</span></div>
+              <div class="sig-row is-safe"><span>Output: IMG_5001.jpg</span><span class="sig-badge">Auto-Upright</span></div>
+              <div class="sig-row is-safe"><span>Privacy Strip</span><span class="sig-badge">GPS EXIF Removed</span></div>
+            </div>
+            <div class="sig-list" data-sig-panel="png" hidden>
+              <div class="sig-row"><span>Input: IMG_5001.HEIC</span><span class="sig-badge">Apple HEIF</span></div>
+              <div class="sig-row is-safe"><span>Output: IMG_5001.png</span><span class="sig-badge">Lossless PNG</span></div>
+              <div class="sig-row is-safe"><span>Quality &amp; Resize</span><span class="sig-badge">100% Local</span></div>
+            </div>
+            <div class="sig-list" data-sig-panel="webp" hidden>
+              <div class="sig-row"><span>Input: Batch of HEIC / AVIF</span><span class="sig-badge">Folder Queue</span></div>
+              <div class="sig-row is-safe"><span>Output: .webp or .pdf</span><span class="sig-badge">Web &amp; Doc Ready</span></div>
+              <div class="sig-row is-safe"><span>PRO Batch Mode</span><span class="sig-badge">Unlimited Files</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="sig-compare-box" style="--split: 50%;">
+              <img src="assets/screenshots/HeicStudio-wide.png" alt="HEIC Studio converted output interface">
+              <img class="sig-compare-before" src="assets/screenshots/HeicStudio-wide.png" alt="Raw HEIC source state">
+              <div class="sig-compare-divider" aria-hidden="true"></div>
+            </div>
+            <div class="sig-compare-labels"><span>Before: Raw HEIC + GPS</span><span>After: Converted &amp; Stripped</span></div>
+            <input class="sig-range" type="range" min="10" max="90" value="50" aria-label="Before and after comparison slider">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="container section" id="how-to" style="border-top: 1px solid var(--border-subtle);">
       <div class="section-heading">
         <div>
@@ -861,6 +910,6 @@
       });
     })();
   </script>
-  <script src="assets/redesign.js?v=20261117.4"></script>
+  <script src="assets/redesign.js?v=20261117.5"></script>
 </body>
 </html>
