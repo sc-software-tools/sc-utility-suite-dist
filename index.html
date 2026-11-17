@@ -136,7 +136,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css?v=20261111.3">
-  <link rel="stylesheet" href="assets/redesign.css?v=20261117.3">
+  <link rel="stylesheet" href="assets/redesign.css?v=20261117.4">
   <script src="site.js?v=20261111.3" defer></script>
 </head>
 
@@ -280,7 +280,7 @@
         <button type="button" class="filter-pill" data-filter="files">PDF &amp; Archives</button>
         <button type="button" class="filter-pill" data-filter="system">Storage &amp; USB Drives</button>
       </div><div class="showcase-bands">
-      <article class="showcase-band reveal-up" id="archive-unpacker" data-cat="files" style="--band-rgb: 16, 185, 129;">
+      <article class="showcase-band band-spotlight reveal-up" id="archive-unpacker" data-cat="files" style="--band-rgb: 16, 185, 129;">
         <div class="band-copy">
           <div class="band-head">
             <img src="assets/icons/ArchiveUnpacker.png" width="52" height="52" alt="">
@@ -312,7 +312,7 @@
           </div>
         </div>
       </article>
-      <article class="showcase-band is-flipped reveal-up" id="dup-scrub" data-cat="system" style="--band-rgb: 244, 63, 94;">
+      <article class="showcase-band is-flipped band-editorial-split reveal-up" id="dup-scrub" data-cat="system" style="--band-rgb: 244, 63, 94;">
         <div class="band-copy">
           <div class="band-head">
             <img src="assets/icons/DupScrub.png" width="52" height="52" alt="">
@@ -344,7 +344,7 @@
           </div>
         </div>
       </article>
-      <article class="showcase-band reveal-up" id="heic-studio" data-cat="media" style="--band-rgb: 245, 158, 11;">
+      <article class="showcase-band band-dual-device reveal-up" id="heic-studio" data-cat="media" style="--band-rgb: 245, 158, 11;">
         <div class="band-copy">
           <div class="band-head">
             <img src="assets/icons/HeicStudio.png" width="52" height="52" alt="">
@@ -372,11 +372,12 @@
             <video muted loop playsinline preload="none" poster="assets/screenshots/HeicStudio-wide.png">
               <source src="assets/videos/HeicStudio/trailer.mp4" type="video/mp4">
             </video>
+            <div class="device-companion-phone" aria-hidden="true"><img src="assets/android/HeicStudio.png" alt="" loading="lazy"></div>
             <button type="button" class="device-play-fab watch-demo-btn" data-app-name="HEIC Studio" data-key="HeicStudio" data-trailer="ROld8b81A5Q" data-short="5U0EqbCI2GE" data-howto="tuaWcBls3Sg">&#9654; Watch Trailer &amp; Short</button>
           </div>
         </div>
       </article>
-      <article class="showcase-band is-flipped reveal-up" id="media-trim" data-cat="media" style="--band-rgb: 139, 92, 246;">
+      <article class="showcase-band band-cinema-wide reveal-up" id="media-trim" data-cat="media" style="--band-rgb: 139, 92, 246;">
         <div class="band-copy">
           <div class="band-head">
             <img src="assets/icons/MediaTrim.png" width="52" height="52" alt="">
@@ -408,7 +409,7 @@
           </div>
         </div>
       </article>
-      <article class="showcase-band reveal-up" id="pdf-knife" data-cat="files" style="--band-rgb: 56, 189, 248;">
+      <article class="showcase-band band-blueprint reveal-up" id="pdf-knife" data-cat="files" style="--band-rgb: 56, 189, 248;">
         <div class="band-copy">
           <div class="band-head">
             <img src="assets/icons/PdfKnife.png" width="52" height="52" alt="">
@@ -440,7 +441,7 @@
           </div>
         </div>
       </article>
-      <article class="showcase-band is-flipped reveal-up" id="screen-lens" data-cat="media" style="--band-rgb: 6, 182, 212;">
+      <article class="showcase-band is-flipped band-rec-studio reveal-up" id="screen-lens" data-cat="media" style="--band-rgb: 6, 182, 212;">
         <div class="band-copy">
           <div class="band-head">
             <img src="assets/icons/ScreenLens.png" width="52" height="52" alt="">
@@ -472,7 +473,7 @@
           </div>
         </div>
       </article>
-      <article class="showcase-band reveal-up" id="usb-flasher" data-cat="system" style="--band-rgb: 251, 146, 60;">
+      <article class="showcase-band band-hardware reveal-up" id="usb-flasher" data-cat="system" style="--band-rgb: 251, 146, 60;">
         <div class="band-copy">
           <div class="band-head">
             <img src="assets/icons/UsbFlasher.png" width="52" height="52" alt="">
@@ -811,7 +812,8 @@
         if (!videoWrap || !vidEl || !screenLink) return;
         if (stageMode === 'vid') {
           screenLink.hidden = true; videoWrap.hidden = false;
-          vidEl.src = 'assets/videos/' + key + '/flow.mp4';
+          vidEl.poster = 'assets/screenshots/' + key + '-wide.png';
+          vidEl.src = 'assets/videos/' + key + '/trailer.mp4';
           var p2 = vidEl.play(); if (p2 && p2.catch) p2.catch(function(){});
         } else {
           videoWrap.hidden = true; vidEl.pause(); screenLink.hidden = false;
@@ -841,6 +843,6 @@
       }
     })();
   </script>
-  <script src="assets/redesign.js?v=20261117"></script>
+  <script src="assets/redesign.js?v=20261117.4"></script>
 </body>
 </html>
