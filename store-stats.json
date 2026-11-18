@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-18 13:42:21 UTC",
+  "last_updated": "2026-11-18 21:44:56 UTC",
   "date_range": "2026-08-20 to 2026-11-18",
   "summary": {
-    "total_acquisitions": 16,
+    "total_acquisitions": 17,
     "total_installs": 17,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -13,7 +13,7 @@
     {
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
-      "acquisitions": 5,
+      "acquisitions": 6,
       "installs": 5,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -189,7 +189,7 @@
     "total_revenue_usd": 0.0,
     "products": [
       {
-        "name": "SC Utility Suite PRO",
+        "name": "SC Utility Suite PRO (pre-release licence only, no installer yet)",
         "sales": 0,
         "revenue_usd": 0.0,
         "price": "$19.99"
