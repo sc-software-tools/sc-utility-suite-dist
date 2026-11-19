@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-19 11:20:59 UTC",
+  "last_updated": "2026-11-19 20:02:06 UTC",
   "date_range": "2026-08-21 to 2026-11-19",
   "summary": {
-    "total_acquisitions": 17,
+    "total_acquisitions": 19,
     "total_installs": 20,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -13,7 +13,7 @@
     {
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
-      "acquisitions": 6,
+      "acquisitions": 7,
       "installs": 7,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -58,7 +58,7 @@
     {
       "name": "Screen Lens",
       "product_id": "9N7V2FVFL4BN",
-      "acquisitions": 0,
+      "acquisitions": 1,
       "installs": 1,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
