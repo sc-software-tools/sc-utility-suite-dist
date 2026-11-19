@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-11-19 08:23:19 UTC",
+  "last_updated": "2026-11-19 11:20:59 UTC",
   "date_range": "2026-08-21 to 2026-11-19",
   "summary": {
     "total_acquisitions": 17,
-    "total_installs": 17,
+    "total_installs": 20,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
@@ -14,7 +14,7 @@
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
       "acquisitions": 6,
-      "installs": 5,
+      "installs": 7,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -59,7 +59,7 @@
       "name": "Screen Lens",
       "product_id": "9N7V2FVFL4BN",
       "acquisitions": 0,
-      "installs": 0,
+      "installs": 1,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -94,6 +94,16 @@
       "code": "UA",
       "country": "UA",
       "count": 2
+    },
+    {
+      "code": "ID",
+      "country": "ID",
+      "count": 1
+    },
+    {
+      "code": "MW",
+      "country": "MW",
+      "count": 1
     },
     {
       "code": "NP",
@@ -169,18 +179,23 @@
       "code": "GB",
       "country": "United Kingdom",
       "count": 1
+    },
+    {
+      "code": "MX",
+      "country": "MX",
+      "count": 1
     }
   ],
   "os_breakdown": [
     {
       "os": "Windows 11",
-      "count": 14,
-      "percent": 82.4
+      "count": 16,
+      "percent": 80.0
     },
     {
       "os": "Windows 10",
-      "count": 3,
-      "percent": 17.6
+      "count": 4,
+      "percent": 20.0
     }
   ],
   "gumroad": {
