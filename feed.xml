@@ -4,7 +4,7 @@
   <subtitle>Practical, privacy-first desktop utilities for Windows 10 &amp; 11</subtitle>
   <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/feed.xml" rel="self"/>
   <link href="https://sc-software-tools.github.io/sc-utility-suite-dist/"/>
-  <updated>2026-11-17T13:48:25Z</updated>
+  <updated>2026-11-20T23:23:59Z</updated>
   <id>https://sc-software-tools.github.io/sc-utility-suite-dist/</id>
   <author>
     <name>SC Software</name>
@@ -12,6 +12,13 @@
     <uri>https://sc-software-tools.github.io/sc-utility-suite-dist/</uri>
   </author>
 
+  <entry>
+    <title>SC Utility Suite 1.2.0</title>
+    <link href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/suite-v1.2.0"/>
+    <id>https://sc-software-tools.github.io/sc-utility-suite-dist/#release-v1.2.0</id>
+    <updated>2026-11-20T23:23:59Z</updated>
+    <summary>Media Trim playback is back, password-protected ZIPs, a Windows 11 right-click menu for Archive Unpacker, side-by-side duplicate choices, clearer saving in Screen Lens and one window per app.</summary>
+  </entry>
   <entry>
     <title>SC Utility Suite 1.1.2: fixes for every app</title>
     <link href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases/tag/suite-v1.1.2"/>
