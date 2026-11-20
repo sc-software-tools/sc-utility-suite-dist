@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-11-20 09:45:14 UTC",
+  "last_updated": "2026-11-20 18:23:08 UTC",
   "date_range": "2026-08-22 to 2026-11-20",
   "summary": {
-    "total_acquisitions": 20,
+    "total_acquisitions": 23,
     "total_installs": 20,
     "total_crashes": 0,
-    "total_inapp_purchases": 1,
+    "total_inapp_purchases": 6,
     "total_inapp_revenue_usd": 4.42,
     "apps_tracked": 7
   },
@@ -15,14 +15,14 @@
       "product_id": "9NXS3LDTBRX8",
       "acquisitions": 7,
       "installs": 7,
-      "inapp_purchases": 0,
+      "inapp_purchases": 1,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
     },
     {
       "name": "Dup Scrub",
       "product_id": "9NL51TH9QR3M",
-      "acquisitions": 1,
+      "acquisitions": 2,
       "installs": 1,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -33,16 +33,16 @@
       "product_id": "9N4F9K6G90HK",
       "acquisitions": 3,
       "installs": 5,
-      "inapp_purchases": 1,
+      "inapp_purchases": 2,
       "inapp_revenue_usd": 4.42,
       "crashes": 0
     },
     {
       "name": "Media Trim",
       "product_id": "9PC1HVN60QBP",
-      "acquisitions": 2,
+      "acquisitions": 3,
       "installs": 3,
-      "inapp_purchases": 0,
+      "inapp_purchases": 1,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
     },
@@ -51,16 +51,16 @@
       "product_id": "9NQLSS021G6T",
       "acquisitions": 5,
       "installs": 3,
-      "inapp_purchases": 0,
+      "inapp_purchases": 1,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
     },
     {
       "name": "Screen Lens",
       "product_id": "9N7V2FVFL4BN",
-      "acquisitions": 1,
+      "acquisitions": 2,
       "installs": 1,
-      "inapp_purchases": 0,
+      "inapp_purchases": 1,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
     },
@@ -75,6 +75,71 @@
     }
   ],
   "sales_history": [
+    {
+      "source": "Microsoft Store",
+      "app": "Archive Unpacker",
+      "product_id": "9NXS3LDTBRX8",
+      "addon_name": "Archive Unpacker PRO (Lifetime)",
+      "addon_id": "",
+      "date": "2026-11-20",
+      "market": "Store",
+      "country": "Microsoft Store",
+      "quantity": 1,
+      "revenue_usd": 0.0,
+      "os": ""
+    },
+    {
+      "source": "Microsoft Store",
+      "app": "HEIC Studio",
+      "product_id": "9N4F9K6G90HK",
+      "addon_name": "HEIC Studio PRO (Lifetime)",
+      "addon_id": "",
+      "date": "2026-11-20",
+      "market": "Store",
+      "country": "Microsoft Store",
+      "quantity": 1,
+      "revenue_usd": 0.0,
+      "os": ""
+    },
+    {
+      "source": "Microsoft Store",
+      "app": "Media Trim",
+      "product_id": "9PC1HVN60QBP",
+      "addon_name": "Media Trim PRO (Lifetime)",
+      "addon_id": "",
+      "date": "2026-11-20",
+      "market": "Store",
+      "country": "Microsoft Store",
+      "quantity": 1,
+      "revenue_usd": 0.0,
+      "os": ""
+    },
+    {
+      "source": "Microsoft Store",
+      "app": "PDF Knife",
+      "product_id": "9NQLSS021G6T",
+      "addon_name": "PDF Knife PRO (Lifetime)",
+      "addon_id": "",
+      "date": "2026-11-20",
+      "market": "Store",
+      "country": "Microsoft Store",
+      "quantity": 1,
+      "revenue_usd": 0.0,
+      "os": ""
+    },
+    {
+      "source": "Microsoft Store",
+      "app": "Screen Lens",
+      "product_id": "9N7V2FVFL4BN",
+      "addon_name": "Screen Lens PRO (Lifetime)",
+      "addon_id": "",
+      "date": "2026-11-20",
+      "market": "Store",
+      "country": "Microsoft Store",
+      "quantity": 1,
+      "revenue_usd": 0.0,
+      "os": ""
+    },
     {
       "source": "Microsoft Store",
       "app": "HEIC Studio",
