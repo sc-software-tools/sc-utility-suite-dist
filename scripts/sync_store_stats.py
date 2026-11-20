@@ -174,6 +174,7 @@ def main():
     total_installs = 0
     total_crashes = 0
     total_inapp = 0
+    promo_redemptions = 0
     total_inapp_revenue = 0.0
     
     market_counts = {}
@@ -202,6 +203,11 @@ def main():
         for item in inapp_records:
             qty = record_quantity(item)
             unit_price = float(item.get("purchasePriceUSDAmount") or 0.0)
+            # Every add-on is paid ($3.99 / $19.99): a $0 acquisition is a free promotional-code redemption (owner
+            # testing), not an upgrade sale, so it stays out of the counts, revenue and sales history.
+            if unit_price <= 0 or "promo" in str(item.get("acquisitionType") or "").lower():
+                promo_redemptions += qty
+                continue
             if qty > 0:
                 row_rev = round(qty * unit_price, 2) if unit_price > 0 else 0.0
                 inapp_count += qty
@@ -322,7 +328,7 @@ def main():
                 f.write(html_text_new)
         
     print(f"Store analytics successfully synced to store-stats.json, ecosystem-data.json, and stats.html")
-    print(f"Acquisitions: {total_acquisitions}, Installs: {total_installs}, InApp: {total_inapp}")
+    print(f"Acquisitions: {total_acquisitions}, Installs: {total_installs}, InApp: {total_inapp} (excluded {promo_redemptions} promotional-code redemptions)")
 
 if __name__ == "__main__":
     main()
