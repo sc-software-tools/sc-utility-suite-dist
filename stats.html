@@ -457,10 +457,11 @@
       </div>
       <div style="overflow-x: auto;">
         <table class="stat-table">
-          <thead><tr><th>Product</th><th>Channel</th><th class="hide-sm">Date</th><th class="n">Units</th><th class="n">Revenue</th><th class="n">Share</th></tr></thead>
-          <tbody id="sales-body"><tr><td colspan="6" class="muted" style="text-align:center; padding: 16px;">No sales yet.</td></tr></tbody>
+          <thead><tr><th>Product</th><th>Channel</th><th>Came from</th><th class="hide-sm">Date</th><th class="n">Units</th><th class="n">Revenue</th><th class="n">Share</th></tr></thead>
+          <tbody id="sales-body"><tr><td colspan="7" class="muted" style="text-align:center; padding: 16px;">No sales yet.</td></tr></tbody>
         </table>
       </div>
+      <p class="muted" id="sales-source-summary" style="margin: 10px 2px 0; font-size: 0.85rem;"></p>
       <details class="fold">
         <summary>Gumroad products &amp; prices <span class="muted" id="gumroad-count"></span></summary>
         <div class="fold-body">
@@ -706,14 +707,40 @@
       el("metric-top-stability").style.color = crashes > 0 ? "#F87171" : "#4ADE80";
 
       // Sales
+      // Where a sale came from. In-app buy links (1.2.2+) carry utm_source=app, utm_medium=<os> and
+      // utm_campaign=<app permalink>, "suite-<permalink>" (Suite app) or "cross-<permalink>" (Suite offer in a standalone app).
+      var APP_BY_PERMALINK = { "sc-heic-studio": "HEIC Studio", "sc-pdf-knife": "PDF Knife", "sc-archive-unpacker": "Archive Unpacker", "sc-media-trim": "Media Trim", "sc-dup-scrub": "Dup Scrub", "sc-screen-lens": "Screen Lens", "sc-usb-flasher": "USB Flasher" };
+      function saleSource(s) {
+        if (!/gumroad/i.test(s.source || "")) return "In-app (Store add-on)";
+        if (s.utm_source === "app") {
+          var os = s.utm_medium ? s.utm_medium.charAt(0).toUpperCase() + s.utm_medium.slice(1) : "";
+          var c = s.utm_campaign || "", where;
+          if (c.indexOf("suite-") === 0) where = "Suite app (" + (APP_BY_PERMALINK[c.slice(6)] || c.slice(6)) + ")";
+          else if (c.indexOf("cross-") === 0) where = (APP_BY_PERMALINK[c.slice(6)] || c.slice(6)) + " app, Suite offer";
+          else where = (APP_BY_PERMALINK[c] || c || "app") + " app";
+          return "In-app · " + where + (os ? " · " + os : "");
+        }
+        if (s.discover) return "Gumroad Discover";
+        if (s.utm_source) return "Link: " + s.utm_source + (s.utm_campaign ? " / " + s.utm_campaign : "");
+        if (s.referrer && s.referrer !== "direct") return "Web: " + s.referrer.replace(/^https?:\/\//, "").split("/")[0];
+        return s.utm_source === undefined ? "Not recorded" : "Website / direct";
+      }
       var sales = [];
-      (data.sales_history || []).forEach(function(s) { sales.push({ product: s.addon_name || s.app, channel: s.source || "Microsoft Store", date: s.date || "", units: s.quantity || 1, rev: Number(s.revenue_usd || 0) }); });
+      (data.sales_history || []).forEach(function(s) { sales.push({ product: s.addon_name || s.app, channel: s.source || "Microsoft Store", from: saleSource(s), date: s.date || "", units: s.quantity || 1, rev: Number(s.revenue_usd || 0) }); });
       if (!(data.sales_history || []).some(function(s) { return /gumroad/i.test(s.source || ""); }))
-        (g.products || []).forEach(function(p) { if ((p.sales || 0) > 0) sales.push({ product: p.name, channel: /Utility Suite/.test(p.name) ? "Gumroad (Suite key)" : "Gumroad", date: "all time", units: p.sales, rev: Number(p.revenue_usd || 0) }); });
+        (g.products || []).forEach(function(p) { if ((p.sales || 0) > 0) sales.push({ product: p.name, channel: /Utility Suite/.test(p.name) ? "Gumroad (Suite key)" : "Gumroad", from: "", date: "all time", units: p.sales, rev: Number(p.revenue_usd || 0) }); });
       var totalRev = sales.reduce(function(t, s) { return t + s.rev; }, 0);
       el("sales-body").innerHTML = sales.length ? sales.map(function(s) {
-        return "<tr><td><strong>" + esc(s.product) + "</strong></td><td>" + esc(s.channel) + "</td><td class='hide-sm muted'>" + esc(s.date) + "</td><td class='n'>" + s.units + "</td><td class='n'>" + money(s.rev) + "</td><td class='n'>" + (totalRev > 0 ? Math.round(s.rev / totalRev * 100) : 0) + "%</td></tr>";
-      }).join("") : "<tr><td colspan='6' class='muted' style='text-align:center; padding:16px;'>No sales yet.</td></tr>";
+        return "<tr><td><strong>" + esc(s.product) + "</strong></td><td>" + esc(s.channel) + "</td><td class='muted'>" + esc(s.from) + "</td><td class='hide-sm muted'>" + esc(s.date) + "</td><td class='n'>" + s.units + "</td><td class='n'>" + money(s.rev) + "</td><td class='n'>" + (totalRev > 0 ? Math.round(s.rev / totalRev * 100) : 0) + "%</td></tr>";
+      }).join("") : "<tr><td colspan='7' class='muted' style='text-align:center; padding:16px;'>No sales yet.</td></tr>";
+      // One-line summary: sales grouped by where they came from (in-app per OS, Store add-on, Discover, web).
+      var bySrc = {};
+      sales.forEach(function(s) {
+        var k = s.from || "Not recorded";
+        if (/^In-app · /.test(k)) k = "In-app (" + k.split(" · ").pop() + ")";
+        bySrc[k] = (bySrc[k] || 0) + s.units;
+      });
+      el("sales-source-summary").innerText = sales.length ? "By source: " + Object.keys(bySrc).sort(function(a, b) { return bySrc[b] - bySrc[a]; }).map(function(k) { return k + " " + bySrc[k]; }).join(" · ") : "";
       el("gumroad-count").innerText = (g.products || []).length + " products";
       el("gumroad-table-body").innerHTML = (g.products || []).map(function(p) {
         return "<tr><td>" + esc(p.name) + "</td><td class='n'>" + esc(p.price || "") + "</td><td class='n'>" + (p.sales || 0) + "</td><td class='n'>" + money(p.revenue_usd) + "</td></tr>";

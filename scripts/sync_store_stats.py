@@ -231,7 +231,14 @@ def fetch_gumroad_stats():
                             "country": s.get("country") or COUNTRY_MAP.get(code, code or "Direct Web"),
                             "quantity": int(s.get("quantity") or 1),
                             "revenue_usd": round(price_cents / 100.0, 2),
-                            "currency": (s.get("currency_symbol") or "$")
+                            "currency": (s.get("currency_symbol") or "$"),
+                            # Where the buyer came from: in-app buy links carry utm_source=app, utm_medium=<os>,
+                            # utm_campaign=<app permalink> (or suite-/cross- prefixed); no tag means web/Discover.
+                            "utm_source": s.get("utm_source") or "",
+                            "utm_medium": s.get("utm_medium") or "",
+                            "utm_campaign": s.get("utm_campaign") or "",
+                            "referrer": s.get("referrer") or "",
+                            "discover": bool(s.get("discover_fee_charged"))
                         })
             except Exception:
                 pass

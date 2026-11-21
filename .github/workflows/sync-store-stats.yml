@@ -2,11 +2,17 @@ name: Sync Microsoft Store Analytics
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour automatically
+    # Twice an hour, off the top of the hour: GitHub delays or drops scheduled runs at :00 when it is busy
+    # (on 21 Nov 2026 three hourly runs were skipped), and a missed run is covered by the next one 30 minutes later.
+    - cron: '17,47 * * * *'
   workflow_dispatch:        # Allows manual one-click trigger anytime
 
 permissions:
   contents: write
+
+concurrency:
+  group: sync-store-stats
+  cancel-in-progress: false
 
 jobs:
   sync:
