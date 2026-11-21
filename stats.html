@@ -337,6 +337,36 @@
     @media (max-width: 540px) {
       .headline-grid { grid-template-columns: 1fr; }
     }
+    .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .three-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .mini-card { background: #19191D; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 14px 16px; }
+    .mini-card h4 { font-size: 0.9rem; font-weight: 600; color: #FFFFFF; margin: 0 0 10px; display: flex; justify-content: space-between; align-items: baseline; }
+    .mini-card h4 span { font-size: 0.75rem; color: #A1A1AA; font-weight: 500; }
+    .bar-row { display: grid; grid-template-columns: minmax(90px, 38%) 1fr 34px; align-items: center; gap: 8px; font-size: 0.8rem; color: #D4D4D8; margin: 5px 0; }
+    .bar-row .bar-container { margin: 0; }
+    .bar-row .num { text-align: right; color: #A1A1AA; font-variant-numeric: tabular-nums; }
+    .bar-row .lbl { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .mix-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: #27272A; margin: 6px 0 8px; }
+    .mix-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.78rem; color: #A1A1AA; }
+    .mix-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+    .stat-table td.n, .stat-table th.n { text-align: right; font-variant-numeric: tabular-nums; }
+    .stat-table tr.total td { border-top: 1px solid rgba(255,255,255,0.14); font-weight: 700; color: #FFFFFF; }
+    .muted { color: #71717A; }
+    .stat-table td { color: #D4D4D8; }
+    .stat-table td strong { color: #FFFFFF; }
+    .stat-table td.muted, .stat-table td .muted { color: #8A8A93; }
+    details.fold > summary .muted { margin-left: auto; margin-right: 14px; font-weight: 500; font-size: 0.8rem; }
+    details.fold { background: #19191D; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; margin-top: 12px; }
+    details.fold > summary { cursor: pointer; padding: 12px 16px; font-size: 0.88rem; font-weight: 600; color: #E4E4E7; list-style: none; display: flex; justify-content: space-between; }
+    details.fold > summary::-webkit-details-marker { display: none; }
+    details.fold > summary::after { content: "Show \25BE"; font-size: 0.75rem; color: #71717A; font-weight: 500; }
+    details.fold[open] > summary::after { content: "Hide \25B4"; }
+    details.fold > .fold-body { padding: 0 16px 16px; overflow-x: auto; }
+    .more-link { background: none; border: 0; color: #38BDF8; font-size: 0.76rem; cursor: pointer; padding: 4px 0 0; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .link-row a { font-size: 0.8rem; color: #D4D4D8; text-decoration: none; background: #19191D; border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 6px 12px; }
+    .link-row a:hover { border-color: rgba(56,189,248,0.5); color: #FFFFFF; }
+    @media (max-width: 640px) { .stat-table th, .stat-table td { padding: 8px 6px; font-size: 0.76rem; } .hide-sm { display: none; } }
   </style>
 </head>
 <body class="dashboard-canvas">
@@ -353,830 +383,387 @@
     </div>
   </div>
 
-  <!-- Unlocked Dashboard Shell -->
   <div class="dash-container" id="dash-shell" style="display: none;">
-    
+
     <div class="dash-topbar">
       <div class="dash-header-title">
         <img src="favicon-32x32.png" width="28" height="28" alt="SC">
         <h1>SC Utility Suite &middot; Ecosystem Command Center</h1>
       </div>
       <div class="dash-header-actions">
-        <button class="dash-pill-btn" onclick="fetchData()">
-          &#8635; Refresh Data
-        </button>
-        <button class="dash-pill-btn" onclick="lockOut()">
-          &#128274; Lock
-        </button>
-        <a href="index.html" class="dash-pill-btn">
-          Showcase Site &nearr;
-        </a>
+        <button class="dash-pill-btn" onclick="fetchData()">&#8635; Refresh Data</button>
+        <button class="dash-pill-btn" onclick="lockOut()">&#128274; Lock</button>
+        <a href="index.html" class="dash-pill-btn">Showcase Site &nearr;</a>
       </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- GRAND TOTALS EXECUTIVE BAR (Across All)   -->
-    <!-- ========================================== -->
+    <!-- GRAND TOTALS -->
     <div class="headline-grid">
-      
-      <!-- 1. Total Ecosystem Installs -->
       <div class="metric-card" style="border-color: rgba(56, 189, 248, 0.35);">
         <div class="metric-label" style="color: #38BDF8;">Total Ecosystem Installs</div>
         <div class="metric-val" id="metric-combined-installs" style="color: #38BDF8;">--</div>
-        <div class="metric-sub" id="metric-combined-sub">GitHub Downloads + Store Installs</div>
+        <div class="metric-sub" id="metric-combined-sub">GitHub + Store + Snap</div>
       </div>
-
-      <!-- 2. Total PRO Upgrades Sold -->
       <div class="metric-card" style="border-color: rgba(168, 85, 247, 0.35);">
         <div class="metric-label" style="color: #C084FC;">Total Upgrades Sold</div>
         <div class="metric-val" id="metric-top-upgrades" style="color: #C084FC;">0</div>
         <div class="metric-sub" id="metric-top-upgrades-sub">Store Add-ons (0) + Gumroad (0)</div>
       </div>
-
-      <!-- 3. Total Money Made -->
       <div class="metric-card" style="border-color: rgba(52, 211, 153, 0.35);">
         <div class="metric-label" style="color: #34D399;">Total Money Made</div>
         <div class="metric-val" id="metric-top-revenue" style="color: #34D399;">$0.00</div>
         <div class="metric-sub" id="metric-top-revenue-sub">Gross USD (Store + Gumroad)</div>
       </div>
-
-      <!-- 4. Overall Stability -->
       <div class="metric-card" style="border-color: rgba(34, 197, 94, 0.35);">
         <div class="metric-label" style="color: #4ADE80;">Overall Fleet Stability</div>
         <div class="metric-val" id="metric-top-stability" style="color: #4ADE80;">100%</div>
-        <div class="metric-sub" id="metric-top-stability-sub"><span id="metric-top-crashes">0</span> Failures Across Fleet</div>
+        <div class="metric-sub"><span id="metric-top-crashes">0</span> Failures Across Fleet</div>
       </div>
-
     </div>
 
-    <!-- ========================================== -->
-    <!-- REVENUE & SALES BREAKDOWN (WHERE MONEY IS) -->
-    <!-- ========================================== -->
+    <!-- APPS AT A GLANCE -->
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="panel-title">Apps at a Glance</h2>
+        <span class="badge-live"><span class="badge-live-dot"></span> <span id="sync-note">Syncing…</span></span>
+      </div>
+      <div class="mix-bar" id="mix-bar"></div>
+      <div class="mix-legend" id="mix-legend"></div>
+      <div style="overflow-x: auto; margin-top: 14px;">
+        <table class="stat-table">
+          <thead>
+            <tr>
+              <th>App</th>
+              <th class="n">MS Store</th>
+              <th class="n">GitHub Win</th>
+              <th class="n">GitHub Linux</th>
+              <th class="n">Snap</th>
+              <th class="n">Total reach</th>
+              <th class="n">PRO sold</th>
+              <th class="n">Revenue</th>
+            </tr>
+          </thead>
+          <tbody id="glance-body"><tr><td colspan="8" class="muted" style="text-align:center; padding: 20px;">Loading…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="panel-sub" style="margin: 10px 0 0; font-size: 0.75rem;">MS Store = device installs · GitHub = installer/archive downloads (includes test and winget validation downloads) · Snap = active installs on the latest day.</p>
+    </div>
+
+    <!-- SALES -->
     <div class="panel" style="border-color: rgba(52, 211, 153, 0.28);">
       <div class="panel-header">
-        <h2 class="panel-title">Revenue &amp; Sales Attribution</h2>
-        <span class="badge-live"><span class="badge-live-dot"></span> Microsoft Store IAP + Gumroad Direct</span>
+        <h2 class="panel-title">Sales</h2>
+        <span class="badge-live"><span class="badge-live-dot"></span> Microsoft Store IAP + Gumroad</span>
       </div>
-      <p class="panel-sub">Exact breakdown of where every PRO upgrade and dollar was earned across all apps and stores.</p>
-
       <div style="overflow-x: auto;">
         <table class="stat-table">
-          <thead>
-            <tr>
-              <th>Application / Product</th>
-              <th>Sales Channel</th>
-              <th>Store / Product ID</th>
-              <th>Date / Window</th>
-              <th>Market / Region</th>
-              <th>PRO Units Sold</th>
-              <th>Gross Revenue (USD)</th>
-              <th>Revenue Share</th>
-            </tr>
-          </thead>
-          <tbody id="revenue-attribution-body">
-            <tr><td colspan="8" style="text-align: center; color: #A1A1AA; padding: 20px;">Calculating revenue attribution...</td></tr>
-          </tbody>
+          <thead><tr><th>Product</th><th>Channel</th><th class="hide-sm">Date</th><th class="n">Units</th><th class="n">Revenue</th><th class="n">Share</th></tr></thead>
+          <tbody id="sales-body"><tr><td colspan="6" class="muted" style="text-align:center; padding: 16px;">No sales yet.</td></tr></tbody>
         </table>
+      </div>
+      <details class="fold">
+        <summary>Gumroad products &amp; prices <span class="muted" id="gumroad-count"></span></summary>
+        <div class="fold-body">
+          <table class="stat-table">
+            <thead><tr><th>Product</th><th class="n">Price</th><th class="n">Units</th><th class="n">Revenue</th></tr></thead>
+            <tbody id="gumroad-table-body"></tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <!-- AUDIENCE -->
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="panel-title">Audience</h2>
+        <span class="badge-live"><span class="badge-live-dot"></span> Store markets &middot; OS versions &middot; Linux distros</span>
+      </div>
+      <div class="three-col">
+        <div class="mini-card"><h4>Store countries <span id="market-total-badge"></span></h4><div id="markets-list"></div></div>
+        <div class="mini-card"><h4>Windows versions <span id="os-total-badge"></span></h4><div id="os-list"></div></div>
+        <div class="mini-card"><h4>Linux distros (Snap) <span id="distro-total-badge"></span></h4><div id="distro-list"></div></div>
       </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- MICROSOFT STORE ECOSYSTEM                  -->
-    <!-- ========================================== -->
+    <!-- CHANNEL DETAIL (collapsed) -->
     <div class="panel">
       <div class="panel-header">
-        <h2 class="panel-title">Microsoft Store Ecosystem</h2>
-        <span class="badge-live"><span class="badge-live-dot"></span> Automated Hourly Sync &middot; Live 60s Poll</span>
-      </div>
-      <p class="panel-sub">Official Microsoft Store listings, package deliveries, in-app add-ons, and telemetry. Last synced: <strong id="store-last-updated" style="color: #38BDF8;">Updating...</strong> <span id="store-date-range" style="color: #71717A; margin-left: 6px;"></span></p>
-      
-      <!-- Store Segment Headline Panel (4 Cards) -->
-      <div class="headline-grid" style="margin-bottom: 24px;">
-        <div class="metric-card" style="background: #19191D;">
-          <div class="metric-label">Store Installs</div>
-          <div class="metric-val" id="seg1-installs">--</div>
-          <div class="metric-sub" id="seg1-installs-sub"><span id="seg1-acquisitions">--</span> Claimed Acquisitions</div>
-        </div>
-
-        <div class="metric-card" style="background: #19191D;">
-          <div class="metric-label">Store Add-ons Sold</div>
-          <div class="metric-val" id="seg1-upgrades">0</div>
-          <div class="metric-sub">In-App PRO Upgrades</div>
-        </div>
-
-        <div class="metric-card" style="background: #19191D;">
-          <div class="metric-label">Store Money Made</div>
-          <div class="metric-val" id="seg1-revenue" style="color: #34D399;">$0.00</div>
-          <div class="metric-sub" id="seg1-revenue-sub">Gross Store IAP Revenue</div>
-        </div>
-
-        <div class="metric-card" style="background: #19191D;">
-          <div class="metric-label">Store Stability</div>
-          <div class="metric-val" id="seg1-stability" style="color: #4ADE80;">100%</div>
-          <div class="metric-sub"><span id="seg1-crashes">0</span> Reported Failures</div>
-        </div>
+        <h2 class="panel-title">Channel Detail</h2>
+        <span class="badge-live"><span class="badge-live-dot"></span> Last synced <span id="store-last-updated">…</span></span>
       </div>
 
-      <!-- Store Applications Table -->
-      <div style="overflow-x: auto; margin-bottom: 24px;">
-        <table class="stat-table">
-          <thead>
-            <tr>
-              <th>Application Package</th>
-              <th>Product ID</th>
-              <th>Acquisitions (Claimed)</th>
-              <th>Device Installs</th>
-              <th>PRO Upgrades Sold</th>
-              <th>Gross Revenue (USD)</th>
-              <th>Crash Hits</th>
-              <th>Store Status</th>
-            </tr>
-          </thead>
-          <tbody id="store-table-body">
-            <tr><td colspan="8" style="text-align: center; color: #A1A1AA; padding: 24px;">Fetching live Store analytics...</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <details class="fold">
+        <summary>Microsoft Store <span class="muted" id="store-fold-note"></span></summary>
+        <div class="fold-body">
+          <table class="stat-table">
+            <thead><tr><th>App</th><th class="hide-sm">Product ID</th><th class="n">Acquisitions</th><th class="n">Installs</th><th class="n">PRO sold</th><th class="n">Revenue</th><th class="n">Crashes</th></tr></thead>
+            <tbody id="store-table-body"></tbody>
+          </table>
+          <p class="panel-sub" style="margin: 8px 0 0; font-size: 0.75rem;" id="store-date-range"></p>
+        </div>
+      </details>
 
-      <!-- Store Markets & OS Sub-Panels -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
-        
-        <!-- Geographic Distribution -->
-        <div style="background: #19191D; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 18px;">
-          <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFFFFF; margin-bottom: 12px; display: flex; justify-content: space-between;">
-            <span>Geographic Distribution (Markets)</span>
-            <span style="font-size: 0.78rem; color: #A1A1AA;" id="market-total-badge">--</span>
-          </h4>
-          <div id="markets-list" style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="color: #71717A; font-size: 0.82rem;">Loading market telemetry...</div>
+      <details class="fold">
+        <summary>GitHub releases <span class="muted" id="github-fold-note"></span></summary>
+        <div class="fold-body">
+          <div style="display:flex; gap:8px; align-items:center; margin: 4px 0 10px;">
+            <label for="release-filter" style="font-size: 0.8rem; color: #A1A1AA;">Release:</label>
+            <select id="release-filter" onchange="renderGitHubMetrics()" style="background: #111114; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 5px 8px; font-size: 0.8rem;">
+              <option value="ALL">All releases</option>
+            </select>
           </div>
+          <table class="stat-table">
+            <thead><tr><th>Package</th><th class="n">.exe</th><th class="n">.zip</th><th class="n">.deb</th><th class="n">.tar.gz</th><th class="n">Total</th></tr></thead>
+            <tbody id="download-table-body"></tbody>
+          </table>
+          <p class="panel-sub" style="margin: 8px 0 0; font-size: 0.75rem;" id="github-aux-note"></p>
         </div>
+      </details>
 
-        <!-- Operating System Breakdown -->
-        <div style="background: #19191D; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 18px;">
-          <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFFFFF; margin-bottom: 12px; display: flex; justify-content: space-between;">
-            <span>Operating System Adoption</span>
-            <span style="font-size: 0.78rem; color: #A1A1AA;" id="os-total-badge">--</span>
-          </h4>
-          <div id="os-list" style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="color: #71717A; font-size: 0.82rem;">Loading OS telemetry...</div>
-          </div>
+      <details class="fold">
+        <summary>Snap Store <span class="muted" id="snap-fold-note"></span></summary>
+        <div class="fold-body">
+          <table class="stat-table">
+            <thead><tr><th>App</th><th>Snap</th><th class="n">Active installs</th><th class="hide-sm">As of</th></tr></thead>
+            <tbody id="snap-table-body"></tbody>
+          </table>
         </div>
-
-      </div>
+      </details>
     </div>
 
-    <!-- ========================================== -->
-    <!-- GITHUB & GUMROAD DIRECT                    -->
-    <!-- ========================================== -->
-    <div class="panel">
-      <div class="panel-header">
-        <h2 class="panel-title">GitHub Releases &amp; Gumroad Direct</h2>
-        <span class="badge-live"><span class="badge-live-dot"></span> GitHub &amp; Gumroad REST APIs Live</span>
-      </div>
-      <p class="panel-sub">Direct Windows &amp; Linux binary distributions on GitHub paired with standalone PRO license upgrades on Gumroad.</p>
-
-      <!-- GitHub & Gumroad Headline Panel (4 Cards) -->
-      <div class="headline-grid" style="margin-bottom: 24px;">
-        <div class="metric-card" style="background: #19191D;">
-          <div class="metric-label">GitHub App Downloads</div>
-          <div class="metric-val" id="seg2-installs">--</div>
-          <div class="metric-sub" id="seg2-installs-sub">Windows (.exe / .zip) + Linux (.deb / .tar.gz)</div>
-        </div>
-
-        <div class="metric-card" style="background: #19191D;">
-          <div class="metric-label">Gumroad Upgrades Sold</div>
-          <div class="metric-val" id="seg2-upgrades">0</div>
-          <div class="metric-sub">Standalone PRO Licenses ($3.99)</div>
-        </div>
-
-        <div class="metric-card" style="background: #19191D;">
-          <div class="metric-label">Gumroad Money Made</div>
-          <div class="metric-val" id="seg2-revenue" style="color: #34D399;">$0.00</div>
-          <div class="metric-sub">Gross Direct Web Revenue</div>
-        </div>
-
-        <div class="metric-card" style="background: #19191D;">
-          <div class="metric-label">Published Releases</div>
-          <div class="metric-val" id="seg2-stability" style="color: #38BDF8;">--</div>
-          <div class="metric-sub" id="seg2-stability-sub">Across Windows &amp; Linux</div>
-        </div>
-      </div>
-
-      <!-- Gumroad Commercial Offerings Table -->
-      <div class="sub-section-title">Commercial PRO Offerings (Gumroad Direct Checkout)</div>
-      <div style="overflow-x: auto; margin-bottom: 32px;">
-        <table class="stat-table">
-          <thead>
-            <tr>
-              <th>Commercial Product</th>
-              <th>Platform</th>
-              <th>Price</th>
-              <th>Units Sold</th>
-              <th>Gross Revenue (USD)</th>
-              <th>Listing Action</th>
-            </tr>
-          </thead>
-          <tbody id="gumroad-table-body">
-            <tr><td colspan="6" style="text-align: center; color: #A1A1AA; padding: 24px;">Loading commercial sales data...</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- GitHub Release Binary Matrix Table -->
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin: 24px 0 12px 0;">
-        <div class="sub-section-title" style="margin: 0;" id="github-breakdown-title">Binary Downloads Breakdown (All GitHub Releases)</div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <label for="release-filter" style="font-size: 0.8rem; color: #A1A1AA;">Release Filter:</label>
-          <select id="release-filter" onchange="onReleaseFilterChange()" style="background: #19191D; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 6px 10px; font-size: 0.82rem;">
-            <option value="ALL">All Releases (Cumulative)</option>
-          </select>
-        </div>
-      </div>
-      <div style="overflow-x: auto;">
-        <table class="stat-table">
-          <thead>
-            <tr>
-              <th>Application Package</th>
-              <th>Win Setup (.exe)</th>
-              <th>Win Portable (.zip)</th>
-              <th>Linux Debian (.deb)</th>
-              <th>Linux Tarball (.tar.gz)</th>
-              <th>Total Downloads</th>
-              <th>Relative Share</th>
-            </tr>
-          </thead>
-          <tbody id="download-table-body">
-            <tr><td colspan="7" style="text-align: center; color: #A1A1AA; padding: 24px;">Fetching live release counts...</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="github-aux-note" style="font-size: 0.78rem; color: #71717A; margin-top: 10px;"></div>
-
+    <!-- PORTALS -->
+    <div class="link-row" style="margin: 8px 0 32px;">
+      <a href="https://partner.microsoft.com/dashboard/apps-and-games/overview" target="_blank">Partner Center &nearr;</a>
+      <a href="https://snapcraft.io/snaps" target="_blank">Snapcraft &nearr;</a>
+      <a href="https://gumroad.com/dashboard" target="_blank">Gumroad &nearr;</a>
+      <a href="https://play.google.com/console" target="_blank">Play Console &nearr;</a>
+      <a href="https://sc-software.goatcounter.com" target="_blank">GoatCounter &nearr;</a>
+      <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases" target="_blank">GitHub Releases &nearr;</a>
     </div>
-
-    <!-- ========================================== -->
-    <!-- SNAP STORE (LINUX)                         -->
-    <!-- ========================================== -->
-    <div class="panel">
-      <div class="panel-header">
-        <h2 class="panel-title">Snap Store (Linux)</h2>
-        <span class="badge-live"><span class="badge-live-dot"></span> Snapcraft Metrics</span>
-      </div>
-      <p class="panel-sub">Active installs reported by the Snap Store for each snap (latest day of the installed base). Free installs; PRO upgrades are bought on Gumroad.</p>
-      <div class="headline-grid" style="margin-bottom: 24px;">
-        <div class="metric-card" style="background: #19191D;">
-          <div class="metric-label">Active Snap Installs</div>
-          <div class="metric-val" id="snap-total">--</div>
-          <div class="metric-sub" id="snap-total-sub">All snaps</div>
-        </div>
-      </div>
-      <div style="overflow-x: auto;">
-        <table class="stat-table">
-          <thead><tr><th>Snap</th><th>Store name</th><th>Active Installs</th><th>As of</th><th>Listing Action</th></tr></thead>
-          <tbody id="snap-table-body"><tr><td colspan="5" style="text-align: center; color: #A1A1AA; padding: 24px;">No Snap Store data yet.</td></tr></tbody>
-        </table>
-      </div>
-      <div class="sub-section-title" style="margin-top: 24px;">Snap Installs by Distribution</div>
-      <div id="snap-os-list" style="color: #A1A1AA; font-size: 0.85rem;"></div>
-    </div>
-
-    <!-- Quick External Portals Navigation -->
-    <div class="panel">
-      <h3 class="panel-title">Developer Dashboards &amp; Portals</h3>
-      <p class="panel-sub">Direct access to your official developer portals, distribution repositories, and web analytics.</p>
-      
-      <div class="ext-links-grid">
-        <a href="https://partner.microsoft.com/dashboard/apps-and-games/overview" target="_blank" class="ext-card">
-          <div class="ext-card-title">Microsoft Partner Center <span>&nearr;</span></div>
-          <div class="ext-card-desc">Manage your 7 Windows Store listings, view global acquisitions, and monitor in-app PRO upgrades.</div>
-        </a>
-        <a href="https://play.google.com/console" target="_blank" class="ext-card">
-          <div class="ext-card-title">Google Play Console <span>&nearr;</span></div>
-          <div class="ext-card-desc">Manage your 7 Android app releases, closed/production tracks, and Play Billing PRO upgrades.</div>
-        </a>
-        <a href="https://gumroad.com/dashboard" target="_blank" class="ext-card">
-          <div class="ext-card-title">Gumroad Dashboard <span>&nearr;</span></div>
-          <div class="ext-card-desc">View direct web sales, customers, and license key generation for standalone PRO editions.</div>
-        </a>
-        <a href="https://sc-software.goatcounter.com" target="_blank" class="ext-card">
-          <div class="ext-card-title">GoatCounter Web Traffic <span>&nearr;</span></div>
-          <div class="ext-card-desc">Review live website unique visitors, referral sources, and geographic breakdown.</div>
-        </a>
-        <a href="https://github.com/sc-software-tools/sc-utility-suite-dist/releases" target="_blank" class="ext-card">
-          <div class="ext-card-title">GitHub Releases (All Versions) <span>&nearr;</span></div>
-          <div class="ext-card-desc">View all published Windows &amp; Linux distribution assets, SHA256 checksums, and release notes.</div>
-        </a>
-      </div>
-    </div>
-
   </div>
 
   <script>
     var CORRECT_PIN = "3562";
-    var gitHubDownloadsTotal = 0;
-    var storeInstallsTotal = 0;
-    var storeAcquisitionsTotal = 0;
-    var storeInAppSales = 0;
-    var storeInAppRev = 0.0;
-    var gumroadSales = 0;
-    var gumroadRev = 0.0;
-    var totalFleetCrashes = 0;
     var cachedReleases = [];
+    var lastData = null;
+    var ghByApp = {};        // app name -> {win, linux}
+    var gitHubDownloadsTotal = 0;
     var pollTimer = null;
-    var regionNames = (typeof Intl !== "undefined" && Intl.DisplayNames)
-      ? new Intl.DisplayNames(["en"], { type: "region" })
-      : null;
-
+    var regionNames = (typeof Intl !== "undefined" && Intl.DisplayNames) ? new Intl.DisplayNames(["en"], { type: "region" }) : null;
     /* AUTO_SYNC_DATA_START */
     var EMBEDDED_STORE_DATA = {"last_updated": "2026-11-21 15:52:08 UTC", "date_range": "2026-08-23 to 2026-11-21", "summary": {"total_acquisitions": 23, "total_installs": 27, "total_crashes": 0, "total_inapp_purchases": 1, "total_inapp_revenue_usd": 4.42, "apps_tracked": 8}, "apps": [{"name": "Archive Unpacker", "product_id": "9NXS3LDTBRX8", "acquisitions": 7, "installs": 10, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "Dup Scrub", "product_id": "9NL51TH9QR3M", "acquisitions": 2, "installs": 1, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "HEIC Studio", "product_id": "9N4F9K6G90HK", "acquisitions": 3, "installs": 6, "inapp_purchases": 1, "inapp_revenue_usd": 4.42, "crashes": 0}, {"name": "Media Trim", "product_id": "9PC1HVN60QBP", "acquisitions": 3, "installs": 3, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "PDF Knife", "product_id": "9NQLSS021G6T", "acquisitions": 5, "installs": 4, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "Screen Lens", "product_id": "9N7V2FVFL4BN", "acquisitions": 2, "installs": 2, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "USB Flasher", "product_id": "9P9NBFS7PMJB", "acquisitions": 1, "installs": 1, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "SC Utility Suite", "product_id": "9NDSBW5TZ90G", "acquisitions": 0, "installs": 0, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}], "sales_history": [{"source": "Microsoft Store", "app": "HEIC Studio", "product_id": "9N4F9K6G90HK", "addon_name": "HEIC Studio PRO (Lifetime)", "addon_id": "", "date": "2026-11-16", "market": "Store", "country": "Microsoft Store", "quantity": 1, "revenue_usd": 4.42, "os": ""}], "markets": [{"code": "UA", "country": "UA", "count": 3}, {"code": "US", "country": "United States", "count": 2}, {"code": "DZ", "country": "DZ", "count": 1}, {"code": "ID", "country": "ID", "count": 1}, {"code": "KR", "country": "South Korea", "count": 1}, {"code": "MW", "country": "MW", "count": 1}, {"code": "NP", "country": "NP", "count": 1}, {"code": "RU", "country": "Russia", "count": 1}, {"code": "TN", "country": "Tunisia", "count": 1}, {"code": "BE", "country": "BE", "count": 1}, {"code": "AZ", "country": "Azerbaijan", "count": 1}, {"code": "JP", "country": "Japan", "count": 1}, {"code": "NL", "country": "Netherlands", "count": 1}, {"code": "NO", "country": "NO", "count": 1}, {"code": "TW", "country": "Taiwan", "count": 1}, {"code": "BA", "country": "Bosnia and Herzegovina", "count": 1}, {"code": "GR", "country": "GR", "count": 1}, {"code": "KH", "country": "Cambodia", "count": 1}, {"code": "AU", "country": "Australia", "count": 1}, {"code": "DE", "country": "Germany", "count": 1}, {"code": "GB", "country": "United Kingdom", "count": 1}, {"code": "IT", "country": "Italy", "count": 1}, {"code": "MX", "country": "MX", "count": 1}, {"code": "PL", "country": "PL", "count": 1}], "os_breakdown": [{"os": "Windows 11", "count": 18, "percent": 66.7}, {"os": "Windows 10", "count": 9, "percent": 33.3}], "gumroad": {"configured": true, "total_sales": 0, "total_revenue_usd": 0.0, "products": [{"name": "SC Utility Suite PRO - Lifetime License (all 7 tools)", "sales": 0, "revenue_usd": 0.0, "price": "$19.99"}, {"name": "USB Flasher PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Screen Lens PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "PDF Knife PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Media Trim PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "HEIC Studio PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Dup Scrub PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Archive Unpacker PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}], "recent_sales": []}, "snap": {"configured": true, "total_installs": 136, "snaps": [{"name": "Archive Unpacker", "snap": "sc-archive-unpacker", "installs": 30, "as_of": "2026-11-20"}, {"name": "Dup Scrub", "snap": "sc-dup-scrub", "installs": 0, "as_of": "2026-11-20"}, {"name": "HEIC Studio", "snap": "sc-heic-studio", "installs": 17, "as_of": "2026-11-20"}, {"name": "Media Trim", "snap": "sc-media-trim", "installs": 2, "as_of": "2026-11-20"}, {"name": "PDF Knife", "snap": "sc-pdf-knife", "installs": 0, "as_of": "2026-11-20"}, {"name": "Screen Lens", "snap": "sc-screen-lens", "installs": 11, "as_of": "2026-11-20"}, {"name": "USB Flasher", "snap": "sc-usb-flasher", "installs": 76, "as_of": "2026-11-20"}, {"name": "SC Utility Suite", "snap": "sc-utility-suite", "installs": 0, "as_of": ""}], "os_breakdown": [{"os": "ubuntu/26.04", "count": 72}, {"os": "ubuntu/24.04", "count": 26}, {"os": "zorin/18", "count": 12}, {"os": "ubuntu/26.10", "count": 6}, {"os": "ubuntu/11.26.11", "count": 3}, {"os": "ubuntu/20.04", "count": 3}, {"os": "ubuntu/22.04", "count": 3}, {"os": "arch/", "count": 2}, {"os": "ubuntu/25.10", "count": 2}, {"os": "fedora/44", "count": 1}, {"os": "zorin/17", "count": 1}, {"os": "neon/24.04", "count": 1}, {"os": "linuxmint/22.3", "count": 1}, {"os": "debian/13", "count": 1}, {"os": "kali/2026.3", "count": 1}, {"os": "ubuntu/11.26.01", "count": 1}]}};
     /* AUTO_SYNC_DATA_END */
 
-    function startAutoPoll() {
-      if (pollTimer) clearInterval(pollTimer);
-      pollTimer = setInterval(fetchData, 60000);
-    }
+    var APP_ORDER = ["SC Utility Suite", "HEIC Studio", "PDF Knife", "Archive Unpacker", "Media Trim", "Dup Scrub", "Screen Lens", "USB Flasher"];
+    var PACKAGE_MATCHERS = [
+      { name: "SC Utility Suite (All-In-One)", app: "SC Utility Suite", prefix: "SC_Utility_Suite_AllInOne", deb: null },
+      { name: "SC Utility Suite", app: "SC Utility Suite", prefix: "SC_Utility_Suite", tar: "SuiteHub", deb: "sc-suite-hub" },   // after All-In-One
+      { name: "Archive Unpacker", app: "Archive Unpacker", prefix: "ArchiveUnpacker", deb: "sc-archive-unpacker" },
+      { name: "Dup Scrub", app: "Dup Scrub", prefix: "DupScrub", deb: "sc-dup-scrub" },
+      { name: "HEIC Studio", app: "HEIC Studio", prefix: "HeicStudio", deb: "sc-heic-studio" },
+      { name: "Media Trim", app: "Media Trim", prefix: "MediaTrim", deb: "sc-media-trim" },
+      { name: "PDF Knife", app: "PDF Knife", prefix: "PdfKnife", deb: "sc-pdf-knife" },
+      { name: "Screen Lens", app: "Screen Lens", prefix: "ScreenLens", deb: "sc-screen-lens" },
+      { name: "USB Flasher", app: "USB Flasher", prefix: "UsbFlasher", deb: "sc-usb-flasher" }
+    ];
 
+    function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function(c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+    function money(v) { return "$" + Number(v || 0).toFixed(2); }
+    function el(id) { return document.getElementById(id); }
     function resolveCountryName(code, fallback) {
       if (!code || code.length !== 2) return fallback || code || "Global";
-      try {
-        var name = regionNames ? regionNames.of(code.toUpperCase()) : null;
-        return name || fallback || code;
-      } catch (e) {
-        return fallback || code;
-      }
+      try { return (regionNames && regionNames.of(code.toUpperCase())) || fallback || code; } catch (e) { return fallback || code; }
     }
 
-    function checkAuth() {
-      if (sessionStorage.getItem("sc_dash_auth") === "granted") {
-        document.getElementById("lock-screen").style.display = "none";
-        document.getElementById("dash-shell").style.display = "block";
-        fetchData();
-        startAutoPoll();
-      }
-    }
-
+    // ---------- auth ----------
+    function showDash() { el("lock-screen").style.display = "none"; el("dash-shell").style.display = "block"; fetchData(); startAutoPoll(); }
+    function checkAuth() { if (sessionStorage.getItem("sc_dash_auth") === "granted") showDash(); }
     function verifyPin() {
-      var pin = document.getElementById("pin-input").value;
-      if (pin === CORRECT_PIN) {
-        sessionStorage.setItem("sc_dash_auth", "granted");
-        document.getElementById("lock-screen").style.display = "none";
-        document.getElementById("dash-shell").style.display = "block";
-        document.getElementById("pin-error").style.display = "none";
-        fetchData();
-        startAutoPoll();
-      } else {
-        document.getElementById("pin-error").style.display = "block";
-        document.getElementById("pin-input").value = "";
-        document.getElementById("pin-input").focus();
-      }
+      if (el("pin-input").value === CORRECT_PIN) { sessionStorage.setItem("sc_dash_auth", "granted"); el("pin-error").style.display = "none"; showDash(); }
+      else { el("pin-error").style.display = "block"; el("pin-input").value = ""; el("pin-input").focus(); }
     }
-
-    document.getElementById("pin-input").addEventListener("keypress", function(e) {
-      if (e.key === "Enter") {
-        verifyPin();
-      }
-    });
-
+    el("pin-input").addEventListener("keypress", function(e) { if (e.key === "Enter") verifyPin(); });
     function lockOut() {
       if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
       sessionStorage.removeItem("sc_dash_auth");
-      document.getElementById("lock-screen").style.display = "flex";
-      document.getElementById("dash-shell").style.display = "none";
-      document.getElementById("pin-input").value = "";
-      document.getElementById("pin-input").focus();
+      el("lock-screen").style.display = "flex"; el("dash-shell").style.display = "none"; el("pin-input").value = ""; el("pin-input").focus();
     }
+    function startAutoPoll() { if (pollTimer) clearInterval(pollTimer); pollTimer = setInterval(fetchData, 60000); }
 
-    function updateGrandTotals() {
-      // 1. Total Installs (GitHub App Binaries + Store Device Installs)
-      var grandTotalInstalls = gitHubDownloadsTotal + storeInstallsTotal;
-      document.getElementById("metric-combined-installs").innerText = grandTotalInstalls;
-      document.getElementById("metric-combined-sub").innerText = "GitHub Binaries (" + gitHubDownloadsTotal + ") + Store Installs (" + storeInstallsTotal + ")";
-
-      // 2. Total Upgrades Sold (Store Add-ons + Gumroad)
-      var grandTotalUpgrades = storeInAppSales + gumroadSales;
-      document.getElementById("metric-top-upgrades").innerText = grandTotalUpgrades;
-      document.getElementById("metric-top-upgrades-sub").innerText = "Store Add-ons (" + storeInAppSales + ") + Gumroad (" + gumroadSales + ")";
-
-      // 3. Total Money Made (Store Revenue + Gumroad Revenue)
-      var grandTotalRev = storeInAppRev + gumroadRev;
-      document.getElementById("metric-top-revenue").innerText = "$" + grandTotalRev.toFixed(2);
-      document.getElementById("metric-top-revenue-sub").innerText = "Store ($" + storeInAppRev.toFixed(2) + ") + Gumroad ($" + gumroadRev.toFixed(2) + ")";
-
-      // 4. Overall Stability
-      document.getElementById("metric-top-crashes").innerText = totalFleetCrashes;
-      if (totalFleetCrashes > 0) {
-        document.getElementById("metric-top-stability").style.color = "#F87171";
-        document.getElementById("metric-top-stability").innerText = "Issues Detected";
-      } else {
-        document.getElementById("metric-top-stability").style.color = "#4ADE80";
-        document.getElementById("metric-top-stability").innerText = "100%";
-      }
-    }
-
-    function fetchData() {
-      fetchGitHubReleases();
-      fetchStoreStats();
-    }
+    // ---------- data ----------
+    function fetchData() { fetchGitHubReleases(); fetchStoreStats(); }
 
     function fetchGitHubReleases() {
-      var url = "https://api.github.com/repos/sc-software-tools/sc-utility-suite-dist/releases?per_page=50&nocache=" + new Date().getTime();
-      fetch(url, { cache: "no-store", headers: { "Accept": "application/vnd.github.v3+json" } })
+      fetch("https://api.github.com/repos/sc-software-tools/sc-utility-suite-dist/releases?per_page=50&nocache=" + Date.now(), { cache: "no-store", headers: { "Accept": "application/vnd.github.v3+json" } })
         .then(function(res) { return res.json(); })
         .then(function(releases) {
-          if (!releases || !Array.isArray(releases)) return;
+          if (!Array.isArray(releases)) return;
           cachedReleases = releases;
-          populateReleaseFilter(releases);
+          var sel = el("release-filter"), current = sel.value || "ALL";
+          sel.innerHTML = "<option value='ALL'>All releases</option>" + releases.filter(function(r) { return /^suite-v|^v\d/.test(r.tag_name); })
+            .map(function(r) { return "<option value='" + esc(r.tag_name) + "'>" + esc(r.tag_name) + "</option>"; }).join("");
+          sel.value = current;
           renderGitHubMetrics();
         })
-        .catch(function(err) {
-          console.error("Failed to fetch release assets", err);
+        .catch(function(err) { console.error("GitHub releases", err); });
+    }
+
+    function fetchStoreStats() {
+      if (typeof EMBEDDED_STORE_DATA !== "undefined" && EMBEDDED_STORE_DATA) { try { renderData(EMBEDDED_STORE_DATA); } catch (e) { console.error(e); } }
+      var ts = Date.now();
+      fetch("https://raw.githubusercontent.com/sc-software-tools/sc-utility-suite-dist/main/ecosystem-data.json?t=" + ts, { cache: "no-store" })
+        .then(function(res) { if (!res.ok) throw new Error(res.status); return res.json(); })
+        .then(renderData)
+        .catch(function() {
+          fetch("ecosystem-data.json?t=" + ts, { cache: "no-store" }).then(function(res) { return res.json(); }).then(renderData).catch(function() {});
         });
     }
-
-    function populateReleaseFilter(releases) {
-      var sel = document.getElementById("release-filter");
-      var current = sel.value || "ALL";
-      sel.innerHTML = "<option value='ALL'>All Releases (Cumulative)</option>";
-      var appReleases = 0;
-      releases.forEach(function(rel) {
-        if (!rel.tag_name) return;
-        var isAux = rel.tag_name.toLowerCase().indexOf("ffmpeg") === 0;
-        if (!isAux) appReleases++;
-        var opt = document.createElement("option");
-        opt.value = rel.tag_name;
-        var dateStr = rel.published_at ? rel.published_at.substring(0, 10) : "";
-        opt.textContent = rel.tag_name + (dateStr ? " (" + dateStr + ")" : "");
-        sel.appendChild(opt);
-      });
-      sel.value = current;
-      if (sel.selectedIndex < 0) sel.value = "ALL";
-      document.getElementById("seg2-stability").innerText = appReleases + " Releases";
-      var latestTag = releases.length > 0 ? releases[0].tag_name : "Latest";
-      document.getElementById("seg2-stability-sub").innerText = "Latest: " + latestTag + " (Win + Linux)";
-    }
-
-    function onReleaseFilterChange() {
-      renderGitHubMetrics();
-    }
-
-    var PACKAGE_MATCHERS = [
-      { name: "SC Utility Suite (All-In-One)", prefix: "SC_Utility_Suite_AllInOne", deb: null },
-      { name: "SC Utility Suite", prefix: "SC_Utility_Suite", tar: "SuiteHub", deb: "sc-suite-hub" },   // after All-In-One: its files match that first
-      { name: "Archive Unpacker", prefix: "ArchiveUnpacker", deb: "sc-archive-unpacker" },
-      { name: "Dup Scrub", prefix: "DupScrub", deb: "sc-dup-scrub" },
-      { name: "HEIC Studio", prefix: "HeicStudio", deb: "sc-heic-studio" },
-      { name: "Media Trim", prefix: "MediaTrim", deb: "sc-media-trim" },
-      { name: "PDF Knife", prefix: "PdfKnife", deb: "sc-pdf-knife" },
-      { name: "Screen Lens", prefix: "ScreenLens", deb: "sc-screen-lens" },
-      { name: "USB Flasher", prefix: "UsbFlasher", deb: "sc-usb-flasher" }
-    ];
 
     function classifyAsset(name) {
       var lower = name.toLowerCase();
       for (var i = 0; i < PACKAGE_MATCHERS.length; i++) {
-        var pkg = PACKAGE_MATCHERS[i];
-        var prefLower = pkg.prefix.toLowerCase();
-        if (lower.indexOf(prefLower + "_setup_") === 0 && lower.slice(-4) === ".exe") {
-          return { index: i, type: "exe" };
-        }
-        if (lower.indexOf(prefLower + "_") === 0 && lower.slice(-13) === "_portable.zip") {
-          return { index: i, type: "zip" };
-        }
-        if (lower.indexOf((pkg.tar || pkg.prefix).toLowerCase() + "-") === 0 && lower.indexOf("-linux-") !== -1 && lower.slice(-7) === ".tar.gz") {
-          return { index: i, type: "targz" };
-        }
-        if (pkg.deb && lower.indexOf(pkg.deb + "_") === 0 && lower.slice(-4) === ".deb") {
-          return { index: i, type: "deb" };
-        }
+        var pkg = PACKAGE_MATCHERS[i], pref = pkg.prefix.toLowerCase();
+        if (lower.indexOf(pref + "_setup_") === 0 && lower.slice(-4) === ".exe") return { index: i, type: "exe" };
+        if (lower.indexOf(pref + "_") === 0 && lower.slice(-13) === "_portable.zip") return { index: i, type: "zip" };
+        if (lower.indexOf((pkg.tar || pkg.prefix).toLowerCase() + "-") === 0 && lower.indexOf("-linux-") !== -1 && lower.slice(-7) === ".tar.gz") return { index: i, type: "targz" };
+        if (pkg.deb && lower.indexOf(pkg.deb + "_") === 0 && lower.slice(-4) === ".deb") return { index: i, type: "deb" };
       }
       return null;
     }
 
+    // ---------- GitHub ----------
     function renderGitHubMetrics() {
-      var selectedTag = document.getElementById("release-filter").value || "ALL";
-      document.getElementById("github-breakdown-title").innerText =
-        selectedTag === "ALL"
-          ? "Binary Downloads Breakdown (All GitHub Releases Cumulative)"
-          : "Binary Downloads Breakdown (Release " + selectedTag + ")";
-
-      var rows = PACKAGE_MATCHERS.map(function(p) {
-        return { name: p.name, exe: 0, zip: 0, deb: 0, targz: 0, total: 0 };
-      });
-
-      var allBinaryDownloads = 0;
-      var filteredBinaryDownloads = 0;
-      var filteredExe = 0, filteredZip = 0, filteredDeb = 0, filteredTargz = 0;
-      var auxDownloads = 0;
-
+      var tag = el("release-filter").value || "ALL";
+      var rows = PACKAGE_MATCHERS.map(function(p) { return { name: p.name, exe: 0, zip: 0, deb: 0, targz: 0, total: 0 }; });
+      var all = 0, aux = 0, shown = 0;
+      ghByApp = {};
       cachedReleases.forEach(function(rel) {
-        var inFilter = (selectedTag === "ALL" || rel.tag_name === selectedTag);
-        (rel.assets || []).forEach(function(asset) {
-          var dl = asset.download_count || 0;
-          var match = classifyAsset(asset.name || "");
-          if (match) {
-            allBinaryDownloads += dl;
-            if (inFilter) {
-              var r = rows[match.index];
-              r[match.type] += dl;
-              r.total += dl;
-              filteredBinaryDownloads += dl;
-              if (match.type === "exe") filteredExe += dl;
-              else if (match.type === "zip") filteredZip += dl;
-              else if (match.type === "deb") filteredDeb += dl;
-              else if (match.type === "targz") filteredTargz += dl;
-            }
-          } else if (inFilter) {
-            auxDownloads += dl;
-          }
+        var inFilter = tag === "ALL" || rel.tag_name === tag;
+        (rel.assets || []).forEach(function(a) {
+          var dl = a.download_count || 0, m = classifyAsset(a.name || "");
+          if (!m) { if (inFilter) aux += dl; return; }
+          all += dl;
+          var app = PACKAGE_MATCHERS[m.index].app;
+          ghByApp[app] = ghByApp[app] || { win: 0, linux: 0 };
+          ghByApp[app][(m.type === "exe" || m.type === "zip") ? "win" : "linux"] += dl;
+          if (inFilter) { var r = rows[m.index]; r[m.type] += dl; r.total += dl; shown += dl; }
         });
       });
-
-      gitHubDownloadsTotal = allBinaryDownloads;
-      updateGrandTotals();
-
-      document.getElementById("seg2-installs").innerText = filteredBinaryDownloads;
-      document.getElementById("seg2-installs-sub").innerText =
-        "Win: " + filteredExe + " .exe, " + filteredZip + " .zip · Linux: " + filteredDeb + " .deb, " + filteredTargz + " .tar.gz";
-
-      var maxRowTotal = 1;
-      rows.forEach(function(r) {
-        if (r.total > maxRowTotal) maxRowTotal = r.total;
-      });
-
-      var tbody = document.getElementById("download-table-body");
-      tbody.innerHTML = "";
-
-      rows.forEach(function(r) {
-        var pct = filteredBinaryDownloads > 0 ? Math.round((r.total / filteredBinaryDownloads) * 100) : 0;
-        var barWidth = maxRowTotal > 0 ? Math.round((r.total / maxRowTotal) * 100) : 0;
-        var tr = document.createElement("tr");
-        tr.innerHTML = "<td><strong>" + r.name + "</strong></td>" +
-                       "<td>" + r.exe + "</td>" +
-                       "<td>" + r.zip + "</td>" +
-                       "<td>" + (r.name.indexOf("All-In-One") !== -1 ? "<span style='color: #71717A;'>-</span>" : r.deb) + "</td>" +
-                       "<td>" + (r.name.indexOf("All-In-One") !== -1 ? "<span style='color: #71717A;'>-</span>" : r.targz) + "</td>" +
-                       "<td><strong>" + r.total + "</strong></td>" +
-                       "<td>" +
-                         "<div style='font-size: 0.76rem; color: #A1A1AA;'>" + r.total + " downloads (" + pct + "% of total)</div>" +
-                         "<div class='bar-container'><div class='bar-fill' style='width: " + barWidth + "%;'></div></div>" +
-                       "</td>";
-        tbody.appendChild(tr);
-      });
-
-      document.getElementById("github-aux-note").innerText =
-        "Note: Checksum lists (.sha256) and LGPL/GPL FFmpeg source bundles account for an additional " + auxDownloads + " non-install file downloads in this view.";
+      gitHubDownloadsTotal = all;
+      el("download-table-body").innerHTML = rows.filter(function(r) { return r.total > 0; }).sort(function(a, b) { return b.total - a.total; }).map(function(r) {
+        return "<tr><td><strong>" + esc(r.name) + "</strong></td><td class='n'>" + r.exe + "</td><td class='n'>" + r.zip + "</td><td class='n'>" + r.deb + "</td><td class='n'>" + r.targz + "</td><td class='n'><strong>" + r.total + "</strong></td></tr>";
+      }).join("") + "<tr class='total'><td>Total</td><td colspan='4'></td><td class='n'>" + shown + "</td></tr>";
+      el("github-aux-note").innerText = "Checksums and source archives: " + aux + " further downloads (not counted).";
+      el("github-fold-note").innerText = all + " downloads · " + cachedReleases.length + " releases";
+      renderOverview();
     }
 
-    function fetchStoreStats() {
-      // Immediately render embedded snapshot so adblockers or CDN lag never leave the board empty
-      if (typeof EMBEDDED_STORE_DATA !== "undefined" && EMBEDDED_STORE_DATA) {
-        try { renderStoreMetrics(EMBEDDED_STORE_DATA); } catch (e) { console.error(e); }
-      }
-      var ts = new Date().getTime();
-      var rawUrl = "https://raw.githubusercontent.com/sc-software-tools/sc-utility-suite-dist/main/ecosystem-data.json?t=" + ts;
-      var localUrl = "ecosystem-data.json?t=" + ts;
-      fetch(rawUrl, { cache: "no-store" })
-        .then(function(res) {
-          if (!res.ok) throw new Error("HTTP " + res.status);
-          return res.json();
-        })
-        .then(function(data) {
-          renderStoreMetrics(data);
-        })
-        .catch(function() {
-          fetch(localUrl, { cache: "no-store" })
-            .then(function(res) {
-              if (!res.ok) throw new Error("HTTP " + res.status);
-              return res.json();
-            })
-            .then(function(data) {
-              renderStoreMetrics(data);
-            })
-            .catch(function(err) {
-              console.warn("Live fetch fallback to embedded store data:", err);
-            });
-        });
+    // ---------- Store / Gumroad / Snap ----------
+    function bars(listId, items, limit) {
+      var box = el(listId), max = Math.max.apply(null, items.map(function(i) { return i.count; }).concat([1]));
+      function row(i) { return "<div class='bar-row'><span class='lbl' title='" + esc(i.label) + "'>" + esc(i.label) + "</span><div class='bar-container'><div class='bar-fill' style='width:" + Math.round(i.count / max * 100) + "%'></div></div><span class='num'>" + i.count + "</span></div>"; }
+      if (!items.length) { box.innerHTML = "<div class='muted' style='font-size:0.8rem'>No data yet.</div>"; return; }
+      var head = items.slice(0, limit).map(row).join(""), rest = items.slice(limit);
+      box.innerHTML = head + (rest.length ? "<div class='more' style='display:none'>" + rest.map(row).join("") + "</div><button class='more-link' onclick=\"var m=this.previousElementSibling;var o=m.style.display==='none';m.style.display=o?'block':'none';this.innerText=o?'Show fewer':'+" + rest.length + " more'\">+" + rest.length + " more</button>" : "");
     }
 
-    function renderRevenueAttribution(data, apps, totalRevenue) {
-      var tbody = document.getElementById("revenue-attribution-body");
-      tbody.innerHTML = "";
-      var entries = [];
+    function renderData(data) {
+      lastData = data;
+      var apps = data.apps || [], snap = data.snap || {}, g = data.gumroad || {};
+      el("store-last-updated").innerText = data.last_updated || "–";
+      el("sync-note").innerText = "Synced " + (data.last_updated || "–");
+      el("store-date-range").innerText = "Store window: " + (data.date_range || "");
 
-      if (data.sales_history && Array.isArray(data.sales_history) && data.sales_history.length > 0) {
-        data.sales_history.forEach(function(s) {
-          var qty = Number(s.quantity || 0);
-          if (qty <= 0) return;
-          entries.push({
-            app: s.app || "SC Utility Suite PRO",
-            channel: s.source || "Microsoft Store",
-            id: s.product_id || s.addon_id || "Direct",
-            date: s.date || data.date_range || "Recent",
-            region: resolveCountryName(s.market, s.country || "Store Market"),
-            units: qty,
-            revenue: Number(s.revenue_usd || 0)
-          });
-        });
-      } else {
-        apps.forEach(function(app) {
-          var rev = Number(app.inapp_revenue_usd || 0);
-          var units = Number(app.inapp_purchases || 0);
-          if (units > 0) {
-            entries.push({
-              app: app.name + " PRO",
-              channel: "Microsoft Store (In-App Add-on)",
-              id: app.product_id,
-              date: data.date_range || "Last 90 Days",
-              region: "Microsoft Store Global",
-              units: units,
-              revenue: rev
-            });
-          }
-        });
-        if (data.gumroad && Array.isArray(data.gumroad.products)) {
-          data.gumroad.products.forEach(function(prod) {
-            var rev = Number(prod.revenue_usd || 0);
-            var units = Number(prod.sales || 0);
-            if (units > 0) {
-              entries.push({
-                app: prod.name,
-                channel: /Utility Suite/.test(prod.name) ? "Gumroad Direct (Suite Key)" : "Gumroad Direct (Standalone Key)",
-                id: "Gumroad Web",
-                date: "All-Time",
-                region: "Global Web",
-                units: units,
-                revenue: rev
-              });
-            }
-          });
-        }
-      }
+      // Store detail
+      var acq = 0, inst = 0, sold = 0, rev = 0, crashes = 0;
+      el("store-table-body").innerHTML = apps.map(function(a) {
+        acq += a.acquisitions || 0; inst += a.installs || 0; crashes += a.crashes || 0;
+        var s = a.inapp_purchases || 0, r = s > 0 ? Number(a.inapp_revenue_usd || 0) : 0; sold += s; rev += r;
+        return "<tr><td><strong>" + esc(a.name) + "</strong></td><td class='hide-sm muted'>" + esc(a.product_id) + "</td><td class='n'>" + (a.acquisitions || 0) + "</td><td class='n'>" + (a.installs || 0) + "</td><td class='n'>" + s + "</td><td class='n'>" + money(r) + "</td><td class='n'>" + (a.crashes || 0) + "</td></tr>";
+      }).join("");
+      el("store-fold-note").innerText = inst + " installs · " + acq + " acquisitions";
 
-      if (entries.length === 0) {
-        tbody.innerHTML = "<tr><td colspan='8' style='text-align: center; color: #A1A1AA; padding: 20px;'>No paid PRO transactions recorded yet.</td></tr>";
-        return;
-      }
+      // Top cards (upgrades, money, stability)
+      var gSales = g.total_sales || 0, gRev = g.total_revenue_usd || 0;
+      el("metric-top-upgrades").innerText = sold + gSales;
+      el("metric-top-upgrades-sub").innerText = "Store Add-ons (" + sold + ") + Gumroad (" + gSales + ")";
+      el("metric-top-revenue").innerText = money(rev + gRev);
+      el("metric-top-revenue-sub").innerText = "Store (" + money(rev) + ") + Gumroad (" + money(gRev) + ")";
+      el("metric-top-crashes").innerText = crashes;
+      el("metric-top-stability").innerText = crashes > 0 ? "Issues Detected" : "100%";
+      el("metric-top-stability").style.color = crashes > 0 ? "#F87171" : "#4ADE80";
 
-      entries.forEach(function(e) {
-        var share = totalRevenue > 0 ? Math.round((e.revenue / totalRevenue) * 100) : 100;
-        var channelBadge = e.channel.indexOf("Microsoft") !== -1
-          ? "<span style='color: #38BDF8; font-weight: 600;'>" + e.channel + "</span>"
-          : "<span style='color: #F43F5E; font-weight: 600;'>" + e.channel + "</span>";
-        var tr = document.createElement("tr");
-        tr.innerHTML = "<td><strong style='color: #FFFFFF;'>" + e.app + "</strong></td>" +
-                       "<td>" + channelBadge + "</td>" +
-                       "<td><code>" + e.id + "</code></td>" +
-                       "<td>" + e.date + "</td>" +
-                       "<td>" + e.region + "</td>" +
-                       "<td><strong style='color: #C084FC;'>" + e.units + "</strong></td>" +
-                       "<td><strong style='color: #34D399;'>$" + e.revenue.toFixed(2) + "</strong></td>" +
-                       "<td>" +
-                         "<div style='font-size: 0.76rem; color: #A1A1AA;'>" + share + "% of revenue</div>" +
-                         "<div class='bar-container'><div class='bar-fill' style='width: " + share + "%; background: #34D399;'></div></div>" +
-                       "</td>";
-        tbody.appendChild(tr);
+      // Sales
+      var sales = [];
+      (data.sales_history || []).forEach(function(s) { sales.push({ product: s.addon_name || s.app, channel: s.source || "Microsoft Store", date: s.date || "", units: s.quantity || 1, rev: Number(s.revenue_usd || 0) }); });
+      if (!(data.sales_history || []).some(function(s) { return /gumroad/i.test(s.source || ""); }))
+        (g.products || []).forEach(function(p) { if ((p.sales || 0) > 0) sales.push({ product: p.name, channel: /Utility Suite/.test(p.name) ? "Gumroad (Suite key)" : "Gumroad", date: "all time", units: p.sales, rev: Number(p.revenue_usd || 0) }); });
+      var totalRev = sales.reduce(function(t, s) { return t + s.rev; }, 0);
+      el("sales-body").innerHTML = sales.length ? sales.map(function(s) {
+        return "<tr><td><strong>" + esc(s.product) + "</strong></td><td>" + esc(s.channel) + "</td><td class='hide-sm muted'>" + esc(s.date) + "</td><td class='n'>" + s.units + "</td><td class='n'>" + money(s.rev) + "</td><td class='n'>" + (totalRev > 0 ? Math.round(s.rev / totalRev * 100) : 0) + "%</td></tr>";
+      }).join("") : "<tr><td colspan='6' class='muted' style='text-align:center; padding:16px;'>No sales yet.</td></tr>";
+      el("gumroad-count").innerText = (g.products || []).length + " products";
+      el("gumroad-table-body").innerHTML = (g.products || []).map(function(p) {
+        return "<tr><td>" + esc(p.name) + "</td><td class='n'>" + esc(p.price || "") + "</td><td class='n'>" + (p.sales || 0) + "</td><td class='n'>" + money(p.revenue_usd) + "</td></tr>";
+      }).join("");
+
+      // Audience
+      var markets = (data.markets || []).map(function(m) { return { label: resolveCountryName(m.code, m.country), count: m.count }; });
+      el("market-total-badge").innerText = markets.length + " countries";
+      bars("markets-list", markets, 6);
+      var oses = (data.os_breakdown || []).map(function(o) { return { label: o.os, count: o.count }; });
+      el("os-total-badge").innerText = oses.reduce(function(t, o) { return t + o.count; }, 0) + " installs";
+      bars("os-list", oses, 6);
+      var fam = {};
+      (snap.os_breakdown || []).forEach(function(o) {
+        var name = (o.os || "?").split("/")[0]; name = name.charAt(0).toUpperCase() + name.slice(1);
+        fam[name] = (fam[name] || 0) + o.count;
       });
+      var distros = Object.keys(fam).map(function(k) { return { label: k, count: fam[k] }; }).sort(function(a, b) { return b.count - a.count; });
+      el("distro-total-badge").innerText = (snap.total_installs || 0) + " active";
+      bars("distro-list", distros, 6);
+
+      // Snap detail
+      el("snap-table-body").innerHTML = (snap.snaps || []).slice().sort(function(a, b) { return (b.installs || 0) - (a.installs || 0); }).map(function(s) {
+        return "<tr><td><strong>" + esc(s.name) + "</strong></td><td><a href='https://snapcraft.io/" + esc(s.snap) + "' target='_blank' style='color:#38BDF8; text-decoration:none'>" + esc(s.snap) + "</a></td><td class='n'>" + (s.installs || 0) + "</td><td class='hide-sm muted'>" + esc(s.as_of || "") + "</td></tr>";
+      }).join("");
+      el("snap-fold-note").innerText = (snap.total_installs || 0) + " active installs" + (snap.configured === false ? " (last known)" : "");
+      renderOverview();
     }
 
-    function renderStoreMetrics(data) {
-      if (!data) return;
-      document.getElementById("store-last-updated").innerText = data.last_updated || "Recently";
-      document.getElementById("store-date-range").innerText = data.date_range ? "(Window: " + data.date_range + ")" : "";
-      
-      storeInstallsTotal = data.summary.total_installs || 0;
-      storeAcquisitionsTotal = data.summary.total_acquisitions || 0;
-      totalFleetCrashes = data.summary.total_crashes || 0;
-
-      var apps = data.apps || [];
-      var computedStoreSales = 0;
-      var computedStoreRev = 0.0;
-      apps.forEach(function(app) {
-        var cnt = Number(app.inapp_purchases || 0);
-        var rev = cnt > 0 ? Number(app.inapp_revenue_usd || 0) : 0.0;
-        computedStoreSales += cnt;
-        computedStoreRev += rev;
+    // ---------- overview ----------
+    function renderOverview() {
+      var data = lastData || {}, snap = data.snap || {}, g = data.gumroad || {};
+      var store = {}, snaps = {}, sold = {}, rev = {};
+      (data.apps || []).forEach(function(a) { store[a.name] = a.installs || 0; var s = a.inapp_purchases || 0; sold[a.name] = (sold[a.name] || 0) + s; rev[a.name] = (rev[a.name] || 0) + (s > 0 ? Number(a.inapp_revenue_usd || 0) : 0); });
+      (snap.snaps || []).forEach(function(s) { snaps[s.name] = s.installs || 0; });
+      (g.products || []).forEach(function(p) {
+        var app = APP_ORDER.filter(function(n) { return p.name.indexOf(n) === 0; })[0];
+        if (app) { sold[app] = (sold[app] || 0) + (p.sales || 0); rev[app] = (rev[app] || 0) + Number(p.revenue_usd || 0); }
       });
+      var T = { store: 0, win: 0, linux: 0, snap: 0, reach: 0, sold: 0, rev: 0 };
+      var rows = APP_ORDER.map(function(name) {
+        var gh = ghByApp[name] || { win: 0, linux: 0 };
+        var r = { name: name, store: store[name] || 0, win: gh.win, linux: gh.linux, snap: snaps[name] || 0, sold: sold[name] || 0, rev: rev[name] || 0 };
+        r.reach = r.store + r.win + r.linux + r.snap;
+        ["store", "win", "linux", "snap", "reach", "sold", "rev"].forEach(function(k) { T[k] += r[k]; });
+        return r;
+      }).sort(function(a, b) { return b.reach - a.reach; });
+      var max = Math.max.apply(null, rows.map(function(r) { return r.reach; }).concat([1]));
+      el("glance-body").innerHTML = rows.map(function(r) {
+        return "<tr><td><strong>" + esc(r.name) + "</strong><div class='bar-container' style='margin-top:5px; max-width:160px'><div class='bar-fill' style='width:" + Math.round(r.reach / max * 100) + "%'></div></div></td>" +
+          "<td class='n'>" + r.store + "</td><td class='n'>" + r.win + "</td><td class='n'>" + r.linux + "</td><td class='n'>" + r.snap + "</td><td class='n'><strong>" + r.reach + "</strong></td><td class='n'>" + r.sold + "</td><td class='n'>" + money(r.rev) + "</td></tr>";
+      }).join("") + "<tr class='total'><td>Total</td><td class='n'>" + T.store + "</td><td class='n'>" + T.win + "</td><td class='n'>" + T.linux + "</td><td class='n'>" + T.snap + "</td><td class='n'>" + T.reach + "</td><td class='n'>" + T.sold + "</td><td class='n'>" + money(T.rev) + "</td></tr>";
 
-      storeInAppSales = computedStoreSales;
-      storeInAppRev = computedStoreRev;
-      gumroadSales = (data.gumroad && data.gumroad.total_sales) ? data.gumroad.total_sales : 0;
-      gumroadRev = (data.gumroad && data.gumroad.total_revenue_usd) ? data.gumroad.total_revenue_usd : 0.0;
+      var parts = [["Microsoft Store", T.store, "#38BDF8"], ["GitHub Windows", T.win, "#818CF8"], ["GitHub Linux", T.linux, "#F59E0B"], ["Snap Store", T.snap, "#F472B6"]];
+      el("mix-bar").innerHTML = parts.map(function(p) { return "<div style='width:" + (T.reach ? p[1] / T.reach * 100 : 0) + "%; background:" + p[2] + "' title='" + p[0] + ": " + p[1] + "'></div>"; }).join("");
+      el("mix-legend").innerHTML = parts.map(function(p) { return "<span><i style='background:" + p[2] + "'></i>" + p[0] + " " + p[1] + " (" + (T.reach ? Math.round(p[1] / T.reach * 100) : 0) + "%)</span>"; }).join("");
 
-      updateGrandTotals();
-      renderRevenueAttribution(data, apps, storeInAppRev + gumroadRev);
-
-      // ==========================================
-      // ECOSYSTEM 1 HEADLINE CARDS: MICROSOFT STORE
-      // ==========================================
-      document.getElementById("seg1-installs").innerText = storeInstallsTotal;
-      document.getElementById("seg1-acquisitions").innerText = storeAcquisitionsTotal;
-      document.getElementById("seg1-upgrades").innerText = storeInAppSales;
-      document.getElementById("seg1-revenue").innerText = "$" + storeInAppRev.toFixed(2);
-      document.getElementById("seg1-crashes").innerText = totalFleetCrashes;
-      document.getElementById("seg1-stability").innerText = totalFleetCrashes === 0 ? "100%" : "Issues";
-
-      // Render Store Apps Table
-      var tbody = document.getElementById("store-table-body");
-      tbody.innerHTML = "";
-      apps.forEach(function(app) {
-        var tr = document.createElement("tr");
-        var statusHtml = "<span class='badge-live'><span class='badge-live-dot'></span> Live</span>";
-        var units = Number(app.inapp_purchases || 0);
-        var rev = units > 0 ? Number(app.inapp_revenue_usd || 0) : 0.0;
-
-        var unitsHtml = units > 0
-          ? "<strong style='color: #C084FC;'>" + units + " sold</strong>"
-          : "<span style='color: #71717A;'>0</span>";
-        var revHtml = rev > 0
-          ? "<strong style='color: #34D399;'>$" + rev.toFixed(2) + "</strong>"
-          : "<span style='color: #71717A;'>$0.00</span>";
-
-        tr.innerHTML = "<td><strong>" + app.name + "</strong></td>" +
-                       "<td><code>" + app.product_id + "</code></td>" +
-                       "<td><strong>" + app.acquisitions + "</strong></td>" +
-                       "<td>" + app.installs + "</td>" +
-                       "<td>" + unitsHtml + "</td>" +
-                       "<td>" + revHtml + "</td>" +
-                       "<td>" + (app.crashes > 0 ? "<span style='color: #F87171; font-weight: 700;'>" + app.crashes + "</span>" : "<span style='color: #34D399;'>0</span>") + "</td>" +
-                       "<td>" + statusHtml + "</td>";
-        tbody.appendChild(tr);
-      });
-
-      // Render Markets
-      var mList = document.getElementById("markets-list");
-      mList.innerHTML = "";
-      var markets = data.markets || [];
-      var maxMarket = markets.length > 0 ? markets[0].count : 1;
-      document.getElementById("market-total-badge").innerText = markets.length + " countries active";
-      markets.forEach(function(m) {
-        var pct = maxMarket > 0 ? Math.round((m.count / maxMarket) * 100) : 0;
-        var fullCountry = resolveCountryName(m.code, m.country);
-        var item = document.createElement("div");
-        item.innerHTML = "<div style='display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;'>" +
-                         "<span><strong>" + fullCountry + "</strong> <span style='color: #71717A;'>(" + m.code + ")</span></span>" +
-                         "<span style='color: #38BDF8; font-weight: 600;'>" + m.count + " install" + (m.count > 1 ? "s" : "") + "</span>" +
-                         "</div>" +
-                         "<div class='bar-container'><div class='bar-fill' style='width: " + pct + "%;'></div></div>";
-        mList.appendChild(item);
-      });
-
-      // Render OS
-      var osList = document.getElementById("os-list");
-      osList.innerHTML = "";
-      var osData = data.os_breakdown || [];
-      document.getElementById("os-total-badge").innerText = storeInstallsTotal + " installs";
-      osData.forEach(function(o) {
-        var item = document.createElement("div");
-        item.innerHTML = "<div style='display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;'>" +
-                         "<span><strong>" + o.os + "</strong></span>" +
-                         "<span style='color: #38BDF8; font-weight: 600;'>" + o.count + " (" + o.percent + "%)</span>" +
-                         "</div>" +
-                         "<div class='bar-container'><div class='bar-fill' style='width: " + o.percent + "%;'></div></div>";
-        osList.appendChild(item);
-      });
-
-      // ==========================================
-      // ECOSYSTEM 2 HEADLINE CARDS: GUMROAD SIDE
-      // ==========================================
-      document.getElementById("seg2-upgrades").innerText = gumroadSales;
-      document.getElementById("seg2-revenue").innerText = "$" + gumroadRev.toFixed(2);
-
-      var gTbody = document.getElementById("gumroad-table-body");
-      gTbody.innerHTML = "";
-      if (data.gumroad && data.gumroad.products) {
-        data.gumroad.products.forEach(function(prod) {
-          var tr = document.createElement("tr");
-          tr.innerHTML = "<td><strong>" + prod.name + "</strong></td>" +
-                         "<td><span style='color: #F43F5E; font-weight: 600;'>Gumroad Web</span></td>" +
-                         "<td>" + (prod.price || "$3.99") + "</td>" +
-                         "<td>" + prod.sales + "</td>" +
-                         "<td>$" + (prod.revenue_usd || 0).toFixed(2) + "</td>" +
-                         "<td><a href='https://scsoftware.gumroad.com' target='_blank' style='color: #38BDF8; text-decoration: none;'>View Listing &nearr;</a></td>";
-          gTbody.appendChild(tr);
-        });
-      }
-
-      // ==========================================
-      // SNAP STORE (LINUX)
-      // ==========================================
-      var snap = data.snap || {};
-      var snapBody = document.getElementById("snap-table-body");
-      if (snap.snaps && snap.snaps.length) {
-        document.getElementById("snap-total").innerText = snap.total_installs || 0;
-        document.getElementById("snap-total-sub").innerText = snap.snaps.length + " snaps" + (snap.configured ? "" : " (last known)");
-        snapBody.innerHTML = "";
-        snap.snaps.slice().sort(function(a, b) { return (b.installs || 0) - (a.installs || 0); }).forEach(function(s) {
-          var tr = document.createElement("tr");
-          tr.innerHTML = "<td><strong>" + s.name + "</strong></td><td>" + s.snap + "</td><td>" + (s.installs || 0) + "</td><td>" + (s.as_of || "") + "</td>" +
-                         "<td><a href='https://snapcraft.io/" + s.snap + "' target='_blank' style='color: #38BDF8; text-decoration: none;'>View Listing &nearr;</a></td>";
-          snapBody.appendChild(tr);
-        });
-        document.getElementById("snap-os-list").innerText = (snap.os_breakdown || []).map(function(o) { return o.os + ": " + o.count; }).join("  ·  ");
-      }
+      var snapTotal = snap.total_installs || 0;
+      el("metric-combined-installs").innerText = gitHubDownloadsTotal + T.store + snapTotal;
+      el("metric-combined-sub").innerText = "GitHub (" + gitHubDownloadsTotal + ") + Store (" + T.store + ") + Snap (" + snapTotal + ")";
     }
 
-    // Auto-check on page load
     checkAuth();
   </script>
 </body>
