@@ -796,7 +796,7 @@
 
     var PACKAGE_MATCHERS = [
       { name: "SC Utility Suite (All-In-One)", prefix: "SC_Utility_Suite_AllInOne", deb: null },
-      { name: "SC Utility Suite", prefix: "SC_Utility_Suite", deb: null },   // after All-In-One: its files match that first
+      { name: "SC Utility Suite", prefix: "SC_Utility_Suite", tar: "SuiteHub", deb: "sc-suite-hub" },   // after All-In-One: its files match that first
       { name: "Archive Unpacker", prefix: "ArchiveUnpacker", deb: "sc-archive-unpacker" },
       { name: "Dup Scrub", prefix: "DupScrub", deb: "sc-dup-scrub" },
       { name: "HEIC Studio", prefix: "HeicStudio", deb: "sc-heic-studio" },
@@ -817,7 +817,7 @@
         if (lower.indexOf(prefLower + "_") === 0 && lower.slice(-13) === "_portable.zip") {
           return { index: i, type: "zip" };
         }
-        if (lower.indexOf(prefLower + "-") === 0 && lower.indexOf("-linux-") !== -1 && lower.slice(-7) === ".tar.gz") {
+        if (lower.indexOf((pkg.tar || pkg.prefix).toLowerCase() + "-") === 0 && lower.indexOf("-linux-") !== -1 && lower.slice(-7) === ".tar.gz") {
           return { index: i, type: "targz" };
         }
         if (pkg.deb && lower.indexOf(pkg.deb + "_") === 0 && lower.slice(-4) === ".deb") {
@@ -975,7 +975,7 @@
             if (units > 0) {
               entries.push({
                 app: prod.name,
-                channel: "Gumroad Direct (Standalone Key)",
+                channel: /Utility Suite/.test(prod.name) ? "Gumroad Direct (Suite Key)" : "Gumroad Direct (Standalone Key)",
                 id: "Gumroad Web",
                 date: "All-Time",
                 region: "Global Web",
