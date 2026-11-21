@@ -17,7 +17,8 @@ APPS = {
     "Media Trim": "9PC1HVN60QBP",
     "PDF Knife": "9NQLSS021G6T",
     "Screen Lens": "9N7V2FVFL4BN",
-    "USB Flasher": "9P9NBFS7PMJB"
+    "USB Flasher": "9P9NBFS7PMJB",
+    "SC Utility Suite": "9NDSBW5TZ90G"
 }
 
 COUNTRY_MAP = {
