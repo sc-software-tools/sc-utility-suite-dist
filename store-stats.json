@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21 19:40:25 UTC",
+  "last_updated": "2026-11-21 20:44:06 UTC",
   "date_range": "2026-08-23 to 2026-11-21",
   "summary": {
     "total_acquisitions": 23,
@@ -92,7 +92,12 @@
       "country": "United States",
       "quantity": 1,
       "revenue_usd": 3.99,
-      "currency": "$"
+      "currency": "$",
+      "utm_source": "app",
+      "utm_medium": "linux",
+      "utm_campaign": "sc-heic-studio",
+      "referrer": "direct",
+      "discover": false
     },
     {
       "source": "Microsoft Store",
@@ -305,7 +310,12 @@
         "country": "United States",
         "quantity": 1,
         "revenue_usd": 3.99,
-        "currency": "$"
+        "currency": "$",
+        "utm_source": "app",
+        "utm_medium": "linux",
+        "utm_campaign": "sc-heic-studio",
+        "referrer": "direct",
+        "discover": false
       }
     ]
   },
@@ -489,7 +499,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 12
+            "download_count": 19
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -557,7 +567,7 @@
           },
           {
             "name": "sc-usb-flasher_1.2.2_amd64.deb",
-            "download_count": 4
+            "download_count": 5
           },
           {
             "name": "ScreenLens-1.2.2-linux-x64.tar.gz",
@@ -597,7 +607,7 @@
           },
           {
             "name": "UsbFlasher-1.2.2-x86_64.AppImage",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "UsbFlasher_Setup_v1.2.2.exe",
@@ -1518,6 +1528,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-21 19:40:25 UTC"
+    "fetched": "2026-11-21 20:44:06 UTC"
   }
 }
