@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-11-21 08:03:44 UTC",
+  "last_updated": "2026-11-21 15:52:08 UTC",
   "date_range": "2026-08-23 to 2026-11-21",
   "summary": {
     "total_acquisitions": 23,
-    "total_installs": 22,
+    "total_installs": 27,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
@@ -14,7 +14,7 @@
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
       "acquisitions": 7,
-      "installs": 7,
+      "installs": 10,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -59,7 +59,7 @@
       "name": "Screen Lens",
       "product_id": "9N7V2FVFL4BN",
       "acquisitions": 2,
-      "installs": 1,
+      "installs": 2,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -68,7 +68,7 @@
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
       "acquisitions": 1,
-      "installs": 0,
+      "installs": 1,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -102,7 +102,7 @@
     {
       "code": "UA",
       "country": "UA",
-      "count": 2
+      "count": 3
     },
     {
       "code": "US",
@@ -110,8 +110,18 @@
       "count": 2
     },
     {
+      "code": "DZ",
+      "country": "DZ",
+      "count": 1
+    },
+    {
       "code": "ID",
       "country": "ID",
+      "count": 1
+    },
+    {
+      "code": "KR",
+      "country": "South Korea",
       "count": 1
     },
     {
@@ -195,21 +205,31 @@
       "count": 1
     },
     {
+      "code": "IT",
+      "country": "Italy",
+      "count": 1
+    },
+    {
       "code": "MX",
       "country": "MX",
+      "count": 1
+    },
+    {
+      "code": "PL",
+      "country": "PL",
       "count": 1
     }
   ],
   "os_breakdown": [
     {
       "os": "Windows 11",
-      "count": 16,
-      "percent": 72.7
+      "count": 18,
+      "percent": 66.7
     },
     {
       "os": "Windows 10",
-      "count": 6,
-      "percent": 27.3
+      "count": 9,
+      "percent": 33.3
     }
   ],
   "gumroad": {
@@ -218,7 +238,7 @@
     "total_revenue_usd": 0.0,
     "products": [
       {
-        "name": "SC Utility Suite PRO (pre-release licence only, no installer yet)",
+        "name": "SC Utility Suite PRO - Lifetime License (all 7 tools)",
         "sales": 0,
         "revenue_usd": 0.0,
         "price": "$19.99"
