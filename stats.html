@@ -513,7 +513,7 @@
             </select>
           </div>
           <table class="stat-table">
-            <thead><tr><th>Package</th><th class="n">.exe</th><th class="n">.zip</th><th class="n">.deb</th><th class="n">.tar.gz</th><th class="n">Total</th></tr></thead>
+            <thead><tr><th>Package</th><th class="n">.exe</th><th class="n">.zip</th><th class="n">.deb</th><th class="n">.tar.gz / AppImage</th><th class="n">Total</th></tr></thead>
             <tbody id="download-table-body"></tbody>
           </table>
           <p class="panel-sub" style="margin: 8px 0 0; font-size: 0.75rem;" id="github-aux-note"></p>
@@ -637,6 +637,7 @@
         if (lower.indexOf(pref + "_") === 0 && lower.slice(-13) === "_portable.zip") return { index: i, type: "zip" };
         if (lower.indexOf((pkg.tar || pkg.prefix).toLowerCase() + "-") === 0 && lower.indexOf("-linux-") !== -1 && lower.slice(-7) === ".tar.gz") return { index: i, type: "targz" };
         if (pkg.deb && lower.indexOf(pkg.deb + "_") === 0 && lower.slice(-4) === ".deb") return { index: i, type: "deb" };
+        if (lower.indexOf((pkg.tar || pkg.prefix).toLowerCase() + "-") === 0 && lower.slice(-9) === ".appimage") return { index: i, type: "targz" };   // AppImage counts with the portable Linux builds
       }
       return null;
     }
