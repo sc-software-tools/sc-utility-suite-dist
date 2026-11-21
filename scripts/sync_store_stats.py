@@ -177,11 +177,28 @@ def fetch_gumroad_stats():
         return {"configured": False, "total_sales": 0, "total_revenue_usd": 0.0, "products": [], "recent_sales": []}
         
     try:
-        url = f"https://api.gumroad.com/v2/products?access_token={token}"
-        resp = requests.get(url, timeout=20)
-        if resp.status_code == 200:
-            data = resp.json()
-            products = data.get("products", [])
+        def gumroad_pages(endpoint, key, limit=20):
+            # Gumroad pages its lists (10 products / 10 sales per page); follow next_page_key.
+            items, page_key, status = [], None, 200
+            for _ in range(limit):
+                params = {"access_token": token}
+                if page_key:
+                    params["page_key"] = page_key
+                r = requests.get(f"https://api.gumroad.com/v2/{endpoint}", params=params, timeout=20)
+                status = r.status_code
+                if status != 200:
+                    break
+                body = r.json()
+                items += body.get(key, [])
+                page_key = body.get("next_page_key")
+                if not page_key:
+                    break
+            return items, status
+
+        all_products, status = gumroad_pages("products", "products")
+        if status == 200 or all_products:
+            # Drafts (unreleased apps) are not on sale; leave them off the stats page.
+            products = [p for p in all_products if p.get("published") and not p.get("deleted")]
             total_sales = 0
             total_cents = 0
             prod_list = []
@@ -199,9 +216,9 @@ def fetch_gumroad_stats():
 
             recent_sales = []
             try:
-                sales_resp = requests.get(f"https://api.gumroad.com/v2/sales?access_token={token}", timeout=20)
-                if sales_resp.status_code == 200:
-                    for s in sales_resp.json().get("sales", [])[:50]:
+                sales, _ = gumroad_pages("sales", "sales", limit=5)
+                if sales:
+                    for s in sales[:50]:
                         if s.get("refunded") or s.get("chargedback"):
                             continue
                         price_cents = s.get("price", 0)
@@ -227,7 +244,7 @@ def fetch_gumroad_stats():
                 "recent_sales": recent_sales
             }
         else:
-            return {"configured": False, "error": f"HTTP {resp.status_code}", "total_sales": 0, "total_revenue_usd": 0.0, "products": [], "recent_sales": []}
+            return {"configured": False, "error": f"HTTP {status}", "total_sales": 0, "total_revenue_usd": 0.0, "products": [], "recent_sales": []}
     except Exception as e:
         return {"configured": False, "error": str(e), "total_sales": 0, "total_revenue_usd": 0.0, "products": [], "recent_sales": []}
 
