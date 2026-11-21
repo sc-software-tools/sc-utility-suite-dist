@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-21 16:23:47 UTC",
+  "last_updated": "2026-11-21 16:39:55 UTC",
   "date_range": "2026-08-23 to 2026-11-21",
   "summary": {
-    "total_acquisitions": 23,
+    "total_acquisitions": 24,
     "total_installs": 27,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -13,7 +13,7 @@
     {
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
-      "acquisitions": 7,
+      "acquisitions": 8,
       "installs": 10,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -1319,6 +1319,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-21 16:23:47 UTC"
+    "fetched": "2026-11-21 16:39:55 UTC"
   }
 }
