@@ -26,6 +26,11 @@ jobs:
                 "https://sc-software-tools.github.io/sc-utility-suite-dist/pdf-tools.html",
                 "https://sc-software-tools.github.io/sc-utility-suite-dist/archive-extractor.html",
                 "https://sc-software-tools.github.io/sc-utility-suite-dist/usb-imager.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/guides.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/how-to-open-heic-on-windows.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/how-to-merge-pdf-files-offline.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/how-to-open-rar-and-7z-files.html",
+                "https://sc-software-tools.github.io/sc-utility-suite-dist/how-to-make-a-bootable-usb.html",
                 "https://sc-software-tools.github.io/sc-utility-suite-dist/feed.xml"
               ]
             }'
