@@ -615,6 +615,32 @@
 
     </div>
 
+    <!-- ========================================== -->
+    <!-- SNAP STORE (LINUX)                         -->
+    <!-- ========================================== -->
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="panel-title">Snap Store (Linux)</h2>
+        <span class="badge-live"><span class="badge-live-dot"></span> Snapcraft Metrics</span>
+      </div>
+      <p class="panel-sub">Active installs reported by the Snap Store for each snap (latest day of the installed base). Free installs; PRO upgrades are bought on Gumroad.</p>
+      <div class="headline-grid" style="margin-bottom: 24px;">
+        <div class="metric-card" style="background: #19191D;">
+          <div class="metric-label">Active Snap Installs</div>
+          <div class="metric-val" id="snap-total">--</div>
+          <div class="metric-sub" id="snap-total-sub">All snaps</div>
+        </div>
+      </div>
+      <div style="overflow-x: auto;">
+        <table class="stat-table">
+          <thead><tr><th>Snap</th><th>Store name</th><th>Active Installs</th><th>As of</th><th>Listing Action</th></tr></thead>
+          <tbody id="snap-table-body"><tr><td colspan="5" style="text-align: center; color: #A1A1AA; padding: 24px;">No Snap Store data yet.</td></tr></tbody>
+        </table>
+      </div>
+      <div class="sub-section-title" style="margin-top: 24px;">Snap Installs by Distribution</div>
+      <div id="snap-os-list" style="color: #A1A1AA; font-size: 0.85rem;"></div>
+    </div>
+
     <!-- Quick External Portals Navigation -->
     <div class="panel">
       <h3 class="panel-title">Developer Dashboards &amp; Portals</h3>
@@ -663,7 +689,7 @@
       : null;
 
     /* AUTO_SYNC_DATA_START */
-    var EMBEDDED_STORE_DATA = {"last_updated": "2026-11-21 15:52:08 UTC", "date_range": "2026-08-23 to 2026-11-21", "summary": {"total_acquisitions": 23, "total_installs": 27, "total_crashes": 0, "total_inapp_purchases": 1, "total_inapp_revenue_usd": 4.42, "apps_tracked": 8}, "apps": [{"name": "Archive Unpacker", "product_id": "9NXS3LDTBRX8", "acquisitions": 7, "installs": 10, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "Dup Scrub", "product_id": "9NL51TH9QR3M", "acquisitions": 2, "installs": 1, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "HEIC Studio", "product_id": "9N4F9K6G90HK", "acquisitions": 3, "installs": 6, "inapp_purchases": 1, "inapp_revenue_usd": 4.42, "crashes": 0}, {"name": "Media Trim", "product_id": "9PC1HVN60QBP", "acquisitions": 3, "installs": 3, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "PDF Knife", "product_id": "9NQLSS021G6T", "acquisitions": 5, "installs": 4, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "Screen Lens", "product_id": "9N7V2FVFL4BN", "acquisitions": 2, "installs": 2, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "USB Flasher", "product_id": "9P9NBFS7PMJB", "acquisitions": 1, "installs": 1, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "SC Utility Suite", "product_id": "9NDSBW5TZ90G", "acquisitions": 0, "installs": 0, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}], "sales_history": [{"source": "Microsoft Store", "app": "HEIC Studio", "product_id": "9N4F9K6G90HK", "addon_name": "HEIC Studio PRO (Lifetime)", "addon_id": "", "date": "2026-11-16", "market": "Store", "country": "Microsoft Store", "quantity": 1, "revenue_usd": 4.42, "os": ""}], "markets": [{"code": "UA", "country": "UA", "count": 3}, {"code": "US", "country": "United States", "count": 2}, {"code": "DZ", "country": "DZ", "count": 1}, {"code": "ID", "country": "ID", "count": 1}, {"code": "KR", "country": "South Korea", "count": 1}, {"code": "MW", "country": "MW", "count": 1}, {"code": "NP", "country": "NP", "count": 1}, {"code": "RU", "country": "Russia", "count": 1}, {"code": "TN", "country": "Tunisia", "count": 1}, {"code": "BE", "country": "BE", "count": 1}, {"code": "AZ", "country": "Azerbaijan", "count": 1}, {"code": "JP", "country": "Japan", "count": 1}, {"code": "NL", "country": "Netherlands", "count": 1}, {"code": "NO", "country": "NO", "count": 1}, {"code": "TW", "country": "Taiwan", "count": 1}, {"code": "BA", "country": "Bosnia and Herzegovina", "count": 1}, {"code": "GR", "country": "GR", "count": 1}, {"code": "KH", "country": "Cambodia", "count": 1}, {"code": "AU", "country": "Australia", "count": 1}, {"code": "DE", "country": "Germany", "count": 1}, {"code": "GB", "country": "United Kingdom", "count": 1}, {"code": "IT", "country": "Italy", "count": 1}, {"code": "MX", "country": "MX", "count": 1}, {"code": "PL", "country": "PL", "count": 1}], "os_breakdown": [{"os": "Windows 11", "count": 18, "percent": 66.7}, {"os": "Windows 10", "count": 9, "percent": 33.3}], "gumroad": {"configured": true, "total_sales": 0, "total_revenue_usd": 0.0, "products": [{"name": "SC Utility Suite PRO - Lifetime License (all 7 tools)", "sales": 0, "revenue_usd": 0.0, "price": "$19.99"}, {"name": "USB Flasher PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Screen Lens PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "PDF Knife PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Media Trim PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "HEIC Studio PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Dup Scrub PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Archive Unpacker PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}], "recent_sales": []}};
+    var EMBEDDED_STORE_DATA = {"last_updated": "2026-11-21 15:52:08 UTC", "date_range": "2026-08-23 to 2026-11-21", "summary": {"total_acquisitions": 23, "total_installs": 27, "total_crashes": 0, "total_inapp_purchases": 1, "total_inapp_revenue_usd": 4.42, "apps_tracked": 8}, "apps": [{"name": "Archive Unpacker", "product_id": "9NXS3LDTBRX8", "acquisitions": 7, "installs": 10, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "Dup Scrub", "product_id": "9NL51TH9QR3M", "acquisitions": 2, "installs": 1, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "HEIC Studio", "product_id": "9N4F9K6G90HK", "acquisitions": 3, "installs": 6, "inapp_purchases": 1, "inapp_revenue_usd": 4.42, "crashes": 0}, {"name": "Media Trim", "product_id": "9PC1HVN60QBP", "acquisitions": 3, "installs": 3, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "PDF Knife", "product_id": "9NQLSS021G6T", "acquisitions": 5, "installs": 4, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "Screen Lens", "product_id": "9N7V2FVFL4BN", "acquisitions": 2, "installs": 2, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "USB Flasher", "product_id": "9P9NBFS7PMJB", "acquisitions": 1, "installs": 1, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}, {"name": "SC Utility Suite", "product_id": "9NDSBW5TZ90G", "acquisitions": 0, "installs": 0, "inapp_purchases": 0, "inapp_revenue_usd": 0.0, "crashes": 0}], "sales_history": [{"source": "Microsoft Store", "app": "HEIC Studio", "product_id": "9N4F9K6G90HK", "addon_name": "HEIC Studio PRO (Lifetime)", "addon_id": "", "date": "2026-11-16", "market": "Store", "country": "Microsoft Store", "quantity": 1, "revenue_usd": 4.42, "os": ""}], "markets": [{"code": "UA", "country": "UA", "count": 3}, {"code": "US", "country": "United States", "count": 2}, {"code": "DZ", "country": "DZ", "count": 1}, {"code": "ID", "country": "ID", "count": 1}, {"code": "KR", "country": "South Korea", "count": 1}, {"code": "MW", "country": "MW", "count": 1}, {"code": "NP", "country": "NP", "count": 1}, {"code": "RU", "country": "Russia", "count": 1}, {"code": "TN", "country": "Tunisia", "count": 1}, {"code": "BE", "country": "BE", "count": 1}, {"code": "AZ", "country": "Azerbaijan", "count": 1}, {"code": "JP", "country": "Japan", "count": 1}, {"code": "NL", "country": "Netherlands", "count": 1}, {"code": "NO", "country": "NO", "count": 1}, {"code": "TW", "country": "Taiwan", "count": 1}, {"code": "BA", "country": "Bosnia and Herzegovina", "count": 1}, {"code": "GR", "country": "GR", "count": 1}, {"code": "KH", "country": "Cambodia", "count": 1}, {"code": "AU", "country": "Australia", "count": 1}, {"code": "DE", "country": "Germany", "count": 1}, {"code": "GB", "country": "United Kingdom", "count": 1}, {"code": "IT", "country": "Italy", "count": 1}, {"code": "MX", "country": "MX", "count": 1}, {"code": "PL", "country": "PL", "count": 1}], "os_breakdown": [{"os": "Windows 11", "count": 18, "percent": 66.7}, {"os": "Windows 10", "count": 9, "percent": 33.3}], "gumroad": {"configured": true, "total_sales": 0, "total_revenue_usd": 0.0, "products": [{"name": "SC Utility Suite PRO - Lifetime License (all 7 tools)", "sales": 0, "revenue_usd": 0.0, "price": "$19.99"}, {"name": "USB Flasher PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Screen Lens PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "PDF Knife PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Media Trim PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "HEIC Studio PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Dup Scrub PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}, {"name": "Archive Unpacker PRO - Lifetime License", "sales": 0, "revenue_usd": 0.0, "price": "$3.99"}], "recent_sales": []}, "snap": {"configured": true, "total_installs": 136, "snaps": [{"name": "Archive Unpacker", "snap": "sc-archive-unpacker", "installs": 30, "as_of": "2026-11-20"}, {"name": "Dup Scrub", "snap": "sc-dup-scrub", "installs": 0, "as_of": "2026-11-20"}, {"name": "HEIC Studio", "snap": "sc-heic-studio", "installs": 17, "as_of": "2026-11-20"}, {"name": "Media Trim", "snap": "sc-media-trim", "installs": 2, "as_of": "2026-11-20"}, {"name": "PDF Knife", "snap": "sc-pdf-knife", "installs": 0, "as_of": "2026-11-20"}, {"name": "Screen Lens", "snap": "sc-screen-lens", "installs": 11, "as_of": "2026-11-20"}, {"name": "USB Flasher", "snap": "sc-usb-flasher", "installs": 76, "as_of": "2026-11-20"}, {"name": "SC Utility Suite", "snap": "sc-utility-suite", "installs": 0, "as_of": ""}], "os_breakdown": [{"os": "ubuntu/26.04", "count": 72}, {"os": "ubuntu/24.04", "count": 26}, {"os": "zorin/18", "count": 12}, {"os": "ubuntu/26.10", "count": 6}, {"os": "ubuntu/11.26.11", "count": 3}, {"os": "ubuntu/20.04", "count": 3}, {"os": "ubuntu/22.04", "count": 3}, {"os": "arch/", "count": 2}, {"os": "ubuntu/25.10", "count": 2}, {"os": "fedora/44", "count": 1}, {"os": "zorin/17", "count": 1}, {"os": "neon/24.04", "count": 1}, {"os": "linuxmint/22.3", "count": 1}, {"os": "debian/13", "count": 1}, {"os": "kali/2026.3", "count": 1}, {"os": "ubuntu/11.26.01", "count": 1}]}};
     /* AUTO_SYNC_DATA_END */
 
     function startAutoPoll() {
@@ -1129,6 +1155,24 @@
                          "<td><a href='https://scsoftware.gumroad.com' target='_blank' style='color: #38BDF8; text-decoration: none;'>View Listing &nearr;</a></td>";
           gTbody.appendChild(tr);
         });
+      }
+
+      // ==========================================
+      // SNAP STORE (LINUX)
+      // ==========================================
+      var snap = data.snap || {};
+      var snapBody = document.getElementById("snap-table-body");
+      if (snap.snaps && snap.snaps.length) {
+        document.getElementById("snap-total").innerText = snap.total_installs || 0;
+        document.getElementById("snap-total-sub").innerText = snap.snaps.length + " snaps" + (snap.configured ? "" : " (last known)");
+        snapBody.innerHTML = "";
+        snap.snaps.slice().sort(function(a, b) { return (b.installs || 0) - (a.installs || 0); }).forEach(function(s) {
+          var tr = document.createElement("tr");
+          tr.innerHTML = "<td><strong>" + s.name + "</strong></td><td>" + s.snap + "</td><td>" + (s.installs || 0) + "</td><td>" + (s.as_of || "") + "</td>" +
+                         "<td><a href='https://snapcraft.io/" + s.snap + "' target='_blank' style='color: #38BDF8; text-decoration: none;'>View Listing &nearr;</a></td>";
+          snapBody.appendChild(tr);
+        });
+        document.getElementById("snap-os-list").innerText = (snap.os_breakdown || []).map(function(o) { return o.os + ": " + o.count; }).join("  ·  ");
       }
     }
 

@@ -98,6 +98,55 @@ def record_quantity(item):
             return int(val)
     return 0
 
+SNAPS = {
+    "Archive Unpacker": "sc-archive-unpacker",
+    "Dup Scrub": "sc-dup-scrub",
+    "HEIC Studio": "sc-heic-studio",
+    "Media Trim": "sc-media-trim",
+    "PDF Knife": "sc-pdf-knife",
+    "Screen Lens": "sc-screen-lens",
+    "USB Flasher": "sc-usb-flasher",
+    "SC Utility Suite": "sc-utility-suite",
+}
+
+
+def previous_payload_section(name):
+    """The section from the last published ecosystem-data.json (kept when a source cannot be read this run)."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "ecosystem-data.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f).get(name)
+    except (OSError, ValueError):
+        return None
+
+
+def fetch_snap_stats():
+    """Active Snap Store installs per snap (latest day of installed_base_by_operating_system) via `snapcraft metrics`.
+    Needs SNAPCRAFT_STORE_CREDENTIALS (a metrics-only exported login). Without it the last published numbers are kept."""
+    import shutil
+    import subprocess
+    if not os.environ.get("SNAPCRAFT_STORE_CREDENTIALS") or not shutil.which("snapcraft"):
+        print("Snap Store: no credentials or snapcraft on this runner; keeping the last published snap numbers.")
+        return previous_payload_section("snap") or {"configured": False, "total_installs": 0, "snaps": [], "os_breakdown": []}
+    snaps, os_totals, total = [], {}, 0
+    for app, snap in SNAPS.items():
+        try:
+            out = subprocess.run(["snapcraft", "metrics", snap, "--name", "installed_base_by_operating_system", "--format", "json"],
+                                 capture_output=True, text=True, timeout=180)
+            data = json.loads(out.stdout) if out.returncode == 0 else {}
+        except (subprocess.SubprocessError, ValueError):
+            data = {}
+        installs = 0
+        for series in data.get("series", []):
+            latest = (series.get("values") or [0])[-1] or 0
+            installs += latest
+            os_totals[series.get("name", "?")] = os_totals.get(series.get("name", "?"), 0) + latest
+        snaps.append({"name": app, "snap": snap, "installs": installs, "as_of": (data.get("buckets") or [""])[-1]})
+        total += installs
+    os_list = [{"os": k, "count": v} for k, v in sorted(os_totals.items(), key=lambda x: x[1], reverse=True)]
+    return {"configured": True, "total_installs": total, "snaps": snaps, "os_breakdown": os_list}
+
+
 def fetch_gumroad_stats():
     token = os.environ.get("GUMROAD_ACCESS_TOKEN")
     if not token:
@@ -302,7 +351,8 @@ def main():
         "sales_history": combined_sales,
         "markets": markets_formatted,
         "os_breakdown": os_formatted,
-        "gumroad": gumroad_data
+        "gumroad": gumroad_data,
+        "snap": fetch_snap_stats()
     }
     
     script_dir = os.path.dirname(os.path.abspath(__file__))

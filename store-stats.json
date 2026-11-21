@@ -287,5 +287,125 @@
       }
     ],
     "recent_sales": []
+  },
+  "snap": {
+    "configured": true,
+    "total_installs": 136,
+    "snaps": [
+      {
+        "name": "Archive Unpacker",
+        "snap": "sc-archive-unpacker",
+        "installs": 30,
+        "as_of": "2026-11-20"
+      },
+      {
+        "name": "Dup Scrub",
+        "snap": "sc-dup-scrub",
+        "installs": 0,
+        "as_of": "2026-11-20"
+      },
+      {
+        "name": "HEIC Studio",
+        "snap": "sc-heic-studio",
+        "installs": 17,
+        "as_of": "2026-11-20"
+      },
+      {
+        "name": "Media Trim",
+        "snap": "sc-media-trim",
+        "installs": 2,
+        "as_of": "2026-11-20"
+      },
+      {
+        "name": "PDF Knife",
+        "snap": "sc-pdf-knife",
+        "installs": 0,
+        "as_of": "2026-11-20"
+      },
+      {
+        "name": "Screen Lens",
+        "snap": "sc-screen-lens",
+        "installs": 11,
+        "as_of": "2026-11-20"
+      },
+      {
+        "name": "USB Flasher",
+        "snap": "sc-usb-flasher",
+        "installs": 76,
+        "as_of": "2026-11-20"
+      },
+      {
+        "name": "SC Utility Suite",
+        "snap": "sc-utility-suite",
+        "installs": 0,
+        "as_of": ""
+      }
+    ],
+    "os_breakdown": [
+      {
+        "os": "ubuntu/26.04",
+        "count": 72
+      },
+      {
+        "os": "ubuntu/24.04",
+        "count": 26
+      },
+      {
+        "os": "zorin/18",
+        "count": 12
+      },
+      {
+        "os": "ubuntu/26.10",
+        "count": 6
+      },
+      {
+        "os": "ubuntu/11.26.11",
+        "count": 3
+      },
+      {
+        "os": "ubuntu/20.04",
+        "count": 3
+      },
+      {
+        "os": "ubuntu/22.04",
+        "count": 3
+      },
+      {
+        "os": "arch/",
+        "count": 2
+      },
+      {
+        "os": "ubuntu/25.10",
+        "count": 2
+      },
+      {
+        "os": "fedora/44",
+        "count": 1
+      },
+      {
+        "os": "zorin/17",
+        "count": 1
+      },
+      {
+        "os": "neon/24.04",
+        "count": 1
+      },
+      {
+        "os": "linuxmint/22.3",
+        "count": 1
+      },
+      {
+        "os": "debian/13",
+        "count": 1
+      },
+      {
+        "os": "kali/2026.3",
+        "count": 1
+      },
+      {
+        "os": "ubuntu/11.26.01",
+        "count": 1
+      }
+    ]
   }
 }

@@ -11,6 +11,8 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      HAS_SNAP_LOGIN: ${{ secrets.SNAPCRAFT_METRICS_LOGIN != '' }}
 
     steps:
       - name: Checkout Repository
@@ -24,8 +26,13 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
 
+      - name: Install snapcraft (Snap Store metrics)
+        if: ${{ env.HAS_SNAP_LOGIN == 'true' }}
+        run: sudo snap install snapcraft --classic
+
       - name: Sync Store Analytics
         env:
+          SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_METRICS_LOGIN }}
           MSSTORE_TENANT_ID: ${{ secrets.MSSTORE_TENANT_ID }}
           MSSTORE_CLIENT_ID: ${{ secrets.MSSTORE_CLIENT_ID }}
           MSSTORE_CLIENT_SECRET: ${{ secrets.MSSTORE_CLIENT_SECRET }}
