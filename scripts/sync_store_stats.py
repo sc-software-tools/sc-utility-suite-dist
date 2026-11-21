@@ -120,6 +120,24 @@ def previous_payload_section(name):
         return None
 
 
+def fetch_github_downloads():
+    """Download counts for every release asset (server-side, with the workflow's GITHUB_TOKEN, so visitors' browsers
+    never hit GitHub's 60-requests-per-hour anonymous limit). Keeps the last published numbers if GitHub fails."""
+    headers = {"Accept": "application/vnd.github+json"}
+    if os.environ.get("GITHUB_TOKEN"):
+        headers["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+    try:
+        resp = requests.get("https://api.github.com/repos/sc-software-tools/sc-utility-suite-dist/releases?per_page=100", headers=headers, timeout=30)
+        resp.raise_for_status()
+        releases = [{"tag_name": r.get("tag_name", ""), "published_at": r.get("published_at", ""),
+                     "assets": [{"name": a.get("name", ""), "download_count": a.get("download_count", 0)} for a in r.get("assets", [])]}
+                    for r in resp.json()]
+        return {"releases": releases, "fetched": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")}
+    except Exception as exc:
+        print(f"GitHub downloads: {exc}; keeping the last published numbers.")
+        return previous_payload_section("github") or {"releases": []}
+
+
 def fetch_snap_stats():
     """Active Snap Store installs per snap (latest day of installed_base_by_operating_system) via `snapcraft metrics`.
     Needs SNAPCRAFT_STORE_CREDENTIALS (a metrics-only exported login). Without it the last published numbers are kept."""
@@ -352,7 +370,8 @@ def main():
         "markets": markets_formatted,
         "os_breakdown": os_formatted,
         "gumroad": gumroad_data,
-        "snap": fetch_snap_stats()
+        "snap": fetch_snap_stats(),
+        "github": fetch_github_downloads()
     }
     
     script_dir = os.path.dirname(os.path.abspath(__file__))
