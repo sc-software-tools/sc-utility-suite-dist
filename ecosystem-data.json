@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-11-21 00:48:22 UTC",
+  "last_updated": "2026-11-21 07:46:53 UTC",
   "date_range": "2026-08-23 to 2026-11-21",
   "summary": {
     "total_acquisitions": 23,
-    "total_installs": 20,
+    "total_installs": 22,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
-    "apps_tracked": 7
+    "apps_tracked": 8
   },
   "apps": [
     {
@@ -32,7 +32,7 @@
       "name": "HEIC Studio",
       "product_id": "9N4F9K6G90HK",
       "acquisitions": 3,
-      "installs": 5,
+      "installs": 6,
       "inapp_purchases": 1,
       "inapp_revenue_usd": 4.42,
       "crashes": 0
@@ -50,7 +50,7 @@
       "name": "PDF Knife",
       "product_id": "9NQLSS021G6T",
       "acquisitions": 5,
-      "installs": 3,
+      "installs": 4,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -68,6 +68,15 @@
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
       "acquisitions": 1,
+      "installs": 0,
+      "inapp_purchases": 0,
+      "inapp_revenue_usd": 0.0,
+      "crashes": 0
+    },
+    {
+      "name": "SC Utility Suite",
+      "product_id": "9NDSBW5TZ90G",
+      "acquisitions": 0,
       "installs": 0,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -96,6 +105,11 @@
       "count": 2
     },
     {
+      "code": "US",
+      "country": "United States",
+      "count": 2
+    },
+    {
       "code": "ID",
       "country": "ID",
       "count": 1
@@ -118,11 +132,6 @@
     {
       "code": "TN",
       "country": "Tunisia",
-      "count": 1
-    },
-    {
-      "code": "US",
-      "country": "United States",
       "count": 1
     },
     {
@@ -176,6 +185,11 @@
       "count": 1
     },
     {
+      "code": "DE",
+      "country": "Germany",
+      "count": 1
+    },
+    {
       "code": "GB",
       "country": "United Kingdom",
       "count": 1
@@ -190,12 +204,12 @@
     {
       "os": "Windows 11",
       "count": 16,
-      "percent": 80.0
+      "percent": 72.7
     },
     {
       "os": "Windows 10",
-      "count": 4,
-      "percent": 20.0
+      "count": 6,
+      "percent": 27.3
     }
   ],
   "gumroad": {
