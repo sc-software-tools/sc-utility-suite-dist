@@ -405,7 +405,7 @@
         <div class="metric-sub" id="metric-combined-sub">GitHub + Store + Snap</div>
       </div>
       <div class="metric-card" style="border-color: rgba(168, 85, 247, 0.35);">
-        <div class="metric-label" style="color: #C084FC;">Total Upgrades Sold</div>
+        <div class="metric-label" style="color: #C084FC;">Total Sales</div>
         <div class="metric-val" id="metric-top-upgrades" style="color: #C084FC;">0</div>
         <div class="metric-sub" id="metric-top-upgrades-sub">Store Add-ons (0) + Gumroad (0)</div>
       </div>
@@ -447,6 +447,33 @@
         </table>
       </div>
       <p class="panel-sub" style="margin: 10px 0 0; font-size: 0.75rem;">MS Store = device installs · GitHub = installer/archive downloads (includes test and winget validation downloads) · Snap = active installs on the latest day.</p>
+    </div>
+
+    <!-- PAID APPS -->
+    <div class="panel" style="border-color: rgba(245, 177, 61, 0.30);">
+      <div class="panel-header">
+        <h2 class="panel-title">Paid Apps</h2>
+        <span class="badge-live"><span class="badge-live-dot"></span> <span id="paid-note">Creator Forge · FileFlow · PaperTrail · ROM &amp; Disc Smith</span></span>
+      </div>
+      <div style="overflow-x: auto;">
+        <table class="stat-table">
+          <thead>
+            <tr>
+              <th>App</th>
+              <th class="n">Store sales</th>
+              <th class="n">Store installs</th>
+              <th class="n">Gumroad sales</th>
+              <th class="n">GitHub Win</th>
+              <th class="n">GitHub Linux</th>
+              <th class="n">Snap</th>
+              <th class="n">Updates</th>
+              <th class="n">Revenue</th>
+            </tr>
+          </thead>
+          <tbody id="paid-body"><tr><td colspan="9" class="muted" style="text-align:center; padding: 16px;">Loading…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="panel-sub" style="margin: 10px 0 0; font-size: 0.75rem;">Sold once per app: Store sales are app purchases (not add-ons); Gumroad sales are licence keys. GitHub = installer/package downloads (anyone can download; the app stays locked until bought). Updates = installed copies fetching a new version. Google Play: closed test until production access.</p>
     </div>
 
     <!-- SALES -->
@@ -565,8 +592,14 @@
       { name: "Media Trim", app: "Media Trim", prefix: "MediaTrim", deb: "sc-media-trim" },
       { name: "PDF Knife", app: "PDF Knife", prefix: "PdfKnife", deb: "sc-pdf-knife" },
       { name: "Screen Lens", app: "Screen Lens", prefix: "ScreenLens", deb: "sc-screen-lens" },
-      { name: "USB Flasher", app: "USB Flasher", prefix: "UsbFlasher", deb: "sc-usb-flasher" }
+      { name: "USB Flasher", app: "USB Flasher", prefix: "UsbFlasher", deb: "sc-usb-flasher" },
+      { name: "Creator Forge", app: "Creator Forge", prefix: "CreatorForge", deb: "sc-creator-forge", paid: true },
+      { name: "FileFlow", app: "FileFlow", prefix: "FileFlow", deb: "sc-file-flow", paid: true },
+      { name: "PaperTrail", app: "PaperTrail", prefix: "PaperTrail", deb: "sc-paper-trail", paid: true },
+      { name: "ROM & Disc Smith", app: "ROM & Disc Smith", prefix: "RomDiscSmith", deb: "sc-rom-disc-smith", paid: true }
     ];
+    var PAID_ORDER = ["Creator Forge", "FileFlow", "PaperTrail", "ROM & Disc Smith"];
+    var paidUpdates = {};    // app -> downloads from the expansion-latest update channel (installed copies updating)
 
     function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function(c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
     function money(v) { return "$" + Number(v || 0).toFixed(2); }
@@ -602,7 +635,7 @@
       if (cachedReleases.length && sum(releases) < sum(cachedReleases)) return false;
       cachedReleases = releases;
       var sel = el("release-filter"), current = sel.value || "ALL";
-      sel.innerHTML = "<option value='ALL'>All releases</option>" + releases.filter(function(r) { return /^suite-v|^v\d/.test(r.tag_name); })
+      sel.innerHTML = "<option value='ALL'>All releases</option>" + releases.filter(function(r) { return /^suite-v|^expansion-v|^v\d/.test(r.tag_name); })
         .map(function(r) { return "<option value='" + esc(r.tag_name) + "'>" + esc(r.tag_name) + "</option>"; }).join("");
       sel.value = current;
       renderGitHubMetrics();
@@ -648,11 +681,12 @@
       var tag = el("release-filter").value || "ALL";
       var rows = PACKAGE_MATCHERS.map(function(p) { return { name: p.name, exe: 0, zip: 0, deb: 0, targz: 0, total: 0 }; });
       var all = 0, aux = 0, shown = 0;
-      ghByApp = {};
+      ghByApp = {}; paidUpdates = {};
       cachedReleases.forEach(function(rel) {
         var inFilter = tag === "ALL" || rel.tag_name === tag;
         (rel.assets || []).forEach(function(a) {
           var dl = a.download_count || 0, m = classifyAsset(a.name || "");
+          if (m && rel.tag_name === "expansion-latest") { var u = PACKAGE_MATCHERS[m.index].app; paidUpdates[u] = (paidUpdates[u] || 0) + dl; return; }
           if (!m) { if (inFilter) aux += dl; return; }
           all += dl;
           var app = PACKAGE_MATCHERS[m.index].app;
@@ -697,11 +731,12 @@
       el("store-fold-note").innerText = inst + " installs · " + acq + " acquisitions";
 
       // Top cards (upgrades, money, stability)
-      var gSales = g.total_sales || 0, gRev = g.total_revenue_usd || 0;
-      el("metric-top-upgrades").innerText = sold + gSales;
-      el("metric-top-upgrades-sub").innerText = "Store Add-ons (" + sold + ") + Gumroad (" + gSales + ")";
-      el("metric-top-revenue").innerText = money(rev + gRev);
-      el("metric-top-revenue-sub").innerText = "Store (" + money(rev) + ") + Gumroad (" + money(gRev) + ")";
+      var gSales = g.total_sales || 0, gRev = g.total_revenue_usd || 0;   // Gumroad totals already include the paid apps' keys
+      var pSold = 0, pRev = 0; (data.paid_apps || []).forEach(function(p) { pSold += p.store_sales || 0; pRev += Number(p.store_revenue_usd || 0); });
+      el("metric-top-upgrades").innerText = sold + pSold + gSales;
+      el("metric-top-upgrades-sub").innerText = "Store add-ons (" + sold + ") + Store paid apps (" + pSold + ") + Gumroad (" + gSales + ")";
+      el("metric-top-revenue").innerText = money(rev + pRev + gRev);
+      el("metric-top-revenue-sub").innerText = "Store (" + money(rev + pRev) + ") + Gumroad (" + money(gRev) + ")";
       el("metric-top-crashes").innerText = crashes;
       el("metric-top-stability").innerText = crashes > 0 ? "Issues Detected" : "100%";
       el("metric-top-stability").style.color = crashes > 0 ? "#F87171" : "#4ADE80";
@@ -770,6 +805,29 @@
       renderOverview();
     }
 
+    // ---------- paid apps ----------
+    function renderPaidApps() {
+      var data = lastData || {}, snap = data.snap || {}, g = data.gumroad || {};
+      var byName = {}; (data.paid_apps || []).forEach(function(p) { byName[p.name] = p; });
+      var snaps = {}; (snap.snaps || []).forEach(function(s) { snaps[s.name] = s.installs || 0; });
+      var gum = {}; (g.products || []).forEach(function(p) { gum[p.name] = p; });
+      var T = { ss: 0, si: 0, gs: 0, win: 0, linux: 0, snap: 0, upd: 0, rev: 0 };
+      var rows = PAID_ORDER.map(function(name) {
+        var p = byName[name] || {}, gp = gum["SC " + name] || {}, gh = ghByApp[name] || { win: 0, linux: 0 };
+        var r = { name: name, ss: p.store_sales || 0, si: p.store_installs || 0, gs: gp.sales || 0, win: gh.win, linux: gh.linux, snap: snaps[name] || 0,
+                  upd: paidUpdates[name] || 0, rev: Number(p.store_revenue_usd || 0) + Number(gp.revenue_usd || 0) };
+        Object.keys(T).forEach(function(k) { T[k] += r[k]; });
+        return r;
+      });
+      el("paid-body").innerHTML = rows.map(function(r) {
+        return "<tr><td><strong>" + esc(r.name) + "</strong></td><td class='n'>" + r.ss + "</td><td class='n'>" + r.si + "</td><td class='n'>" + r.gs + "</td><td class='n'>" + r.win +
+          "</td><td class='n'>" + r.linux + "</td><td class='n'>" + r.snap + "</td><td class='n'>" + r.upd + "</td><td class='n'>" + money(r.rev) + "</td></tr>";
+      }).join("") + "<tr class='total'><td>Total</td><td class='n'>" + T.ss + "</td><td class='n'>" + T.si + "</td><td class='n'>" + T.gs + "</td><td class='n'>" + T.win + "</td><td class='n'>" + T.linux +
+        "</td><td class='n'>" + T.snap + "</td><td class='n'>" + T.upd + "</td><td class='n'>" + money(T.rev) + "</td></tr>";
+      el("paid-note").innerText = (T.ss + T.gs) + " sold · " + money(T.rev);
+      return T;
+    }
+
     // ---------- overview ----------
     function renderOverview() {
       var data = lastData || {}, snap = data.snap || {}, g = data.gumroad || {};
@@ -798,9 +856,10 @@
       el("mix-bar").innerHTML = parts.map(function(p) { return "<div style='width:" + (T.reach ? p[1] / T.reach * 100 : 0) + "%; background:" + p[2] + "' title='" + p[0] + ": " + p[1] + "'></div>"; }).join("");
       el("mix-legend").innerHTML = parts.map(function(p) { return "<span><i style='background:" + p[2] + "'></i>" + p[0] + " " + p[1] + " (" + (T.reach ? Math.round(p[1] / T.reach * 100) : 0) + "%)</span>"; }).join("");
 
-      var snapTotal = snap.total_installs || 0;
-      el("metric-combined-installs").innerText = gitHubDownloadsTotal + T.store + snapTotal;
-      el("metric-combined-sub").innerText = "GitHub (" + gitHubDownloadsTotal + ") + Store (" + T.store + ") + Snap (" + snapTotal + ")";
+      var P = renderPaidApps();
+      var snapTotal = snap.total_installs || 0, storeAll = T.store + P.si;
+      el("metric-combined-installs").innerText = gitHubDownloadsTotal + storeAll + snapTotal;
+      el("metric-combined-sub").innerText = "GitHub (" + gitHubDownloadsTotal + ") + Store (" + storeAll + ") + Snap (" + snapTotal + ")";
     }
 
     checkAuth();

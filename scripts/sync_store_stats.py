@@ -21,6 +21,14 @@ APPS = {
     "SC Utility Suite": "9NDSBW5TZ90G"
 }
 
+# The four paid apps (sold as the app itself, so their Store sales are paid acquisitions, not add-ons).
+PAID_APPS = {
+    "Creator Forge": {"store": "9P18Z18SGV8F", "snap": "sc-creator-forge", "gumroad": "SC Creator Forge"},
+    "FileFlow": {"store": "9P55JCHSDK2V", "snap": "sc-file-flow", "gumroad": "SC FileFlow"},
+    "PaperTrail": {"store": "9P2K4281M9S2", "snap": "sc-paper-trail", "gumroad": "SC PaperTrail"},
+    "ROM & Disc Smith": {"store": "9NV49B669CKN", "snap": "sc-rom-disc-smith", "gumroad": "SC ROM & Disc Smith"},
+}
+
 COUNTRY_MAP = {
     "US": "United States",
     "GB": "United Kingdom",
@@ -107,6 +115,10 @@ SNAPS = {
     "Screen Lens": "sc-screen-lens",
     "USB Flasher": "sc-usb-flasher",
     "SC Utility Suite": "sc-utility-suite",
+    "Creator Forge": "sc-creator-forge",
+    "FileFlow": "sc-file-flow",
+    "PaperTrail": "sc-paper-trail",
+    "ROM & Disc Smith": "sc-rom-disc-smith",
 }
 
 
@@ -355,6 +367,32 @@ def main():
             "crashes": fail_count
         })
         
+    # Paid apps: a sale is a paid acquisition (purchasePriceUSDAmount > 0); free/promotional ones are owner tests.
+    paid_apps = []
+    for app_name, ids in PAID_APPS.items():
+        app_id = ids["store"]
+        time.sleep(1.2)
+        acq = call_api(f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/acquisitions?applicationId={app_id}&startDate={start_date}&endDate={end_date}", headers).get("Value", [])
+        sold, revenue = 0, 0.0
+        for item in acq:
+            qty = item.get("acquisitionQuantity", 0) or 0
+            price = float(item.get("purchasePriceUSDAmount") or 0.0)
+            if qty <= 0 or price <= 0 or "promo" in str(item.get("acquisitionType") or "").lower():
+                continue
+            sold += qty; revenue += round(qty * price, 2)
+            m_code = (item.get("market") or "").upper()
+            store_sales.append({"source": "Microsoft Store", "app": app_name, "product_id": app_id, "addon_name": f"SC {app_name} (app purchase)",
+                                "addon_id": "", "date": (item.get("date") or end_date)[:10], "market": m_code or "Store",
+                                "country": COUNTRY_MAP.get(m_code, m_code or "Microsoft Store"), "quantity": qty, "revenue_usd": round(qty * price, 2), "os": ""})
+        time.sleep(1.2)
+        inst = call_api(f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/installs?applicationId={app_id}&startDate={start_date}&endDate={end_date}&groupby=market", headers).get("Value", [])
+        time.sleep(1.2)
+        fails = call_api(f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId={app_id}&startDate={start_date}&endDate={end_date}", headers).get("Value", [])
+        paid_apps.append({"name": app_name, "store_id": app_id, "snap": ids["snap"], "gumroad_product": ids["gumroad"],
+                          "store_sales": sold, "store_revenue_usd": round(revenue, 2),
+                          "store_installs": sum(i.get("successfulInstallCount", 0) for i in inst),
+                          "crashes": sum(i.get("failureCount", 0) for i in fails)})
+
     markets_formatted = []
     for code, cnt in sorted(market_counts.items(), key=lambda x: x[1], reverse=True):
         markets_formatted.append({
@@ -394,6 +432,7 @@ def main():
         "markets": markets_formatted,
         "os_breakdown": os_formatted,
         "gumroad": gumroad_data,
+        "paid_apps": paid_apps,
         "snap": fetch_snap_stats(),
         "github": fetch_github_downloads()
     }
