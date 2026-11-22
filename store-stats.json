@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-11-22 15:43:38 UTC",
+  "last_updated": "2026-11-22 18:22:05 UTC",
   "date_range": "2026-08-24 to 2026-11-22",
   "summary": {
     "total_acquisitions": 24,
-    "total_installs": 27,
+    "total_installs": 31,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
@@ -14,7 +14,7 @@
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
       "acquisitions": 9,
-      "installs": 10,
+      "installs": 14,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -120,6 +120,11 @@
       "count": 3
     },
     {
+      "code": "GB",
+      "country": "United Kingdom",
+      "count": 2
+    },
+    {
       "code": "US",
       "country": "United States",
       "count": 2
@@ -150,6 +155,11 @@
       "count": 1
     },
     {
+      "code": "PK",
+      "country": "PK",
+      "count": 1
+    },
+    {
       "code": "RU",
       "country": "Russia",
       "count": 1
@@ -157,6 +167,16 @@
     {
       "code": "TN",
       "country": "Tunisia",
+      "count": 1
+    },
+    {
+      "code": "TR",
+      "country": "TR",
+      "count": 1
+    },
+    {
+      "code": "ZA",
+      "country": "ZA",
       "count": 1
     },
     {
@@ -215,11 +235,6 @@
       "count": 1
     },
     {
-      "code": "GB",
-      "country": "United Kingdom",
-      "count": 1
-    },
-    {
       "code": "IT",
       "country": "Italy",
       "count": 1
@@ -238,13 +253,13 @@
   "os_breakdown": [
     {
       "os": "Windows 11",
-      "count": 18,
-      "percent": 66.7
+      "count": 22,
+      "percent": 71.0
     },
     {
       "os": "Windows 10",
       "count": 9,
-      "percent": 33.3
+      "percent": 29.0
     }
   ],
   "gumroad": {
@@ -343,6 +358,48 @@
       }
     ]
   },
+  "paid_apps": [
+    {
+      "name": "Creator Forge",
+      "store_id": "9P18Z18SGV8F",
+      "snap": "sc-creator-forge",
+      "gumroad_product": "SC Creator Forge",
+      "store_sales": 0,
+      "store_revenue_usd": 0.0,
+      "store_installs": 0,
+      "crashes": 0
+    },
+    {
+      "name": "FileFlow",
+      "store_id": "9P55JCHSDK2V",
+      "snap": "sc-file-flow",
+      "gumroad_product": "SC FileFlow",
+      "store_sales": 0,
+      "store_revenue_usd": 0.0,
+      "store_installs": 0,
+      "crashes": 0
+    },
+    {
+      "name": "PaperTrail",
+      "store_id": "9P2K4281M9S2",
+      "snap": "sc-paper-trail",
+      "gumroad_product": "SC PaperTrail",
+      "store_sales": 0,
+      "store_revenue_usd": 0.0,
+      "store_installs": 0,
+      "crashes": 0
+    },
+    {
+      "name": "ROM & Disc Smith",
+      "store_id": "9NV49B669CKN",
+      "snap": "sc-rom-disc-smith",
+      "gumroad_product": "SC ROM & Disc Smith",
+      "store_sales": 0,
+      "store_revenue_usd": 0.0,
+      "store_installs": 0,
+      "crashes": 0
+    }
+  ],
   "snap": {
     "configured": true,
     "total_installs": 136,
@@ -466,180 +523,366 @@
   "github": {
     "releases": [
       {
+        "tag_name": "suite-v1.2.5",
+        "published_at": "2026-11-22T17:54:04Z",
+        "assets": [
+          {
+            "name": "ArchiveUnpacker-1.2.5-linux-x64.tar.gz",
+            "download_count": 3
+          },
+          {
+            "name": "ArchiveUnpacker-1.2.5-x86_64.AppImage",
+            "download_count": 2
+          },
+          {
+            "name": "ArchiveUnpacker_Setup_v1.2.5.exe",
+            "download_count": 4
+          },
+          {
+            "name": "ArchiveUnpacker_v1.2.5_Portable.zip",
+            "download_count": 2
+          },
+          {
+            "name": "checksums_appimage_v1.2.5.sha256",
+            "download_count": 0
+          },
+          {
+            "name": "checksums_linux_v1.2.5.sha256",
+            "download_count": 1
+          },
+          {
+            "name": "checksums_windows_v1.2.5.sha256",
+            "download_count": 1
+          },
+          {
+            "name": "DupScrub-1.2.5-linux-x64.tar.gz",
+            "download_count": 3
+          },
+          {
+            "name": "DupScrub-1.2.5-x86_64.AppImage",
+            "download_count": 2
+          },
+          {
+            "name": "DupScrub_Setup_v1.2.5.exe",
+            "download_count": 5
+          },
+          {
+            "name": "DupScrub_v1.2.5_Portable.zip",
+            "download_count": 2
+          },
+          {
+            "name": "HeicStudio-1.2.5-linux-x64.tar.gz",
+            "download_count": 3
+          },
+          {
+            "name": "HeicStudio-1.2.5-x86_64.AppImage",
+            "download_count": 2
+          },
+          {
+            "name": "HeicStudio_Setup_v1.2.5.exe",
+            "download_count": 5
+          },
+          {
+            "name": "HeicStudio_v1.2.5_Portable.zip",
+            "download_count": 2
+          },
+          {
+            "name": "MediaTrim-1.2.5-linux-x64.tar.gz",
+            "download_count": 3
+          },
+          {
+            "name": "MediaTrim-1.2.5-x86_64.AppImage",
+            "download_count": 2
+          },
+          {
+            "name": "MediaTrim_Setup_v1.2.5.exe",
+            "download_count": 6
+          },
+          {
+            "name": "MediaTrim_v1.2.5_Portable.zip",
+            "download_count": 2
+          },
+          {
+            "name": "PdfKnife-1.2.5-linux-x64.tar.gz",
+            "download_count": 2
+          },
+          {
+            "name": "PdfKnife-1.2.5-x86_64.AppImage",
+            "download_count": 1
+          },
+          {
+            "name": "PdfKnife_Setup_v1.2.5.exe",
+            "download_count": 5
+          },
+          {
+            "name": "PdfKnife_v1.2.5_Portable.zip",
+            "download_count": 1
+          },
+          {
+            "name": "sc-archive-unpacker_1.2.5_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-dup-scrub_1.2.5_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-heic-studio_1.2.5_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-media-trim_1.2.5_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-pdf-knife_1.2.5_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-screen-lens_1.2.5_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-suite-hub_1.2.5_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-usb-flasher_1.2.5_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "ScreenLens-1.2.5-linux-x64.tar.gz",
+            "download_count": 2
+          },
+          {
+            "name": "ScreenLens-1.2.5-x86_64.AppImage",
+            "download_count": 1
+          },
+          {
+            "name": "ScreenLens_Setup_v1.2.5.exe",
+            "download_count": 5
+          },
+          {
+            "name": "ScreenLens_v1.2.5_Portable.zip",
+            "download_count": 1
+          },
+          {
+            "name": "SC_Utility_Suite_Setup_v1.2.5.exe",
+            "download_count": 3
+          },
+          {
+            "name": "SC_Utility_Suite_v1.2.5_Portable.zip",
+            "download_count": 1
+          },
+          {
+            "name": "SuiteHub-1.2.5-linux-x64.tar.gz",
+            "download_count": 2
+          },
+          {
+            "name": "SuiteHub-1.2.5-x86_64.AppImage",
+            "download_count": 1
+          },
+          {
+            "name": "update-manifest.json",
+            "download_count": 1
+          },
+          {
+            "name": "update-manifest.json.sig",
+            "download_count": 0
+          },
+          {
+            "name": "UsbFlasher-1.2.5-linux-x64.tar.gz",
+            "download_count": 2
+          },
+          {
+            "name": "UsbFlasher-1.2.5-x86_64.AppImage",
+            "download_count": 1
+          },
+          {
+            "name": "UsbFlasher_Setup_v1.2.5.exe",
+            "download_count": 4
+          },
+          {
+            "name": "UsbFlasher_v1.2.5_Portable.zip",
+            "download_count": 1
+          }
+        ]
+      },
+      {
         "tag_name": "suite-v1.2.4",
         "published_at": "2026-11-22T15:38:12Z",
         "assets": [
           {
             "name": "ArchiveUnpacker-1.2.4-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 3
           },
           {
             "name": "ArchiveUnpacker-1.2.4-x86_64.AppImage",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.4.exe",
-            "download_count": 0
+            "download_count": 6
           },
           {
             "name": "ArchiveUnpacker_v1.2.4_Portable.zip",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "checksums_appimage_v1.2.4.sha256",
-            "download_count": 0
+            "download_count": 1
           },
           {
             "name": "checksums_linux_v1.2.4.sha256",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "checksums_windows_v1.2.4.sha256",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "DupScrub-1.2.4-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 3
           },
           {
             "name": "DupScrub-1.2.4-x86_64.AppImage",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "DupScrub_Setup_v1.2.4.exe",
-            "download_count": 0
+            "download_count": 5
           },
           {
             "name": "DupScrub_v1.2.4_Portable.zip",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "HeicStudio-1.2.4-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "HeicStudio-1.2.4-x86_64.AppImage",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "HeicStudio_Setup_v1.2.4.exe",
-            "download_count": 0
+            "download_count": 5
           },
           {
             "name": "HeicStudio_v1.2.4_Portable.zip",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "MediaTrim-1.2.4-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 3
           },
           {
             "name": "MediaTrim-1.2.4-x86_64.AppImage",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "MediaTrim_Setup_v1.2.4.exe",
-            "download_count": 0
+            "download_count": 5
           },
           {
             "name": "MediaTrim_v1.2.4_Portable.zip",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "PdfKnife-1.2.4-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "PdfKnife-1.2.4-x86_64.AppImage",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "PdfKnife_Setup_v1.2.4.exe",
-            "download_count": 0
+            "download_count": 6
           },
           {
             "name": "PdfKnife_v1.2.4_Portable.zip",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "sc-archive-unpacker_1.2.4_amd64.deb",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "sc-dup-scrub_1.2.4_amd64.deb",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "sc-heic-studio_1.2.4_amd64.deb",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "sc-media-trim_1.2.4_amd64.deb",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "sc-pdf-knife_1.2.4_amd64.deb",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "sc-screen-lens_1.2.4_amd64.deb",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "sc-suite-hub_1.2.4_amd64.deb",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "sc-usb-flasher_1.2.4_amd64.deb",
-            "download_count": 0
+            "download_count": 3
           },
           {
             "name": "ScreenLens-1.2.4-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 3
           },
           {
             "name": "ScreenLens-1.2.4-x86_64.AppImage",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "ScreenLens_Setup_v1.2.4.exe",
-            "download_count": 0
+            "download_count": 5
           },
           {
             "name": "ScreenLens_v1.2.4_Portable.zip",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.4.exe",
-            "download_count": 0
+            "download_count": 6
           },
           {
             "name": "SC_Utility_Suite_v1.2.4_Portable.zip",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "SuiteHub-1.2.4-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 3
           },
           {
             "name": "SuiteHub-1.2.4-x86_64.AppImage",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "UsbFlasher-1.2.4-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 3
           },
           {
             "name": "UsbFlasher-1.2.4-x86_64.AppImage",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "UsbFlasher_Setup_v1.2.4.exe",
-            "download_count": 0
+            "download_count": 6
           },
           {
             "name": "UsbFlasher_v1.2.4_Portable.zip",
-            "download_count": 0
+            "download_count": 2
           }
         ]
       },
@@ -822,12 +1065,82 @@
         ]
       },
       {
+        "tag_name": "expansion-v1.2.1",
+        "published_at": "2026-11-22T17:27:15Z",
+        "assets": [
+          {
+            "name": "checksums_expansion_linux_v1.2.1.sha256",
+            "download_count": 1
+          },
+          {
+            "name": "checksums_expansion_windows_v1.2.1.sha256",
+            "download_count": 1
+          },
+          {
+            "name": "CreatorForge-1.2.1-linux-x64.tar.gz",
+            "download_count": 1
+          },
+          {
+            "name": "CreatorForge_Setup_v1.2.1.exe",
+            "download_count": 5
+          },
+          {
+            "name": "FileFlow-1.2.1-linux-x64.tar.gz",
+            "download_count": 1
+          },
+          {
+            "name": "FileFlow_Setup_v1.2.1.exe",
+            "download_count": 5
+          },
+          {
+            "name": "PaperTrail-1.2.1-linux-x64.tar.gz",
+            "download_count": 1
+          },
+          {
+            "name": "PaperTrail_Setup_v1.2.1.exe",
+            "download_count": 6
+          },
+          {
+            "name": "RomDiscSmith-1.2.1-linux-x64.tar.gz",
+            "download_count": 1
+          },
+          {
+            "name": "RomDiscSmith_Setup_v1.2.1.exe",
+            "download_count": 6
+          },
+          {
+            "name": "sc-creator-forge_1.2.1_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-file-flow_1.2.1_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-paper-trail_1.2.1_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "sc-rom-disc-smith_1.2.1_amd64.deb",
+            "download_count": 1
+          },
+          {
+            "name": "update-manifest.json",
+            "download_count": 1
+          },
+          {
+            "name": "update-manifest.json.sig",
+            "download_count": 1
+          }
+        ]
+      },
+      {
         "tag_name": "expansion-v1.2.0",
         "published_at": "2026-11-22T14:55:49Z",
         "assets": [
           {
             "name": "checksums_expansion_linux_v1.2.0.sha256",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "checksums_expansion_windows_v1.2.0.sha256",
@@ -835,15 +1148,15 @@
           },
           {
             "name": "CreatorForge-1.2.0-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 1
           },
           {
             "name": "CreatorForge_Setup_v1.2.0.exe",
-            "download_count": 6
+            "download_count": 7
           },
           {
             "name": "FileFlow-1.2.0-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 2
           },
           {
             "name": "FileFlow_Setup_v1.2.0.exe",
@@ -851,7 +1164,7 @@
           },
           {
             "name": "PaperTrail-1.2.0-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 1
           },
           {
             "name": "PaperTrail_Setup_v1.2.0.exe",
@@ -859,7 +1172,7 @@
           },
           {
             "name": "RomDiscSmith-1.2.0-linux-x64.tar.gz",
-            "download_count": 0
+            "download_count": 1
           },
           {
             "name": "RomDiscSmith_Setup_v1.2.0.exe",
@@ -867,19 +1180,89 @@
           },
           {
             "name": "sc-creator-forge_1.2.0_amd64.deb",
-            "download_count": 0
+            "download_count": 1
           },
           {
             "name": "sc-file-flow_1.2.0_amd64.deb",
-            "download_count": 0
+            "download_count": 1
           },
           {
             "name": "sc-paper-trail_1.2.0_amd64.deb",
-            "download_count": 0
+            "download_count": 1
           },
           {
             "name": "sc-rom-disc-smith_1.2.0_amd64.deb",
+            "download_count": 1
+          }
+        ]
+      },
+      {
+        "tag_name": "expansion-latest",
+        "published_at": "2026-11-22T17:27:17Z",
+        "assets": [
+          {
+            "name": "checksums_expansion_linux_v1.2.1.sha256",
             "download_count": 0
+          },
+          {
+            "name": "checksums_expansion_windows_v1.2.1.sha256",
+            "download_count": 0
+          },
+          {
+            "name": "CreatorForge-1.2.1-linux-x64.tar.gz",
+            "download_count": 0
+          },
+          {
+            "name": "CreatorForge_Setup_v1.2.1.exe",
+            "download_count": 0
+          },
+          {
+            "name": "FileFlow-1.2.1-linux-x64.tar.gz",
+            "download_count": 0
+          },
+          {
+            "name": "FileFlow_Setup_v1.2.1.exe",
+            "download_count": 1
+          },
+          {
+            "name": "PaperTrail-1.2.1-linux-x64.tar.gz",
+            "download_count": 0
+          },
+          {
+            "name": "PaperTrail_Setup_v1.2.1.exe",
+            "download_count": 0
+          },
+          {
+            "name": "RomDiscSmith-1.2.1-linux-x64.tar.gz",
+            "download_count": 0
+          },
+          {
+            "name": "RomDiscSmith_Setup_v1.2.1.exe",
+            "download_count": 0
+          },
+          {
+            "name": "sc-creator-forge_1.2.1_amd64.deb",
+            "download_count": 0
+          },
+          {
+            "name": "sc-file-flow_1.2.1_amd64.deb",
+            "download_count": 0
+          },
+          {
+            "name": "sc-paper-trail_1.2.1_amd64.deb",
+            "download_count": 0
+          },
+          {
+            "name": "sc-rom-disc-smith_1.2.1_amd64.deb",
+            "download_count": 0
+          },
+          {
+            "name": "update-manifest.json",
+            "download_count": 1
+          },
+          {
+            "name": "update-manifest.json.sig",
+            "download_count": 1
           }
         ]
       },
@@ -941,7 +1324,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 32
+            "download_count": 35
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -1025,7 +1408,7 @@
           },
           {
             "name": "ScreenLens_v1.2.2_Portable.zip",
-            "download_count": 6
+            "download_count": 8
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.2.exe",
@@ -1970,6 +2353,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-22 15:43:39 UTC"
+    "fetched": "2026-11-22 18:22:06 UTC"
   }
 }
