@@ -193,6 +193,8 @@ summary { cursor: pointer; }
 .fluent-table tbody tr:target { background: #24384e; }
 .link-btn { display: inline-flex; align-items: center; min-height: 36px; border: 1px solid #4b5668; border-radius: 5px; padding: 5px 11px; font-size: 12px; color: var(--text-secondary); white-space: nowrap; }
 .link-btn:hover { color: #fff; border-color: var(--accent-light); background: var(--accent-subtle); }
+.link-sub { display: block; margin-top: 4px; font-size: 11px; color: var(--text-secondary); text-decoration: underline; }
+.link-sub:hover { color: #fff; }
 .technical-details { margin-top: 16px; padding: 18px 22px; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); font-size: 13px; color: var(--text-secondary); }
 .technical-details > p { margin-top: 15px; line-height: 1.8; }
 code { font-family: var(--font-mono); font-size: .9em; overflow-wrap: anywhere; }
