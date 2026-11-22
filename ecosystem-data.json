@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-21 20:44:06 UTC",
-  "date_range": "2026-08-23 to 2026-11-21",
+  "last_updated": "2026-11-22 00:49:01 UTC",
+  "date_range": "2026-08-24 to 2026-11-22",
   "summary": {
-    "total_acquisitions": 23,
+    "total_acquisitions": 24,
     "total_installs": 27,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -13,7 +13,7 @@
     {
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
-      "acquisitions": 8,
+      "acquisitions": 9,
       "installs": 10,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -499,7 +499,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 19
+            "download_count": 23
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -1528,6 +1528,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-21 20:44:06 UTC"
+    "fetched": "2026-11-22 00:49:01 UTC"
   }
 }
