@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22 00:49:01 UTC",
+  "last_updated": "2026-11-22 07:31:43 UTC",
   "date_range": "2026-08-24 to 2026-11-22",
   "summary": {
     "total_acquisitions": 24,
@@ -455,7 +455,7 @@
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.2.exe",
-            "download_count": 5
+            "download_count": 6
           },
           {
             "name": "ArchiveUnpacker_v1.2.2_Portable.zip",
@@ -491,7 +491,7 @@
           },
           {
             "name": "HeicStudio-1.2.2-linux-x64.tar.gz",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "HeicStudio-1.2.2-x86_64.AppImage",
@@ -499,7 +499,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 23
+            "download_count": 28
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -539,35 +539,35 @@
           },
           {
             "name": "sc-archive-unpacker_1.2.2_amd64.deb",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "sc-dup-scrub_1.2.2_amd64.deb",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "sc-heic-studio_1.2.2_amd64.deb",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "sc-media-trim_1.2.2_amd64.deb",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "sc-pdf-knife_1.2.2_amd64.deb",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "sc-screen-lens_1.2.2_amd64.deb",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "sc-suite-hub_1.2.2_amd64.deb",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "sc-usb-flasher_1.2.2_amd64.deb",
-            "download_count": 5
+            "download_count": 6
           },
           {
             "name": "ScreenLens-1.2.2-linux-x64.tar.gz",
@@ -599,7 +599,7 @@
           },
           {
             "name": "SuiteHub-1.2.2-x86_64.AppImage",
-            "download_count": 1
+            "download_count": 2
           },
           {
             "name": "UsbFlasher-1.2.2-linux-x64.tar.gz",
@@ -747,7 +747,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.0.exe",
-            "download_count": 26
+            "download_count": 28
           },
           {
             "name": "HeicStudio_v1.2.0_Portable.zip",
@@ -907,7 +907,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.1.2.exe",
-            "download_count": 50
+            "download_count": 52
           },
           {
             "name": "HeicStudio_v1.1.2_Portable.zip",
@@ -1528,6 +1528,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-22 00:49:01 UTC"
+    "fetched": "2026-11-22 07:31:43 UTC"
   }
 }
