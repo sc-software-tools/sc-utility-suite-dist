@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22 21:45:40 UTC",
+  "last_updated": "2026-11-22 21:49:53 UTC",
   "date_range": "2026-08-24 to 2026-11-22",
   "summary": {
     "total_acquisitions": 25,
@@ -568,7 +568,7 @@
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.7.exe",
-            "download_count": 2
+            "download_count": 5
           },
           {
             "name": "ArchiveUnpacker_v1.2.7_Portable.zip",
@@ -644,7 +644,7 @@
           },
           {
             "name": "PdfKnife_Setup_v1.2.7.exe",
-            "download_count": 2
+            "download_count": 4
           },
           {
             "name": "PdfKnife_v1.2.7_Portable.zip",
@@ -1494,7 +1494,7 @@
           },
           {
             "name": "FileFlow_Setup_v1.2.4.exe",
-            "download_count": 4
+            "download_count": 6
           },
           {
             "name": "PaperTrail-1.2.4-linux-x64.tar.gz",
@@ -2967,6 +2967,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-22 21:46:11 UTC"
+    "fetched": "2026-11-22 21:50:28 UTC"
   }
 }
