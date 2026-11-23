@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  actions: write     # the "next" job starts the following run
 
 concurrency:
   group: sync-store-stats
@@ -61,3 +62,23 @@ jobs:
             sleep $((attempt * 5))
           done
           echo "::error::Could not push the refreshed stats after 5 attempts"; exit 1
+
+  # GitHub runs scheduled workflows on a best-effort basis: on 23 Nov 2026 only 3 of 48 half-hourly runs happened.
+  # So each run starts the next one about 25 minutes after it finishes (free on a public repository). The schedule
+  # above stays as a backup that restarts the chain if it ever breaks.
+  next:
+    needs: sync
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Wait, then start the next sync (unless one is already queued)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          sleep 1500
+          waiting=$(gh run list --workflow sync-store-stats.yml --status queued --json databaseId -q 'length')
+          if [ "${waiting:-0}" -gt 0 ]; then echo "A sync is already queued; not starting another."; exit 0; fi
+          gh workflow run sync-store-stats.yml --ref main
+          echo "Next sync started."
