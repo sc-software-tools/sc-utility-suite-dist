@@ -51,4 +51,13 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add store-stats.json ecosystem-data.json stats.html
-          git diff-index --quiet HEAD || (git pull --rebase --autostash && git commit -m "Auto-sync Microsoft Store and Gumroad analytics" && git push)
+          git diff-index --quiet HEAD && exit 0
+          git commit -q -m "Auto-sync Microsoft Store and Gumroad analytics"
+          # These files are regenerated whole each run, so this run's copy always wins over anything pushed meanwhile
+          # (in a rebase, "theirs" is the commit being replayed: ours). Retry if another push lands in between.
+          for attempt in 1 2 3 4 5; do
+            git pull -q --rebase -X theirs && git push -q && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push the refreshed stats after 5 attempts"; exit 1
