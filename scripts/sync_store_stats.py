@@ -173,6 +173,8 @@ def fetch_snap_stats():
         except (subprocess.SubprocessError, ValueError) as e:
             print(f"Snap Store: metrics for {snap} failed: {type(e).__name__}")
             data = {}
+        if not data.get("series"):
+            print(f"Snap Store: no figures for {snap}; reply was: {(out.stdout if 'out' in dir() else '')[:160]!r}")
         if not data.get("series") and snap in previous:
             failures += 1
             kept = previous[snap]
