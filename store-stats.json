@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23 18:19:33 UTC",
+  "last_updated": "2026-11-23 18:48:48 UTC",
   "date_range": "2026-08-25 to 2026-11-23",
   "summary": {
     "total_acquisitions": 27,
@@ -836,7 +836,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 18
+            "download_count": 19
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -924,7 +924,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 20
+            "download_count": 21
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -3223,6 +3223,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-23 18:20:07 UTC"
+    "fetched": "2026-11-23 18:49:24 UTC"
   }
 }
