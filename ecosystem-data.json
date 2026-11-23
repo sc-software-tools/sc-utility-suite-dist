@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23 17:50:03 UTC",
+  "last_updated": "2026-11-23 18:19:33 UTC",
   "date_range": "2026-08-25 to 2026-11-23",
   "summary": {
     "total_acquisitions": 27,
@@ -1850,7 +1850,7 @@
           },
           {
             "name": "CreatorForge_Setup_v1.2.2.exe",
-            "download_count": 8
+            "download_count": 9
           },
           {
             "name": "FileFlow-1.2.2-linux-x64.tar.gz",
@@ -1858,7 +1858,7 @@
           },
           {
             "name": "FileFlow_Setup_v1.2.2.exe",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "PaperTrail-1.2.2-linux-x64.tar.gz",
@@ -3223,6 +3223,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-23 17:50:40 UTC"
+    "fetched": "2026-11-23 18:20:07 UTC"
   }
 }
