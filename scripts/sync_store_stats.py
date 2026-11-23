@@ -159,13 +159,25 @@ def fetch_snap_stats():
         print("Snap Store: no credentials or snapcraft on this runner; keeping the last published snap numbers.")
         return previous_payload_section("snap") or {"configured": False, "total_installs": 0, "snaps": [], "os_breakdown": []}
     snaps, os_totals, total = [], {}, 0
+    previous = {s["snap"]: s for s in (previous_payload_section("snap") or {}).get("snaps", [])}
+    failures = 0
     for app, snap in SNAPS.items():
         try:
             out = subprocess.run(["snapcraft", "metrics", snap, "--name", "installed_base_by_operating_system", "--format", "json"],
                                  capture_output=True, text=True, timeout=180)
             data = json.loads(out.stdout) if out.returncode == 0 else {}
-        except (subprocess.SubprocessError, ValueError):
+            if out.returncode != 0:
+                # Say why (Snap's own message; never the credentials), and keep the last good figure for this snap.
+                reason = (out.stderr or out.stdout or "").strip().splitlines()
+                print(f"Snap Store: metrics for {snap} failed (exit {out.returncode}): {reason[-1][:200] if reason else 'no message'}")
+        except (subprocess.SubprocessError, ValueError) as e:
+            print(f"Snap Store: metrics for {snap} failed: {type(e).__name__}")
             data = {}
+        if not data.get("series") and snap in previous:
+            failures += 1
+            kept = previous[snap]
+            snaps.append(kept); total += kept.get("installs", 0)
+            continue
         installs = 0
         for series in data.get("series", []):
             latest = (series.get("values") or [0])[-1] or 0
@@ -173,7 +185,11 @@ def fetch_snap_stats():
             os_totals[series.get("name", "?")] = os_totals.get(series.get("name", "?"), 0) + latest
         snaps.append({"name": app, "snap": snap, "installs": installs, "as_of": (data.get("buckets") or [""])[-1]})
         total += installs
+    if failures == len(SNAPS):   # nothing read this run: keep the last published section as it was
+        print("Snap Store: no metrics could be read; keeping the last published snap numbers.")
+        return previous_payload_section("snap") or {"configured": False, "total_installs": 0, "snaps": [], "os_breakdown": []}
     os_list = [{"os": k, "count": v} for k, v in sorted(os_totals.items(), key=lambda x: x[1], reverse=True)]
+    if not os_list: os_list = (previous_payload_section("snap") or {}).get("os_breakdown", [])
     return {"configured": True, "total_installs": total, "snaps": snaps, "os_breakdown": os_list}
 
 
