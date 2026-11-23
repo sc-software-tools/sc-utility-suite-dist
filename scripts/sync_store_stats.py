@@ -185,8 +185,9 @@ def fetch_snap_stats():
             continue
         installs = 0
         buckets = data.get("buckets") or []
-        # Newest day with any figure.
-        day = next((k for k in range(len(buckets) - 1, -1, -1) if any((sr.get("values") or [None] * len(buckets))[k] for sr in data.get("series", []))), len(buckets) - 1)
+        # Newest day that has been published (a zero is a real figure; only missing days are skipped).
+        day = next((k for k in range(len(buckets) - 1, -1, -1)
+                    if any(k < len(sr.get("values") or []) and (sr.get("values") or [])[k] is not None for sr in data.get("series", []))), len(buckets) - 1)
         for series in data.get("series", []):
             values = series.get("values") or []
             latest = (values[day] if 0 <= day < len(values) else 0) or 0
