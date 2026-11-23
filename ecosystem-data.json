@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23 21:15:29 UTC",
+  "last_updated": "2026-11-23 21:44:55 UTC",
   "date_range": "2026-08-25 to 2026-11-23",
   "summary": {
     "total_acquisitions": 27,
@@ -924,7 +924,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 26
+            "download_count": 27
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -2194,7 +2194,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 39
+            "download_count": 40
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -2230,7 +2230,7 @@
           },
           {
             "name": "PdfKnife_v1.2.2_Portable.zip",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "sc-archive-unpacker_1.2.2_amd64.deb",
@@ -2278,7 +2278,7 @@
           },
           {
             "name": "ScreenLens_v1.2.2_Portable.zip",
-            "download_count": 23
+            "download_count": 24
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.2.exe",
@@ -2442,7 +2442,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.0.exe",
-            "download_count": 29
+            "download_count": 30
           },
           {
             "name": "HeicStudio_v1.2.0_Portable.zip",
@@ -3223,6 +3223,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-23 21:16:10 UTC"
+    "fetched": "2026-11-23 21:45:32 UTC"
   }
 }
