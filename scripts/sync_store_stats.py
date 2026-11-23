@@ -163,7 +163,10 @@ def fetch_snap_stats():
     failures = 0
     for app, snap in SNAPS.items():
         try:
-            out = subprocess.run(["snapcraft", "metrics", snap, "--name", "installed_base_by_operating_system", "--format", "json"],
+            # Snap publishes each day's figures with a lag: asking only for "yesterday" often returns NO DATA early in the
+            # day. Ask for a week and use the newest day that has figures.
+            start = (datetime.utcnow() - timedelta(days=7)).strftime("%Y-%m-%d")
+            out = subprocess.run(["snapcraft", "metrics", snap, "--name", "installed_base_by_operating_system", "--start", start, "--format", "json"],
                                  capture_output=True, text=True, timeout=180)
             data = json.loads(out.stdout) if out.returncode == 0 else {}
             if out.returncode != 0:
@@ -181,11 +184,15 @@ def fetch_snap_stats():
             snaps.append(kept); total += kept.get("installs", 0)
             continue
         installs = 0
+        buckets = data.get("buckets") or []
+        # Newest day with any figure.
+        day = next((k for k in range(len(buckets) - 1, -1, -1) if any((sr.get("values") or [None] * len(buckets))[k] for sr in data.get("series", []))), len(buckets) - 1)
         for series in data.get("series", []):
-            latest = (series.get("values") or [0])[-1] or 0
+            values = series.get("values") or []
+            latest = (values[day] if 0 <= day < len(values) else 0) or 0
             installs += latest
             os_totals[series.get("name", "?")] = os_totals.get(series.get("name", "?"), 0) + latest
-        snaps.append({"name": app, "snap": snap, "installs": installs, "as_of": (data.get("buckets") or [""])[-1]})
+        snaps.append({"name": app, "snap": snap, "installs": installs, "as_of": buckets[day] if 0 <= day < len(buckets) else ""})
         total += installs
     if failures == len(SNAPS):   # nothing read this run: keep the last published section as it was
         print("Snap Store: no metrics could be read; keeping the last published snap numbers.")
