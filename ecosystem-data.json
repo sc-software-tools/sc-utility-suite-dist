@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23 16:50:29 UTC",
+  "last_updated": "2026-11-23 17:20:35 UTC",
   "date_range": "2026-08-25 to 2026-11-23",
   "summary": {
     "total_acquisitions": 27,
@@ -924,7 +924,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 18
+            "download_count": 19
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -2278,7 +2278,7 @@
           },
           {
             "name": "ScreenLens_v1.2.2_Portable.zip",
-            "download_count": 20
+            "download_count": 21
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.2.exe",
@@ -3223,6 +3223,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-23 16:51:00 UTC"
+    "fetched": "2026-11-23 17:21:10 UTC"
   }
 }
