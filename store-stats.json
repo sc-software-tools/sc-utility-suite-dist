@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 03:45:42 UTC",
+  "last_updated": "2026-11-24 04:14:41 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 27,
@@ -2447,7 +2447,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.0.exe",
-            "download_count": 30
+            "download_count": 31
           },
           {
             "name": "HeicStudio_v1.2.0_Portable.zip",
@@ -2627,7 +2627,7 @@
           },
           {
             "name": "PdfKnife-1.1.2-linux-x64.tar.gz",
-            "download_count": 7
+            "download_count": 8
           },
           {
             "name": "PdfKnife_Setup_v1.1.2.exe",
@@ -3228,6 +3228,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 03:46:17 UTC"
+    "fetched": "2026-11-24 04:15:14 UTC"
   }
 }
