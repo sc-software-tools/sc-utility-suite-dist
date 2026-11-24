@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 11:35:46 UTC",
+  "last_updated": "2026-11-24 12:04:56 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 29,
@@ -2247,7 +2247,7 @@
           },
           {
             "name": "PdfKnife_v1.2.2_Portable.zip",
-            "download_count": 13
+            "download_count": 14
           },
           {
             "name": "sc-archive-unpacker_1.2.2_amd64.deb",
@@ -2295,7 +2295,7 @@
           },
           {
             "name": "ScreenLens_v1.2.2_Portable.zip",
-            "download_count": 33
+            "download_count": 34
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.2.exe",
@@ -3240,6 +3240,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 11:36:27 UTC"
+    "fetched": "2026-11-24 12:05:38 UTC"
   }
 }
