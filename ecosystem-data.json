@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 07:41:20 UTC",
+  "last_updated": "2026-11-24 08:10:31 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 28,
@@ -407,7 +407,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 197,
+    "total_installs": 190,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -448,8 +448,8 @@
       {
         "name": "USB Flasher",
         "snap": "sc-usb-flasher",
-        "installs": 98,
-        "as_of": "2026-11-22"
+        "installs": 91,
+        "as_of": "2026-11-23"
       },
       {
         "name": "SC Utility Suite",
@@ -485,54 +485,54 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 117
+        "count": 101
       },
       {
         "os": "ubuntu/24.04",
-        "count": 32
+        "count": 36
       },
       {
         "os": "zorin/18",
-        "count": 15
+        "count": 14
+      },
+      {
+        "os": "ubuntu/26.10",
+        "count": 8
       },
       {
         "os": "ubuntu/22.04",
         "count": 8
       },
       {
-        "os": "ubuntu/26.10",
-        "count": 6
-      },
-      {
-        "os": "zorin/17",
-        "count": 4
-      },
-      {
         "os": "ubuntu/20.04",
         "count": 3
       },
       {
-        "os": "ubuntu/18.04",
+        "os": "zorin/17",
         "count": 3
       },
       {
-        "os": "ubuntu/24.10",
-        "count": 2
+        "os": "neon/24.04",
+        "count": 3
       },
       {
         "os": "debian/13",
-        "count": 1
+        "count": 2
       },
       {
         "os": "ubuntu/11.26.11",
+        "count": 2
+      },
+      {
+        "os": "ubuntu/18.04",
+        "count": 2
+      },
+      {
+        "os": "ubuntu/24.10",
         "count": 1
       },
       {
         "os": "linuxmint/22",
-        "count": 1
-      },
-      {
-        "os": "neon/24.04",
         "count": 1
       },
       {
@@ -544,7 +544,19 @@
         "count": 1
       },
       {
-        "os": "ubuntu/10",
+        "os": "rocky/10.3",
+        "count": 1
+      },
+      {
+        "os": "ubuntu/21.10",
+        "count": 1
+      },
+      {
+        "os": "ubuntu/25.10",
+        "count": 1
+      },
+      {
+        "os": "vailuxos/1.0",
         "count": 1
       },
       {
@@ -560,6 +572,10 @@
         "count": 0
       },
       {
+        "os": "ubuntu/10",
+        "count": 0
+      },
+      {
         "os": "ubuntu/11.26.01",
         "count": 0
       },
@@ -569,10 +585,6 @@
       },
       {
         "os": "ubuntu/23.10",
-        "count": 0
-      },
-      {
-        "os": "ubuntu/25.10",
         "count": 0
       }
     ]
@@ -3228,6 +3240,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 07:42:05 UTC"
+    "fetched": "2026-11-24 08:11:13 UTC"
   }
 }
