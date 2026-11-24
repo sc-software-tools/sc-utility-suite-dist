@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 01:19:19 UTC",
+  "last_updated": "2026-11-24 01:48:42 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 27,
@@ -629,7 +629,7 @@
           },
           {
             "name": "PaperTrail-1.2.6-x86_64.AppImage",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "PaperTrail_Setup_v1.2.6.exe",
@@ -2235,7 +2235,7 @@
           },
           {
             "name": "PdfKnife_v1.2.2_Portable.zip",
-            "download_count": 6
+            "download_count": 7
           },
           {
             "name": "sc-archive-unpacker_1.2.2_amd64.deb",
@@ -2283,7 +2283,7 @@
           },
           {
             "name": "ScreenLens_v1.2.2_Portable.zip",
-            "download_count": 26
+            "download_count": 27
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.2.exe",
@@ -3228,6 +3228,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 01:20:00 UTC"
+    "fetched": "2026-11-24 01:49:17 UTC"
   }
 }
