@@ -400,9 +400,9 @@
     <!-- GRAND TOTALS -->
     <div class="headline-grid">
       <div class="metric-card" style="border-color: rgba(56, 189, 248, 0.35);">
-        <div class="metric-label" style="color: #38BDF8;">Total Ecosystem Installs</div>
+        <div class="metric-label" style="color: #38BDF8;">Real Users</div>
         <div class="metric-val" id="metric-combined-installs" style="color: #38BDF8;">--</div>
-        <div class="metric-sub" id="metric-combined-sub">GitHub + Store + Snap</div>
+        <div class="metric-sub" id="metric-combined-sub">Store + Snap installs</div>
       </div>
       <div class="metric-card" style="border-color: rgba(168, 85, 247, 0.35);">
         <div class="metric-label" style="color: #C084FC;">Total Sales</div>
@@ -858,8 +858,10 @@
 
       var P = renderPaidApps();
       var snapTotal = snap.total_installs || 0, storeAll = T.store + P.si;
-      el("metric-combined-installs").innerText = gitHubDownloadsTotal + storeAll + snapTotal;
-      el("metric-combined-sub").innerText = "GitHub (" + gitHubDownloadsTotal + ") + Store (" + storeAll + ") + Snap (" + snapTotal + ")";
+      // Real users = devices with the app installed (Store installs + Snap active installs). GitHub downloads are shown
+      // separately: they include our own test and winget-validation downloads, so they are not people.
+      el("metric-combined-installs").innerText = storeAll + snapTotal;
+      el("metric-combined-sub").innerText = "Store (" + storeAll + ") + Snap (" + snapTotal + ") · plus " + gitHubDownloadsTotal + " GitHub downloads";
     }
 
     checkAuth();
