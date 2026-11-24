@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 00:11:10 UTC",
+  "last_updated": "2026-11-24 00:49:22 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 27,
@@ -924,7 +924,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 28
+            "download_count": 30
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -3223,6 +3223,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 00:11:56 UTC"
+    "fetched": "2026-11-24 00:50:08 UTC"
   }
 }
