@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 02:17:42 UTC",
+  "last_updated": "2026-11-24 02:47:03 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 27,
@@ -407,7 +407,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 176,
+    "total_installs": 180,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -418,8 +418,8 @@
       {
         "name": "Dup Scrub",
         "snap": "sc-dup-scrub",
-        "installs": 3,
-        "as_of": "2026-11-22"
+        "installs": 7,
+        "as_of": "2026-11-23"
       },
       {
         "name": "HEIC Studio",
@@ -485,7 +485,7 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 105
+        "count": 109
       },
       {
         "os": "ubuntu/24.04",
@@ -496,11 +496,11 @@
         "count": 13
       },
       {
-        "os": "ubuntu/26.10",
+        "os": "ubuntu/22.04",
         "count": 7
       },
       {
-        "os": "ubuntu/22.04",
+        "os": "ubuntu/26.10",
         "count": 6
       },
       {
@@ -2235,7 +2235,7 @@
           },
           {
             "name": "PdfKnife_v1.2.2_Portable.zip",
-            "download_count": 7
+            "download_count": 8
           },
           {
             "name": "sc-archive-unpacker_1.2.2_amd64.deb",
@@ -2283,7 +2283,7 @@
           },
           {
             "name": "ScreenLens_v1.2.2_Portable.zip",
-            "download_count": 27
+            "download_count": 28
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.2.exe",
@@ -3228,6 +3228,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 02:18:22 UTC"
+    "fetched": "2026-11-24 02:47:48 UTC"
   }
 }
