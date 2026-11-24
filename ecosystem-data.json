@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 02:47:03 UTC",
+  "last_updated": "2026-11-24 03:16:22 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 27,
@@ -797,7 +797,7 @@
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.7.exe",
-            "download_count": 6
+            "download_count": 7
           },
           {
             "name": "ArchiveUnpacker_v1.2.7_Portable.zip",
@@ -825,7 +825,7 @@
           },
           {
             "name": "DupScrub_Setup_v1.2.7.exe",
-            "download_count": 5
+            "download_count": 6
           },
           {
             "name": "DupScrub_v1.2.7_Portable.zip",
@@ -833,7 +833,7 @@
           },
           {
             "name": "HeicStudio-1.2.7-linux-x64.tar.gz",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "HeicStudio-1.2.7-x86_64.AppImage",
@@ -841,7 +841,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 28
+            "download_count": 30
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -881,35 +881,35 @@
           },
           {
             "name": "sc-archive-unpacker_1.2.7_amd64.deb",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "sc-dup-scrub_1.2.7_amd64.deb",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "sc-heic-studio_1.2.7_amd64.deb",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "sc-media-trim_1.2.7_amd64.deb",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "sc-pdf-knife_1.2.7_amd64.deb",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "sc-screen-lens_1.2.7_amd64.deb",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "sc-suite-hub_1.2.7_amd64.deb",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "sc-usb-flasher_1.2.7_amd64.deb",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "ScreenLens-1.2.7-linux-x64.tar.gz",
@@ -929,7 +929,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 31
+            "download_count": 33
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -941,7 +941,7 @@
           },
           {
             "name": "SuiteHub-1.2.7-x86_64.AppImage",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "update-manifest.json",
@@ -2199,7 +2199,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 40
+            "download_count": 41
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -2607,7 +2607,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.1.2.exe",
-            "download_count": 54
+            "download_count": 55
           },
           {
             "name": "HeicStudio_v1.1.2_Portable.zip",
@@ -3228,6 +3228,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 02:47:48 UTC"
+    "fetched": "2026-11-24 03:17:04 UTC"
   }
 }
