@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 16:00:25 UTC",
+  "last_updated": "2026-11-24 16:29:56 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 31,
@@ -984,7 +984,7 @@
           },
           {
             "name": "UsbFlasher-1.2.7-x86_64.AppImage",
-            "download_count": 2
+            "download_count": 4
           },
           {
             "name": "UsbFlasher_Setup_v1.2.7.exe",
@@ -992,7 +992,7 @@
           },
           {
             "name": "UsbFlasher_v1.2.7_Portable.zip",
-            "download_count": 2
+            "download_count": 3
           }
         ]
       },
@@ -3255,6 +3255,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 16:01:12 UTC"
+    "fetched": "2026-11-24 16:30:35 UTC"
   }
 }
