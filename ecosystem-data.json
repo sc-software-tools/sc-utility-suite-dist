@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-24 08:10:31 UTC",
+  "last_updated": "2026-11-24 08:39:36 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
-    "total_acquisitions": 28,
+    "total_acquisitions": 29,
     "total_installs": 32,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 0,
+      "acquisitions": 1,
       "installs": 1,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -407,7 +407,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 190,
+    "total_installs": 192,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -430,8 +430,8 @@
       {
         "name": "Media Trim",
         "snap": "sc-media-trim",
-        "installs": 3,
-        "as_of": "2026-11-22"
+        "installs": 5,
+        "as_of": "2026-11-23"
       },
       {
         "name": "PDF Knife",
@@ -489,7 +489,7 @@
       },
       {
         "os": "ubuntu/24.04",
-        "count": 36
+        "count": 37
       },
       {
         "os": "zorin/18",
@@ -497,7 +497,7 @@
       },
       {
         "os": "ubuntu/26.10",
-        "count": 8
+        "count": 9
       },
       {
         "os": "ubuntu/22.04",
@@ -3240,6 +3240,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 08:11:13 UTC"
+    "fetched": "2026-11-24 08:40:11 UTC"
   }
 }
