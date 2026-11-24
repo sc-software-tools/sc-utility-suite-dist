@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 16:29:56 UTC",
+  "last_updated": "2026-11-24 16:59:13 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 31,
@@ -936,7 +936,7 @@
           },
           {
             "name": "sc-usb-flasher_1.2.7_amd64.deb",
-            "download_count": 6
+            "download_count": 8
           },
           {
             "name": "ScreenLens-1.2.7-linux-x64.tar.gz",
@@ -972,11 +972,11 @@
           },
           {
             "name": "update-manifest.json",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "update-manifest.json.sig",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "UsbFlasher-1.2.7-linux-x64.tar.gz",
@@ -3255,6 +3255,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 16:30:35 UTC"
+    "fetched": "2026-11-24 16:59:52 UTC"
   }
 }
