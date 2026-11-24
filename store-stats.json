@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-11-24 12:34:08 UTC",
+  "last_updated": "2026-11-24 13:03:24 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
-    "total_acquisitions": 29,
-    "total_installs": 32,
+    "total_acquisitions": 31,
+    "total_installs": 36,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
@@ -14,7 +14,7 @@
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
       "acquisitions": 11,
-      "installs": 15,
+      "installs": 17,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -41,7 +41,7 @@
       "name": "Media Trim",
       "product_id": "9PC1HVN60QBP",
       "acquisitions": 4,
-      "installs": 3,
+      "installs": 4,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -59,7 +59,7 @@
       "name": "Screen Lens",
       "product_id": "9N7V2FVFL4BN",
       "acquisitions": 2,
-      "installs": 2,
+      "installs": 3,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 1,
+      "acquisitions": 3,
       "installs": 1,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -125,13 +125,28 @@
       "count": 2
     },
     {
+      "code": "PK",
+      "country": "PK",
+      "count": 2
+    },
+    {
       "code": "US",
       "country": "United States",
       "count": 2
     },
     {
+      "code": "BF",
+      "country": "BF",
+      "count": 1
+    },
+    {
       "code": "DZ",
       "country": "DZ",
+      "count": 1
+    },
+    {
+      "code": "ES",
+      "country": "Spain",
       "count": 1
     },
     {
@@ -157,11 +172,6 @@
     {
       "code": "NP",
       "country": "NP",
-      "count": 1
-    },
-    {
-      "code": "PK",
-      "country": "PK",
       "count": 1
     },
     {
@@ -220,6 +230,11 @@
       "count": 1
     },
     {
+      "code": "CA",
+      "country": "Canada",
+      "count": 1
+    },
+    {
       "code": "GR",
       "country": "GR",
       "count": 1
@@ -258,13 +273,13 @@
   "os_breakdown": [
     {
       "os": "Windows 11",
-      "count": 23,
-      "percent": 71.9
+      "count": 26,
+      "percent": 72.2
     },
     {
       "os": "Windows 10",
-      "count": 9,
-      "percent": 28.1
+      "count": 10,
+      "percent": 27.8
     }
   ],
   "gumroad": {
@@ -401,7 +416,7 @@
       "gumroad_product": "SC ROM & Disc Smith",
       "store_sales": 0,
       "store_revenue_usd": 0.0,
-      "store_installs": 0,
+      "store_installs": 2,
       "crashes": 0
     }
   ],
@@ -3240,6 +3255,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 12:34:49 UTC"
+    "fetched": "2026-11-24 13:04:07 UTC"
   }
 }
