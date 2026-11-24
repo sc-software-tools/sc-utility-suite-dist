@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 15:31:06 UTC",
+  "last_updated": "2026-11-24 16:00:25 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 31,
@@ -836,7 +836,7 @@
           },
           {
             "name": "checksums_linux_v1.2.7.sha256",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "checksums_windows_v1.2.7.sha256",
@@ -3255,6 +3255,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 15:31:51 UTC"
+    "fetched": "2026-11-24 16:01:12 UTC"
   }
 }
