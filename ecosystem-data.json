@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 06:40:41 UTC",
+  "last_updated": "2026-11-24 07:11:57 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 28,
@@ -2603,7 +2603,7 @@
           },
           {
             "name": "HeicStudio-1.1.2-linux-x64.tar.gz",
-            "download_count": 8
+            "download_count": 9
           },
           {
             "name": "HeicStudio_Setup_v1.1.2.exe",
@@ -2615,7 +2615,7 @@
           },
           {
             "name": "MediaTrim-1.1.2-linux-x64.tar.gz",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "MediaTrim_Setup_v1.1.2.exe",
@@ -3228,6 +3228,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 06:43:23 UTC"
+    "fetched": "2026-11-24 07:12:41 UTC"
   }
 }
