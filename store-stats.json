@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 11:06:24 UTC",
+  "last_updated": "2026-11-24 11:35:46 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 29,
@@ -407,7 +407,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 194,
+    "total_installs": 195,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -460,8 +460,8 @@
       {
         "name": "Creator Forge",
         "snap": "sc-creator-forge",
-        "installs": 0,
-        "as_of": ""
+        "installs": 1,
+        "as_of": "2026-11-23"
       },
       {
         "name": "FileFlow",
@@ -485,7 +485,7 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 102
+        "count": 103
       },
       {
         "os": "ubuntu/24.04",
@@ -3240,6 +3240,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 11:07:07 UTC"
+    "fetched": "2026-11-24 11:36:27 UTC"
   }
 }
