@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 15:01:48 UTC",
+  "last_updated": "2026-11-24 15:31:06 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 31,
@@ -868,7 +868,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 31
+            "download_count": 33
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -936,7 +936,7 @@
           },
           {
             "name": "sc-usb-flasher_1.2.7_amd64.deb",
-            "download_count": 4
+            "download_count": 6
           },
           {
             "name": "ScreenLens-1.2.7-linux-x64.tar.gz",
@@ -956,7 +956,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 34
+            "download_count": 36
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -3255,6 +3255,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 15:02:27 UTC"
+    "fetched": "2026-11-24 15:31:51 UTC"
   }
 }
