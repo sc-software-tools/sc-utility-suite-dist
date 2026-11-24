@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-11-24 00:49:22 UTC",
+  "last_updated": "2026-11-24 01:19:19 UTC",
   "date_range": "2026-08-26 to 2026-11-24",
   "summary": {
     "total_acquisitions": 27,
-    "total_installs": 31,
+    "total_installs": 32,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
@@ -14,7 +14,7 @@
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
       "acquisitions": 11,
-      "installs": 14,
+      "installs": 15,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -140,6 +140,11 @@
       "count": 1
     },
     {
+      "code": "IN",
+      "country": "India",
+      "count": 1
+    },
+    {
       "code": "KR",
       "country": "South Korea",
       "count": 1
@@ -253,13 +258,13 @@
   "os_breakdown": [
     {
       "os": "Windows 11",
-      "count": 22,
-      "percent": 71.0
+      "count": 23,
+      "percent": 71.9
     },
     {
       "os": "Windows 10",
       "count": 9,
-      "percent": 29.0
+      "percent": 28.1
     }
   ],
   "gumroad": {
@@ -836,7 +841,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 27
+            "download_count": 28
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -924,7 +929,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 30
+            "download_count": 31
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -3223,6 +3228,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 00:50:08 UTC"
+    "fetched": "2026-11-24 01:20:00 UTC"
   }
 }
