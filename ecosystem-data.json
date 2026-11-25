@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25 07:15:27 UTC",
+  "last_updated": "2026-11-25 07:44:47 UTC",
   "date_range": "2026-08-27 to 2026-11-25",
   "summary": {
     "total_acquisitions": 35,
@@ -434,7 +434,7 @@
         "name": "Dup Scrub",
         "snap": "sc-dup-scrub",
         "installs": 7,
-        "as_of": "2026-11-23"
+        "as_of": "2026-11-24"
       },
       {
         "name": "HEIC Studio",
@@ -500,11 +500,11 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 107
+        "count": 106
       },
       {
         "os": "ubuntu/24.04",
-        "count": 40
+        "count": 41
       },
       {
         "os": "zorin/18",
@@ -2634,7 +2634,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.1.2.exe",
-            "download_count": 57
+            "download_count": 58
           },
           {
             "name": "HeicStudio_v1.1.2_Portable.zip",
@@ -3255,6 +3255,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-25 07:16:04 UTC"
+    "fetched": "2026-11-25 07:45:31 UTC"
   }
 }
