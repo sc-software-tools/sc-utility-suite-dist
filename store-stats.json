@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-11-25 07:44:47 UTC",
+  "last_updated": "2026-11-25 08:14:20 UTC",
   "date_range": "2026-08-27 to 2026-11-25",
   "summary": {
     "total_acquisitions": 35,
-    "total_installs": 36,
+    "total_installs": 39,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
@@ -32,7 +32,7 @@
       "name": "HEIC Studio",
       "product_id": "9N4F9K6G90HK",
       "acquisitions": 4,
-      "installs": 6,
+      "installs": 7,
       "inapp_purchases": 1,
       "inapp_revenue_usd": 4.42,
       "crashes": 0
@@ -68,7 +68,7 @@
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
       "acquisitions": 5,
-      "installs": 1,
+      "installs": 3,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -125,6 +125,11 @@
       "count": 2
     },
     {
+      "code": "NP",
+      "country": "NP",
+      "count": 2
+    },
+    {
       "code": "PK",
       "country": "PK",
       "count": 2
@@ -132,6 +137,11 @@
     {
       "code": "US",
       "country": "United States",
+      "count": 2
+    },
+    {
+      "code": "DE",
+      "country": "Germany",
       "count": 2
     },
     {
@@ -167,11 +177,6 @@
     {
       "code": "MW",
       "country": "MW",
-      "count": 1
-    },
-    {
-      "code": "NP",
-      "country": "NP",
       "count": 1
     },
     {
@@ -250,11 +255,6 @@
       "count": 1
     },
     {
-      "code": "DE",
-      "country": "Germany",
-      "count": 1
-    },
-    {
       "code": "IT",
       "country": "Italy",
       "count": 1
@@ -268,18 +268,23 @@
       "code": "PL",
       "country": "PL",
       "count": 1
+    },
+    {
+      "code": "TD",
+      "country": "TD",
+      "count": 1
     }
   ],
   "os_breakdown": [
     {
       "os": "Windows 11",
-      "count": 26,
-      "percent": 72.2
+      "count": 29,
+      "percent": 74.4
     },
     {
       "os": "Windows 10",
       "count": 10,
-      "percent": 27.8
+      "percent": 25.6
     }
   ],
   "gumroad": {
@@ -956,7 +961,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 41
+            "download_count": 42
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -3255,6 +3260,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-25 07:45:31 UTC"
+    "fetched": "2026-11-25 08:15:07 UTC"
   }
 }
