@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-24 23:50:56 UTC",
-  "date_range": "2026-08-26 to 2026-11-24",
+  "last_updated": "2026-11-25 00:20:03 UTC",
+  "date_range": "2026-08-27 to 2026-11-25",
   "summary": {
     "total_acquisitions": 33,
     "total_installs": 36,
@@ -3255,6 +3255,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-24 23:51:31 UTC"
+    "fetched": "2026-11-25 00:20:45 UTC"
   }
 }
