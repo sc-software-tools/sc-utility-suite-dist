@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25 02:52:10 UTC",
+  "last_updated": "2026-11-25 03:21:19 UTC",
   "date_range": "2026-08-27 to 2026-11-25",
   "summary": {
     "total_acquisitions": 33,
@@ -446,13 +446,13 @@
         "name": "Media Trim",
         "snap": "sc-media-trim",
         "installs": 5,
-        "as_of": "2026-11-23"
+        "as_of": "2026-11-24"
       },
       {
         "name": "PDF Knife",
         "snap": "sc-pdf-knife",
         "installs": 1,
-        "as_of": "2026-11-18"
+        "as_of": "2026-11-24"
       },
       {
         "name": "Screen Lens",
@@ -500,11 +500,11 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 106
+        "count": 107
       },
       {
         "os": "ubuntu/24.04",
-        "count": 40
+        "count": 39
       },
       {
         "os": "zorin/18",
@@ -512,11 +512,11 @@
       },
       {
         "os": "ubuntu/22.04",
-        "count": 10
+        "count": 11
       },
       {
         "os": "ubuntu/26.10",
-        "count": 9
+        "count": 8
       },
       {
         "os": "zorin/17",
@@ -3255,6 +3255,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-25 02:52:44 UTC"
+    "fetched": "2026-11-25 03:21:54 UTC"
   }
 }
