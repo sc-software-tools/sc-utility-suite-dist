@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-25 15:35:24 UTC",
+  "last_updated": "2026-11-25 22:37:56 UTC",
   "date_range": "2026-08-27 to 2026-11-25",
   "summary": {
-    "total_acquisitions": 35,
+    "total_acquisitions": 36,
     "total_installs": 39,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 5,
+      "acquisitions": 6,
       "installs": 3,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -833,7 +833,7 @@
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.7.exe",
-            "download_count": 8
+            "download_count": 10
           },
           {
             "name": "ArchiveUnpacker_v1.2.7_Portable.zip",
@@ -849,7 +849,7 @@
           },
           {
             "name": "checksums_windows_v1.2.7.sha256",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "DupScrub-1.2.7-linux-x64.tar.gz",
@@ -861,7 +861,7 @@
           },
           {
             "name": "DupScrub_Setup_v1.2.7.exe",
-            "download_count": 6
+            "download_count": 8
           },
           {
             "name": "DupScrub_v1.2.7_Portable.zip",
@@ -877,7 +877,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 39
+            "download_count": 43
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -893,7 +893,7 @@
           },
           {
             "name": "MediaTrim_Setup_v1.2.7.exe",
-            "download_count": 6
+            "download_count": 7
           },
           {
             "name": "MediaTrim_v1.2.7_Portable.zip",
@@ -909,7 +909,7 @@
           },
           {
             "name": "PdfKnife_Setup_v1.2.7.exe",
-            "download_count": 5
+            "download_count": 7
           },
           {
             "name": "PdfKnife_v1.2.7_Portable.zip",
@@ -937,7 +937,7 @@
           },
           {
             "name": "sc-screen-lens_1.2.7_amd64.deb",
-            "download_count": 4
+            "download_count": 5
           },
           {
             "name": "sc-suite-hub_1.2.7_amd64.deb",
@@ -957,7 +957,7 @@
           },
           {
             "name": "ScreenLens_Setup_v1.2.7.exe",
-            "download_count": 5
+            "download_count": 7
           },
           {
             "name": "ScreenLens_v1.2.7_Portable.zip",
@@ -965,7 +965,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 44
+            "download_count": 48
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -981,11 +981,11 @@
           },
           {
             "name": "update-manifest.json",
-            "download_count": 7
+            "download_count": 33
           },
           {
             "name": "update-manifest.json.sig",
-            "download_count": 6
+            "download_count": 35
           },
           {
             "name": "UsbFlasher-1.2.7-linux-x64.tar.gz",
@@ -997,11 +997,11 @@
           },
           {
             "name": "UsbFlasher_Setup_v1.2.7.exe",
-            "download_count": 7
+            "download_count": 10
           },
           {
             "name": "UsbFlasher_v1.2.7_Portable.zip",
-            "download_count": 4
+            "download_count": 6
           }
         ]
       },
@@ -1891,7 +1891,7 @@
           },
           {
             "name": "CreatorForge_Setup_v1.2.2.exe",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "FileFlow-1.2.2-linux-x64.tar.gz",
@@ -1899,7 +1899,7 @@
           },
           {
             "name": "FileFlow_Setup_v1.2.2.exe",
-            "download_count": 10
+            "download_count": 11
           },
           {
             "name": "PaperTrail-1.2.2-linux-x64.tar.gz",
@@ -1907,7 +1907,7 @@
           },
           {
             "name": "PaperTrail_Setup_v1.2.2.exe",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "RomDiscSmith-1.2.2-linux-x64.tar.gz",
@@ -1915,7 +1915,7 @@
           },
           {
             "name": "RomDiscSmith_Setup_v1.2.2.exe",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "sc-creator-forge_1.2.2_amd64.deb",
@@ -2191,7 +2191,7 @@
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.2.exe",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "ArchiveUnpacker_v1.2.2_Portable.zip",
@@ -2219,7 +2219,7 @@
           },
           {
             "name": "DupScrub_Setup_v1.2.2.exe",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "DupScrub_v1.2.2_Portable.zip",
@@ -2235,7 +2235,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 47
+            "download_count": 49
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -2251,7 +2251,7 @@
           },
           {
             "name": "MediaTrim_Setup_v1.2.2.exe",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "MediaTrim_v1.2.2_Portable.zip",
@@ -2267,7 +2267,7 @@
           },
           {
             "name": "PdfKnife_Setup_v1.2.2.exe",
-            "download_count": 11
+            "download_count": 12
           },
           {
             "name": "PdfKnife_v1.2.2_Portable.zip",
@@ -2315,7 +2315,7 @@
           },
           {
             "name": "ScreenLens_Setup_v1.2.2.exe",
-            "download_count": 7
+            "download_count": 8
           },
           {
             "name": "ScreenLens_v1.2.2_Portable.zip",
@@ -2323,7 +2323,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.2.exe",
-            "download_count": 5
+            "download_count": 6
           },
           {
             "name": "SC_Utility_Suite_v1.2.2_Portable.zip",
@@ -2347,7 +2347,7 @@
           },
           {
             "name": "UsbFlasher_Setup_v1.2.2.exe",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "UsbFlasher_v1.2.2_Portable.zip",
@@ -2643,7 +2643,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.1.2.exe",
-            "download_count": 58
+            "download_count": 61
           },
           {
             "name": "HeicStudio_v1.1.2_Portable.zip",
@@ -3264,6 +3264,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-25 15:36:06 UTC"
+    "fetched": "2026-11-25 22:38:34 UTC"
   }
 }
