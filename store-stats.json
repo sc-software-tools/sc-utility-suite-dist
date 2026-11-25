@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25 06:17:02 UTC",
+  "last_updated": "2026-11-25 06:46:08 UTC",
   "date_range": "2026-08-27 to 2026-11-25",
   "summary": {
     "total_acquisitions": 34,
@@ -428,7 +428,7 @@
         "name": "Archive Unpacker",
         "snap": "sc-archive-unpacker",
         "installs": 46,
-        "as_of": "2026-11-23"
+        "as_of": "2026-11-24"
       },
       {
         "name": "Dup Scrub",
@@ -482,7 +482,7 @@
         "name": "FileFlow",
         "snap": "sc-file-flow",
         "installs": 1,
-        "as_of": "2026-11-22"
+        "as_of": "2026-11-24"
       },
       {
         "name": "PaperTrail",
@@ -504,7 +504,7 @@
       },
       {
         "os": "ubuntu/24.04",
-        "count": 39
+        "count": 40
       },
       {
         "os": "zorin/18",
@@ -512,11 +512,15 @@
       },
       {
         "os": "ubuntu/22.04",
-        "count": 11
+        "count": 10
       },
       {
         "os": "ubuntu/26.10",
         "count": 8
+      },
+      {
+        "os": "ubuntu/18.04",
+        "count": 3
       },
       {
         "os": "zorin/17",
@@ -533,14 +537,6 @@
       {
         "os": "ubuntu/11.26.11",
         "count": 2
-      },
-      {
-        "os": "ubuntu/18.04",
-        "count": 2
-      },
-      {
-        "os": "ubuntu/20.04",
-        "count": 1
       },
       {
         "os": "ubuntu/24.10",
@@ -576,6 +572,10 @@
       },
       {
         "os": "fedora/44",
+        "count": 0
+      },
+      {
+        "os": "ubuntu/20.04",
         "count": 0
       },
       {
@@ -3255,6 +3255,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-25 06:17:46 UTC"
+    "fetched": "2026-11-25 06:46:42 UTC"
   }
 }
