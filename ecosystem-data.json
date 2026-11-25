@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25 11:41:05 UTC",
+  "last_updated": "2026-11-25 12:10:24 UTC",
   "date_range": "2026-08-27 to 2026-11-25",
   "summary": {
     "total_acquisitions": 35,
@@ -427,7 +427,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 219,
+    "total_installs": 220,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -474,8 +474,8 @@
       {
         "name": "SC Utility Suite",
         "snap": "sc-utility-suite",
-        "installs": 0,
-        "as_of": ""
+        "installs": 1,
+        "as_of": "2026-11-24"
       },
       {
         "name": "Creator Forge",
@@ -505,7 +505,7 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 120
+        "count": 121
       },
       {
         "os": "ubuntu/24.04",
@@ -3264,6 +3264,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-25 11:41:44 UTC"
+    "fetched": "2026-11-25 12:11:01 UTC"
   }
 }
