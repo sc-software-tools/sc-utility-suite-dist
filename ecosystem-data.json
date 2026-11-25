@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25 11:11:32 UTC",
+  "last_updated": "2026-11-25 11:41:05 UTC",
   "date_range": "2026-08-27 to 2026-11-25",
   "summary": {
     "total_acquisitions": 35,
@@ -427,7 +427,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 200,
+    "total_installs": 219,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -468,8 +468,8 @@
       {
         "name": "USB Flasher",
         "snap": "sc-usb-flasher",
-        "installs": 91,
-        "as_of": "2026-11-23"
+        "installs": 110,
+        "as_of": "2026-11-24"
       },
       {
         "name": "SC Utility Suite",
@@ -505,15 +505,15 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 106
+        "count": 120
       },
       {
         "os": "ubuntu/24.04",
-        "count": 41
+        "count": 51
       },
       {
         "os": "zorin/18",
-        "count": 14
+        "count": 12
       },
       {
         "os": "ubuntu/22.04",
@@ -521,7 +521,7 @@
       },
       {
         "os": "ubuntu/26.10",
-        "count": 8
+        "count": 9
       },
       {
         "os": "ubuntu/18.04",
@@ -533,15 +533,11 @@
       },
       {
         "os": "neon/24.04",
-        "count": 3
+        "count": 2
       },
       {
         "os": "debian/13",
-        "count": 2
-      },
-      {
-        "os": "ubuntu/11.26.11",
-        "count": 2
+        "count": 1
       },
       {
         "os": "ubuntu/24.10",
@@ -560,11 +556,15 @@
         "count": 1
       },
       {
+        "os": "linuxmint/7",
+        "count": 1
+      },
+      {
         "os": "rocky/10.3",
         "count": 1
       },
       {
-        "os": "ubuntu/21.10",
+        "os": "ubuntu/10",
         "count": 1
       },
       {
@@ -572,11 +572,11 @@
         "count": 1
       },
       {
-        "os": "vailuxos/1.0",
-        "count": 1
+        "os": "fedora/44",
+        "count": 0
       },
       {
-        "os": "fedora/44",
+        "os": "ubuntu/11.26.11",
         "count": 0
       },
       {
@@ -592,11 +592,11 @@
         "count": 0
       },
       {
-        "os": "ubuntu/10",
+        "os": "ubuntu/11.26.01",
         "count": 0
       },
       {
-        "os": "ubuntu/11.26.01",
+        "os": "ubuntu/21.10",
         "count": 0
       },
       {
@@ -605,6 +605,10 @@
       },
       {
         "os": "ubuntu/23.10",
+        "count": 0
+      },
+      {
+        "os": "vailuxos/1.0",
         "count": 0
       }
     ]
@@ -853,7 +857,7 @@
           },
           {
             "name": "DupScrub-1.2.7-x86_64.AppImage",
-            "download_count": 2
+            "download_count": 3
           },
           {
             "name": "DupScrub_Setup_v1.2.7.exe",
@@ -3260,6 +3264,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-25 11:12:31 UTC"
+    "fetched": "2026-11-25 11:41:44 UTC"
   }
 }
