@@ -509,10 +509,10 @@
     <div class="panel">
       <div class="panel-header">
         <h2 class="panel-title">Audience</h2>
-        <span class="badge-live"><span class="badge-live-dot"></span> Store markets &middot; OS versions &middot; Linux distros</span>
+        <span class="badge-live"><span class="badge-live-dot"></span> Countries &middot; Windows versions &middot; Linux distros</span>
       </div>
       <div class="three-col">
-        <div class="mini-card"><h4>Store countries <span id="market-total-badge"></span></h4><div id="markets-list"></div></div>
+        <div class="mini-card"><h4>Countries (Store + Snap) <span id="market-total-badge"></span></h4><div id="markets-list"></div><div class="muted" style="font-size:0.72rem;margin-top:6px">GitHub downloads carry no location, so they are not counted here.</div></div>
         <div class="mini-card"><h4>Windows versions <span id="os-total-badge"></span></h4><div id="os-list"></div></div>
         <div class="mini-card"><h4>Linux distros (Snap) <span id="distro-total-badge"></span></h4><div id="distro-list"></div></div>
       </div>
@@ -787,8 +787,12 @@
       }).join("");
 
       // Audience
-      var markets = (data.markets || []).map(function(m) { return { label: resolveCountryName(m.code, m.country), count: m.count }; });
-      el("market-total-badge").innerText = markets.length + " countries";
+      // Store installs + Snap active installs, merged by country code.
+      var byCode = {};
+      (data.markets || []).forEach(function(m) { var c = (m.code || m.country || "?").toUpperCase(); byCode[c] = (byCode[c] || 0) + m.count; });
+      ((data.snap || {}).countries || []).forEach(function(m) { var c = (m.code || "?").toUpperCase(); byCode[c] = (byCode[c] || 0) + m.count; });
+      var markets = Object.keys(byCode).map(function(c) { return { label: resolveCountryName(c, c), count: byCode[c] }; }).sort(function(a, b) { return b.count - a.count; });
+      el("market-total-badge").innerText = markets.length + " countries · " + markets.reduce(function(t, m) { return t + m.count; }, 0) + " installs";
       bars("markets-list", markets, 6);
       var oses = (data.os_breakdown || []).map(function(o) { return { label: o.os, count: o.count }; });
       el("os-total-badge").innerText = oses.reduce(function(t, o) { return t + o.count; }, 0) + " installs";
