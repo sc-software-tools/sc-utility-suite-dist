@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 12:31:59 UTC",
+  "last_updated": "2026-11-26 13:01:20 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
     "total_acquisitions": 38,
@@ -2147,7 +2147,7 @@
           },
           {
             "name": "PaperTrail_Setup_v1.2.6.exe",
-            "download_count": 0
+            "download_count": 1
           },
           {
             "name": "PaperTrail_v1.2.6_Portable.zip",
@@ -2187,11 +2187,11 @@
           },
           {
             "name": "update-manifest.json",
-            "download_count": 1
+            "download_count": 2
           },
           {
             "name": "update-manifest.json.sig",
-            "download_count": 0
+            "download_count": 1
           }
         ]
       },
@@ -3282,6 +3282,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 12:32:49 UTC"
+    "fetched": "2026-11-26 13:01:59 UTC"
   }
 }
