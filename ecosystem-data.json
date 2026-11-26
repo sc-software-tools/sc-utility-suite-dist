@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 18:35:52 UTC",
+  "last_updated": "2026-11-26 19:05:06 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
     "total_acquisitions": 38,
@@ -851,7 +851,7 @@
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.7.exe",
-            "download_count": 10
+            "download_count": 11
           },
           {
             "name": "ArchiveUnpacker_v1.2.7_Portable.zip",
@@ -879,7 +879,7 @@
           },
           {
             "name": "DupScrub_Setup_v1.2.7.exe",
-            "download_count": 8
+            "download_count": 9
           },
           {
             "name": "DupScrub_v1.2.7_Portable.zip",
@@ -3282,6 +3282,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 18:36:28 UTC"
+    "fetched": "2026-11-26 19:05:42 UTC"
   }
 }
