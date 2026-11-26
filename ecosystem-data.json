@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 04:12:52 UTC",
+  "last_updated": "2026-11-26 04:41:58 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
     "total_acquisitions": 38,
@@ -427,7 +427,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 223,
+    "total_installs": 225,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -456,8 +456,8 @@
       {
         "name": "PDF Knife",
         "snap": "sc-pdf-knife",
-        "installs": 1,
-        "as_of": "2026-11-24"
+        "installs": 3,
+        "as_of": "2026-11-25"
       },
       {
         "name": "Screen Lens",
@@ -505,11 +505,11 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 123
+        "count": 124
       },
       {
         "os": "ubuntu/24.04",
-        "count": 51
+        "count": 52
       },
       {
         "os": "zorin/18",
@@ -3264,6 +3264,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 04:13:26 UTC"
+    "fetched": "2026-11-26 04:42:38 UTC"
   }
 }
