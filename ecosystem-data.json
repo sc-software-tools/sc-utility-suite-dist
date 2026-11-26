@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 07:37:59 UTC",
+  "last_updated": "2026-11-26 08:07:24 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
     "total_acquisitions": 38,
@@ -497,7 +497,7 @@
         "name": "FileFlow",
         "snap": "sc-file-flow",
         "installs": 1,
-        "as_of": "2026-11-24"
+        "as_of": "2026-11-25"
       },
       {
         "name": "PaperTrail",
@@ -963,7 +963,7 @@
           },
           {
             "name": "sc-usb-flasher_1.2.7_amd64.deb",
-            "download_count": 8
+            "download_count": 9
           },
           {
             "name": "ScreenLens-1.2.7-linux-x64.tar.gz",
@@ -3282,6 +3282,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 07:38:41 UTC"
+    "fetched": "2026-11-26 08:08:02 UTC"
   }
 }
