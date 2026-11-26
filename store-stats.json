@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-26 19:05:06 UTC",
+  "last_updated": "2026-11-26 19:34:05 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
-    "total_acquisitions": 38,
+    "total_acquisitions": 39,
     "total_installs": 44,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 8,
+      "acquisitions": 9,
       "installs": 5,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -628,6 +628,236 @@
       {
         "os": "vailuxos/1.0",
         "count": 0
+      }
+    ],
+    "countries": [
+      {
+        "code": "US",
+        "count": 49
+      },
+      {
+        "code": "DE",
+        "count": 25
+      },
+      {
+        "code": "FR",
+        "count": 17
+      },
+      {
+        "code": "CA",
+        "count": 15
+      },
+      {
+        "code": "BR",
+        "count": 12
+      },
+      {
+        "code": "ES",
+        "count": 10
+      },
+      {
+        "code": "IN",
+        "count": 8
+      },
+      {
+        "code": "IT",
+        "count": 8
+      },
+      {
+        "code": "GB",
+        "count": 7
+      },
+      {
+        "code": "NL",
+        "count": 7
+      },
+      {
+        "code": "MX",
+        "count": 5
+      },
+      {
+        "code": "RU",
+        "count": 5
+      },
+      {
+        "code": "AU",
+        "count": 4
+      },
+      {
+        "code": "BE",
+        "count": 3
+      },
+      {
+        "code": "IR",
+        "count": 3
+      },
+      {
+        "code": "NO",
+        "count": 3
+      },
+      {
+        "code": "PK",
+        "count": 3
+      },
+      {
+        "code": "TR",
+        "count": 3
+      },
+      {
+        "code": "ZA",
+        "count": 3
+      },
+      {
+        "code": "PL",
+        "count": 3
+      },
+      {
+        "code": "EG",
+        "count": 3
+      },
+      {
+        "code": "CN",
+        "count": 2
+      },
+      {
+        "code": "JP",
+        "count": 2
+      },
+      {
+        "code": "MA",
+        "count": 2
+      },
+      {
+        "code": "NZ",
+        "count": 2
+      },
+      {
+        "code": "SK",
+        "count": 2
+      },
+      {
+        "code": "CY",
+        "count": 2
+      },
+      {
+        "code": "DK",
+        "count": 2
+      },
+      {
+        "code": "ID",
+        "count": 2
+      },
+      {
+        "code": "PT",
+        "count": 2
+      },
+      {
+        "code": "CL",
+        "count": 2
+      },
+      {
+        "code": "FI",
+        "count": 2
+      },
+      {
+        "code": "HU",
+        "count": 2
+      },
+      {
+        "code": "AE",
+        "count": 1
+      },
+      {
+        "code": "MD",
+        "count": 1
+      },
+      {
+        "code": "NG",
+        "count": 1
+      },
+      {
+        "code": "PE",
+        "count": 1
+      },
+      {
+        "code": "QA",
+        "count": 1
+      },
+      {
+        "code": "AL",
+        "count": 1
+      },
+      {
+        "code": "BG",
+        "count": 1
+      },
+      {
+        "code": "CR",
+        "count": 1
+      },
+      {
+        "code": "PR",
+        "count": 1
+      },
+      {
+        "code": "TH",
+        "count": 1
+      },
+      {
+        "code": "GE",
+        "count": 1
+      },
+      {
+        "code": "LK",
+        "count": 1
+      },
+      {
+        "code": "TN",
+        "count": 1
+      },
+      {
+        "code": "AM",
+        "count": 1
+      },
+      {
+        "code": "BO",
+        "count": 1
+      },
+      {
+        "code": "CV",
+        "count": 1
+      },
+      {
+        "code": "EC",
+        "count": 1
+      },
+      {
+        "code": "GA",
+        "count": 1
+      },
+      {
+        "code": "GR",
+        "count": 1
+      },
+      {
+        "code": "MK",
+        "count": 1
+      },
+      {
+        "code": "SE",
+        "count": 1
+      },
+      {
+        "code": "SI",
+        "count": 1
+      },
+      {
+        "code": "UA",
+        "count": 1
+      },
+      {
+        "code": "VE",
+        "count": 1
       }
     ]
   },
@@ -3282,6 +3512,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 19:05:42 UTC"
+    "fetched": "2026-11-26 19:35:20 UTC"
   }
 }
