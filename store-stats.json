@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-26 02:16:08 UTC",
+  "last_updated": "2026-11-26 02:45:16 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
-    "total_acquisitions": 37,
+    "total_acquisitions": 38,
     "total_installs": 39,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 7,
+      "acquisitions": 8,
       "installs": 3,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -427,7 +427,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 220,
+    "total_installs": 223,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -438,8 +438,8 @@
       {
         "name": "Dup Scrub",
         "snap": "sc-dup-scrub",
-        "installs": 7,
-        "as_of": "2026-11-24"
+        "installs": 10,
+        "as_of": "2026-11-25"
       },
       {
         "name": "HEIC Studio",
@@ -505,7 +505,7 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 121
+        "count": 123
       },
       {
         "os": "ubuntu/24.04",
@@ -513,14 +513,14 @@
       },
       {
         "os": "zorin/18",
-        "count": 12
-      },
-      {
-        "os": "ubuntu/22.04",
-        "count": 10
+        "count": 13
       },
       {
         "os": "ubuntu/26.10",
+        "count": 10
+      },
+      {
+        "os": "ubuntu/22.04",
         "count": 9
       },
       {
@@ -3264,6 +3264,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 02:16:49 UTC"
+    "fetched": "2026-11-26 02:45:50 UTC"
   }
 }
