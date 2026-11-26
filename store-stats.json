@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-26 23:04:00 UTC",
+  "last_updated": "2026-11-26 23:34:07 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
-    "total_acquisitions": 39,
+    "total_acquisitions": 40,
     "total_installs": 44,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 9,
+      "acquisitions": 10,
       "installs": 5,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -1125,7 +1125,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 50
+            "download_count": 51
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -1213,7 +1213,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 54
+            "download_count": 55
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -3512,6 +3512,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 23:05:16 UTC"
+    "fetched": "2026-11-26 23:35:23 UTC"
   }
 }
