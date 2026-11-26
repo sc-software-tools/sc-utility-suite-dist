@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 06:39:03 UTC",
+  "last_updated": "2026-11-26 07:08:26 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
     "total_acquisitions": 38,
@@ -437,7 +437,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 243,
+    "total_installs": 245,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -460,8 +460,8 @@
       {
         "name": "Media Trim",
         "snap": "sc-media-trim",
-        "installs": 5,
-        "as_of": "2026-11-24"
+        "installs": 7,
+        "as_of": "2026-11-25"
       },
       {
         "name": "PDF Knife",
@@ -519,11 +519,11 @@
       },
       {
         "os": "ubuntu/24.04",
-        "count": 48
+        "count": 49
       },
       {
         "os": "zorin/18",
-        "count": 19
+        "count": 20
       },
       {
         "os": "ubuntu/26.10",
@@ -3282,6 +3282,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 06:39:40 UTC"
+    "fetched": "2026-11-26 07:09:09 UTC"
   }
 }
