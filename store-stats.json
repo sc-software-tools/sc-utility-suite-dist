@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 08:36:47 UTC",
+  "last_updated": "2026-11-26 09:06:12 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
     "total_acquisitions": 38,
@@ -437,7 +437,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 245,
+    "total_installs": 244,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -472,8 +472,8 @@
       {
         "name": "Screen Lens",
         "snap": "sc-screen-lens",
-        "installs": 18,
-        "as_of": "2026-11-24"
+        "installs": 17,
+        "as_of": "2026-11-25"
       },
       {
         "name": "USB Flasher",
@@ -515,11 +515,11 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 129
+        "count": 127
       },
       {
         "os": "ubuntu/24.04",
-        "count": 49
+        "count": 51
       },
       {
         "os": "zorin/18",
@@ -534,12 +534,12 @@
         "count": 11
       },
       {
-        "os": "ubuntu/18.04",
+        "os": "ubuntu/20.04",
         "count": 4
       },
       {
-        "os": "ubuntu/20.04",
-        "count": 4
+        "os": "ubuntu/18.04",
+        "count": 3
       },
       {
         "os": "ubuntu/25.10",
@@ -3282,6 +3282,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 08:37:30 UTC"
+    "fetched": "2026-11-26 09:06:59 UTC"
   }
 }
