@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 10:04:33 UTC",
+  "last_updated": "2026-11-26 10:34:29 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
     "total_acquisitions": 38,
@@ -999,11 +999,11 @@
           },
           {
             "name": "update-manifest.json",
-            "download_count": 43
+            "download_count": 44
           },
           {
             "name": "update-manifest.json.sig",
-            "download_count": 44
+            "download_count": 45
           },
           {
             "name": "UsbFlasher-1.2.7-linux-x64.tar.gz",
@@ -3282,6 +3282,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 10:05:15 UTC"
+    "fetched": "2026-11-26 10:35:02 UTC"
   }
 }
