@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 21:04:16 UTC",
+  "last_updated": "2026-11-26 21:34:05 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
     "total_acquisitions": 39,
@@ -2483,7 +2483,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 51
+            "download_count": 53
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -3512,6 +3512,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 21:05:31 UTC"
+    "fetched": "2026-11-26 21:35:25 UTC"
   }
 }
