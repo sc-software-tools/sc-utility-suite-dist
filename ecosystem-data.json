@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 04:41:58 UTC",
+  "last_updated": "2026-11-26 05:11:22 UTC",
   "date_range": "2026-08-28 to 2026-11-26",
   "summary": {
     "total_acquisitions": 38,
@@ -427,7 +427,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 225,
+    "total_installs": 229,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -444,8 +444,8 @@
       {
         "name": "HEIC Studio",
         "snap": "sc-heic-studio",
-        "installs": 30,
-        "as_of": "2026-11-24"
+        "installs": 34,
+        "as_of": "2026-11-25"
       },
       {
         "name": "Media Trim",
@@ -469,7 +469,7 @@
         "name": "USB Flasher",
         "snap": "sc-usb-flasher",
         "installs": 110,
-        "as_of": "2026-11-24"
+        "as_of": "2026-11-25"
       },
       {
         "name": "SC Utility Suite",
@@ -505,34 +505,38 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 124
+        "count": 119
       },
       {
         "os": "ubuntu/24.04",
-        "count": 52
+        "count": 46
       },
       {
         "os": "zorin/18",
-        "count": 13
+        "count": 20
       },
       {
         "os": "ubuntu/26.10",
-        "count": 10
+        "count": 11
       },
       {
         "os": "ubuntu/22.04",
-        "count": 9
+        "count": 11
       },
       {
         "os": "ubuntu/18.04",
-        "count": 3
+        "count": 4
+      },
+      {
+        "os": "ubuntu/20.04",
+        "count": 4
       },
       {
         "os": "zorin/17",
-        "count": 3
+        "count": 2
       },
       {
-        "os": "neon/24.04",
+        "os": "linuxmint/22.3",
         "count": 2
       },
       {
@@ -544,7 +548,7 @@
         "count": 1
       },
       {
-        "os": "linuxmint/22.3",
+        "os": "neon/24.04",
         "count": 1
       },
       {
@@ -560,11 +564,15 @@
         "count": 1
       },
       {
+        "os": "manjaro/",
+        "count": 1
+      },
+      {
         "os": "rocky/10.3",
         "count": 1
       },
       {
-        "os": "ubuntu/10",
+        "os": "ubuntu/16.04",
         "count": 1
       },
       {
@@ -580,15 +588,15 @@
         "count": 0
       },
       {
-        "os": "ubuntu/20.04",
-        "count": 0
-      },
-      {
         "os": "kali/2026.3",
         "count": 0
       },
       {
         "os": "rhel/10.3",
+        "count": 0
+      },
+      {
+        "os": "ubuntu/10",
         "count": 0
       },
       {
@@ -3264,6 +3272,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-26 04:42:38 UTC"
+    "fetched": "2026-11-26 05:11:58 UTC"
   }
 }
