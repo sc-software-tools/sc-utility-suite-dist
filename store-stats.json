@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27 21:10:51 UTC",
+  "last_updated": "2026-11-27 21:40:39 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
     "total_acquisitions": 50,
@@ -1155,7 +1155,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 59
+            "download_count": 60
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -1199,7 +1199,7 @@
           },
           {
             "name": "sc-dup-scrub_1.2.7_amd64.deb",
-            "download_count": 7
+            "download_count": 8
           },
           {
             "name": "sc-heic-studio_1.2.7_amd64.deb",
@@ -1259,11 +1259,11 @@
           },
           {
             "name": "update-manifest.json",
-            "download_count": 45
+            "download_count": 46
           },
           {
             "name": "update-manifest.json.sig",
-            "download_count": 46
+            "download_count": 47
           },
           {
             "name": "UsbFlasher-1.2.7-linux-x64.tar.gz",
@@ -3542,6 +3542,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 21:12:06 UTC"
+    "fetched": "2026-11-27 21:41:56 UTC"
   }
 }
