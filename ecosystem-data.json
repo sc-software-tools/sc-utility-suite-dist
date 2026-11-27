@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27 13:13:47 UTC",
+  "last_updated": "2026-11-27 13:43:41 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
     "total_acquisitions": 45,
@@ -447,7 +447,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 275,
+    "total_installs": 279,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -482,8 +482,8 @@
       {
         "name": "Screen Lens",
         "snap": "sc-screen-lens",
-        "installs": 17,
-        "as_of": "2026-11-25"
+        "installs": 21,
+        "as_of": "2026-11-26"
       },
       {
         "name": "USB Flasher",
@@ -529,11 +529,11 @@
       },
       {
         "os": "ubuntu/24.04",
-        "count": 61
+        "count": 62
       },
       {
         "os": "ubuntu/26.10",
-        "count": 14
+        "count": 15
       },
       {
         "os": "zorin/18",
@@ -541,15 +541,15 @@
       },
       {
         "os": "ubuntu/22.04",
-        "count": 10
+        "count": 11
+      },
+      {
+        "os": "ubuntu/18.04",
+        "count": 5
       },
       {
         "os": "ubuntu/20.04",
         "count": 5
-      },
-      {
-        "os": "ubuntu/18.04",
-        "count": 4
       },
       {
         "os": "neon/24.04",
@@ -647,7 +647,7 @@
     "countries": [
       {
         "code": "US",
-        "count": 59
+        "count": 61
       },
       {
         "code": "DE",
@@ -659,7 +659,7 @@
       },
       {
         "code": "FR",
-        "count": 18
+        "count": 17
       },
       {
         "code": "CA",
@@ -671,7 +671,7 @@
       },
       {
         "code": "IN",
-        "count": 10
+        "count": 11
       },
       {
         "code": "AU",
@@ -699,6 +699,10 @@
       },
       {
         "code": "PL",
+        "count": 6
+      },
+      {
+        "code": "PK",
         "count": 5
       },
       {
@@ -706,11 +710,11 @@
         "count": 4
       },
       {
-        "code": "PK",
+        "code": "RO",
         "count": 4
       },
       {
-        "code": "RO",
+        "code": "EG",
         "count": 4
       },
       {
@@ -727,10 +731,6 @@
       },
       {
         "code": "MA",
-        "count": 3
-      },
-      {
-        "code": "EG",
         "count": 3
       },
       {
@@ -815,10 +815,6 @@
       },
       {
         "code": "TH",
-        "count": 1
-      },
-      {
-        "code": "GE",
         "count": 1
       },
       {
@@ -3546,6 +3542,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 13:15:06 UTC"
+    "fetched": "2026-11-27 13:44:46 UTC"
   }
 }
