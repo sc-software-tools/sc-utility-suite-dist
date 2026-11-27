@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-27 14:43:15 UTC",
+  "last_updated": "2026-11-27 15:13:04 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
-    "total_acquisitions": 45,
+    "total_acquisitions": 46,
     "total_installs": 52,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 14,
+      "acquisitions": 15,
       "installs": 10,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -1111,7 +1111,7 @@
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.7.exe",
-            "download_count": 11
+            "download_count": 12
           },
           {
             "name": "ArchiveUnpacker_v1.2.7_Portable.zip",
@@ -1147,7 +1147,7 @@
           },
           {
             "name": "HeicStudio-1.2.7-linux-x64.tar.gz",
-            "download_count": 4
+            "download_count": 5
           },
           {
             "name": "HeicStudio-1.2.7-x86_64.AppImage",
@@ -1155,7 +1155,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 55
+            "download_count": 56
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -1195,35 +1195,35 @@
           },
           {
             "name": "sc-archive-unpacker_1.2.7_amd64.deb",
-            "download_count": 4
-          },
-          {
-            "name": "sc-dup-scrub_1.2.7_amd64.deb",
-            "download_count": 4
-          },
-          {
-            "name": "sc-heic-studio_1.2.7_amd64.deb",
-            "download_count": 4
-          },
-          {
-            "name": "sc-media-trim_1.2.7_amd64.deb",
-            "download_count": 4
-          },
-          {
-            "name": "sc-pdf-knife_1.2.7_amd64.deb",
-            "download_count": 4
-          },
-          {
-            "name": "sc-screen-lens_1.2.7_amd64.deb",
             "download_count": 5
           },
           {
+            "name": "sc-dup-scrub_1.2.7_amd64.deb",
+            "download_count": 5
+          },
+          {
+            "name": "sc-heic-studio_1.2.7_amd64.deb",
+            "download_count": 5
+          },
+          {
+            "name": "sc-media-trim_1.2.7_amd64.deb",
+            "download_count": 5
+          },
+          {
+            "name": "sc-pdf-knife_1.2.7_amd64.deb",
+            "download_count": 5
+          },
+          {
+            "name": "sc-screen-lens_1.2.7_amd64.deb",
+            "download_count": 6
+          },
+          {
             "name": "sc-suite-hub_1.2.7_amd64.deb",
-            "download_count": 4
+            "download_count": 5
           },
           {
             "name": "sc-usb-flasher_1.2.7_amd64.deb",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "ScreenLens-1.2.7-linux-x64.tar.gz",
@@ -1243,7 +1243,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 57
+            "download_count": 58
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -1255,7 +1255,7 @@
           },
           {
             "name": "SuiteHub-1.2.7-x86_64.AppImage",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "update-manifest.json",
@@ -2513,7 +2513,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 55
+            "download_count": 56
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -2921,7 +2921,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.1.2.exe",
-            "download_count": 63
+            "download_count": 64
           },
           {
             "name": "HeicStudio_v1.1.2_Portable.zip",
@@ -3542,6 +3542,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 14:44:28 UTC"
+    "fetched": "2026-11-27 15:14:13 UTC"
   }
 }
