@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27 03:47:10 UTC",
+  "last_updated": "2026-11-27 04:16:55 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
     "total_acquisitions": 41,
@@ -497,7 +497,7 @@
         "name": "FileFlow",
         "snap": "sc-file-flow",
         "installs": 1,
-        "as_of": "2026-11-25"
+        "as_of": "2026-11-26"
       },
       {
         "name": "PaperTrail",
@@ -515,11 +515,11 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 147
+        "count": 146
       },
       {
         "os": "ubuntu/24.04",
-        "count": 56
+        "count": 57
       },
       {
         "os": "zorin/18",
@@ -637,7 +637,7 @@
     "countries": [
       {
         "code": "US",
-        "count": 54
+        "count": 55
       },
       {
         "code": "DE",
@@ -680,11 +680,11 @@
         "count": 7
       },
       {
-        "code": "AU",
-        "count": 6
+        "code": "PK",
+        "count": 5
       },
       {
-        "code": "PK",
+        "code": "AU",
         "count": 5
       },
       {
@@ -1145,7 +1145,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 51
+            "download_count": 52
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -3532,6 +3532,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 03:48:19 UTC"
+    "fetched": "2026-11-27 04:18:07 UTC"
   }
 }
