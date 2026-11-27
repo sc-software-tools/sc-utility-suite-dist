@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27 15:13:04 UTC",
+  "last_updated": "2026-11-27 15:42:48 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
     "total_acquisitions": 46,
@@ -1111,7 +1111,7 @@
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.7.exe",
-            "download_count": 12
+            "download_count": 13
           },
           {
             "name": "ArchiveUnpacker_v1.2.7_Portable.zip",
@@ -1139,7 +1139,7 @@
           },
           {
             "name": "DupScrub_Setup_v1.2.7.exe",
-            "download_count": 9
+            "download_count": 10
           },
           {
             "name": "DupScrub_v1.2.7_Portable.zip",
@@ -1155,7 +1155,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.7.exe",
-            "download_count": 56
+            "download_count": 57
           },
           {
             "name": "HeicStudio_v1.2.7_Portable.zip",
@@ -1195,35 +1195,35 @@
           },
           {
             "name": "sc-archive-unpacker_1.2.7_amd64.deb",
-            "download_count": 5
-          },
-          {
-            "name": "sc-dup-scrub_1.2.7_amd64.deb",
-            "download_count": 5
-          },
-          {
-            "name": "sc-heic-studio_1.2.7_amd64.deb",
-            "download_count": 5
-          },
-          {
-            "name": "sc-media-trim_1.2.7_amd64.deb",
-            "download_count": 5
-          },
-          {
-            "name": "sc-pdf-knife_1.2.7_amd64.deb",
-            "download_count": 5
-          },
-          {
-            "name": "sc-screen-lens_1.2.7_amd64.deb",
             "download_count": 6
           },
           {
+            "name": "sc-dup-scrub_1.2.7_amd64.deb",
+            "download_count": 6
+          },
+          {
+            "name": "sc-heic-studio_1.2.7_amd64.deb",
+            "download_count": 6
+          },
+          {
+            "name": "sc-media-trim_1.2.7_amd64.deb",
+            "download_count": 6
+          },
+          {
+            "name": "sc-pdf-knife_1.2.7_amd64.deb",
+            "download_count": 6
+          },
+          {
+            "name": "sc-screen-lens_1.2.7_amd64.deb",
+            "download_count": 7
+          },
+          {
             "name": "sc-suite-hub_1.2.7_amd64.deb",
-            "download_count": 5
+            "download_count": 6
           },
           {
             "name": "sc-usb-flasher_1.2.7_amd64.deb",
-            "download_count": 10
+            "download_count": 11
           },
           {
             "name": "ScreenLens-1.2.7-linux-x64.tar.gz",
@@ -1243,7 +1243,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.7.exe",
-            "download_count": 58
+            "download_count": 59
           },
           {
             "name": "SC_Utility_Suite_v1.2.7_Portable.zip",
@@ -1255,7 +1255,7 @@
           },
           {
             "name": "SuiteHub-1.2.7-x86_64.AppImage",
-            "download_count": 4
+            "download_count": 5
           },
           {
             "name": "update-manifest.json",
@@ -3542,6 +3542,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 15:14:13 UTC"
+    "fetched": "2026-11-27 15:43:56 UTC"
   }
 }
