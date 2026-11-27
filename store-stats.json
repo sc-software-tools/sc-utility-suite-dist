@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27 01:47:46 UTC",
+  "last_updated": "2026-11-27 02:17:37 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
     "total_acquisitions": 41,
@@ -437,7 +437,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 244,
+    "total_installs": 266,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -466,8 +466,8 @@
       {
         "name": "PDF Knife",
         "snap": "sc-pdf-knife",
-        "installs": 3,
-        "as_of": "2026-11-25"
+        "installs": 2,
+        "as_of": "2026-11-26"
       },
       {
         "name": "Screen Lens",
@@ -478,8 +478,8 @@
       {
         "name": "USB Flasher",
         "snap": "sc-usb-flasher",
-        "installs": 110,
-        "as_of": "2026-11-25"
+        "installs": 133,
+        "as_of": "2026-11-26"
       },
       {
         "name": "SC Utility Suite",
@@ -515,19 +515,19 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 127
+        "count": 147
       },
       {
         "os": "ubuntu/24.04",
-        "count": 51
+        "count": 56
       },
       {
         "os": "zorin/18",
-        "count": 20
+        "count": 16
       },
       {
         "os": "ubuntu/26.10",
-        "count": 13
+        "count": 12
       },
       {
         "os": "ubuntu/22.04",
@@ -542,15 +542,19 @@
         "count": 3
       },
       {
-        "os": "ubuntu/25.10",
-        "count": 2
-      },
-      {
         "os": "zorin/17",
         "count": 2
       },
       {
-        "os": "linuxmint/22.3",
+        "os": "neon/24.04",
+        "count": 2
+      },
+      {
+        "os": "debian/13",
+        "count": 2
+      },
+      {
+        "os": "ubuntu/23.10",
         "count": 2
       },
       {
@@ -558,19 +562,19 @@
         "count": 1
       },
       {
+        "os": "ubuntu/25.10",
+        "count": 1
+      },
+      {
         "os": "linuxmint/22",
         "count": 1
       },
       {
-        "os": "neon/24.04",
+        "os": "linuxmint/22.3",
         "count": 1
       },
       {
-        "os": "arch/",
-        "count": 1
-      },
-      {
-        "os": "debian/13",
+        "os": "kali/2026.3",
         "count": 1
       },
       {
@@ -578,15 +582,15 @@
         "count": 1
       },
       {
-        "os": "manjaro/",
-        "count": 1
-      },
-      {
         "os": "rocky/10.3",
         "count": 1
       },
       {
-        "os": "ubuntu/16.04",
+        "os": "ubuntu/11.26.10",
+        "count": 1
+      },
+      {
+        "os": "ubuntu/21.10",
         "count": 1
       },
       {
@@ -598,7 +602,11 @@
         "count": 0
       },
       {
-        "os": "kali/2026.3",
+        "os": "arch/",
+        "count": 0
+      },
+      {
+        "os": "manjaro/",
         "count": 0
       },
       {
@@ -614,7 +622,7 @@
         "count": 0
       },
       {
-        "os": "ubuntu/21.10",
+        "os": "ubuntu/16.04",
         "count": 0
       },
       {
@@ -629,30 +637,34 @@
     "countries": [
       {
         "code": "US",
-        "count": 49
+        "count": 54
       },
       {
         "code": "DE",
-        "count": 25
+        "count": 24
       },
       {
         "code": "FR",
-        "count": 17
+        "count": 18
+      },
+      {
+        "code": "BR",
+        "count": 15
       },
       {
         "code": "CA",
         "count": 15
       },
       {
-        "code": "BR",
+        "code": "GB",
         "count": 12
       },
       {
-        "code": "ES",
+        "code": "IN",
         "count": 10
       },
       {
-        "code": "IN",
+        "code": "ES",
         "count": 8
       },
       {
@@ -660,23 +672,31 @@
         "count": 8
       },
       {
-        "code": "GB",
-        "count": 7
-      },
-      {
-        "code": "NL",
-        "count": 7
-      },
-      {
         "code": "MX",
-        "count": 5
+        "count": 7
       },
       {
         "code": "RU",
-        "count": 5
+        "count": 7
       },
       {
         "code": "AU",
+        "count": 6
+      },
+      {
+        "code": "PK",
+        "count": 5
+      },
+      {
+        "code": "IR",
+        "count": 4
+      },
+      {
+        "code": "NL",
+        "count": 4
+      },
+      {
+        "code": "PL",
         "count": 4
       },
       {
@@ -684,27 +704,7 @@
         "count": 3
       },
       {
-        "code": "IR",
-        "count": 3
-      },
-      {
-        "code": "NO",
-        "count": 3
-      },
-      {
-        "code": "PK",
-        "count": 3
-      },
-      {
-        "code": "TR",
-        "count": 3
-      },
-      {
-        "code": "ZA",
-        "count": 3
-      },
-      {
-        "code": "PL",
+        "code": "CN",
         "count": 3
       },
       {
@@ -712,7 +712,15 @@
         "count": 3
       },
       {
-        "code": "CN",
+        "code": "ID",
+        "count": 3
+      },
+      {
+        "code": "RO",
+        "count": 3
+      },
+      {
+        "code": "AE",
         "count": 2
       },
       {
@@ -724,11 +732,19 @@
         "count": 2
       },
       {
-        "code": "NZ",
+        "code": "NO",
         "count": 2
       },
       {
         "code": "SK",
+        "count": 2
+      },
+      {
+        "code": "TR",
+        "count": 2
+      },
+      {
+        "code": "ZA",
         "count": 2
       },
       {
@@ -740,28 +756,8 @@
         "count": 2
       },
       {
-        "code": "ID",
-        "count": 2
-      },
-      {
         "code": "PT",
         "count": 2
-      },
-      {
-        "code": "CL",
-        "count": 2
-      },
-      {
-        "code": "FI",
-        "count": 2
-      },
-      {
-        "code": "HU",
-        "count": 2
-      },
-      {
-        "code": "AE",
-        "count": 1
       },
       {
         "code": "MD",
@@ -769,6 +765,10 @@
       },
       {
         "code": "NG",
+        "count": 1
+      },
+      {
+        "code": "NZ",
         "count": 1
       },
       {
@@ -816,7 +816,7 @@
         "count": 1
       },
       {
-        "code": "BO",
+        "code": "CL",
         "count": 1
       },
       {
@@ -824,7 +824,7 @@
         "count": 1
       },
       {
-        "code": "EC",
+        "code": "FI",
         "count": 1
       },
       {
@@ -836,7 +836,27 @@
         "count": 1
       },
       {
+        "code": "HU",
+        "count": 1
+      },
+      {
+        "code": "IE",
+        "count": 1
+      },
+      {
+        "code": "KR",
+        "count": 1
+      },
+      {
         "code": "MK",
+        "count": 1
+      },
+      {
+        "code": "MY",
+        "count": 1
+      },
+      {
+        "code": "SA",
         "count": 1
       },
       {
@@ -844,7 +864,7 @@
         "count": 1
       },
       {
-        "code": "SI",
+        "code": "TG",
         "count": 1
       },
       {
@@ -853,6 +873,10 @@
       },
       {
         "code": "VE",
+        "count": 1
+      },
+      {
+        "code": "VN",
         "count": 1
       }
     ]
@@ -3508,6 +3532,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 01:49:04 UTC"
+    "fetched": "2026-11-27 02:18:58 UTC"
   }
 }
