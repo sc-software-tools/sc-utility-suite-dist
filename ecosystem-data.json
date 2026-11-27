@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27 20:11:12 UTC",
+  "last_updated": "2026-11-27 20:40:56 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
     "total_acquisitions": 50,
@@ -915,7 +915,7 @@
           },
           {
             "name": "CreatorForge_Setup_v1.2.6.exe",
-            "download_count": 7
+            "download_count": 8
           },
           {
             "name": "CreatorForge_v1.2.6_Portable.zip",
@@ -1103,15 +1103,15 @@
         "assets": [
           {
             "name": "ArchiveUnpacker-1.2.7-linux-x64.tar.gz",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "ArchiveUnpacker-1.2.7-x86_64.AppImage",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "ArchiveUnpacker_Setup_v1.2.7.exe",
-            "download_count": 13
+            "download_count": 14
           },
           {
             "name": "ArchiveUnpacker_v1.2.7_Portable.zip",
@@ -3542,6 +3542,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 20:12:14 UTC"
+    "fetched": "2026-11-27 20:42:17 UTC"
   }
 }
