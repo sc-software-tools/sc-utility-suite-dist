@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-27 06:46:08 UTC",
+  "last_updated": "2026-11-27 07:16:02 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
-    "total_acquisitions": 43,
+    "total_acquisitions": 44,
     "total_installs": 44,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -13,7 +13,7 @@
     {
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
-      "acquisitions": 11,
+      "acquisitions": 12,
       "installs": 18,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -1121,7 +1121,7 @@
           },
           {
             "name": "DupScrub-1.2.7-x86_64.AppImage",
-            "download_count": 3
+            "download_count": 4
           },
           {
             "name": "DupScrub_Setup_v1.2.7.exe",
@@ -3528,6 +3528,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 06:47:28 UTC"
+    "fetched": "2026-11-27 07:17:22 UTC"
   }
 }
