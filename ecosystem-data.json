@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-27 05:46:10 UTC",
+  "last_updated": "2026-11-27 06:16:16 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
-    "total_acquisitions": 42,
+    "total_acquisitions": 43,
     "total_installs": 44,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 12,
+      "acquisitions": 13,
       "installs": 5,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -437,7 +437,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 266,
+    "total_installs": 262,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -454,8 +454,8 @@
       {
         "name": "HEIC Studio",
         "snap": "sc-heic-studio",
-        "installs": 34,
-        "as_of": "2026-11-25"
+        "installs": 30,
+        "as_of": "2026-11-26"
       },
       {
         "name": "Media Trim",
@@ -515,15 +515,15 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 146
+        "count": 144
       },
       {
         "os": "ubuntu/24.04",
-        "count": 57
+        "count": 56
       },
       {
         "os": "zorin/18",
-        "count": 16
+        "count": 15
       },
       {
         "os": "ubuntu/26.10",
@@ -531,15 +531,15 @@
       },
       {
         "os": "ubuntu/22.04",
-        "count": 11
+        "count": 10
+      },
+      {
+        "os": "ubuntu/18.04",
+        "count": 4
       },
       {
         "os": "ubuntu/20.04",
         "count": 4
-      },
-      {
-        "os": "ubuntu/18.04",
-        "count": 3
       },
       {
         "os": "zorin/17",
@@ -637,7 +637,7 @@
     "countries": [
       {
         "code": "US",
-        "count": 55
+        "count": 56
       },
       {
         "code": "DE",
@@ -645,7 +645,7 @@
       },
       {
         "code": "FR",
-        "count": 18
+        "count": 17
       },
       {
         "code": "BR",
@@ -653,23 +653,23 @@
       },
       {
         "code": "CA",
-        "count": 15
+        "count": 14
       },
       {
         "code": "GB",
-        "count": 12
+        "count": 13
       },
       {
         "code": "IN",
-        "count": 10
-      },
-      {
-        "code": "ES",
         "count": 8
       },
       {
         "code": "IT",
         "count": 8
+      },
+      {
+        "code": "ES",
+        "count": 7
       },
       {
         "code": "MX",
@@ -680,11 +680,11 @@
         "count": 7
       },
       {
-        "code": "PK",
-        "count": 5
+        "code": "AU",
+        "count": 6
       },
       {
-        "code": "AU",
+        "code": "PL",
         "count": 5
       },
       {
@@ -696,7 +696,7 @@
         "count": 4
       },
       {
-        "code": "PL",
+        "code": "PK",
         "count": 4
       },
       {
@@ -740,10 +740,6 @@
         "count": 2
       },
       {
-        "code": "TR",
-        "count": 2
-      },
-      {
         "code": "ZA",
         "count": 2
       },
@@ -780,7 +776,7 @@
         "count": 1
       },
       {
-        "code": "AL",
+        "code": "TR",
         "count": 1
       },
       {
@@ -3532,6 +3528,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 05:47:38 UTC"
+    "fetched": "2026-11-27 06:17:28 UTC"
   }
 }
