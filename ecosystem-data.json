@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-27 18:41:40 UTC",
+  "last_updated": "2026-11-27 19:11:10 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
-    "total_acquisitions": 48,
+    "total_acquisitions": 49,
     "total_installs": 52,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 17,
+      "acquisitions": 18,
       "installs": 10,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -1199,7 +1199,7 @@
           },
           {
             "name": "sc-dup-scrub_1.2.7_amd64.deb",
-            "download_count": 6
+            "download_count": 7
           },
           {
             "name": "sc-heic-studio_1.2.7_amd64.deb",
@@ -3542,6 +3542,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 18:42:42 UTC"
+    "fetched": "2026-11-27 19:12:22 UTC"
   }
 }
