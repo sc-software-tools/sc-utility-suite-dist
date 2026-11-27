@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-27 00:03:56 UTC",
+  "last_updated": "2026-11-27 00:48:17 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
-    "total_acquisitions": 40,
+    "total_acquisitions": 41,
     "total_installs": 44,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 10,
+      "acquisitions": 11,
       "installs": 5,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -2135,7 +2135,7 @@
           },
           {
             "name": "CreatorForge_Setup_v1.2.2.exe",
-            "download_count": 12
+            "download_count": 13
           },
           {
             "name": "FileFlow-1.2.2-linux-x64.tar.gz",
@@ -2143,7 +2143,7 @@
           },
           {
             "name": "FileFlow_Setup_v1.2.2.exe",
-            "download_count": 13
+            "download_count": 14
           },
           {
             "name": "PaperTrail-1.2.2-linux-x64.tar.gz",
@@ -2159,7 +2159,7 @@
           },
           {
             "name": "RomDiscSmith_Setup_v1.2.2.exe",
-            "download_count": 12
+            "download_count": 13
           },
           {
             "name": "sc-creator-forge_1.2.2_amd64.deb",
@@ -2479,7 +2479,7 @@
           },
           {
             "name": "HeicStudio_Setup_v1.2.2.exe",
-            "download_count": 53
+            "download_count": 54
           },
           {
             "name": "HeicStudio_v1.2.2_Portable.zip",
@@ -2495,7 +2495,7 @@
           },
           {
             "name": "MediaTrim_Setup_v1.2.2.exe",
-            "download_count": 12
+            "download_count": 13
           },
           {
             "name": "MediaTrim_v1.2.2_Portable.zip",
@@ -2511,7 +2511,7 @@
           },
           {
             "name": "PdfKnife_Setup_v1.2.2.exe",
-            "download_count": 14
+            "download_count": 15
           },
           {
             "name": "PdfKnife_v1.2.2_Portable.zip",
@@ -2559,7 +2559,7 @@
           },
           {
             "name": "ScreenLens_Setup_v1.2.2.exe",
-            "download_count": 10
+            "download_count": 11
           },
           {
             "name": "ScreenLens_v1.2.2_Portable.zip",
@@ -2567,7 +2567,7 @@
           },
           {
             "name": "SC_Utility_Suite_Setup_v1.2.2.exe",
-            "download_count": 8
+            "download_count": 9
           },
           {
             "name": "SC_Utility_Suite_v1.2.2_Portable.zip",
@@ -3508,6 +3508,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 00:05:17 UTC"
+    "fetched": "2026-11-27 00:49:25 UTC"
   }
 }
