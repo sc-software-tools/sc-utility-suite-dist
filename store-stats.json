@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27 11:14:59 UTC",
+  "last_updated": "2026-11-27 11:44:35 UTC",
   "date_range": "2026-08-29 to 2026-11-27",
   "summary": {
     "total_acquisitions": 44,
@@ -447,19 +447,19 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 261,
+    "total_installs": 275,
     "snaps": [
       {
         "name": "Archive Unpacker",
         "snap": "sc-archive-unpacker",
-        "installs": 60,
-        "as_of": "2026-11-25"
+        "installs": 76,
+        "as_of": "2026-11-26"
       },
       {
         "name": "Dup Scrub",
         "snap": "sc-dup-scrub",
-        "installs": 10,
-        "as_of": "2026-11-25"
+        "installs": 8,
+        "as_of": "2026-11-26"
       },
       {
         "name": "HEIC Studio",
@@ -525,38 +525,42 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 144
+        "count": 148
       },
       {
         "os": "ubuntu/24.04",
-        "count": 56
+        "count": 61
+      },
+      {
+        "os": "ubuntu/26.10",
+        "count": 14
       },
       {
         "os": "zorin/18",
         "count": 14
       },
       {
-        "os": "ubuntu/26.10",
-        "count": 12
-      },
-      {
         "os": "ubuntu/22.04",
         "count": 10
+      },
+      {
+        "os": "ubuntu/20.04",
+        "count": 5
       },
       {
         "os": "ubuntu/18.04",
         "count": 4
       },
       {
-        "os": "ubuntu/20.04",
-        "count": 4
+        "os": "neon/24.04",
+        "count": 3
       },
       {
-        "os": "zorin/17",
+        "os": "ubuntu/25.10",
         "count": 2
       },
       {
-        "os": "neon/24.04",
+        "os": "zorin/17",
         "count": 2
       },
       {
@@ -569,10 +573,6 @@
       },
       {
         "os": "fedora/44",
-        "count": 1
-      },
-      {
-        "os": "ubuntu/25.10",
         "count": 1
       },
       {
@@ -647,19 +647,19 @@
     "countries": [
       {
         "code": "US",
-        "count": 56
+        "count": 59
       },
       {
         "code": "DE",
-        "count": 24
-      },
-      {
-        "code": "FR",
-        "count": 17
+        "count": 22
       },
       {
         "code": "BR",
-        "count": 15
+        "count": 19
+      },
+      {
+        "code": "FR",
+        "count": 18
       },
       {
         "code": "CA",
@@ -667,18 +667,22 @@
       },
       {
         "code": "GB",
-        "count": 13
+        "count": 12
       },
       {
         "code": "IN",
-        "count": 8
+        "count": 10
       },
       {
-        "code": "IT",
-        "count": 8
+        "code": "AU",
+        "count": 7
       },
       {
         "code": "ES",
+        "count": 7
+      },
+      {
+        "code": "IT",
         "count": 7
       },
       {
@@ -690,12 +694,8 @@
         "count": 7
       },
       {
-        "code": "AU",
-        "count": 6
-      },
-      {
         "code": "NL",
-        "count": 5
+        "count": 6
       },
       {
         "code": "PL",
@@ -710,6 +710,10 @@
         "count": 4
       },
       {
+        "code": "RO",
+        "count": 4
+      },
+      {
         "code": "BE",
         "count": 3
       },
@@ -718,11 +722,15 @@
         "count": 3
       },
       {
-        "code": "EG",
+        "code": "ID",
         "count": 3
       },
       {
-        "code": "RO",
+        "code": "MA",
+        "count": 3
+      },
+      {
+        "code": "EG",
         "count": 3
       },
       {
@@ -730,15 +738,11 @@
         "count": 2
       },
       {
+        "code": "GR",
+        "count": 2
+      },
+      {
         "code": "JP",
-        "count": 2
-      },
-      {
-        "code": "MA",
-        "count": 2
-      },
-      {
-        "code": "NO",
         "count": 2
       },
       {
@@ -762,15 +766,23 @@
         "count": 2
       },
       {
+        "code": "AZ",
+        "count": 1
+      },
+      {
+        "code": "CO",
+        "count": 1
+      },
+      {
+        "code": "HR",
+        "count": 1
+      },
+      {
+        "code": "KE",
+        "count": 1
+      },
+      {
         "code": "MD",
-        "count": 1
-      },
-      {
-        "code": "NG",
-        "count": 1
-      },
-      {
-        "code": "NZ",
         "count": 1
       },
       {
@@ -791,6 +803,10 @@
       },
       {
         "code": "CR",
+        "count": 1
+      },
+      {
+        "code": "NO",
         "count": 1
       },
       {
@@ -834,15 +850,7 @@
         "count": 1
       },
       {
-        "code": "GR",
-        "count": 1
-      },
-      {
         "code": "HU",
-        "count": 1
-      },
-      {
-        "code": "ID",
         "count": 1
       },
       {
@@ -3538,6 +3546,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 11:16:01 UTC"
+    "fetched": "2026-11-27 11:45:41 UTC"
   }
 }
