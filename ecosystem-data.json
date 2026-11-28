@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-28 02:20:06 UTC",
+  "last_updated": "2026-11-28 02:50:10 UTC",
   "date_range": "2026-08-30 to 2026-11-28",
   "summary": {
     "total_acquisitions": 52,
@@ -447,7 +447,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 286,
+    "total_installs": 279,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -488,8 +488,8 @@
       {
         "name": "USB Flasher",
         "snap": "sc-usb-flasher",
-        "installs": 133,
-        "as_of": "2026-11-26"
+        "installs": 126,
+        "as_of": "2026-11-27"
       },
       {
         "name": "SC Utility Suite",
@@ -525,34 +525,30 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 151
+        "count": 145
       },
       {
         "os": "ubuntu/24.04",
-        "count": 67
+        "count": 62
       },
       {
         "os": "ubuntu/26.10",
-        "count": 15
+        "count": 20
       },
       {
         "os": "zorin/18",
-        "count": 15
+        "count": 18
       },
       {
         "os": "ubuntu/22.04",
-        "count": 11
-      },
-      {
-        "os": "ubuntu/18.04",
-        "count": 4
+        "count": 10
       },
       {
         "os": "ubuntu/20.04",
         "count": 4
       },
       {
-        "os": "neon/24.04",
+        "os": "ubuntu/18.04",
         "count": 3
       },
       {
@@ -568,11 +564,15 @@
         "count": 2
       },
       {
-        "os": "ubuntu/23.10",
+        "os": "ubuntu/11.26.11",
         "count": 2
       },
       {
         "os": "fedora/44",
+        "count": 1
+      },
+      {
+        "os": "neon/24.04",
         "count": 1
       },
       {
@@ -592,11 +592,11 @@
         "count": 1
       },
       {
-        "os": "rocky/10.3",
+        "os": "omarchy/4.5.0",
         "count": 1
       },
       {
-        "os": "ubuntu/11.26.10",
+        "os": "ubuntu/16.04",
         "count": 1
       },
       {
@@ -620,19 +620,23 @@
         "count": 0
       },
       {
+        "os": "rocky/10.3",
+        "count": 0
+      },
+      {
         "os": "ubuntu/10",
         "count": 0
       },
       {
-        "os": "ubuntu/11.26.11",
-        "count": 0
-      },
-      {
-        "os": "ubuntu/16.04",
+        "os": "ubuntu/11.26.10",
         "count": 0
       },
       {
         "os": "ubuntu/22.10",
+        "count": 0
+      },
+      {
+        "os": "ubuntu/23.10",
         "count": 0
       },
       {
@@ -643,7 +647,7 @@
     "countries": [
       {
         "code": "US",
-        "count": 60
+        "count": 65
       },
       {
         "code": "DE",
@@ -651,15 +655,15 @@
       },
       {
         "code": "BR",
-        "count": 19
-      },
-      {
-        "code": "FR",
-        "count": 17
+        "count": 18
       },
       {
         "code": "CA",
         "count": 15
+      },
+      {
+        "code": "FR",
+        "count": 14
       },
       {
         "code": "GB",
@@ -671,22 +675,18 @@
       },
       {
         "code": "ES",
+        "count": 10
+      },
+      {
+        "code": "NL",
         "count": 8
       },
       {
         "code": "AU",
-        "count": 7
+        "count": 6
       },
       {
-        "code": "MX",
-        "count": 7
-      },
-      {
-        "code": "NL",
-        "count": 7
-      },
-      {
-        "code": "IT",
+        "code": "IR",
         "count": 6
       },
       {
@@ -694,8 +694,12 @@
         "count": 6
       },
       {
-        "code": "RU",
-        "count": 6
+        "code": "IT",
+        "count": 5
+      },
+      {
+        "code": "MX",
+        "count": 5
       },
       {
         "code": "PL",
@@ -706,35 +710,27 @@
         "count": 4
       },
       {
-        "code": "IR",
+        "code": "RU",
         "count": 4
-      },
-      {
-        "code": "RO",
-        "count": 4
-      },
-      {
-        "code": "EG",
-        "count": 4
-      },
-      {
-        "code": "BE",
-        "count": 3
-      },
-      {
-        "code": "CN",
-        "count": 3
       },
       {
         "code": "MA",
         "count": 3
       },
       {
-        "code": "AE",
-        "count": 2
+        "code": "TR",
+        "count": 3
       },
       {
-        "code": "GR",
+        "code": "EG",
+        "count": 3
+      },
+      {
+        "code": "HU",
+        "count": 3
+      },
+      {
+        "code": "CN",
         "count": 2
       },
       {
@@ -742,11 +738,15 @@
         "count": 2
       },
       {
-        "code": "SK",
+        "code": "KE",
         "count": 2
       },
       {
-        "code": "TR",
+        "code": "RO",
+        "count": 2
+      },
+      {
+        "code": "SK",
         "count": 2
       },
       {
@@ -754,11 +754,11 @@
         "count": 2
       },
       {
-        "code": "CY",
+        "code": "DK",
         "count": 2
       },
       {
-        "code": "DK",
+        "code": "LK",
         "count": 2
       },
       {
@@ -766,7 +766,19 @@
         "count": 2
       },
       {
+        "code": "UA",
+        "count": 2
+      },
+      {
+        "code": "AE",
+        "count": 1
+      },
+      {
         "code": "AZ",
+        "count": 1
+      },
+      {
+        "code": "BE",
         "count": 1
       },
       {
@@ -774,11 +786,11 @@
         "count": 1
       },
       {
-        "code": "HR",
+        "code": "GR",
         "count": 1
       },
       {
-        "code": "KE",
+        "code": "HR",
         "count": 1
       },
       {
@@ -791,6 +803,10 @@
       },
       {
         "code": "QA",
+        "count": 1
+      },
+      {
+        "code": "CY",
         "count": 1
       },
       {
@@ -822,10 +838,6 @@
         "count": 1
       },
       {
-        "code": "LK",
-        "count": 1
-      },
-      {
         "code": "RW",
         "count": 1
       },
@@ -834,15 +846,7 @@
         "count": 1
       },
       {
-        "code": "AM",
-        "count": 1
-      },
-      {
         "code": "CL",
-        "count": 1
-      },
-      {
-        "code": "CV",
         "count": 1
       },
       {
@@ -854,15 +858,7 @@
         "count": 1
       },
       {
-        "code": "HU",
-        "count": 1
-      },
-      {
-        "code": "IE",
-        "count": 1
-      },
-      {
-        "code": "KR",
+        "code": "GT",
         "count": 1
       },
       {
@@ -874,7 +870,11 @@
         "count": 1
       },
       {
-        "code": "SA",
+        "code": "NZ",
+        "count": 1
+      },
+      {
+        "code": "RS",
         "count": 1
       },
       {
@@ -882,19 +882,7 @@
         "count": 1
       },
       {
-        "code": "TG",
-        "count": 1
-      },
-      {
-        "code": "UA",
-        "count": 1
-      },
-      {
         "code": "VE",
-        "count": 1
-      },
-      {
-        "code": "VN",
         "count": 1
       }
     ]
@@ -1279,7 +1267,7 @@
           },
           {
             "name": "UsbFlasher-1.2.7-x86_64.AppImage",
-            "download_count": 5
+            "download_count": 6
           },
           {
             "name": "UsbFlasher_Setup_v1.2.7.exe",
@@ -3550,6 +3538,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-28 02:21:32 UTC"
+    "fetched": "2026-11-28 02:51:09 UTC"
   }
 }
