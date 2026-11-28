@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-28 07:18:00 UTC",
+  "last_updated": "2026-11-28 07:47:53 UTC",
   "date_range": "2026-08-30 to 2026-11-28",
   "summary": {
-    "total_acquisitions": 53,
+    "total_acquisitions": 54,
     "total_installs": 52,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -67,7 +67,7 @@
     {
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
-      "acquisitions": 21,
+      "acquisitions": 22,
       "installs": 10,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -3538,6 +3538,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-28 07:19:11 UTC"
+    "fetched": "2026-11-28 07:49:06 UTC"
   }
 }
