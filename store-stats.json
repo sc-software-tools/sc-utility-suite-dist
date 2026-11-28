@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-11-28 09:46:34 UTC",
+  "last_updated": "2026-11-28 10:16:22 UTC",
   "date_range": "2026-08-30 to 2026-11-28",
   "summary": {
     "total_acquisitions": 54,
-    "total_installs": 52,
+    "total_installs": 68,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
     "total_inapp_revenue_usd": 4.42,
@@ -14,7 +14,7 @@
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
       "acquisitions": 12,
-      "installs": 21,
+      "installs": 22,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -50,7 +50,7 @@
       "name": "PDF Knife",
       "product_id": "9NQLSS021G6T",
       "acquisitions": 7,
-      "installs": 6,
+      "installs": 7,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -68,7 +68,7 @@
       "name": "USB Flasher",
       "product_id": "9P9NBFS7PMJB",
       "acquisitions": 22,
-      "installs": 10,
+      "installs": 24,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
       "crashes": 0
@@ -117,11 +117,31 @@
     {
       "code": "PL",
       "country": "PL",
+      "count": 5
+    },
+    {
+      "code": "IN",
+      "country": "India",
       "count": 4
+    },
+    {
+      "code": "US",
+      "country": "United States",
+      "count": 4
+    },
+    {
+      "code": "ID",
+      "country": "ID",
+      "count": 3
     },
     {
       "code": "NL",
       "country": "Netherlands",
+      "count": 3
+    },
+    {
+      "code": "TR",
+      "country": "TR",
       "count": 3
     },
     {
@@ -135,18 +155,13 @@
       "count": 3
     },
     {
+      "code": "DZ",
+      "country": "DZ",
+      "count": 2
+    },
+    {
       "code": "GB",
       "country": "United Kingdom",
-      "count": 2
-    },
-    {
-      "code": "ID",
-      "country": "ID",
-      "count": 2
-    },
-    {
-      "code": "IN",
-      "country": "India",
       "count": 2
     },
     {
@@ -160,23 +175,23 @@
       "count": 2
     },
     {
-      "code": "TR",
-      "country": "TR",
+      "code": "SE",
+      "country": "SE",
       "count": 2
     },
     {
-      "code": "US",
-      "country": "United States",
+      "code": "BE",
+      "country": "BE",
+      "count": 2
+    },
+    {
+      "code": "IT",
+      "country": "Italy",
       "count": 2
     },
     {
       "code": "BF",
       "country": "BF",
-      "count": 1
-    },
-    {
-      "code": "DZ",
-      "country": "DZ",
       "count": 1
     },
     {
@@ -207,11 +222,6 @@
     {
       "code": "ZA",
       "country": "ZA",
-      "count": 1
-    },
-    {
-      "code": "BE",
-      "country": "BE",
       "count": 1
     },
     {
@@ -265,11 +275,6 @@
       "count": 1
     },
     {
-      "code": "IT",
-      "country": "Italy",
-      "count": 1
-    },
-    {
       "code": "MX",
       "country": "MX",
       "count": 1
@@ -280,8 +285,23 @@
       "count": 1
     },
     {
+      "code": "CO",
+      "country": "CO",
+      "count": 1
+    },
+    {
       "code": "HK",
       "country": "HK",
+      "count": 1
+    },
+    {
+      "code": "PE",
+      "country": "PE",
+      "count": 1
+    },
+    {
+      "code": "QA",
+      "country": "QA",
       "count": 1
     },
     {
@@ -293,18 +313,23 @@
       "code": "TD",
       "country": "TD",
       "count": 1
+    },
+    {
+      "code": "TH",
+      "country": "TH",
+      "count": 1
     }
   ],
   "os_breakdown": [
     {
       "os": "Windows 11",
-      "count": 38,
-      "percent": 73.1
+      "count": 50,
+      "percent": 73.5
     },
     {
       "os": "Windows 10",
-      "count": 14,
-      "percent": 26.9
+      "count": 18,
+      "percent": 26.5
     }
   ],
   "gumroad": {
@@ -3538,6 +3563,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-28 09:47:51 UTC"
+    "fetched": "2026-11-28 10:17:35 UTC"
   }
 }
