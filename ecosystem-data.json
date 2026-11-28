@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-28 11:16:06 UTC",
-  "date_range": "2026-08-30 to 2026-11-28",
+  "last_updated": "2026-11-28 11:48:03 UTC",
+  "date_range": "all time to 2026-11-28",
   "summary": {
-    "total_acquisitions": 54,
+    "total_acquisitions": 55,
     "total_installs": 68,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -13,7 +13,7 @@
     {
       "name": "Archive Unpacker",
       "product_id": "9NXS3LDTBRX8",
-      "acquisitions": 12,
+      "acquisitions": 13,
       "installs": 22,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -120,23 +120,23 @@
       "count": 5
     },
     {
-      "code": "IN",
-      "country": "India",
-      "count": 4
-    },
-    {
       "code": "US",
       "country": "United States",
       "count": 4
     },
     {
-      "code": "ID",
-      "country": "ID",
+      "code": "IN",
+      "country": "India",
+      "count": 4
+    },
+    {
+      "code": "UA",
+      "country": "UA",
       "count": 3
     },
     {
-      "code": "NL",
-      "country": "Netherlands",
+      "code": "ID",
+      "country": "ID",
       "count": 3
     },
     {
@@ -145,14 +145,19 @@
       "count": 3
     },
     {
-      "code": "UA",
-      "country": "UA",
+      "code": "NL",
+      "country": "Netherlands",
       "count": 3
     },
     {
       "code": "DE",
       "country": "Germany",
       "count": 3
+    },
+    {
+      "code": "NP",
+      "country": "NP",
+      "count": 2
     },
     {
       "code": "DZ",
@@ -162,11 +167,6 @@
     {
       "code": "GB",
       "country": "United Kingdom",
-      "count": 2
-    },
-    {
-      "code": "NP",
-      "country": "NP",
       "count": 2
     },
     {
@@ -190,26 +190,6 @@
       "count": 2
     },
     {
-      "code": "BF",
-      "country": "BF",
-      "count": 1
-    },
-    {
-      "code": "ES",
-      "country": "Spain",
-      "count": 1
-    },
-    {
-      "code": "KR",
-      "country": "South Korea",
-      "count": 1
-    },
-    {
-      "code": "MW",
-      "country": "MW",
-      "count": 1
-    },
-    {
       "code": "RU",
       "country": "Russia",
       "count": 1
@@ -220,13 +200,28 @@
       "count": 1
     },
     {
+      "code": "MW",
+      "country": "MW",
+      "count": 1
+    },
+    {
+      "code": "KR",
+      "country": "South Korea",
+      "count": 1
+    },
+    {
       "code": "ZA",
       "country": "ZA",
       "count": 1
     },
     {
-      "code": "AZ",
-      "country": "Azerbaijan",
+      "code": "BF",
+      "country": "BF",
+      "count": 1
+    },
+    {
+      "code": "ES",
+      "country": "Spain",
       "count": 1
     },
     {
@@ -235,8 +230,8 @@
       "count": 1
     },
     {
-      "code": "NO",
-      "country": "NO",
+      "code": "AZ",
+      "country": "Azerbaijan",
       "count": 1
     },
     {
@@ -245,13 +240,18 @@
       "count": 1
     },
     {
-      "code": "BA",
-      "country": "Bosnia and Herzegovina",
+      "code": "NO",
+      "country": "NO",
       "count": 1
     },
     {
-      "code": "CA",
-      "country": "Canada",
+      "code": "KH",
+      "country": "Cambodia",
+      "count": 1
+    },
+    {
+      "code": "BA",
+      "country": "Bosnia and Herzegovina",
       "count": 1
     },
     {
@@ -260,8 +260,8 @@
       "count": 1
     },
     {
-      "code": "KH",
-      "country": "Cambodia",
+      "code": "CA",
+      "country": "Canada",
       "count": 1
     },
     {
@@ -280,18 +280,28 @@
       "count": 1
     },
     {
+      "code": "TD",
+      "country": "TD",
+      "count": 1
+    },
+    {
       "code": "BR",
       "country": "Brazil",
       "count": 1
     },
     {
-      "code": "CO",
-      "country": "CO",
+      "code": "HK",
+      "country": "HK",
       "count": 1
     },
     {
-      "code": "HK",
-      "country": "HK",
+      "code": "RO",
+      "country": "RO",
+      "count": 1
+    },
+    {
+      "code": "CO",
+      "country": "CO",
       "count": 1
     },
     {
@@ -302,16 +312,6 @@
     {
       "code": "QA",
       "country": "QA",
-      "count": 1
-    },
-    {
-      "code": "RO",
-      "country": "RO",
-      "count": 1
-    },
-    {
-      "code": "TD",
-      "country": "TD",
       "count": 1
     },
     {
@@ -472,7 +472,7 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 284,
+    "total_installs": 286,
     "snaps": [
       {
         "name": "Archive Unpacker",
@@ -483,8 +483,8 @@
       {
         "name": "Dup Scrub",
         "snap": "sc-dup-scrub",
-        "installs": 8,
-        "as_of": "2026-11-26"
+        "installs": 10,
+        "as_of": "2026-11-27"
       },
       {
         "name": "HEIC Studio",
@@ -550,11 +550,11 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 148
+        "count": 147
       },
       {
         "os": "ubuntu/24.04",
-        "count": 62
+        "count": 61
       },
       {
         "os": "ubuntu/26.10",
@@ -562,7 +562,7 @@
       },
       {
         "os": "zorin/18",
-        "count": 18
+        "count": 20
       },
       {
         "os": "ubuntu/22.04",
@@ -581,20 +581,20 @@
         "count": 3
       },
       {
-        "os": "ubuntu/25.10",
+        "os": "debian/13",
+        "count": 3
+      },
+      {
+        "os": "fedora/44",
         "count": 2
       },
       {
-        "os": "debian/13",
+        "os": "ubuntu/25.10",
         "count": 2
       },
       {
         "os": "ubuntu/11.26.11",
         "count": 2
-      },
-      {
-        "os": "fedora/44",
-        "count": 1
       },
       {
         "os": "neon/24.04",
@@ -676,11 +676,11 @@
     "countries": [
       {
         "code": "US",
-        "count": 65
+        "count": 67
       },
       {
         "code": "DE",
-        "count": 23
+        "count": 22
       },
       {
         "code": "BR",
@@ -688,7 +688,7 @@
       },
       {
         "code": "CA",
-        "count": 16
+        "count": 15
       },
       {
         "code": "FR",
@@ -708,7 +708,7 @@
       },
       {
         "code": "NL",
-        "count": 8
+        "count": 9
       },
       {
         "code": "IR",
@@ -719,7 +719,11 @@
         "count": 6
       },
       {
-        "code": "RU",
+        "code": "AU",
+        "count": 6
+      },
+      {
+        "code": "IT",
         "count": 6
       },
       {
@@ -727,11 +731,7 @@
         "count": 5
       },
       {
-        "code": "AU",
-        "count": 5
-      },
-      {
-        "code": "IT",
+        "code": "RU",
         "count": 5
       },
       {
@@ -3563,6 +3563,183 @@
         ]
       }
     ],
-    "fetched": "2026-11-28 11:17:16 UTC"
+    "fetched": "2026-11-28 11:49:28 UTC"
+  },
+  "store_ledger": {
+    "9NXS3LDTBRX8": {
+      "installs": {
+        "2026-11-12|RU|Windows 11": 1,
+        "2026-11-14|TN|Windows 11": 1,
+        "2026-11-15|US|Windows 11": 1,
+        "2026-11-17|NP|Windows 11": 1,
+        "2026-11-17|UA|Windows 10": 1,
+        "2026-11-18|ID|Windows 11": 1,
+        "2026-11-18|MW|Windows 10": 1,
+        "2026-11-20|DZ|Windows 10": 1,
+        "2026-11-20|KR|Windows 11": 1,
+        "2026-11-20|UA|Windows 10": 1,
+        "2026-11-21|GB|Windows 11": 1,
+        "2026-11-21|PK|Windows 11": 1,
+        "2026-11-21|TR|Windows 11": 1,
+        "2026-11-21|ZA|Windows 11": 1,
+        "2026-11-22|IN|Windows 11": 1,
+        "2026-11-23|BF|Windows 11": 1,
+        "2026-11-23|ES|Windows 10": 1,
+        "2026-11-25|NL|Windows 11": 1,
+        "2026-11-26|ID|Windows 10": 1,
+        "2026-11-26|NL|Windows 11": 1,
+        "2026-11-26|PL|Windows 10": 1,
+        "2026-11-27|SE|Windows 11": 1
+      },
+      "acquisitions": {
+        "2026-11-12": 1,
+        "2026-11-13": 1,
+        "2026-11-14": 2,
+        "2026-11-17": 1,
+        "2026-11-18": 1,
+        "2026-11-19": 1,
+        "2026-11-21": 2,
+        "2026-11-22": 1,
+        "2026-11-23": 1,
+        "2026-11-27": 1,
+        "2026-11-28": 1
+      },
+      "failures": {}
+    },
+    "9NL51TH9QR3M": {
+      "installs": {
+        "2026-11-17|BE|Windows 10": 1
+      },
+      "acquisitions": {
+        "2026-11-17": 1,
+        "2026-11-20": 1
+      },
+      "failures": {}
+    },
+    "9N4F9K6G90HK": {
+      "installs": {
+        "2026-11-14|JP|Windows 11": 1,
+        "2026-11-15|AZ|Windows 10": 1,
+        "2026-11-15|NL|Windows 11": 1,
+        "2026-11-15|TW|Windows 11": 1,
+        "2026-11-16|NO|Windows 11": 1,
+        "2026-11-19|US|Windows 10": 1,
+        "2026-11-24|NP|Windows 11": 1
+      },
+      "acquisitions": {
+        "2026-11-12": 1,
+        "2026-11-14": 1,
+        "2026-11-16": 1,
+        "2026-11-24": 1
+      },
+      "failures": {}
+    },
+    "9PC1HVN60QBP": {
+      "installs": {
+        "2026-11-12|KH|Windows 11": 1,
+        "2026-11-13|BA|Windows 11": 1,
+        "2026-11-17|GR|Windows 11": 1,
+        "2026-11-23|CA|Windows 11": 1
+      },
+      "acquisitions": {
+        "2026-11-12": 1,
+        "2026-11-13": 1,
+        "2026-11-20": 1,
+        "2026-11-23": 1
+      },
+      "failures": {}
+    },
+    "9NQLSS021G6T": {
+      "installs": {
+        "2026-11-13|GB|Windows 11": 1,
+        "2026-11-17|AU|Windows 11": 1,
+        "2026-11-17|UA|Windows 11": 1,
+        "2026-11-19|DE|Windows 10": 1,
+        "2026-11-25|CN|Windows 10": 1,
+        "2026-11-25|IN|Windows 11": 1,
+        "2026-11-27|BE|Windows 10": 1
+      },
+      "acquisitions": {
+        "2026-11-11": 1,
+        "2026-11-12": 1,
+        "2026-11-13": 1,
+        "2026-11-17": 2,
+        "2026-11-25": 2
+      },
+      "failures": {}
+    },
+    "9N7V2FVFL4BN": {
+      "installs": {
+        "2026-11-18|MX|Windows 11": 1,
+        "2026-11-20|IT|Windows 10": 1,
+        "2026-11-23|PK|Windows 11": 1
+      },
+      "acquisitions": {
+        "2026-11-19": 1,
+        "2026-11-20": 1,
+        "2026-11-28": 1
+      },
+      "failures": {}
+    },
+    "9P9NBFS7PMJB": {
+      "installs": {
+        "2026-11-20|PL|Windows 11": 1,
+        "2026-11-24|DE|Windows 11": 1,
+        "2026-11-24|TD|Windows 11": 1,
+        "2026-11-25|BR|Windows 10": 1,
+        "2026-11-25|PL|Windows 11": 1,
+        "2026-11-26|DE|Windows 11": 1,
+        "2026-11-26|HK|Windows 11": 1,
+        "2026-11-26|PL|Windows 11": 1,
+        "2026-11-26|RO|Windows 11": 1,
+        "2026-11-26|TR|Windows 11": 1,
+        "2026-11-27|CO|Windows 10": 1,
+        "2026-11-27|DZ|Windows 11": 1,
+        "2026-11-27|ID|Windows 11": 1,
+        "2026-11-27|IN|Windows 11": 2,
+        "2026-11-27|IT|Windows 11": 1,
+        "2026-11-27|PE|Windows 11": 1,
+        "2026-11-27|PL|Windows 10": 1,
+        "2026-11-27|QA|Windows 10": 1,
+        "2026-11-27|SE|Windows 11": 1,
+        "2026-11-27|TH|Windows 11": 1,
+        "2026-11-27|TR|Windows 11": 1,
+        "2026-11-27|US|Windows 11": 2
+      },
+      "acquisitions": {
+        "2026-11-24": 5,
+        "2026-11-25": 1,
+        "2026-11-26": 4,
+        "2026-11-27": 10,
+        "2026-11-28": 2
+      },
+      "failures": {
+        "?": 0
+      }
+    },
+    "9NDSBW5TZ90G": {
+      "installs": {},
+      "acquisitions": {},
+      "failures": {}
+    },
+    "9P18Z18SGV8F": {
+      "installs": {},
+      "failures": {}
+    },
+    "9P55JCHSDK2V": {
+      "installs": {},
+      "failures": {}
+    },
+    "9P2K4281M9S2": {
+      "installs": {},
+      "failures": {}
+    },
+    "9NV49B669CKN": {
+      "installs": {
+        "2026-11-23|PL": 1,
+        "2026-11-23|SA": 1
+      },
+      "failures": {}
+    }
   }
 }
