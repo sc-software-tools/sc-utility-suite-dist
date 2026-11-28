@@ -83,7 +83,7 @@ def get_msstore_token():
         
     return resp.json()["access_token"]
 
-def call_api(url, headers, max_retries=4, base_delay=2.0):
+def call_api(url, headers, max_retries=6, base_delay=5.0):
     for attempt in range(max_retries):
         try:
             resp = requests.get(url, headers=headers, timeout=30)
@@ -130,6 +130,19 @@ def previous_payload_section(name):
             return json.load(f).get(name)
     except (OSError, ValueError):
         return None
+
+
+def merge_ledger(old, fresh, start_date, ok):
+    """Running all-time totals. Partner Center only answers for the last 90 days, so each day's count is kept here
+    ({"YYYY-MM-DD|...": count}) once it leaves that window. Days inside the window are replaced by the fresh answer;
+    if this run's call failed (ok=False) the previous ledger is kept untouched."""
+    old = old or {}
+    if not ok:
+        return dict(old)
+    merged = {k: v for k, v in old.items() if k[:10] < start_date}
+    for k, v in fresh.items():
+        merged[k] = merged.get(k, 0) + v
+    return merged
 
 
 def fetch_github_downloads():
@@ -328,13 +341,21 @@ def main():
     os_counts = {}
     apps_data = []
     store_sales = []
+    old_ledger = previous_payload_section("store_ledger") or {}
+    ledger = {}
+    # Store sales older than the 90-day window are carried over from the last payload so revenue never shrinks.
+    old_store_sales = [s for s in (previous_payload_section("sales_history") or [])
+                       if s.get("source") == "Microsoft Store" and (s.get("date") or "9")[:10] < start_date]
     
     for app_name, app_id in APPS.items():
         time.sleep(1.2)
         # Acquisitions
         acq_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/acquisitions?applicationId={app_id}&startDate={start_date}&endDate={end_date}"
         acq_data = call_api(acq_url, headers)
-        acq_count = sum(item.get("acquisitionQuantity", 0) for item in acq_data.get("Value", []))
+        acq_fresh = {}
+        for item in acq_data.get("Value", []):
+            d = (item.get("date") or "")[:10] or "?"
+            acq_fresh[d] = acq_fresh.get(d, 0) + (item.get("acquisitionQuantity", 0) or 0)
         
         time.sleep(1.2)
         # In-app purchases (Add-ons)
@@ -378,21 +399,39 @@ def main():
         # Failures
         fail_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId={app_id}&startDate={start_date}&endDate={end_date}"
         fail_data = call_api(fail_url, headers)
-        fail_count = sum(item.get("failureCount", 0) for item in fail_data.get("Value", []))
+        fail_fresh = {}
+        for item in fail_data.get("Value", []):
+            d = (item.get("date") or "")[:10] or "?"
+            fail_fresh[d] = fail_fresh.get(d, 0) + (item.get("failureCount", 0) or 0)
         
         time.sleep(1.2)
         # Installs
-        inst_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/installs?applicationId={app_id}&startDate={start_date}&endDate={end_date}&groupby=market,deviceType,osVersion,packageVersion"
+        inst_url = f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/installs?applicationId={app_id}&startDate={start_date}&endDate={end_date}&aggregationLevel=day&groupby=date,market,osVersion"
         inst_data = call_api(inst_url, headers)
-        inst_records = inst_data.get("Value", [])
-        inst_count = sum(item.get("successfulInstallCount", 0) for item in inst_records)
-        
-        for item in inst_records:
-            cnt = item.get("successfulInstallCount", 0)
-            m = item.get("market") or "Unknown"
-            osv = item.get("osVersion") or "Unknown"
+        inst_fresh = {}
+        for item in inst_data.get("Value", []):
+            k = f"{(item.get('date') or '')[:10] or '?'}|{item.get('market') or 'Unknown'}|{item.get('osVersion') or 'Unknown'}"
+            inst_fresh[k] = inst_fresh.get(k, 0) + (item.get("successfulInstallCount", 0) or 0)
+
+        prev = old_ledger.get(app_id, {})
+        ledger[app_id] = {
+            "installs": merge_ledger(prev.get("installs"), inst_fresh, start_date, "error" not in inst_data),
+            "acquisitions": merge_ledger(prev.get("acquisitions"), acq_fresh, start_date, "error" not in acq_data),
+            "failures": merge_ledger(prev.get("failures"), fail_fresh, start_date, "error" not in fail_data),
+        }
+        acq_count = sum(ledger[app_id]["acquisitions"].values())
+        fail_count = sum(ledger[app_id]["failures"].values())
+        inst_count = sum(ledger[app_id]["installs"].values())
+        for k, cnt in ledger[app_id]["installs"].items():
+            _, m, osv = k.split("|", 2)
             market_counts[m] = market_counts.get(m, 0) + cnt
             os_counts[osv] = os_counts.get(osv, 0) + cnt
+
+        for s in old_store_sales:
+            if s.get("product_id") == app_id:
+                store_sales.append(s)
+                inapp_count += s.get("quantity", 0)
+                inapp_rev += s.get("revenue_usd", 0.0)
             
         total_acquisitions += acq_count
         total_installs += inst_count
@@ -417,6 +456,9 @@ def main():
         time.sleep(1.2)
         acq = call_api(f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/acquisitions?applicationId={app_id}&startDate={start_date}&endDate={end_date}", headers).get("Value", [])
         sold, revenue = 0, 0.0
+        for s in old_store_sales:
+            if s.get("product_id") == app_id:
+                store_sales.append(s); sold += s.get("quantity", 0); revenue += s.get("revenue_usd", 0.0)
         for item in acq:
             qty = item.get("acquisitionQuantity", 0) or 0
             price = float(item.get("purchasePriceUSDAmount") or 0.0)
@@ -428,13 +470,23 @@ def main():
                                 "addon_id": "", "date": (item.get("date") or end_date)[:10], "market": m_code or "Store",
                                 "country": COUNTRY_MAP.get(m_code, m_code or "Microsoft Store"), "quantity": qty, "revenue_usd": round(qty * price, 2), "os": ""})
         time.sleep(1.2)
-        inst = call_api(f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/installs?applicationId={app_id}&startDate={start_date}&endDate={end_date}&groupby=market", headers).get("Value", [])
+        inst_resp = call_api(f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/installs?applicationId={app_id}&startDate={start_date}&endDate={end_date}&aggregationLevel=day&groupby=date,market", headers)
         time.sleep(1.2)
-        fails = call_api(f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId={app_id}&startDate={start_date}&endDate={end_date}", headers).get("Value", [])
+        fail_resp = call_api(f"https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId={app_id}&startDate={start_date}&endDate={end_date}", headers)
+        inst_fresh, fail_fresh = {}, {}
+        for i in inst_resp.get("Value", []):
+            k = f"{(i.get('date') or '')[:10] or '?'}|{i.get('market') or 'Unknown'}"
+            inst_fresh[k] = inst_fresh.get(k, 0) + (i.get("successfulInstallCount", 0) or 0)
+        for i in fail_resp.get("Value", []):
+            d = (i.get("date") or "")[:10] or "?"
+            fail_fresh[d] = fail_fresh.get(d, 0) + (i.get("failureCount", 0) or 0)
+        prev = old_ledger.get(app_id, {})
+        ledger[app_id] = {"installs": merge_ledger(prev.get("installs"), inst_fresh, start_date, "error" not in inst_resp),
+                          "failures": merge_ledger(prev.get("failures"), fail_fresh, start_date, "error" not in fail_resp)}
         paid_apps.append({"name": app_name, "store_id": app_id, "snap": ids["snap"], "gumroad_product": ids["gumroad"],
                           "store_sales": sold, "store_revenue_usd": round(revenue, 2),
-                          "store_installs": sum(i.get("successfulInstallCount", 0) for i in inst),
-                          "crashes": sum(i.get("failureCount", 0) for i in fails)})
+                          "store_installs": sum(ledger[app_id]["installs"].values()),
+                          "crashes": sum(ledger[app_id]["failures"].values())})
 
     markets_formatted = []
     for code, cnt in sorted(market_counts.items(), key=lambda x: x[1], reverse=True):
@@ -461,7 +513,7 @@ def main():
     
     output_payload = {
         "last_updated": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"),
-        "date_range": f"{start_date} to {end_date}",
+        "date_range": f"all time to {end_date}",
         "summary": {
             "total_acquisitions": total_acquisitions,
             "total_installs": total_installs,
@@ -477,7 +529,8 @@ def main():
         "gumroad": gumroad_data,
         "paid_apps": paid_apps,
         "snap": fetch_snap_stats(),
-        "github": fetch_github_downloads()
+        "github": fetch_github_downloads(),
+        "store_ledger": ledger
     }
     
     script_dir = os.path.dirname(os.path.abspath(__file__))
