@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-28 07:47:53 UTC",
+  "last_updated": "2026-11-28 08:17:35 UTC",
   "date_range": "2026-08-30 to 2026-11-28",
   "summary": {
     "total_acquisitions": 54,
@@ -447,13 +447,13 @@
   ],
   "snap": {
     "configured": true,
-    "total_installs": 280,
+    "total_installs": 282,
     "snaps": [
       {
         "name": "Archive Unpacker",
         "snap": "sc-archive-unpacker",
-        "installs": 76,
-        "as_of": "2026-11-26"
+        "installs": 78,
+        "as_of": "2026-11-27"
       },
       {
         "name": "Dup Scrub",
@@ -525,7 +525,7 @@
     "os_breakdown": [
       {
         "os": "ubuntu/26.04",
-        "count": 145
+        "count": 146
       },
       {
         "os": "ubuntu/24.04",
@@ -544,19 +544,19 @@
         "count": 11
       },
       {
-        "os": "ubuntu/20.04",
-        "count": 4
-      },
-      {
         "os": "ubuntu/18.04",
         "count": 3
       },
       {
-        "os": "ubuntu/25.10",
-        "count": 2
+        "os": "ubuntu/20.04",
+        "count": 3
       },
       {
         "os": "zorin/17",
+        "count": 3
+      },
+      {
+        "os": "ubuntu/25.10",
         "count": 2
       },
       {
@@ -573,6 +573,10 @@
       },
       {
         "os": "neon/24.04",
+        "count": 1
+      },
+      {
+        "os": "ubuntu/25.04",
         "count": 1
       },
       {
@@ -651,19 +655,19 @@
       },
       {
         "code": "DE",
-        "count": 22
+        "count": 23
       },
       {
         "code": "BR",
-        "count": 18
+        "count": 17
       },
       {
         "code": "CA",
-        "count": 15
+        "count": 16
       },
       {
         "code": "FR",
-        "count": 14
+        "count": 15
       },
       {
         "code": "GB",
@@ -671,7 +675,7 @@
       },
       {
         "code": "IN",
-        "count": 13
+        "count": 12
       },
       {
         "code": "ES",
@@ -682,10 +686,6 @@
         "count": 8
       },
       {
-        "code": "AU",
-        "count": 6
-      },
-      {
         "code": "IR",
         "count": 6
       },
@@ -694,27 +694,39 @@
         "count": 6
       },
       {
-        "code": "IT",
-        "count": 5
+        "code": "RU",
+        "count": 6
       },
       {
         "code": "MX",
         "count": 5
       },
       {
-        "code": "PL",
+        "code": "AU",
         "count": 5
       },
       {
+        "code": "EG",
+        "count": 4
+      },
+      {
+        "code": "PL",
+        "count": 4
+      },
+      {
+        "code": "IT",
+        "count": 4
+      },
+      {
+        "code": "CN",
+        "count": 3
+      },
+      {
         "code": "ID",
-        "count": 4
+        "count": 3
       },
       {
-        "code": "RU",
-        "count": 4
-      },
-      {
-        "code": "MA",
+        "code": "JP",
         "count": 3
       },
       {
@@ -722,7 +734,7 @@
         "count": 3
       },
       {
-        "code": "EG",
+        "code": "UA",
         "count": 3
       },
       {
@@ -730,15 +742,15 @@
         "count": 3
       },
       {
-        "code": "CN",
+        "code": "AE",
         "count": 2
       },
       {
-        "code": "JP",
+        "code": "MA",
         "count": 2
       },
       {
-        "code": "KE",
+        "code": "PR",
         "count": 2
       },
       {
@@ -750,7 +762,7 @@
         "count": 2
       },
       {
-        "code": "ZA",
+        "code": "VE",
         "count": 2
       },
       {
@@ -766,15 +778,7 @@
         "count": 2
       },
       {
-        "code": "UA",
-        "count": 2
-      },
-      {
-        "code": "AE",
-        "count": 1
-      },
-      {
-        "code": "AZ",
+        "code": "AR",
         "count": 1
       },
       {
@@ -786,7 +790,7 @@
         "count": 1
       },
       {
-        "code": "GR",
+        "code": "CZ",
         "count": 1
       },
       {
@@ -799,10 +803,6 @@
       },
       {
         "code": "PE",
-        "count": 1
-      },
-      {
-        "code": "QA",
         "count": 1
       },
       {
@@ -823,10 +823,6 @@
       },
       {
         "code": "NO",
-        "count": 1
-      },
-      {
-        "code": "PR",
         "count": 1
       },
       {
@@ -862,6 +858,10 @@
         "count": 1
       },
       {
+        "code": "KE",
+        "count": 1
+      },
+      {
         "code": "MK",
         "count": 1
       },
@@ -882,7 +882,7 @@
         "count": 1
       },
       {
-        "code": "VE",
+        "code": "ZA",
         "count": 1
       }
     ]
@@ -3538,6 +3538,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-28 07:49:06 UTC"
+    "fetched": "2026-11-28 08:18:45 UTC"
   }
 }
