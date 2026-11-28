@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27 23:42:07 UTC",
-  "date_range": "2026-08-29 to 2026-11-27",
+  "last_updated": "2026-11-28 00:11:54 UTC",
+  "date_range": "2026-08-30 to 2026-11-28",
   "summary": {
     "total_acquisitions": 51,
     "total_installs": 52,
@@ -604,10 +604,6 @@
         "count": 1
       },
       {
-        "os": "ubuntu/11.26.11",
-        "count": 0
-      },
-      {
         "os": "ubuntu/24.10",
         "count": 0
       },
@@ -628,7 +624,7 @@
         "count": 0
       },
       {
-        "os": "ubuntu/11.26.01",
+        "os": "ubuntu/11.26.11",
         "count": 0
       },
       {
@@ -1279,7 +1275,7 @@
           },
           {
             "name": "UsbFlasher_v1.2.7_Portable.zip",
-            "download_count": 6
+            "download_count": 8
           }
         ]
       },
@@ -3542,6 +3538,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-27 23:43:30 UTC"
+    "fetched": "2026-11-28 00:12:52 UTC"
   }
 }
