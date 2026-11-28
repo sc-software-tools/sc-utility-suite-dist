@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-11-28 02:50:10 UTC",
+  "last_updated": "2026-11-28 03:19:48 UTC",
   "date_range": "2026-08-30 to 2026-11-28",
   "summary": {
-    "total_acquisitions": 52,
+    "total_acquisitions": 53,
     "total_installs": 52,
     "total_crashes": 0,
     "total_inapp_purchases": 1,
@@ -58,7 +58,7 @@
     {
       "name": "Screen Lens",
       "product_id": "9N7V2FVFL4BN",
-      "acquisitions": 2,
+      "acquisitions": 3,
       "installs": 3,
       "inapp_purchases": 0,
       "inapp_revenue_usd": 0.0,
@@ -3538,6 +3538,6 @@
         ]
       }
     ],
-    "fetched": "2026-11-28 02:51:09 UTC"
+    "fetched": "2026-11-28 03:21:08 UTC"
   }
 }
